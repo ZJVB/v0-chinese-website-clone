@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
 
 const testimonials = [
@@ -26,8 +26,7 @@ const testimonials = [
     company: "R M Clinic",
   },
   {
-    quote:
-      "我们与MSL合作处理所有履约业务已超过一年，非常满意！",
+    quote: "我们与MSL合作处理所有履约业务已超过一年，非常满意！",
     author: "Rosie William",
     title: "总监",
     company: "Nii HAi Ltd",
@@ -51,10 +50,19 @@ const testimonials = [
 export function TestimonialsSection() {
   const [current, setCurrent] = useState(0);
 
-  const prev = () =>
-    setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1));
-  const next = () =>
-    setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1));
+  const prev = useCallback(
+    () => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1)),
+    [],
+  );
+  const next = useCallback(
+    () => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1)),
+    [],
+  );
+
+  useEffect(() => {
+    const interval = setInterval(next, 6000);
+    return () => clearInterval(interval);
+  }, [next]);
 
   const t = testimonials[current];
 
@@ -62,7 +70,7 @@ export function TestimonialsSection() {
     <section id="testimonials" className="bg-card py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-accent">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
             客户评价
           </p>
           <h2 className="mb-12 text-3xl font-bold text-foreground lg:text-4xl">
@@ -71,10 +79,10 @@ export function TestimonialsSection() {
         </div>
 
         <div className="mx-auto max-w-4xl">
-          <div className="relative rounded-2xl border border-border bg-muted/30 p-8 lg:p-12">
-            <Quote className="absolute left-6 top-6 h-10 w-10 text-primary/15 lg:left-8 lg:top-8 lg:h-14 lg:w-14" />
+          <div className="relative overflow-hidden rounded-2xl border border-border bg-muted/20 p-8 lg:p-12">
+            <Quote className="absolute left-6 top-6 h-12 w-12 text-primary/8 lg:left-8 lg:top-8 lg:h-16 lg:w-16" />
             <div className="relative">
-              <div className="mb-4 flex gap-1">
+              <div className="mb-5 flex gap-1">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
                     key={`star-${current}-${i}`}
@@ -82,31 +90,36 @@ export function TestimonialsSection() {
                   />
                 ))}
               </div>
-              <blockquote className="mb-6 text-lg leading-relaxed text-foreground lg:text-xl">
+              <blockquote className="mb-8 min-h-[100px] text-lg leading-relaxed text-foreground lg:text-xl text-pretty">
                 {`"${t.quote}"`}
               </blockquote>
-              <div>
-                <p className="font-semibold text-foreground">
-                  {t.author}
-                  <span className="font-normal text-muted-foreground">
-                    {", "}
-                    {t.title}
-                  </span>
-                </p>
-                {t.company && (
-                  <p className="text-sm font-medium text-primary">
-                    {t.company}
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-primary-foreground">
+                  {t.author[0]}
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground">
+                    {t.author}
+                    <span className="font-normal text-muted-foreground">
+                      {", "}
+                      {t.title}
+                    </span>
                   </p>
-                )}
+                  {t.company && (
+                    <p className="text-sm font-medium text-primary">
+                      {t.company}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="mt-6 flex items-center justify-center gap-4">
+          <div className="mt-8 flex items-center justify-center gap-4">
             <button
               type="button"
               onClick={prev}
-              className="rounded-full border border-border p-2 text-foreground transition-colors hover:bg-muted"
+              className="rounded-full border border-border p-2.5 text-foreground transition-all hover:bg-muted hover:border-primary/30"
               aria-label="上一条"
             >
               <ChevronLeft className="h-5 w-5" />
@@ -117,8 +130,8 @@ export function TestimonialsSection() {
                   type="button"
                   key={`dot-${testimonials[i].author}`}
                   onClick={() => setCurrent(i)}
-                  className={`h-2.5 w-2.5 rounded-full transition-colors ${
-                    i === current ? "bg-primary" : "bg-border"
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
+                    i === current ? "w-8 bg-primary" : "w-2.5 bg-border hover:bg-muted-foreground/30"
                   }`}
                   aria-label={`切换到第 ${i + 1} 条评价`}
                 />
@@ -127,7 +140,7 @@ export function TestimonialsSection() {
             <button
               type="button"
               onClick={next}
-              className="rounded-full border border-border p-2 text-foreground transition-colors hover:bg-muted"
+              className="rounded-full border border-border p-2.5 text-foreground transition-all hover:bg-muted hover:border-primary/30"
               aria-label="下一条"
             >
               <ChevronRight className="h-5 w-5" />

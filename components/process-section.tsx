@@ -35,33 +35,36 @@ export function ProcessSection() {
     <section id="process" className="bg-muted py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-accent">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
             从注册到成功
           </p>
           <h2 className="mb-4 text-3xl font-bold text-foreground lg:text-4xl text-balance">
             我们的合作流程
           </h2>
-          <p className="text-lg leading-relaxed text-muted-foreground">
-            MSL UK 让入驻变得简单。我们的3PL专家将引导您完成账户设置、库存管理和订单履约流程，确保您从第一天起就能高效销售。
+          <p className="text-lg leading-relaxed text-muted-foreground text-pretty">
+            MSL UK
+            让入驻变得简单。我们的3PL专家将引导您完成账户设置、库存管理和订单履约流程，确保您从第一天起就能高效销售。
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, i) => (
             <div key={step.step} className="relative">
               {i < steps.length - 1 && (
-                <div className="absolute right-0 top-12 hidden h-0.5 w-full translate-x-1/2 bg-border lg:block" />
+                <div className="absolute right-0 top-10 hidden h-px w-full translate-x-1/2 bg-border lg:block">
+                  <div className="absolute right-0 top-1/2 h-2 w-2 -translate-y-1/2 rotate-45 border-r border-t border-border" />
+                </div>
               )}
               <div className="relative flex flex-col items-center text-center">
-                <div className="relative mb-4">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary">
-                    <step.icon className="h-7 w-7 text-primary-foreground" />
+                <div className="relative mb-6">
+                  <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-primary shadow-lg transition-transform hover:scale-105">
+                    <step.icon className="h-8 w-8 text-primary-foreground" />
                   </div>
-                  <span className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground">
+                  <span className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground shadow-md">
                     {step.step}
                   </span>
                 </div>
-                <h3 className="mb-2 text-lg font-semibold text-foreground">
+                <h3 className="mb-3 text-lg font-bold text-foreground">
                   {step.title}
                 </h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">

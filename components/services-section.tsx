@@ -75,32 +75,36 @@ export function ServicesSection() {
     <section id="services" className="bg-muted py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-accent">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
             我们为您采购
           </p>
           <h2 className="mb-4 text-3xl font-bold text-foreground lg:text-4xl text-balance">
             我们的电商仓储与3PL服务
           </h2>
-          <p className="text-lg leading-relaxed text-muted-foreground">
+          <p className="text-lg leading-relaxed text-muted-foreground text-pretty">
             除了端到端的订单履约，我们还提供托盘存储、国内和国际运输、智能包装和产品摄影。MSL的仓储解决方案旨在简化您的电商运营并支持可扩展增长。
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {services.map((service) => (
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {services.map((service, index) => (
             <div
               key={service.title}
-              className="group rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-lg"
+              className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/30 hover:shadow-xl hover:-translate-y-1"
+              style={{ animationDelay: `${index * 50}ms` }}
             >
-              <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3">
-                <service.icon className="h-6 w-6 text-primary" />
+              <div className="absolute inset-0 bg-primary/0 transition-colors duration-300 group-hover:bg-primary/[0.02]" />
+              <div className="relative">
+                <div className="mb-4 inline-flex rounded-xl bg-primary/8 p-3 transition-colors duration-300 group-hover:bg-primary/15">
+                  <service.icon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="mb-2 text-lg font-semibold text-foreground">
+                  {service.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {service.description}
+                </p>
               </div>
-              <h3 className="mb-2 text-lg font-semibold text-foreground">
-                {service.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                {service.description}
-              </p>
             </div>
           ))}
         </div>
