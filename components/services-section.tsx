@@ -1,50 +1,52 @@
 import Link from "next/link";
 import {
-  Warehouse,
-  Package,
-  Truck,
-  Ship,
-  Camera,
-  Box,
+  Timer,
+  CalendarClock,
+  Thermometer,
+  Container,
+  Globe,
+  Gift,
   ArrowRight,
 } from "lucide-react";
+import { SectionTitle } from "@/components/section-title";
 
 const services = [
   {
-    icon: Warehouse,
+    icon: Timer,
     title: "短期存储",
     description: "适用于快速周转商品，灵活出库，降低仓储成本",
-    slug: "pallet-storage",
+    slug: "uk-warehouse",
   },
   {
-    icon: Package,
+    icon: CalendarClock,
     title: "长期存储",
     description: "适合大批量进货、季节性商品存储，优化供应链成本",
-    slug: "ecommerce-fulfilment",
+    slug: "uk-warehouse",
   },
   {
-    icon: Truck,
+    icon: Thermometer,
     title: "温控仓储",
     description: "适用于食品、美妆、医疗等对存储环境有特殊要求的产品",
-    slug: "transport-delivery",
+    slug: "uk-warehouse",
   },
   {
-    icon: Ship,
+    icon: Container,
     title: "大件 & 托盘存储",
     description: "专为家具、家电、机械设备等大件商品提供专业存储方案",
-    slug: "freight-forwarding",
+    slug: "uk-warehouse",
   },
   {
-    icon: Camera,
+    icon: Globe,
     title: "全渠道平台存储",
     description: "深度对接亚马逊、独立站等销售渠道，实现库存数据实时同步",
-    slug: "product-photography",
+    slug: "uk-warehouse",
   },
   {
-    icon: Box,
+    icon: Gift,
     title: "增值服务集成存储",
-    description: "整合贴标换标、定制包装、退货翻新等增值服务，形成存储-处理-再销售闭环",
-    slug: "smart-packaging",
+    description:
+      "整合贴标换标、定制包装、退货翻新等增值服务，形成存储-处理-再销售闭环",
+    slug: "uk-warehouse",
   },
 ];
 
@@ -52,28 +54,18 @@ export function ServicesSection() {
   return (
     <section className="py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        {/* Section header with animated underline */}
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="mb-1 text-3xl font-bold text-foreground lg:text-[40px]">
-            灵活存储方案
-          </h2>
-          <div className="relative mx-auto mt-1 mb-4 inline-block">
-            <span className="text-3xl font-bold text-foreground lg:text-[40px]">
-              满足不同业务需求
-            </span>
-            <span className="absolute bottom-0 left-0 h-[40%] w-full bg-primary/20 animate-underline -z-10" />
-          </div>
-          <p className="mt-4 text-muted-foreground leading-relaxed text-pretty max-w-xl mx-auto">
-            不同卖家的运营模式不同，Cube提供个性化仓储方案，确保您的货物能在最合适的条件下存储
-          </p>
-        </div>
+        <SectionTitle
+          title="灵活存储方案"
+          highlight="满足不同业务需求"
+          subtitle="不同卖家的运营模式不同，Cube提供个性化仓储方案，确保您的货物能在最合适的条件下存储"
+        />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <Link
-              key={service.slug}
+              key={service.title}
               href={`/services/${service.slug}`}
-              className="group flex flex-col rounded-lg bg-card p-7 shadow-[0_1px_12px_0_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_4px_24px_0_rgba(0,0,0,0.1)] hover:-translate-y-1"
+              className="group flex flex-col rounded-lg bg-card p-7 shadow-[0_1px_19px_0_rgba(0,0,0,0.08)] transition-all duration-300 hover:shadow-[0_4px_24px_0_rgba(0,0,0,0.12)] hover:-translate-y-1"
             >
               <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
                 <service.icon className="h-6 w-6 text-primary" />

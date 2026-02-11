@@ -7,6 +7,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SectionTitle } from "@/components/section-title";
 
 const steps = [
   {
@@ -39,17 +40,10 @@ export function ProcessSection() {
   return (
     <section className="bg-card py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="mb-1 text-3xl font-bold text-foreground lg:text-[40px]">
-            合作流程
-          </h2>
-          <div className="relative mx-auto mt-1 inline-block">
-            <span className="text-3xl font-bold text-foreground lg:text-[40px]">
-              简单四步开始
-            </span>
-            <span className="absolute bottom-0 left-0 h-[40%] w-full bg-primary/20 animate-underline -z-10" />
-          </div>
-        </div>
+        <SectionTitle
+          title="合作流程"
+          highlight="简单四步开始"
+        />
 
         <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, i) => (
