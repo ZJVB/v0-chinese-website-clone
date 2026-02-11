@@ -12,15 +12,15 @@ const notoSansSC = Noto_Sans_SC({
 });
 
 export const metadata: Metadata = {
-  title: "MSL UK - 英国电商仓储与第三方物流服务 | 专业3PL物流合作伙伴",
+  title: "Cube Fulfilment - 英国电商仓储与第三方物流服务",
   description:
-    "MSL UK 提供专业的电商仓储、第三方物流(3PL)、拣货包装、运输配送等一站式服务，助力在线零售商高效增长。服务覆盖Amazon、eBay、Shopify等主流平台。",
+    "Cube Fulfilment 提供专业的电商仓储、第三方物流(3PL)、拣货包装、运输配送等一站式服务，助力在线零售商高效增长。",
   keywords:
-    "电商仓储,3PL,第三方物流,英国物流,仓储服务,Amazon FBA,电商履约,国际货运",
+    "电商仓储,3PL,第三方物流,英国物流,仓储服务,Amazon FBA,电商履约,Cube Fulfilment",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1a3464",
+  themeColor: "#0f4c81",
   width: "device-width",
   initialScale: 1,
 };

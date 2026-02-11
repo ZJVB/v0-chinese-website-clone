@@ -1,112 +1,101 @@
+import Link from "next/link";
 import {
   Warehouse,
   Package,
   Truck,
-  BarChart3,
   Ship,
   Camera,
-  Globe,
   Box,
-  Headphones,
-  Rocket,
+  ArrowRight,
 } from "lucide-react";
 
 const services = [
   {
     icon: Warehouse,
     title: "托盘仓储",
-    description: "安全、可扩展的散货存储解决方案，包括高效的托盘存储选项。",
+    description: "安全、可扩展的散货存储与高效托盘管理方案。",
+    slug: "pallet-storage",
   },
   {
     icon: Package,
-    title: "电商仓储履约",
-    description:
-      "MSL 提供端到端的电商履约解决方案，简化在线业务的存储、包装和配送。",
+    title: "电商履约",
+    description: "端到端订单履约，涵盖存储、拣货、包装和配送。",
+    slug: "ecommerce-fulfilment",
   },
   {
     icon: Truck,
     title: "运输配送",
-    description: "可靠的国内和国际配送选项，支持高效的陆运和货运服务。",
-  },
-  {
-    icon: BarChart3,
-    title: "智能销售方案",
-    description: "提升电商业绩的工具和策略，为增长量身定制的智能销售解决方案。",
+    description: "国内及国际配送，高效陆运与货运服务。",
+    slug: "transport-delivery",
   },
   {
     icon: Ship,
     title: "国际货运代理",
-    description:
-      "全球运输和清关的端到端物流，可靠的货运代理解决方案确保准时交付。",
+    description: "全球运输与清关的端到端物流解决方案。",
+    slug: "freight-forwarding",
   },
   {
     icon: Camera,
     title: "产品摄影",
-    description:
-      "高品质的视觉效果，提升您的在线列表和转化率。专业产品摄影清晰展现每个细节。",
-  },
-  {
-    icon: Globe,
-    title: "国际客户3PL服务",
-    description:
-      "帮助国际客户更智能地运营。我们专注于为国际客户提供可靠、可扩展的3PL解决方案。",
+    description: "专业产品拍摄，提升在线商品展示效果。",
+    slug: "product-photography",
   },
   {
     icon: Box,
     title: "智能包装",
-    description: "创新、环保且经济高效的智能包装解决方案，提升您的运输流程。",
-  },
-  {
-    icon: Headphones,
-    title: "客户支持外包",
-    description:
-      "我们已经在管理您的库存和完整的履约流程，为什么不进一步简化您的运营？",
-  },
-  {
-    icon: Rocket,
-    title: "初创企业支持",
-    description:
-      "MSL致力于帮助新企业茁壮成长，提供灵活的、适合增长的解决方案。",
+    description: "环保、高效的定制包装解决方案。",
+    slug: "smart-packaging",
   },
 ];
 
 export function ServicesSection() {
   return (
-    <section id="services" className="bg-muted py-16 lg:py-24">
+    <section className="bg-card py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-2xl text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
-            我们为您采购
+            核心服务
           </p>
           <h2 className="mb-4 text-3xl font-bold text-foreground lg:text-4xl text-balance">
-            我们的电商仓储与3PL服务
+            全方位电商物流解决方案
           </h2>
-          <p className="text-lg leading-relaxed text-muted-foreground text-pretty">
-            除了端到端的订单履约，我们还提供托盘存储、国内和国际运输、智能包装和产品摄影。MSL的仓储解决方案旨在简化您的电商运营并支持可扩展增长。
+          <p className="text-muted-foreground leading-relaxed text-pretty">
+            从仓储管理到最终配送，Cube Fulfilment 为您提供一站式物流服务。
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {services.map((service, index) => (
-            <div
-              key={service.title}
-              className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/30 hover:shadow-xl hover:-translate-y-1"
-              style={{ animationDelay: `${index * 50}ms` }}
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => (
+            <Link
+              key={service.slug}
+              href={`/services/${service.slug}`}
+              className="group flex flex-col rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:-translate-y-0.5"
             >
-              <div className="absolute inset-0 bg-primary/0 transition-colors duration-300 group-hover:bg-primary/[0.02]" />
-              <div className="relative">
-                <div className="mb-4 inline-flex rounded-xl bg-primary/8 p-3 transition-colors duration-300 group-hover:bg-primary/15">
-                  <service.icon className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="mb-2 text-lg font-semibold text-foreground">
-                  {service.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {service.description}
-                </p>
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/8 transition-colors group-hover:bg-primary/15">
+                <service.icon className="h-6 w-6 text-primary" />
               </div>
-            </div>
+              <h3 className="mb-2 text-lg font-semibold text-foreground">
+                {service.title}
+              </h3>
+              <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">
+                {service.description}
+              </p>
+              <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-all group-hover:gap-2.5">
+                了解详情
+                <ArrowRight className="h-3.5 w-3.5" />
+              </span>
+            </Link>
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
+          >
+            查看全部服务
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>

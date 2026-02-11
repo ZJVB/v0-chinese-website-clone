@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const stats = [
-  { value: 312000, label: "年度拣货发货量", suffix: "+", prefix: "" },
-  { value: 50000, label: "托盘检查量", suffix: "+", prefix: "" },
-  { value: 500000, label: "精准拣货量", suffix: "+", prefix: "" },
-  { value: 80000, label: "平方英尺托盘存储", suffix: "", prefix: "" },
+  { value: 312000, label: "年度拣货发货量", suffix: "+" },
+  { value: 50000, label: "托盘检查量", suffix: "+" },
+  { value: 500000, label: "精准拣货量", suffix: "+" },
+  { value: 80000, label: "平方英尺仓储面积", suffix: "" },
 ];
 
 function useCountUp(end: number, duration: number, start: boolean) {
@@ -44,19 +44,18 @@ function StatCard({
   value: number;
   label: string;
   suffix: string;
-  prefix: string;
   isVisible: boolean;
 }) {
   const count = useCountUp(value, 2500, isVisible);
 
   return (
-    <div className="relative text-center">
-      <p className="text-4xl font-black tabular-nums text-primary-foreground lg:text-5xl xl:text-6xl">
+    <div className="text-center">
+      <p className="text-3xl font-black tabular-nums text-primary-foreground lg:text-4xl xl:text-5xl">
         {count.toLocaleString()}
-        <span className="text-accent">{suffix}</span>
+        {suffix && <span className="text-accent">{suffix}</span>}
       </p>
-      <div className="mx-auto mt-3 h-0.5 w-12 rounded-full bg-accent/40" />
-      <p className="mt-3 text-sm font-medium text-primary-foreground/70 lg:text-base">
+      <div className="mx-auto mt-3 h-0.5 w-10 rounded-full bg-accent/40" />
+      <p className="mt-3 text-sm font-medium text-primary-foreground/70">
         {label}
       </p>
     </div>
@@ -83,10 +82,7 @@ export function StatsSection() {
   }, []);
 
   return (
-    <section
-      id="stats"
-      className="relative overflow-hidden bg-primary py-20 lg:py-32"
-    >
+    <section className="relative overflow-hidden bg-primary py-16 lg:py-24">
       <div className="absolute inset-0">
         <Image
           src="/images/warehouse-operations.jpg"
@@ -94,15 +90,11 @@ export function StatsSection() {
           fill
           className="object-cover opacity-10"
         />
-        <div className="absolute inset-0 bg-primary/40" />
       </div>
       <div ref={ref} className="relative mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
-            我们的经验
-          </p>
-          <h2 className="mb-16 text-3xl font-bold text-primary-foreground lg:text-4xl text-balance">
-            深受英国成长型企业信赖的电商履约合作伙伴
+        <div className="mx-auto mb-12 max-w-2xl text-center">
+          <h2 className="text-3xl font-bold text-primary-foreground lg:text-4xl text-balance">
+            值得信赖的履约合作伙伴
           </h2>
         </div>
 
