@@ -60,7 +60,7 @@ export default function AboutPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden bg-primary py-16 lg:py-24">
+        <section className="relative overflow-hidden bg-accent py-16 lg:py-24">
           <div className="absolute inset-0">
             <Image
               src="/images/warehouse-operations.jpg"
@@ -71,13 +71,13 @@ export default function AboutPage() {
           </div>
           <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
             <div className="max-w-2xl">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
                 关于 Cube Fulfilment
               </p>
-              <h1 className="mb-4 text-4xl font-black text-primary-foreground lg:text-5xl text-balance">
+              <h1 className="mb-4 text-4xl font-black text-accent-foreground lg:text-5xl text-balance">
                 您值得信赖的电商物流合作伙伴
               </h1>
-              <p className="text-lg leading-relaxed text-primary-foreground/80 text-pretty">
+              <p className="text-lg leading-relaxed text-accent-foreground/80 text-pretty">
                 Cube Fulfilment（注册名：Cube Distribution Service Ltd）总部位于英国曼彻斯特，
                 是一家专注于电商仓储与第三方物流（3PL）的专业服务商，致力于为各类规模的在线零售商提供高效、可靠的一站式物流解决方案。
               </p>
@@ -90,7 +90,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div>
-                <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
+                <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
                   我们的故事
                 </p>
                 <h2 className="mb-6 text-3xl font-bold text-foreground lg:text-4xl text-balance">
@@ -132,7 +132,7 @@ export default function AboutPage() {
         <section className="bg-muted py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
                 核心价值
               </p>
               <h2 className="mb-4 text-3xl font-bold text-foreground lg:text-4xl text-balance">
@@ -164,7 +164,7 @@ export default function AboutPage() {
         <section className="bg-card py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
                 为什么选择我们
               </p>
               <h2 className="mb-6 text-3xl font-bold text-foreground lg:text-4xl text-balance">
@@ -193,8 +193,8 @@ export default function AboutPage() {
                   key={item.title}
                   className="rounded-xl border border-border bg-muted/30 p-8 text-center"
                 >
-                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary">
-                    <item.icon className="h-7 w-7 text-primary-foreground" />
+                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-accent">
+                    <item.icon className="h-7 w-7 text-accent-foreground" />
                   </div>
                   <h3 className="mb-3 text-lg font-bold text-foreground">
                     {item.title}

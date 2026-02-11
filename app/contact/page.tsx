@@ -50,16 +50,16 @@ export default function ContactPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-primary py-16 lg:py-24">
+        <section className="bg-accent py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="max-w-2xl">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
                 联系我们
               </p>
-              <h1 className="mb-4 text-4xl font-black text-primary-foreground lg:text-5xl text-balance">
+              <h1 className="mb-4 text-4xl font-black text-accent-foreground lg:text-5xl text-balance">
                 与我们取得联系
               </h1>
-              <p className="text-lg leading-relaxed text-primary-foreground/80 text-pretty">
+              <p className="text-lg leading-relaxed text-accent-foreground/80 text-pretty">
                 无论您有任何关于电商仓储、物流配送的需求或疑问，我们的团队随时为您服务。
               </p>
             </div>
@@ -84,8 +84,8 @@ export default function ContactPage() {
                       key={item.title}
                       className="flex items-start gap-4 rounded-xl border border-border bg-muted/30 p-5"
                     >
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary">
-                        <item.icon className="h-5 w-5 text-primary-foreground" />
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent">
+                        <item.icon className="h-5 w-5 text-accent-foreground" />
                       </div>
                       <div>
                         <p className="text-sm font-semibold text-foreground">

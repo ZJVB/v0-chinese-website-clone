@@ -321,24 +321,24 @@ export default async function ServiceDetailPage({
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-primary py-16 lg:py-24">
+        <section className="bg-accent py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <Link
               href="/services"
-              className="mb-6 inline-flex items-center gap-1.5 text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+              className="mb-6 inline-flex items-center gap-1.5 text-sm text-accent-foreground/60 hover:text-accent-foreground transition-colors"
             >
               <ArrowLeft className="h-3.5 w-3.5" />
               返回全部服务
             </Link>
             <div className="flex items-start gap-5">
-              <div className="hidden sm:flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-primary-foreground/10">
-                <Icon className="h-8 w-8 text-accent" />
+              <div className="hidden sm:flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-accent-foreground/10">
+                <Icon className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="mb-2 text-3xl font-black text-primary-foreground lg:text-5xl">
+                <h1 className="mb-2 text-3xl font-black text-accent-foreground lg:text-5xl">
                   {service.title}
                 </h1>
-                <p className="text-lg text-primary-foreground/70">
+                <p className="text-lg text-accent-foreground/70">
                   {service.subtitle}
                 </p>
               </div>
@@ -376,7 +376,7 @@ export default async function ServiceDetailPage({
                   <ul className="space-y-3">
                     {service.features.map((f) => (
                       <li key={f} className="flex items-start gap-3">
-                        <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                        <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                         <span className="text-sm text-foreground">{f}</span>
                       </li>
                     ))}
@@ -412,19 +412,19 @@ export default async function ServiceDetailPage({
         </section>
 
         {/* CTA */}
-        <section className="bg-primary py-12 lg:py-16">
+        <section className="bg-accent py-12 lg:py-16">
           <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">
-            <h2 className="mb-4 text-2xl font-bold text-primary-foreground lg:text-3xl">
+            <h2 className="mb-4 text-2xl font-bold text-accent-foreground lg:text-3xl">
               对{service.title}服务感兴趣？
             </h2>
-            <p className="mb-8 text-primary-foreground/70">
+            <p className="mb-8 text-accent-foreground/70">
               联系我们了解详细方案和定价
             </p>
             <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Button
                 asChild
                 size="lg"
-                className="bg-accent text-accent-foreground hover:bg-accent/90 gap-2"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2"
               >
                 <Link href="/contact">
                   联系我们
@@ -435,7 +435,7 @@ export default async function ServiceDetailPage({
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-primary-foreground/25 text-primary-foreground hover:bg-primary-foreground/10 bg-transparent"
+                className="border-accent-foreground/25 text-accent-foreground hover:bg-accent-foreground/10 bg-transparent"
               >
                 <Link href="/services">查看其他服务</Link>
               </Button>

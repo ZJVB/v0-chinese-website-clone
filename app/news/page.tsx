@@ -93,16 +93,16 @@ export default function NewsPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-primary py-16 lg:py-24">
+        <section className="bg-accent py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="max-w-2xl">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
                 新闻资讯
               </p>
-              <h1 className="mb-4 text-4xl font-black text-primary-foreground lg:text-5xl text-balance">
+              <h1 className="mb-4 text-4xl font-black text-accent-foreground lg:text-5xl text-balance">
                 行业洞察与最新动态
               </h1>
-              <p className="text-lg leading-relaxed text-primary-foreground/80 text-pretty">
+              <p className="text-lg leading-relaxed text-accent-foreground/80 text-pretty">
                 通过 Cube Fulfilment 的资讯中心，掌握电商物流行业趋势，了解我们的最新发展。
               </p>
             </div>
@@ -150,7 +150,7 @@ export default function NewsPage() {
         <section className="bg-muted py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="mx-auto mb-12 max-w-2xl text-center">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
                 客户评价
               </p>
               <h2 className="text-3xl font-bold text-foreground lg:text-4xl">
@@ -168,7 +168,7 @@ export default function NewsPage() {
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star
                         key={`star-${t.author}-${i}`}
-                        className="h-4 w-4 fill-accent text-accent"
+                        className="h-4 w-4 fill-primary text-primary"
                       />
                     ))}
                   </div>

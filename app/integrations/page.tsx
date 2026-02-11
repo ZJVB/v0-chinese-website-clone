@@ -98,16 +98,16 @@ export default function IntegrationsPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-primary py-16 lg:py-24">
+        <section className="bg-accent py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="max-w-2xl">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
                 平台集成
               </p>
-              <h1 className="mb-4 text-4xl font-black text-primary-foreground lg:text-5xl text-balance">
+              <h1 className="mb-4 text-4xl font-black text-accent-foreground lg:text-5xl text-balance">
                 多渠道无缝对接
               </h1>
-              <p className="text-lg leading-relaxed text-primary-foreground/80 text-pretty">
+              <p className="text-lg leading-relaxed text-accent-foreground/80 text-pretty">
                 Cube Fulfilment 的智能仓储管理系统与所有主流电商平台和物流渠道深度集成，
                 确保您的库存、订单在多个销售渠道中实时同步、高效运转。
               </p>
@@ -170,7 +170,7 @@ export default function IntegrationsPage() {
         <section className="bg-card py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="mb-10 flex items-center gap-3">
-              <Truck className="h-6 w-6 text-accent" />
+              <Truck className="h-6 w-6 text-primary" />
               <h2 className="text-2xl font-bold text-foreground lg:text-3xl">
                 快递物流集成
               </h2>
@@ -194,18 +194,18 @@ export default function IntegrationsPage() {
         </section>
 
         {/* CTA */}
-        <section className="bg-primary py-12 lg:py-16">
+        <section className="bg-accent py-12 lg:py-16">
           <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">
-            <h2 className="mb-4 text-2xl font-bold text-primary-foreground lg:text-3xl">
+            <h2 className="mb-4 text-2xl font-bold text-accent-foreground lg:text-3xl">
               想了解我们如何对接您的销售渠道？
             </h2>
-            <p className="mb-8 text-primary-foreground/70">
+            <p className="mb-8 text-accent-foreground/70">
               我们的技术团队将为您演示系统集成方案
             </p>
             <Button
               asChild
               size="lg"
-              className="bg-accent text-accent-foreground hover:bg-accent/90 gap-2"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2"
             >
               <Link href="/contact">
                 联系我们

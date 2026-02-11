@@ -102,16 +102,16 @@ export default function ServicesPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-primary py-16 lg:py-24">
+        <section className="bg-accent py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="max-w-2xl">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
                 服务项目
               </p>
-              <h1 className="mb-4 text-4xl font-black text-primary-foreground lg:text-5xl text-balance">
+              <h1 className="mb-4 text-4xl font-black text-accent-foreground lg:text-5xl text-balance">
                 全方位电商物流服务
               </h1>
-              <p className="text-lg leading-relaxed text-primary-foreground/80 text-pretty">
+              <p className="text-lg leading-relaxed text-accent-foreground/80 text-pretty">
                 从仓储管理到最终配送，Cube Fulfilment 为您提供一站式电商物流解决方案，
                 满足不同规模和业务类型的需求。
               </p>

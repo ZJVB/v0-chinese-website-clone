@@ -50,12 +50,12 @@ function StatCard({
 
   return (
     <div className="text-center">
-      <p className="text-3xl font-black tabular-nums text-primary-foreground lg:text-4xl xl:text-5xl">
+      <p className="text-3xl font-black tabular-nums text-accent-foreground lg:text-4xl xl:text-5xl">
         {count.toLocaleString()}
-        {suffix && <span className="text-accent">{suffix}</span>}
+        {suffix && <span className="text-primary">{suffix}</span>}
       </p>
-      <div className="mx-auto mt-3 h-0.5 w-10 rounded-full bg-accent/40" />
-      <p className="mt-3 text-sm font-medium text-primary-foreground/70">
+      <div className="mx-auto mt-3 h-0.5 w-10 rounded-full bg-primary/40" />
+      <p className="mt-3 text-sm font-medium text-accent-foreground/65">
         {label}
       </p>
     </div>
@@ -82,7 +82,7 @@ export function StatsSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-primary py-16 lg:py-24">
+    <section className="relative overflow-hidden bg-accent py-16 lg:py-24">
       <div className="absolute inset-0">
         <Image
           src="/images/warehouse-operations.jpg"
@@ -93,7 +93,7 @@ export function StatsSection() {
       </div>
       <div ref={ref} className="relative mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <h2 className="text-3xl font-bold text-primary-foreground lg:text-4xl text-balance">
+          <h2 className="text-3xl font-bold text-accent-foreground lg:text-4xl text-balance">
             值得信赖的履约合作伙伴
           </h2>
         </div>

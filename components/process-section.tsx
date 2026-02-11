@@ -34,7 +34,7 @@ export function ProcessSection() {
     <section className="bg-muted py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
             合作流程
           </p>
           <h2 className="mb-4 text-3xl font-bold text-foreground lg:text-4xl text-balance">
@@ -50,10 +50,10 @@ export function ProcessSection() {
               )}
               <div className="relative flex flex-col items-center text-center">
                 <div className="relative mb-5">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary">
-                    <step.icon className="h-7 w-7 text-primary-foreground" />
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-accent">
+                    <step.icon className="h-7 w-7 text-accent-foreground" />
                   </div>
-                  <span className="absolute -right-1.5 -top-1.5 flex h-7 w-7 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground">
+                  <span className="absolute -right-1.5 -top-1.5 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
                     {step.step}
                   </span>
                 </div>

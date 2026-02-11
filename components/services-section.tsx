@@ -53,7 +53,7 @@ export function ServicesSection() {
     <section className="bg-card py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
             核心服务
           </p>
           <h2 className="mb-4 text-3xl font-bold text-foreground lg:text-4xl text-balance">
@@ -91,7 +91,7 @@ export function ServicesSection() {
         <div className="mt-10 text-center">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
           >
             查看全部服务
             <ArrowRight className="h-4 w-4" />
