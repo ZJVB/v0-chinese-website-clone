@@ -13,16 +13,17 @@ const serviceLinks = [
 const quickLinks = [
   { label: "关于我们", href: "/about" },
   { label: "服务项目", href: "/services" },
-  { label: "平台集成", href: "/integrations" },
+  { label: "信息化", href: "/integrations" },
   { label: "新闻资讯", href: "/news" },
   { label: "联系我们", href: "/contact" },
 ];
 
 export function Footer() {
   return (
-    <footer className="bg-accent text-accent-foreground">
+    <footer className="bg-card border-t border-border">
       <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+          {/* Brand column */}
           <div>
             <div className="mb-5 flex items-center gap-2.5">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
@@ -31,68 +32,51 @@ export function Footer() {
                 </span>
               </div>
               <div className="flex flex-col">
-                <span className="text-lg font-bold leading-tight text-accent-foreground">
+                <span className="text-lg font-bold leading-tight text-foreground">
                   Cube Fulfilment
                 </span>
-                <span className="text-[10px] font-medium text-accent-foreground/50 leading-tight tracking-wide uppercase">
+                <span className="text-[10px] font-medium text-muted-foreground leading-tight tracking-wide uppercase">
                   Cube Distribution Service Ltd
                 </span>
               </div>
             </div>
-            <p className="mb-6 text-sm leading-relaxed text-accent-foreground/60">
+            <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
               Cube Fulfilment
               是您值得信赖的英国电商仓储与第三方物流合作伙伴，助力品牌高效增长。
             </p>
             <div className="flex flex-col gap-3">
               <a
                 href="tel:01616223633"
-                className="flex items-center gap-2 text-sm text-accent-foreground/60 hover:text-primary transition-colors"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Phone className="h-4 w-4" />
                 0161 622 3633
               </a>
               <a
-                href="mailto:info@cubefulfilment.com"
-                className="flex items-center gap-2 text-sm text-accent-foreground/60 hover:text-primary transition-colors"
+                href="mailto:contact@bnj-global.com"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="h-4 w-4" />
-                info@cubefulfilment.com
+                contact@bnj-global.com
               </a>
-              <div className="flex items-start gap-2 text-sm text-accent-foreground/60">
+              <div className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                Manchester, United Kingdom
+                109 Portland Street, Manchester, M1 6DN
               </div>
             </div>
           </div>
 
+          {/* Services */}
           <div>
-            <h3 className="mb-5 text-xs font-semibold uppercase tracking-widest text-accent-foreground/40">
-              服务项目
+            <h3 className="mb-5 text-base font-bold uppercase tracking-wide text-primary">
+              Page Navigation
             </h3>
-            <ul className="flex flex-col gap-2.5">
-              {serviceLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-accent-foreground/60 transition-colors hover:text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-5 text-xs font-semibold uppercase tracking-widest text-accent-foreground/40">
-              快速链接
-            </h3>
-            <ul className="flex flex-col gap-2.5">
+            <ul className="flex flex-col gap-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-accent-foreground/60 transition-colors hover:text-primary"
+                    className="text-sm text-muted-foreground transition-colors hover:text-primary hover:font-semibold"
                   >
                     {link.label}
                   </Link>
@@ -101,25 +85,35 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Quick links */}
           <div>
-            <h3 className="mb-5 text-xs font-semibold uppercase tracking-widest text-accent-foreground/40">
-              平台集成
+            <h3 className="mb-5 text-base font-bold uppercase tracking-wide text-primary">
+              Useful Links
             </h3>
-            <ul className="flex flex-col gap-2.5">
-              {[
-                "Amazon",
-                "eBay",
-                "Shopify",
-                "TikTok Shop",
-                "WooCommerce",
-                "Etsy",
-              ].map((platform) => (
-                <li key={platform}>
+            <ul className="flex flex-col gap-3">
+              {["17track", "51tracking", "Exchange Rate Query", "Flight Search", "HS Code Lookup"].map((item) => (
+                <li key={item}>
+                  <span className="text-sm text-muted-foreground">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact info */}
+          <div>
+            <h3 className="mb-5 text-base font-bold uppercase tracking-wide text-primary">
+              Contact Information
+            </h3>
+            <ul className="flex flex-col gap-3">
+              {serviceLinks.map((link) => (
+                <li key={link.label}>
                   <Link
-                    href="/integrations"
-                    className="text-sm text-accent-foreground/60 transition-colors hover:text-primary"
+                    href={link.href}
+                    className="text-sm text-muted-foreground transition-colors hover:text-primary hover:font-semibold"
                   >
-                    {platform}
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -127,13 +121,13 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-accent-foreground/10 pt-8">
+        <div className="mt-12 border-t border-border pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-sm text-accent-foreground/40">
+            <p className="text-sm text-muted-foreground">
               &copy; {new Date().getFullYear()} Cube Distribution Service Ltd.
               保留所有权利。
             </p>
-            <p className="text-sm text-accent-foreground/40">
+            <p className="text-sm text-muted-foreground">
               www.cubefulfilment.com
             </p>
           </div>

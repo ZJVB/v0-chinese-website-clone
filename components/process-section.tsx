@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { UserPlus, ClipboardList, PackageCheck, Rocket, ArrowRight } from "lucide-react";
+import {
+  UserPlus,
+  ClipboardList,
+  PackageCheck,
+  Rocket,
+  ArrowRight,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const steps = [
@@ -31,18 +37,21 @@ const steps = [
 
 export function ProcessSection() {
   return (
-    <section className="bg-muted py-16 lg:py-24">
+    <section className="bg-card py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
+          <h2 className="mb-1 text-3xl font-bold text-foreground lg:text-[40px]">
             合作流程
-          </p>
-          <h2 className="mb-4 text-3xl font-bold text-foreground lg:text-4xl text-balance">
-            简单四步，开始合作
           </h2>
+          <div className="relative mx-auto mt-1 inline-block">
+            <span className="text-3xl font-bold text-foreground lg:text-[40px]">
+              简单四步开始
+            </span>
+            <span className="absolute bottom-0 left-0 h-[40%] w-full bg-primary/20 animate-underline -z-10" />
+          </div>
         </div>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, i) => (
             <div key={step.step} className="relative">
               {i < steps.length - 1 && (
@@ -50,8 +59,8 @@ export function ProcessSection() {
               )}
               <div className="relative flex flex-col items-center text-center">
                 <div className="relative mb-5">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-accent">
-                    <step.icon className="h-7 w-7 text-accent-foreground" />
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10">
+                    <step.icon className="h-7 w-7 text-primary" />
                   </div>
                   <span className="absolute -right-1.5 -top-1.5 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
                     {step.step}
@@ -69,7 +78,7 @@ export function ProcessSection() {
         </div>
 
         <div className="mt-12 text-center">
-          <Button asChild size="lg" className="gap-2">
+          <Button asChild size="lg" className="gap-2 rounded-md">
             <Link href="/contact">
               立即开始合作
               <ArrowRight className="h-4 w-4" />

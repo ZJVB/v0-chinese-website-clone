@@ -12,75 +12,79 @@ import {
 const services = [
   {
     icon: Warehouse,
-    title: "托盘仓储",
-    description: "安全、可扩展的散货存储与高效托盘管理方案。",
+    title: "短期存储",
+    description: "适用于快速周转商品，灵活出库，降低仓储成本",
     slug: "pallet-storage",
   },
   {
     icon: Package,
-    title: "电商履约",
-    description: "端到端订单履约，涵盖存储、拣货、包装和配送。",
+    title: "长期存储",
+    description: "适合大批量进货、季节性商品存储，优化供应链成本",
     slug: "ecommerce-fulfilment",
   },
   {
     icon: Truck,
-    title: "运输配送",
-    description: "国内及国际配送，高效陆运与货运服务。",
+    title: "温控仓储",
+    description: "适用于食品、美妆、医疗等对存储环境有特殊要求的产品",
     slug: "transport-delivery",
   },
   {
     icon: Ship,
-    title: "国际货运代理",
-    description: "全球运输与清关的端到端物流解决方案。",
+    title: "大件 & 托盘存储",
+    description: "专为家具、家电、机械设备等大件商品提供专业存储方案",
     slug: "freight-forwarding",
   },
   {
     icon: Camera,
-    title: "产品摄影",
-    description: "专业产品拍摄，提升在线商品展示效果。",
+    title: "全渠道平台存储",
+    description: "深度对接亚马逊、独立站等销售渠道，实现库存数据实时同步",
     slug: "product-photography",
   },
   {
     icon: Box,
-    title: "智能包装",
-    description: "环保、高效的定制包装解决方案。",
+    title: "增值服务集成存储",
+    description: "整合贴标换标、定制包装、退货翻新等增值服务，形成存储-处理-再销售闭环",
     slug: "smart-packaging",
   },
 ];
 
 export function ServicesSection() {
   return (
-    <section className="bg-card py-16 lg:py-24">
+    <section className="py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
+        {/* Section header with animated underline */}
         <div className="mx-auto max-w-2xl text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
-            核心服务
-          </p>
-          <h2 className="mb-4 text-3xl font-bold text-foreground lg:text-4xl text-balance">
-            全方位电商物流解决方案
+          <h2 className="mb-1 text-3xl font-bold text-foreground lg:text-[40px]">
+            灵活存储方案
           </h2>
-          <p className="text-muted-foreground leading-relaxed text-pretty">
-            从仓储管理到最终配送，Cube Fulfilment 为您提供一站式物流服务。
+          <div className="relative mx-auto mt-1 mb-4 inline-block">
+            <span className="text-3xl font-bold text-foreground lg:text-[40px]">
+              满足不同业务需求
+            </span>
+            <span className="absolute bottom-0 left-0 h-[40%] w-full bg-primary/20 animate-underline -z-10" />
+          </div>
+          <p className="mt-4 text-muted-foreground leading-relaxed text-pretty max-w-xl mx-auto">
+            不同卖家的运营模式不同，Cube提供个性化仓储方案，确保您的货物能在最合适的条件下存储
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}
-              className="group flex flex-col rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:-translate-y-0.5"
+              className="group flex flex-col rounded-lg bg-card p-7 shadow-[0_1px_12px_0_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_4px_24px_0_rgba(0,0,0,0.1)] hover:-translate-y-1"
             >
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/8 transition-colors group-hover:bg-primary/15">
+              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
                 <service.icon className="h-6 w-6 text-primary" />
               </div>
               <h3 className="mb-2 text-lg font-semibold text-foreground">
                 {service.title}
               </h3>
-              <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">
+              <p className="mb-5 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {service.description}
               </p>
-              <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-all group-hover:gap-2.5">
+              <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:gap-2.5">
                 了解详情
                 <ArrowRight className="h-3.5 w-3.5" />
               </span>

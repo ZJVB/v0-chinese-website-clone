@@ -1,13 +1,33 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import { Warehouse, Maximize, Package, Handshake } from "lucide-react";
 
 const stats = [
-  { value: 312000, label: "年度拣货发货量", suffix: "+" },
-  { value: 50000, label: "托盘检查量", suffix: "+" },
-  { value: 500000, label: "精准拣货量", suffix: "+" },
-  { value: 80000, label: "平方英尺仓储面积", suffix: "" },
+  {
+    icon: Warehouse,
+    value: 3,
+    suffix: "+海外仓",
+    label: "曼彻斯特、利物浦、伦敦建有海外仓",
+  },
+  {
+    icon: Maximize,
+    value: 10000,
+    suffix: "+平米",
+    label: "仓库空间充足",
+  },
+  {
+    icon: Package,
+    value: 5000,
+    suffix: "+订单",
+    label: "日均处理订单量",
+  },
+  {
+    icon: Handshake,
+    value: 50,
+    suffix: "+物流商合作",
+    label: "与多家国际知名物流企业达成合作关系",
+  },
 ];
 
 function useCountUp(end: number, duration: number, start: boolean) {
@@ -36,28 +56,36 @@ function useCountUp(end: number, duration: number, start: boolean) {
 }
 
 function StatCard({
+  icon: Icon,
   value,
   label,
   suffix,
   isVisible,
 }: {
+  icon: React.ElementType;
   value: number;
   label: string;
   suffix: string;
   isVisible: boolean;
 }) {
-  const count = useCountUp(value, 2500, isVisible);
+  const count = useCountUp(value, 2000, isVisible);
 
   return (
-    <div className="text-center">
-      <p className="text-3xl font-black tabular-nums text-accent-foreground lg:text-4xl xl:text-5xl">
-        {count.toLocaleString()}
-        {suffix && <span className="text-primary">{suffix}</span>}
-      </p>
-      <div className="mx-auto mt-3 h-0.5 w-10 rounded-full bg-primary/40" />
-      <p className="mt-3 text-sm font-medium text-accent-foreground/65">
-        {label}
-      </p>
+    <div className="flex items-center gap-5 rounded-lg bg-card p-6 shadow-[0_1px_19px_0_rgba(0,0,0,0.08)]">
+      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+        <Icon className="h-7 w-7 text-primary" />
+      </div>
+      <div>
+        <p className="text-2xl font-black tabular-nums text-foreground lg:text-3xl">
+          {count.toLocaleString()}
+          <span className="text-sm font-semibold text-muted-foreground ml-0.5">
+            {suffix.replace(/^\d+/, "")}
+          </span>
+        </p>
+        <p className="mt-1 text-sm text-muted-foreground leading-snug">
+          {label}
+        </p>
+      </div>
     </div>
   );
 }
@@ -82,23 +110,9 @@ export function StatsSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-accent py-16 lg:py-24">
-      <div className="absolute inset-0">
-        <Image
-          src="/images/warehouse-operations.jpg"
-          alt="仓库运营"
-          fill
-          className="object-cover opacity-10"
-        />
-      </div>
-      <div ref={ref} className="relative mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="mx-auto mb-12 max-w-2xl text-center">
-          <h2 className="text-3xl font-bold text-accent-foreground lg:text-4xl text-balance">
-            值得信赖的履约合作伙伴
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-12">
+    <section className="bg-card py-16 lg:py-20">
+      <div ref={ref} className="mx-auto max-w-7xl px-4 lg:px-8">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
             <StatCard key={stat.label} {...stat} isVisible={isVisible} />
           ))}
