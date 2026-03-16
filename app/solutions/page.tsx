@@ -165,37 +165,36 @@ export default function SolutionsPage() {
               </p>
             </div>
 
-            {/* Solutions Grid - 3 columns with images */}
+            {/* Solutions Grid - 3 columns with image on top, text below */}
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {solutions.map((item) => (
                 <Link
                   key={item.title}
                   href={item.href}
-                  className="group relative flex flex-col h-[280px] rounded-xl overflow-hidden shadow-[0_1px_16px_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:-translate-y-1"
+                  className="group flex flex-col bg-white rounded-xl overflow-hidden shadow-[0_1px_16px_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:-translate-y-1"
                 >
-                  {/* Background Image */}
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+                  {/* Image on Top */}
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
                   
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-                  
-                  {/* Content */}
-                  <div className="relative mt-auto p-6">
-                    <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
-                      <item.icon className="h-5 w-5 text-white" />
+                  {/* Content Below */}
+                  <div className="p-6 flex-1 flex flex-col">
+                    <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                      <item.icon className="h-5 w-5 text-primary" />
                     </div>
-                    <h3 className="mb-2 text-lg font-semibold text-white">
+                    <h3 className="mb-2 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-white/80 line-clamp-2">
+                    <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
                       {item.description}
                     </p>
-                    <div className="mt-3 flex items-center gap-1 text-sm font-medium text-primary">
+                    <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary">
                       了解详情
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </div>
