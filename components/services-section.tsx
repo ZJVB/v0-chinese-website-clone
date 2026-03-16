@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import {
   BadgeCheck,
   Package,
@@ -9,112 +8,79 @@ import {
   Settings,
   ArrowRight,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { SectionTitle } from "@/components/section-title";
 
 const services = [
   {
     icon: BadgeCheck,
     title: "TEMU 官方认证仓",
-    description: "为 TEMU 平台卖家提供标准化仓储、订单履约与本地发货支持。",
-    highlight: "作为 TEMU 官方认证仓，Cube Cang 在多个周期的履约数据评估中持续保持优异表现，履约表现长期位居前列。",
     href: "/solutions/temu",
-    image: "/images/service-temu.jpg",
   },
   {
     icon: Package,
     title: "FBA 备货与转运",
-    description: "支持英国本地前置仓备货、中转、分批补货与退件处理。",
     href: "/solutions/fba",
-    image: "/images/service-fba.jpg",
   },
   {
     icon: ShoppingBag,
     title: "D2C 一件代发",
-    description: "支持独立站和多平台订单履约，实现英国本地快速发货。",
     href: "/solutions/d2c",
-    image: "/images/service-d2c.jpg",
   },
   {
     icon: Building2,
     title: "B2B 零售分销",
-    description: "适用于整箱、整托、门店补货及批量订单配送场景。",
     href: "/solutions/b2b",
-    image: "/images/service-b2b.jpg",
   },
   {
     icon: RotateCcw,
     title: "退货与售后支持",
-    description: "提供退件接收、检查、分类处理与后续履约支持。",
     href: "/solutions/returns",
-    image: "/images/service-returns.jpg",
   },
   {
     icon: Settings,
-    title: "系统与 API 支持",
-    description: "通过 WMS 与系统对接提升库存、订单与物流可视化能力。",
+    title: "WMS 与 API 支持",
     href: "/technology/wms",
-    image: "/images/service-api.jpg",
   },
 ];
 
 export function ServicesSection() {
   return (
-    <section className="py-16 lg:py-24">
+    <section className="bg-gradient-to-b from-white to-[#f8fafc] py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <SectionTitle
-          title="覆盖仓储、履约、派送与售后的"
-          highlight="英国本地物流能力"
-          subtitle="无论您是平台卖家、独立站品牌，还是零售分销客户，Cube Cang 都可根据您的订单模式、产品类型和业务阶段，提供更适合的英国本地物流解决方案。"
+          title="我们的"
+          highlight="服务"
+          subtitle="Cube海外仓专注于英国本地仓储、履约、配送及售后支持，为不同平台、渠道及业务模式的客户提供更高效、更稳定的本地物流解决方案。"
         />
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <Link
               key={service.title}
               href={service.href}
-              className="group flex flex-col overflow-hidden rounded-lg bg-card shadow-[0_1px_19px_0_rgba(0,0,0,0.08)] transition-all duration-300 hover:shadow-[0_4px_24px_0_rgba(0,0,0,0.12)] hover:-translate-y-1"
+              className="group flex items-center gap-4 rounded-xl bg-white p-6 shadow-[0_1px_20px_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_4px_24px_rgba(0,0,0,0.1)] hover:-translate-y-1"
             >
-              <div className="relative h-40 w-full overflow-hidden">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                <div className="absolute bottom-3 left-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/90 backdrop-blur-sm shadow-sm">
-                  <service.icon className="h-5 w-5 text-primary" />
-                </div>
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/15">
+                <service.icon className="h-7 w-7 text-primary" />
               </div>
-              <div className="flex flex-1 flex-col p-5">
-                <h3 className="mb-2 text-lg font-semibold text-foreground">
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                   {service.title}
                 </h3>
-                <p className="mb-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {service.description}
-                </p>
-                {service.highlight && (
-                  <p className="mb-3 text-xs leading-relaxed text-primary/80 bg-primary/5 rounded p-2">
-                    {service.highlight}
-                  </p>
-                )}
-                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:gap-2.5">
-                  了解详情
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </span>
               </div>
+              <ArrowRight className="h-5 w-5 text-muted-foreground/40 transition-all group-hover:text-primary group-hover:translate-x-1" />
             </Link>
           ))}
         </div>
 
-        <div className="mt-10 text-center">
-          <Link
-            href="/solutions"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
-          >
-            查看全部解决方案
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+        <div className="mt-12 text-center">
+          <Button asChild variant="outline" size="lg" className="gap-2 rounded-md">
+            <Link href="/solutions">
+              查看全部解决方案
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

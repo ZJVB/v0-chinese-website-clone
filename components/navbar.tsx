@@ -117,7 +117,7 @@ export function Navbar() {
               scrolled || !isHomepage ? "text-foreground" : "text-white"
             }`}
           >
-            Cube Cang
+            Cube海外仓
           </span>
         </Link>
 

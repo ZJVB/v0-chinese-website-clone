@@ -14,7 +14,7 @@ export function Footer() {
                 <span className="text-xs font-black text-white">CUBE</span>
               </div>
               <div>
-                <div className="text-lg font-bold text-white">Cube Cang</div>
+                <div className="text-lg font-bold text-white">Cube海外仓</div>
                 <div className="text-[10px] font-medium uppercase tracking-wide text-primary">
                   Cube Distribution Service Ltd
                 </div>

@@ -1,14 +1,10 @@
 import { Navbar } from "@/components/navbar";
 import { HeroSection } from "@/components/hero-section";
+import { StatsSection } from "@/components/stats-section";
+import { TemuSection } from "@/components/temu-section";
 import { ServicesSection } from "@/components/services-section";
-import { BusinessTypesSection } from "@/components/business-types-section";
 import { AdvantagesSection } from "@/components/advantages-section";
-import { WarehouseNetworkSection } from "@/components/warehouse-network-section";
-import { SolutionsEntrySection } from "@/components/solutions-entry-section";
-import { IndustriesSection } from "@/components/industries-section";
-import { TechSection } from "@/components/tech-section";
-import { NewsSection } from "@/components/news-section";
-import { AboutIntroSection } from "@/components/about-intro-section";
+import { ContactCtaSection } from "@/components/contact-cta-section";
 import { Footer } from "@/components/footer";
 
 export default function Page() {
@@ -16,16 +12,23 @@ export default function Page() {
     <>
       <Navbar />
       <main>
+        {/* Section 1: Hero - 3 Banner Carousel */}
         <HeroSection />
+        
+        {/* Section 2: Company Stats */}
+        <StatsSection />
+        
+        {/* Section 3: TEMU Official Certification */}
+        <TemuSection />
+        
+        {/* Section 4: Our Services */}
         <ServicesSection />
-        <BusinessTypesSection />
+        
+        {/* Section 5: Why Choose Us */}
         <AdvantagesSection />
-        <WarehouseNetworkSection />
-        <SolutionsEntrySection />
-        <IndustriesSection />
-        <TechSection />
-        <NewsSection />
-        <AboutIntroSection />
+        
+        {/* Section 6: Contact CTA */}
+        <ContactCtaSection />
       </main>
       <Footer />
     </>
