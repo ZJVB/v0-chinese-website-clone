@@ -91,13 +91,13 @@ export default function TemuPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-[#051851] py-16 lg:py-20">
+        <section className="bg-white py-16 lg:py-20 border-t border-gray-100">
           <div className="mx-auto max-w-4xl px-4 lg:px-8 text-center">
             <BadgeCheck className="mx-auto h-12 w-12 text-primary mb-6" />
-            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+            <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
               开启 TEMU 英国本地履约之旅
             </h2>
-            <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
               无论您是刚入驻 TEMU 平台的新卖家，还是希望优化现有物流方案的资深商家，我们都能为您提供专业的本地仓配支持。
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -107,7 +107,7 @@ export default function TemuPage() {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="bg-transparent border-white/30 text-white hover:bg-white/10">
+              <Button asChild variant="outline" size="lg">
                 <Link href="/solutions">查看全部方案</Link>
               </Button>
             </div>
