@@ -70,11 +70,6 @@ export function IndustriesSection() {
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-all duration-300 group-hover:from-black/90 group-hover:via-black/40" />
               
-              {/* Icon Badge */}
-              <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/90 shadow-lg backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
-                <item.icon className="h-5 w-5 text-primary" />
-              </div>
-              
               {/* Content Overlay */}
               <div className="absolute inset-x-0 bottom-0 p-5">
                 <h3 className="mb-2 text-lg font-bold text-white transition-colors duration-300 group-hover:text-primary">
