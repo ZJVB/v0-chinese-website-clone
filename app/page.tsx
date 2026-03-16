@@ -9,7 +9,6 @@ import { IndustriesSection } from "@/components/industries-section";
 import { TechSection } from "@/components/tech-section";
 import { NewsSection } from "@/components/news-section";
 import { AboutIntroSection } from "@/components/about-intro-section";
-import { ContactCtaSection } from "@/components/contact-cta-section";
 import { Footer } from "@/components/footer";
 
 export default function Page() {
@@ -27,7 +26,6 @@ export default function Page() {
         <TechSection />
         <NewsSection />
         <AboutIntroSection />
-        <ContactCtaSection />
       </main>
       <Footer />
     </>
