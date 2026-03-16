@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, QrCode } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-[#0e1a3d] text-white">
+    <footer className="bg-[#051851] text-white">
       {/* Main Footer Content */}
       <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
