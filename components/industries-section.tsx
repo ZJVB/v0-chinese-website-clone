@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Shirt, Zap, Smartphone, Sofa, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionTitle } from "@/components/section-title";
@@ -9,30 +10,35 @@ const industries = [
     title: "时尚服饰与快消品",
     description: "适合高频出货、多 SKU 管理与快速周转场景。",
     href: "/industries/fashion",
+    image: "/images/industry-fashion.jpg",
   },
   {
     icon: Zap,
     title: "新能源与电池",
     description: "更重视流程、合规与产品属性管理，适合对执行要求较高的仓储与物流场景。",
     href: "/industries/energy",
+    image: "/images/industry-energy.jpg",
   },
   {
     icon: Smartphone,
     title: "消费电子与高价值商品",
     description: "更关注库存准确、包装保护、追踪可视化与签收体验。",
     href: "/industries/electronics",
+    image: "/images/industry-electronics.jpg",
   },
   {
     icon: Sofa,
     title: "大件家居与器材",
     description: "适合需要大件仓储、分拨及复杂交付支持的业务。",
     href: "/industries/furniture",
+    image: "/images/industry-furniture.jpg",
   },
   {
     icon: Sparkles,
     title: "美妆与保健品",
     description: "适合高频小件订单、批次管理和消费者体验要求较高的场景。",
     href: "/industries/beauty",
+    image: "/images/industry-beauty.jpg",
   },
 ];
 
@@ -46,31 +52,47 @@ export function IndustriesSection() {
           subtitle="不同产品在仓储、履约、配送和售后上的要求并不相同。Cube Cang 结合不同行业的业务特点，为客户提供更符合实际运营需求的英国本地物流支持。"
         />
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {industries.map((item) => (
+        <div className="mt-14 flex flex-col gap-6">
+          {industries.map((item, index) => (
             <Link
               key={item.title}
               href={item.href}
-              className="group flex flex-col rounded-lg bg-background p-7 shadow-[0_1px_19px_0_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)] hover:-translate-y-1"
+              className={`group flex flex-col overflow-hidden rounded-xl bg-background shadow-[0_1px_19px_0_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] md:flex-row ${
+                index % 2 === 1 ? "md:flex-row-reverse" : ""
+              }`}
             >
-              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                <item.icon className="h-6 w-6 text-primary" />
+              {/* Image */}
+              <div className="relative h-56 w-full overflow-hidden md:h-64 md:w-2/5 lg:w-1/2">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/90 shadow-lg backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
+                  <item.icon className="h-6 w-6 text-primary" />
+                </div>
               </div>
-              <h3 className="mb-2 text-base font-semibold text-foreground">
-                {item.title}
-              </h3>
-              <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">
-                {item.description}
-              </p>
-              <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:gap-2.5">
-                了解详情
-                <ArrowRight className="h-3.5 w-3.5" />
-              </span>
+
+              {/* Content */}
+              <div className="flex flex-1 flex-col justify-center p-6 md:p-8 lg:p-10">
+                <h3 className="mb-3 text-xl font-bold text-foreground transition-colors duration-300 group-hover:text-primary lg:text-2xl">
+                  {item.title}
+                </h3>
+                <p className="mb-5 text-sm leading-relaxed text-muted-foreground lg:text-base">
+                  {item.description}
+                </p>
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all duration-300 group-hover:gap-3">
+                  了解详情
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
+              </div>
             </Link>
           ))}
         </div>
 
-        <div className="mt-10 text-center">
+        <div className="mt-12 text-center">
           <Button asChild variant="outline" size="lg" className="gap-2 rounded-md">
             <Link href="/industries">
               查看行业解决方案
