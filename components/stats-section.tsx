@@ -1,14 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Shield, Package, Warehouse, Camera, Clock, ArrowRight } from "lucide-react";
+import { BadgeCheck, TrendingUp, Building2, ShieldCheck, Award, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const stats = [
-  { icon: Shield, value: "HMRC 认可", label: "FHDDS 认证服务商" },
-  { icon: Package, value: "20,000+", label: "日订单处理量" },
-  { icon: Warehouse, value: "30,000㎡+", label: "仓储面积" },
-  { icon: Camera, value: "24/7", label: "安保监控系统" },
-  { icon: Clock, value: "15年+", label: "管理经验" },
+  { icon: BadgeCheck, value: "HMRC 认可", label: "FHDDS 认证服务商" },
+  { icon: TrendingUp, value: "20,000+", label: "日订单处理量" },
+  { icon: Building2, value: "30,000㎡+", label: "仓储面积" },
+  { icon: ShieldCheck, value: "24/7", label: "安保监控系统" },
+  { icon: Award, value: "15年+", label: "管理经验" },
 ];
 
 export function StatsSection() {
