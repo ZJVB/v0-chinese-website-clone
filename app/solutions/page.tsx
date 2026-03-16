@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { PageBanner } from "@/components/page-banner";
 
 import {
   BadgeCheck,
@@ -71,22 +72,12 @@ export default function SolutionsPage() {
     <>
       <Navbar />
       <main>
-        {/* Hero */}
-        <section className="pt-[72px] bg-card">
-          <div className="mx-auto max-w-7xl px-4 py-14 lg:px-8 lg:py-20">
-            <div className="text-center">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-                SOLUTIONS
-              </p>
-              <h1 className="text-3xl font-bold text-foreground lg:text-[40px]">
-                解决方案
-              </h1>
-              <p className="mt-4 mx-auto max-w-2xl text-muted-foreground leading-relaxed">
-                根据您的业务模式、订单结构和产品类型，选择更适合的英国本地物流方案。Cube Cang 提供从仓储、履约、配送到售后的全链路服务支持。
-              </p>
-            </div>
-          </div>
-        </section>
+        <PageBanner
+          tag="SOLUTIONS"
+          title="解决方案"
+          description="根据您的业务模式、订单结构和产品类型，选择更适合的英国本地物流方案。Cube Cang 提供从仓储、履约、配送到售后的全链路服务支持。"
+          image="/images/banner-solutions.jpg"
+        />
 
         {/* Solutions grid */}
         <section className="py-16 lg:py-24">

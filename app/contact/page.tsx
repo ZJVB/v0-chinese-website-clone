@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { PageBanner } from "@/components/page-banner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -34,21 +35,12 @@ export default function ContactPage() {
     <>
       <Navbar />
       <main>
-        {/* Page header */}
-        <section className="pt-[72px] bg-card">
-          <div className="mx-auto max-w-7xl px-4 py-14 lg:px-8 lg:py-20">
-            <div className="text-center">
-              <h1 className="text-3xl font-bold text-foreground lg:text-[40px]">联系</h1>
-              <div className="relative mx-auto mt-1 inline-block">
-                <span className="text-3xl font-bold text-foreground lg:text-[40px]">我们</span>
-                <span className="absolute bottom-0 left-0 h-[40%] w-full bg-primary/20 animate-underline -z-10" />
-              </div>
-              <p className="mt-4 mx-auto max-w-xl text-muted-foreground leading-relaxed">
-                无论您有任何关于英国海外仓、跨境物流的需求或疑问，我们的团队随时为您服务
-              </p>
-            </div>
-          </div>
-        </section>
+        <PageBanner
+          tag="CONTACT US"
+          title="联系我们"
+          description="无论您有任何关于英国海外仓、跨境物流的需求或疑问，我们的团队随时为您服务"
+          image="/images/banner-contact.jpg"
+        />
 
         {/* Quick Contact */}
         <section className="border-b border-border py-8">

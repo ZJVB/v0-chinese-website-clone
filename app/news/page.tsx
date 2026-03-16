@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { PageBanner } from "@/components/page-banner";
 import { Calendar, Star, Quote } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -71,21 +72,12 @@ export default function NewsPage() {
     <>
       <Navbar />
       <main>
-        {/* Page header */}
-        <section className="pt-[72px] bg-card">
-          <div className="mx-auto max-w-7xl px-4 py-14 lg:px-8 lg:py-20">
-            <div className="text-center">
-              <h1 className="text-3xl font-bold text-foreground lg:text-[40px]">新闻</h1>
-              <div className="relative mx-auto mt-1 inline-block">
-                <span className="text-3xl font-bold text-foreground lg:text-[40px]">资讯</span>
-                <span className="absolute bottom-0 left-0 h-[40%] w-full bg-primary/20 animate-underline -z-10" />
-              </div>
-              <p className="mt-4 mx-auto max-w-xl text-muted-foreground leading-relaxed">
-                通过 Cube Fulfilment 的资讯中心，掌握电商物流行业趋势，了解我们的最新发展
-              </p>
-            </div>
-          </div>
-        </section>
+        <PageBanner
+          tag="NEWS & INSIGHTS"
+          title="新闻资讯"
+          description="通过 Cube海外仓 的资讯中心，掌握电商物流行业趋势，了解我们的最新发展"
+          image="/images/banner-news.jpg"
+        />
 
         {/* Articles */}
         <section className="py-16 lg:py-24">

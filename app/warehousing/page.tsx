@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { PageBanner } from "@/components/page-banner";
 
 import { Warehouse, Clock, Truck, Ship, ArrowRight } from "lucide-react";
 
@@ -43,22 +44,12 @@ export default function WarehousingPage() {
     <>
       <Navbar />
       <main>
-        {/* Hero */}
-        <section className="pt-[72px] bg-card">
-          <div className="mx-auto max-w-7xl px-4 py-14 lg:px-8 lg:py-20">
-            <div className="text-center">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-                WAREHOUSING & DELIVERY
-              </p>
-              <h1 className="text-3xl font-bold text-foreground lg:text-[40px]">
-                仓储与派送
-              </h1>
-              <p className="mt-4 mx-auto max-w-2xl text-muted-foreground leading-relaxed">
-                以英国本地仓储与配送资源，支撑更高效的订单履约。从入仓到出货、从库存管理到末端派送的一体化支持。
-              </p>
-            </div>
-          </div>
-        </section>
+        <PageBanner
+          tag="WAREHOUSING & DELIVERY"
+          title="仓储与派送"
+          description="以英国本地仓储与配送资源，支撑更高效的订单履约。从入仓到出货、从库存管理到末端派送的一体化支持。"
+          image="/images/banner-warehousing.jpg"
+        />
 
         {/* Services grid */}
         <section className="py-16 lg:py-24">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { PageBanner } from "@/components/page-banner";
 
 import { Shirt, Zap, Smartphone, Sofa, Sparkles, ArrowRight } from "lucide-react";
 
@@ -49,22 +50,12 @@ export default function IndustriesPage() {
     <>
       <Navbar />
       <main>
-        {/* Hero */}
-        <section className="pt-[72px] bg-card">
-          <div className="mx-auto max-w-7xl px-4 py-14 lg:px-8 lg:py-20">
-            <div className="text-center">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-                INDUSTRIES
-              </p>
-              <h1 className="text-3xl font-bold text-foreground lg:text-[40px]">
-                行业解决方案
-              </h1>
-              <p className="mt-4 mx-auto max-w-2xl text-muted-foreground leading-relaxed">
-                不同产品在仓储、履约、配送和售后上的要求并不相同。Cube Cang 结合不同行业的业务特点，为客户提供更符合实际运营需求的英国本地物流支持。
-              </p>
-            </div>
-          </div>
-        </section>
+        <PageBanner
+          tag="INDUSTRIES"
+          title="行业解决方案"
+          description="不同产品在仓储、履约、配送和售后上的要求并不相同。Cube Cang 结合不同行业的业务特点，为客户提供更符合实际运营需求的英国本地物流支持。"
+          image="/images/banner-industries.jpg"
+        />
 
         {/* Industries grid */}
         <section className="py-16 lg:py-24">
