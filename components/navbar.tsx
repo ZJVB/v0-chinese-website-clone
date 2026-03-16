@@ -194,17 +194,17 @@ export function Navbar() {
               <div className="absolute right-0 top-full pt-2 hidden group-hover:block z-50">
                 <div className="bg-card rounded-lg shadow-[0_8px_40px_rgba(0,0,0,0.15)] p-4">
                   <div className="flex gap-4">
-                    <div className="text-center">
-                      <div className="w-24 h-24 bg-muted rounded flex items-center justify-center mb-2">
+                    <div className="group/qr text-center">
+                      <div className="w-24 h-24 bg-muted rounded flex items-center justify-center mb-2 cursor-pointer transition-all duration-300 group-hover/qr:scale-150 group-hover/qr:z-50 group-hover/qr:shadow-xl group-hover/qr:bg-white">
                         <QrCode className="h-10 w-10 text-muted-foreground" />
                       </div>
-                      <p className="text-xs text-muted-foreground">微信客服1</p>
+                      <p className="text-xs text-muted-foreground group-hover/qr:opacity-0 transition-opacity">微信客服1</p>
                     </div>
-                    <div className="text-center">
-                      <div className="w-24 h-24 bg-muted rounded flex items-center justify-center mb-2">
+                    <div className="group/qr text-center">
+                      <div className="w-24 h-24 bg-muted rounded flex items-center justify-center mb-2 cursor-pointer transition-all duration-300 group-hover/qr:scale-150 group-hover/qr:z-50 group-hover/qr:shadow-xl group-hover/qr:bg-white">
                         <QrCode className="h-10 w-10 text-muted-foreground" />
                       </div>
-                      <p className="text-xs text-muted-foreground">微信客服2</p>
+                      <p className="text-xs text-muted-foreground group-hover/qr:opacity-0 transition-opacity">微信客服2</p>
                     </div>
                   </div>
                 </div>
