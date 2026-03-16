@@ -73,14 +73,14 @@ const solutions = [
     title: "检测翻新与二次销售",
     description: "外观与功能检测、清洁整理与重新包装、配件补齐与分类分级，支持产品再流通。",
     href: "/solutions/refurbishment",
-    image: "/images/service-returns.jpg",
+    image: "/images/service-refurbishment.jpg",
   },
   {
     icon: Wrench,
     title: "增值服务",
     description: "贴标、换标、重新包装、组合装、套装组装、促销包装、抽检、拍照等个性化处理。",
     href: "/solutions/value-added",
-    image: "/images/service-wms.jpg",
+    image: "/images/service-value-added.jpg",
   },
 ];
 
