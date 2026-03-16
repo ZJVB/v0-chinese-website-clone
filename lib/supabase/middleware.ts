@@ -45,6 +45,7 @@ export async function updateSession(request: NextRequest) {
   if (
     request.nextUrl.pathname.startsWith('/admin') &&
     !request.nextUrl.pathname.startsWith('/admin/login') &&
+    !request.nextUrl.pathname.startsWith('/admin/register') &&
     !user
   ) {
     const url = request.nextUrl.clone()
@@ -52,8 +53,8 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(url)
   }
 
-  // Redirect logged-in users away from admin login page
-  if (request.nextUrl.pathname === '/admin/login' && user) {
+  // Redirect logged-in users away from admin login and register pages
+  if ((request.nextUrl.pathname === '/admin/login' || request.nextUrl.pathname === '/admin/register') && user) {
     const url = request.nextUrl.clone()
     url.pathname = '/admin'
     return NextResponse.redirect(url)
