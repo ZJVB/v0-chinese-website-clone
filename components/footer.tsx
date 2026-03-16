@@ -69,20 +69,20 @@ export function Footer() {
           <div>
             <h4 className="mb-4 text-sm font-semibold text-primary">微信联系</h4>
             <div className="flex gap-4">
-              <div className="text-center">
-                <div className="mb-2 flex h-20 w-20 items-center justify-center rounded-lg border border-white/20 bg-white/10">
-                  <QrCode className="h-10 w-10 text-white/40" />
+              <div className="group relative text-center">
+                <div className="mb-2 flex h-20 w-20 items-center justify-center rounded-lg border border-white/20 bg-white/10 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl group-hover:bg-white group-hover:border-white">
+                  <QrCode className="h-10 w-10 text-white/40 group-hover:text-gray-800" />
                 </div>
-                <span className="text-xs text-white/60">微信客服1</span>
+                <span className="text-xs text-white/60 group-hover:opacity-0 transition-opacity">微信客服1</span>
               </div>
-              <div className="text-center">
-                <div className="mb-2 flex h-20 w-20 items-center justify-center rounded-lg border border-white/20 bg-white/10">
-                  <QrCode className="h-10 w-10 text-white/40" />
+              <div className="group relative text-center">
+                <div className="mb-2 flex h-20 w-20 items-center justify-center rounded-lg border border-white/20 bg-white/10 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl group-hover:bg-white group-hover:border-white">
+                  <QrCode className="h-10 w-10 text-white/40 group-hover:text-gray-800" />
                 </div>
-                <span className="text-xs text-white/60">微信客服2</span>
+                <span className="text-xs text-white/60 group-hover:opacity-0 transition-opacity">微信客服2</span>
               </div>
             </div>
-            <p className="mt-3 text-xs text-white/60">扫码添加微信咨询业务合作</p>
+            <p className="mt-3 text-xs text-white/60">鼠标悬停放大，方便扫码</p>
           </div>
         </div>
       </div>
