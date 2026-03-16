@@ -27,7 +27,7 @@ const banners = [
     id: 3,
     title: "TEMU 官方认证仓，履约表现持续位居前列",
     subtitle: "依托标准化作业流程、稳定的订单处理能力和英国本地履约资源，Cube海外仓为 TEMU 卖家提供更高效、更可靠的本地仓配支持。",
-    image: "/images/industry-fashion.jpg",
+    image: "/images/hero-temu.jpg",
     link: "/solutions/temu",
     linkText: "了解 TEMU 服务",
   },
