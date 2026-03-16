@@ -30,14 +30,14 @@ const industries = [
     icon: Sofa,
     title: "大件家居与器材",
     description: "适合需要大件仓储、分拨及复杂交付支持的业务。",
-    href: "/industries/furniture",
+    href: "/industries/home-garden",
     image: "/images/industry-furniture.jpg",
   },
   {
     icon: Sparkles,
     title: "美妆与保健品",
     description: "适合高频小件订单、批次管理和消费者体验要求较高的场景。",
-    href: "/industries/beauty",
+    href: "/industries/health",
     image: "/images/industry-beauty.jpg",
   },
 ];
@@ -52,35 +52,35 @@ export function IndustriesSection() {
           subtitle="不同产品在仓储、履约、配送和售后上的要求并不相同。Cube Cang 结合不同行业的业务特点，为客户提供更符合实际运营需求的英国本地物流支持。"
         />
 
-        <div className="mt-14 flex flex-col gap-6">
-          {industries.map((item, index) => (
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          {industries.map((item) => (
             <Link
               key={item.title}
               href={item.href}
-              className={`group flex flex-col overflow-hidden rounded-xl bg-background shadow-[0_1px_19px_0_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] md:flex-row ${
-                index % 2 === 1 ? "md:flex-row-reverse" : ""
-              }`}
+              className="group relative block aspect-[3/4] overflow-hidden rounded-xl shadow-[0_1px_19px_0_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)]"
             >
-              {/* Image */}
-              <div className="relative h-56 w-full overflow-hidden md:h-64 md:w-2/5 lg:w-1/2">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/90 shadow-lg backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
-                  <item.icon className="h-6 w-6 text-primary" />
-                </div>
+              {/* Background Image */}
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
+              />
+              
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-all duration-300 group-hover:from-black/90 group-hover:via-black/40" />
+              
+              {/* Icon Badge */}
+              <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/90 shadow-lg backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
+                <item.icon className="h-5 w-5 text-primary" />
               </div>
-
-              {/* Content */}
-              <div className="flex flex-1 flex-col justify-center p-6 md:p-8 lg:p-10">
-                <h3 className="mb-3 text-xl font-bold text-foreground transition-colors duration-300 group-hover:text-primary lg:text-2xl">
+              
+              {/* Content Overlay */}
+              <div className="absolute inset-x-0 bottom-0 p-5">
+                <h3 className="mb-2 text-lg font-bold text-white transition-colors duration-300 group-hover:text-primary">
                   {item.title}
                 </h3>
-                <p className="mb-5 text-sm leading-relaxed text-muted-foreground lg:text-base">
+                <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-white/80">
                   {item.description}
                 </p>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all duration-300 group-hover:gap-3">
