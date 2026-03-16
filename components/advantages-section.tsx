@@ -58,7 +58,7 @@ export function AdvantagesSection() {
                     <img
                       src={platform.logo}
                       alt={platform.name}
-                      className="h-12 w-auto max-w-full object-contain"
+                      className="h-12 w-auto max-w-full object-contain mix-blend-multiply"
                     />
                   </div>
                 ))}
@@ -81,7 +81,7 @@ export function AdvantagesSection() {
                     <img
                       src={partner.logo}
                       alt={partner.name}
-                      className="h-12 w-auto max-w-full object-contain"
+                      className="h-12 w-auto max-w-full object-contain mix-blend-multiply"
                     />
                   </div>
                 ))}
