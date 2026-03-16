@@ -17,13 +17,6 @@ export const metadata: Metadata = {
     "Cube海外仓作为 TEMU 官方认证仓，为平台卖家提供标准化仓储、订单履约与本地发货支持，履约表现长期位居前列。",
 };
 
-const stats = [
-  { value: "99.5%+", label: "订单准确率" },
-  { value: "24h", label: "订单处理时效" },
-  { value: "Top 3", label: "履约排名" },
-  { value: "7x24", label: "系统支持" },
-];
-
 export default function TemuPage() {
   return (
     <>
@@ -36,20 +29,6 @@ export default function TemuPage() {
           description="依托标准化作业流程、稳定的订单处理能力和英国本地履约资源，Cube海外仓为 TEMU 卖家提供更高效、更可靠的本地仓配支持。"
           image="/images/temu-hero.jpg"
         />
-
-        {/* Stats Section */}
-        <section className="relative -mt-12 z-10">
-          <div className="mx-auto max-w-5xl px-4 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] p-6 lg:p-8">
-              {stats.map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <div className="text-2xl lg:text-3xl font-bold text-primary">{stat.value}</div>
-                  <div className="mt-1 text-sm text-muted-foreground">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Official Certification Section */}
         <section className="py-16 lg:py-20">
