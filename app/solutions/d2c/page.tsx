@@ -5,7 +5,17 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { PageBanner } from "@/components/page-banner";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowRight, ShoppingBag } from "lucide-react";
+import { 
+  ArrowRight, 
+  ShoppingBag,
+  Link2,
+  Package,
+  PackageCheck,
+  Truck,
+  MapPin,
+  RotateCcw,
+  LucideIcon
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "D2C 一件代发 - Cube海外仓",
@@ -13,13 +23,13 @@ export const metadata: Metadata = {
     "支持独立站和多平台订单履约，实现英国本地快速发货，提升消费者购物体验。",
 };
 
-const features = [
-  "多平台订单接入与同步处理",
-  "SKU 与库存实时管理",
-  "拣货、打包、贴单与发运",
-  "多渠道本地配送支持",
-  "物流追踪与异常处理",
-  "退货接收与售后支持",
+const features: { text: string; icon: LucideIcon }[] = [
+  { text: "多平台订单接入与同步处理", icon: Link2 },
+  { text: "SKU 与库存实时管理", icon: Package },
+  { text: "拣货、打包、贴单与发运", icon: PackageCheck },
+  { text: "多渠道本地配送支持", icon: Truck },
+  { text: "物流追踪与异常处理", icon: MapPin },
+  { text: "退货接收与售后支持", icon: RotateCcw },
 ];
 
 export default function D2cPage() {
@@ -47,11 +57,13 @@ export default function D2cPage() {
                 <p className="text-muted-foreground leading-relaxed mb-8">
                   无论是独立站还是多平台销售，Cube海外仓都能为您提供稳定的订单处理与配送支持。我们通过系统对接实现订单自动同步，结合英国本地仓储与配送资源，帮助卖家实现快速、准确的订单履约。
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {features.map((item) => (
-                    <li key={item} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary shrink-0" />
-                      <span className="text-foreground">{item}</span>
+                    <li key={item.text} className="flex items-center gap-4">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 shrink-0">
+                        <item.icon className="h-5 w-5 text-primary" />
+                      </div>
+                      <span className="text-foreground font-medium">{item.text}</span>
                     </li>
                   ))}
                 </ul>
