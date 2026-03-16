@@ -53,7 +53,7 @@ export function AdvantagesSection() {
                 {[...platforms, ...platforms].map((platform, index) => (
                   <div
                     key={`${platform.name}-${index}`}
-                    className="flex-shrink-0 mx-6 flex items-center justify-center h-12 w-28 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                    className="flex-shrink-0 mx-6 flex items-center justify-center h-12 w-28 transition-all duration-300 hover:scale-110"
                   >
                     <img
                       src={platform.logo}
@@ -76,7 +76,7 @@ export function AdvantagesSection() {
                 {[...logistics, ...logistics].map((partner, index) => (
                   <div
                     key={`${partner.name}-${index}`}
-                    className="flex-shrink-0 mx-8 flex items-center justify-center h-12 w-28 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                    className="flex-shrink-0 mx-8 flex items-center justify-center h-12 w-28 transition-all duration-300 hover:scale-110"
                   >
                     <img
                       src={partner.logo}
