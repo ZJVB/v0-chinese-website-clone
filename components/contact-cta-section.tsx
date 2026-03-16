@@ -4,12 +4,8 @@ import { Button } from "@/components/ui/button";
 
 export function ContactCtaSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-primary/10 via-primary/5 to-orange-50 py-16 lg:py-20">
-      {/* Decorative elements */}
-      <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
-      <div className="absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-orange-200/30 blur-3xl" />
-      
-      <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
+    <section className="bg-[#f8fafc] py-16 lg:py-20">
+      <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="text-center">
           <h2 className="mb-4 text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
             正在寻找可靠的英国本地物流伙伴？
