@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { BadgeCheck, TrendingUp, Building2, ShieldCheck, Award, ArrowRight } from "lucide-react";
+import { BadgeCheck, TrendingUp, Building2, ShieldCheck, Users, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const stats = [
@@ -8,7 +8,7 @@ const stats = [
   { icon: TrendingUp, value: "20,000+", label: "日订单处理量" },
   { icon: Building2, value: "30,000㎡+", label: "仓储面积" },
   { icon: ShieldCheck, value: "24/7", label: "安保监控系统" },
-  { icon: Award, value: "15年+", label: "管理经验" },
+  { icon: Users, value: "15年+", label: "团队经验" },
 ];
 
 export function StatsSection() {
