@@ -52,22 +52,20 @@ export function ServicesSection() {
             <Link
               key={service.title}
               href={service.href}
-              className="group flex-shrink-0 w-[220px] lg:flex-1 overflow-hidden rounded-xl bg-white shadow-[0_1px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:-translate-y-1"
+              className="group relative flex-shrink-0 w-[200px] lg:flex-1 h-[320px] overflow-hidden rounded-xl shadow-[0_1px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_4px_20px_rgba(0,0,0,0.12)] hover:-translate-y-1"
             >
-              <div className="relative h-32 w-full overflow-hidden">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              <div className="p-4">
-                <h3 className="mb-1 text-sm font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-1">
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <h3 className="mb-2 text-base font-semibold text-white">
                   {service.title}
                 </h3>
-                <p className="text-xs text-muted-foreground line-clamp-2">
+                <p className="text-sm text-white/80 line-clamp-2">
                   {service.description}
                 </p>
               </div>
