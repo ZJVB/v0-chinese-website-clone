@@ -1,32 +1,36 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Warehouse, Maximize, Package, Handshake } from "lucide-react";
+import { Warehouse, Maximize, Users, Shield } from "lucide-react";
 
 const stats = [
   {
     icon: Warehouse,
-    value: 3,
-    suffix: "+海外仓",
-    label: "曼彻斯特、利物浦、伦敦建有海外仓",
+    value: 30000,
+    suffix: "+",
+    unit: "平方米",
+    label: "仓储面积",
   },
   {
-    icon: Maximize,
-    value: 10000,
-    suffix: "+平米",
-    label: "仓库空间充足",
+    icon: Shield,
+    value: 24,
+    suffix: "",
+    unit: "小时",
+    label: "全天候安保与CCTV监控",
   },
   {
-    icon: Package,
-    value: 5000,
-    suffix: "+订单",
-    label: "日均处理订单量",
+    icon: Users,
+    value: 15,
+    suffix: "+",
+    unit: "年",
+    label: "管理团队行业经验",
   },
   {
-    icon: Handshake,
+    icon: Users,
     value: 50,
-    suffix: "+物流商合作",
-    label: "与多家国际知名物流企业达成合作关系",
+    suffix: "+",
+    unit: "人",
+    label: "专业团队规模",
   },
 ];
 
@@ -60,12 +64,14 @@ function StatCard({
   value,
   label,
   suffix,
+  unit,
   isVisible,
 }: {
   icon: React.ElementType;
   value: number;
   label: string;
   suffix: string;
+  unit: string;
   isVisible: boolean;
 }) {
   const count = useCountUp(value, 2000, isVisible);
@@ -78,8 +84,9 @@ function StatCard({
       <div>
         <p className="text-2xl font-black tabular-nums text-foreground lg:text-3xl">
           {count.toLocaleString()}
-          <span className="text-sm font-semibold text-muted-foreground ml-0.5">
-            {suffix.replace(/^\d+/, "")}
+          <span className="text-primary">{suffix}</span>
+          <span className="text-sm font-semibold text-muted-foreground ml-1">
+            {unit}
           </span>
         </p>
         <p className="mt-1 text-sm text-muted-foreground leading-snug">

@@ -1,27 +1,28 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, QrCode } from "lucide-react";
 
-const serviceLinks = [
-  { label: "英国海外仓", href: "/services/uk-warehouse" },
-  { label: "国际集运物流", href: "/services/consolidation" },
-  { label: "国际海运", href: "/services/sea-freight" },
-  { label: "国际空运", href: "/services/air-freight" },
+const solutionLinks = [
+  { label: "TEMU 官方认证仓", href: "/solutions/temu" },
+  { label: "FBA 备货与转运", href: "/solutions/fba" },
+  { label: "D2C 一件代发", href: "/solutions/d2c" },
+  { label: "B2B 零售分销", href: "/solutions/b2b" },
+  { label: "售后退货", href: "/solutions/returns" },
+  { label: "增值服务", href: "/solutions/value-added" },
 ];
 
 const quickLinks = [
+  { label: "首页", href: "/" },
+  { label: "仓储与派送", href: "/warehousing" },
+  { label: "行业解决方案", href: "/industries" },
+  { label: "技术支持", href: "/technology" },
   { label: "关于我们", href: "/about" },
-  { label: "服务项目", href: "/services" },
-  { label: "信息化", href: "/integrations" },
-  { label: "新闻资讯", href: "/news" },
   { label: "联系我们", href: "/contact" },
 ];
 
-const usefulLinks = [
-  { label: "17track", href: "https://www.17track.net" },
-  { label: "51tracking", href: "https://www.51tracking.com" },
-  { label: "Exchange Rate Query", href: "#" },
-  { label: "Flight Search", href: "#" },
-  { label: "HS Code Lookup", href: "#" },
+const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
+  { label: "Cookies", href: "/cookies" },
 ];
 
 export function Footer() {
@@ -39,7 +40,7 @@ export function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold leading-tight text-white">
-                  Cube Fulfilment
+                  Cube Cang
                 </span>
                 <span className="text-[10px] font-medium text-white/50 leading-tight tracking-wide uppercase">
                   Cube Distribution Service Ltd
@@ -47,35 +48,53 @@ export function Footer() {
               </div>
             </div>
             <p className="mb-6 text-sm leading-relaxed text-white/60">
-              Cube Fulfilment
-              是您值得信赖的英国电商仓储与第三方物流合作伙伴，助力品牌高效增长。
+              英国本地仓储与履约解决方案，助力品牌高效进入英国市场。为跨境品牌、平台卖家、分销客户提供专业物流支持。
             </p>
             <div className="flex flex-col gap-3">
               <a
-                href="tel:01616223633"
+                href="tel:+441615662392"
                 className="flex items-center gap-2 text-sm text-white/60 hover:text-primary transition-colors"
               >
                 <Phone className="h-4 w-4" />
-                0161 622 3633
+                +44 161 566 2392 / 7599588577
               </a>
               <a
-                href="mailto:contact@bnj-global.com"
+                href="mailto:contact@thecubedistribution.com"
                 className="flex items-center gap-2 text-sm text-white/60 hover:text-primary transition-colors"
               >
                 <Mail className="h-4 w-4" />
-                contact@bnj-global.com
+                contact@thecubedistribution.com
               </a>
               <div className="flex items-start gap-2 text-sm text-white/60">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                109 Portland Street, Manchester, M1 6DN
+                <span>Zainhub Gate2, Lord North Street, Manchester, M40 8HT, United Kingdom</span>
               </div>
             </div>
           </div>
 
-          {/* Page Navigation */}
+          {/* Solutions */}
           <div>
             <h3 className="mb-5 text-sm font-bold uppercase tracking-wide text-primary">
-              Page Navigation
+              解决方案
+            </h3>
+            <ul className="flex flex-col gap-3">
+              {solutionLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-white/60 transition-colors hover:text-primary"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="mb-5 text-sm font-bold uppercase tracking-wide text-primary">
+              快速导航
             </h3>
             <ul className="flex flex-col gap-3">
               {quickLinks.map((link) => (
@@ -91,54 +110,47 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Useful Links */}
+          {/* WeChat QR */}
           <div>
             <h3 className="mb-5 text-sm font-bold uppercase tracking-wide text-primary">
-              Useful Links
+              微信联系
             </h3>
-            <ul className="flex flex-col gap-3">
-              {usefulLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-white/60 transition-colors hover:text-primary"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="mb-5 text-sm font-bold uppercase tracking-wide text-primary">
-              Our Services
-            </h3>
-            <ul className="flex flex-col gap-3">
-              {serviceLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/60 transition-colors hover:text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div className="flex gap-4">
+              <div className="text-center">
+                <div className="w-24 h-24 bg-white/10 rounded flex items-center justify-center mb-2">
+                  <QrCode className="h-10 w-10 text-white/40" />
+                </div>
+                <p className="text-xs text-white/50">微信客服1</p>
+              </div>
+              <div className="text-center">
+                <div className="w-24 h-24 bg-white/10 rounded flex items-center justify-center mb-2">
+                  <QrCode className="h-10 w-10 text-white/40" />
+                </div>
+                <p className="text-xs text-white/50">微信客服2</p>
+              </div>
+            </div>
+            <p className="mt-3 text-xs text-white/40">
+              扫码添加微信咨询业务合作
+            </p>
           </div>
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-sm text-white/40">
-              &copy; {new Date().getFullYear()} Cube Distribution Service Ltd.
-              保留所有权利。
+              &copy; {new Date().getFullYear()} Cube Distribution Service Ltd. All rights reserved.
             </p>
-            <p className="text-sm text-white/40">www.cubefulfilment.com</p>
+            <div className="flex items-center gap-6">
+              {legalLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="text-sm text-white/40 hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>

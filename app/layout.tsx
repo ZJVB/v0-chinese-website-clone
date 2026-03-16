@@ -12,11 +12,11 @@ const notoSansSC = Noto_Sans_SC({
 });
 
 export const metadata: Metadata = {
-  title: "Cube Fulfilment - 英国电商仓储与第三方物流服务",
+  title: "Cube Cang - 英国本地仓储与履约解决方案",
   description:
-    "Cube Fulfilment 提供专业的电商仓储、第三方物流(3PL)、拣货包装、运输配送等一站式服务，助力在线零售商高效增长。",
+    "Cube Cang 为跨境品牌、平台卖家、分销客户及项目型业务提供覆盖英国本地的仓储、订单履约、配送、退货与增值服务支持。TEMU官方认证仓，FBA备货与转运，D2C一件代发，B2B零售分销。",
   keywords:
-    "电商仓储,3PL,第三方物流,英国物流,仓储服务,Amazon FBA,电商履约,Cube Fulfilment",
+    "英国仓储,3PL,第三方物流,TEMU官方认证仓,FBA备货,D2C代发,B2B分销,英国履约,Cube Cang",
 };
 
 export const viewport: Viewport = {

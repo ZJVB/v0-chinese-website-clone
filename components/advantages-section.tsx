@@ -1,52 +1,61 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Warehouse, Layers, Truck, Monitor } from "lucide-react";
 import { SectionTitle } from "@/components/section-title";
+
+const advantages = [
+  {
+    icon: Warehouse,
+    title: "英国本地仓储与履约能力",
+    description: "围绕英国本地库存、订单处理和配送需求，提供更贴近市场的执行支持。",
+  },
+  {
+    icon: Layers,
+    title: "多渠道、多场景解决方案",
+    description: "可同时支持 D2C、FBA、B2B 分销、退货处理及增值服务等多种业务模式。",
+  },
+  {
+    icon: Truck,
+    title: "多物流渠道灵活配置",
+    description: "根据产品属性、时效要求、签收需求和成本结构选择更合适的配送渠道。",
+  },
+  {
+    icon: Monitor,
+    title: "系统化运营支持",
+    description: "通过 WMS 和 API 对接提升订单、库存和物流状态的可视化与管理效率。",
+  },
+];
 
 export function AdvantagesSection() {
   return (
-    <section className="relative overflow-hidden bg-card py-16 lg:py-24">
+    <section className="py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
-          <div className="flex-1">
-            <SectionTitle
-              title="CUBE的"
-              highlight="优势"
-              center={false}
-            />
-            <p className="mt-6 text-muted-foreground leading-relaxed text-pretty max-w-xl">
-              Cube英国海外仓依托先进的仓储管理系统（WMS），提供智能化库存管理、灵活存储解决方案，确保卖家能够高效控制库存状态，减少滞销与断货风险，提高供应链的运营效率
-            </p>
-            <div className="mt-8">
-              <Button asChild size="lg" className="gap-2 rounded-md">
-                <Link href="/about">
-                  About Us
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
+        <SectionTitle
+          title="为什么越来越多客户选择 Cube Cang 作为"
+          highlight="英国本地物流合作伙伴"
+        />
 
-          <div className="grid w-full max-w-md grid-cols-2 gap-4">
-            {[
-              { num: "98%", label: "订单履约率" },
-              { num: "99%", label: "客户满意度" },
-              { num: "27%", label: "价格节约" },
-              { num: "5000+", label: "日均处理订单量" },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="flex flex-col items-center justify-center rounded-lg bg-background p-6 text-center shadow-[0_1px_19px_0_rgba(0,0,0,0.06)]"
-              >
-                <span className="text-3xl font-black text-primary lg:text-4xl">
-                  {item.num}
-                </span>
-                <span className="mt-2 text-sm font-medium text-muted-foreground">
-                  {item.label}
-                </span>
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {advantages.map((item) => (
+            <div
+              key={item.title}
+              className="rounded-lg bg-card p-7 shadow-[0_1px_19px_0_rgba(0,0,0,0.08)] transition-all duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)] hover:-translate-y-1"
+            >
+              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                <item.icon className="h-6 w-6 text-primary" />
               </div>
-            ))}
-          </div>
+              <h3 className="mb-3 text-base font-semibold text-foreground">
+                {item.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mx-auto mt-12 max-w-4xl rounded-lg bg-card p-8 shadow-[0_1px_19px_0_rgba(0,0,0,0.08)]">
+          <p className="text-center text-muted-foreground leading-relaxed">
+            我们理解，不同客户在进入英国市场或扩大本地业务时，面对的问题并不相同。有些客户更关注时效，有些客户更关注库存灵活性，也有些客户更关注退货处理和系统协同。Cube Cang 希望通过更灵活的服务组合与更贴近业务实际的执行方式，帮助客户在不同阶段建立更稳定的本地物流能力。
+          </p>
         </div>
       </div>
     </section>

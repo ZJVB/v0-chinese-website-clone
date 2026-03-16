@@ -2,52 +2,53 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Phone, ChevronDown, Warehouse, Ship, Plane, Package } from "lucide-react";
+import { Menu, X, ChevronDown, QrCode } from "lucide-react";
 
-const serviceItems = [
-  {
-    icon: Warehouse,
-    title: "英国海外仓",
-    subtitle: "本土化仓储服务",
-    href: "/services/uk-warehouse",
-    features: ["多区布点，辐射全英", "就近发货，时效提升", "智能系统，动态调配", "税务合规，风险规避"],
-  },
-  {
-    icon: Package,
-    title: "国际集运物流",
-    subtitle: "资源整合中转",
-    href: "/services/consolidation",
-    features: ["全球揽收，统一归集", "智能分拨，精准归类", "拼箱拼单，均摊费用", "一单到底，透明可视"],
-  },
-  {
-    icon: Ship,
-    title: "国际海运",
-    subtitle: "大宗运输主力",
-    href: "/services/sea-freight",
-    features: ["整柜拼箱，灵活适配", "低价承运，长期稳定", "全球港口，高频班次", "低碳减排，绿色运输"],
-  },
-  {
-    icon: Plane,
-    title: "国际空运",
-    subtitle: "高效时效保障",
-    href: "/services/air-freight",
-    features: ["优先舱位，极速通关", "加急服务，按需调配", "温控防损，全链保险", "特殊货物，专项解决"],
-  },
+const solutionItems = [
+  { label: "TEMU 官方认证仓", href: "/solutions/temu" },
+  { label: "FBA 备货与转运服务", href: "/solutions/fba" },
+  { label: "D2C 一件代发", href: "/solutions/d2c" },
+  { label: "B2B 零售分销", href: "/solutions/b2b" },
+  { label: "售后退货与履约保障", href: "/solutions/returns" },
+  { label: "检测、翻新与二次销售", href: "/solutions/refurbishment" },
+  { label: "增值服务", href: "/solutions/value-added" },
+];
+
+const warehouseItems = [
+  { label: "仓储网络", href: "/warehousing/network" },
+  { label: "全英配送时效", href: "/warehousing/delivery" },
+  { label: "物流渠道", href: "/warehousing/logistics" },
+  { label: "货运与特种物流", href: "/warehousing/freight" },
+];
+
+const industryItems = [
+  { label: "时尚服饰与快消品", href: "/industries/fashion" },
+  { label: "新能源与电池", href: "/industries/energy" },
+  { label: "消费电子与高价值商品", href: "/industries/electronics" },
+  { label: "大件家居与器材", href: "/industries/furniture" },
+  { label: "美妆与保健品", href: "/industries/beauty" },
+];
+
+const techItems = [
+  { label: "WMS 仓储订单管理系统", href: "/technology/wms" },
+  { label: "全平台 API 集成", href: "/technology/api" },
 ];
 
 const aboutItems = [
-  { label: "专业服务", href: "/about#services" },
-  { label: "关于我们", href: "/about" },
-  { label: "企业发展", href: "/about#timeline" },
-  { label: "企业文化", href: "/about#culture" },
+  { label: "公司介绍", href: "/about" },
+  { label: "资讯与合作", href: "/news" },
 ];
 
 const navLinks = [
   { href: "/", label: "首页", dropdown: null },
-  { href: "/services", label: "服务", dropdown: "services" as const },
-  { href: "/integrations", label: "信息化", dropdown: null },
-  { href: "/about", label: "关于", dropdown: "about" as const },
+  { href: "/solutions", label: "解决方案", dropdown: "solutions" as const },
+  { href: "/warehousing", label: "仓储与派送", dropdown: "warehousing" as const },
+  { href: "/industries", label: "行业", dropdown: "industries" as const },
+  { href: "/technology", label: "技术支持", dropdown: "technology" as const },
+  { href: "/about", label: "关于我们", dropdown: "about" as const },
+  { href: "/contact", label: "联系我们", dropdown: null },
 ];
 
 export function Navbar() {
@@ -84,6 +85,17 @@ export function Navbar() {
 
   const isHomepage = pathname === "/";
 
+  function getDropdownItems(key: string) {
+    switch (key) {
+      case "solutions": return solutionItems;
+      case "warehousing": return warehouseItems;
+      case "industries": return industryItems;
+      case "technology": return techItems;
+      case "about": return aboutItems;
+      default: return [];
+    }
+  }
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -105,7 +117,7 @@ export function Navbar() {
               scrolled || !isHomepage ? "text-foreground" : "text-white"
             }`}
           >
-            Cube Fulfilment
+            Cube Cang
           </span>
         </Link>
 
@@ -127,7 +139,7 @@ export function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    className={`flex items-center gap-1 px-[14px] h-20 text-[15px] font-normal transition-colors border-y-[4px] border-transparent ${
+                    className={`flex items-center gap-1 px-3 h-20 text-[15px] font-normal transition-colors border-y-[4px] border-transparent ${
                       isActive
                         ? "!text-primary !font-semibold border-b-primary"
                         : scrolled || !isHomepage
@@ -139,57 +151,14 @@ export function Navbar() {
                     <ChevronDown className="h-3.5 w-3.5" />
                   </Link>
 
-                  {/* Services mega dropdown */}
-                  {link.dropdown === "services" && activeDropdown === "services" && (
+                  {activeDropdown === link.dropdown && (
                     <div
-                      className="absolute left-1/2 top-20 -translate-x-1/2 w-[720px] animate-fade-in"
-                      onMouseEnter={() => handleMouseEnter("services")}
-                      onMouseLeave={handleMouseLeave}
-                    >
-                      <div className="mt-0 rounded-lg bg-card p-5 shadow-[0_8px_40px_rgba(0,0,0,0.12)]">
-                        <div className="grid grid-cols-2 gap-3">
-                          {serviceItems.map((item) => (
-                            <Link
-                              key={item.href}
-                              href={item.href}
-                              className="group flex gap-3.5 rounded-lg p-3 transition-colors hover:bg-primary/[0.04]"
-                            >
-                              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/15">
-                                <item.icon className="h-5 w-5 text-primary" />
-                              </div>
-                              <div className="min-w-0 flex-1">
-                                <div className="flex items-baseline gap-2">
-                                  <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
-                                    {item.title}
-                                  </span>
-                                  <span className="text-xs text-muted-foreground">
-                                    {item.subtitle}
-                                  </span>
-                                </div>
-                                <div className="mt-1.5 grid grid-cols-2 gap-x-3 gap-y-0.5">
-                                  {item.features.map((f) => (
-                                    <span key={f} className="text-xs text-muted-foreground/70">
-                                      {f}
-                                    </span>
-                                  ))}
-                                </div>
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* About dropdown */}
-                  {link.dropdown === "about" && activeDropdown === "about" && (
-                    <div
-                      className="absolute left-1/2 top-20 -translate-x-1/2 w-48 animate-fade-in"
-                      onMouseEnter={() => handleMouseEnter("about")}
+                      className="absolute left-1/2 top-20 -translate-x-1/2 min-w-[200px] animate-fade-in"
+                      onMouseEnter={() => handleMouseEnter(link.dropdown!)}
                       onMouseLeave={handleMouseLeave}
                     >
                       <div className="mt-0 rounded-lg bg-card py-2 shadow-[0_8px_40px_rgba(0,0,0,0.12)]">
-                        {aboutItems.map((item) => (
+                        {getDropdownItems(link.dropdown).map((item) => (
                           <Link
                             key={item.href}
                             href={item.href}
@@ -209,7 +178,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-[14px] h-20 flex items-center text-[15px] font-normal transition-colors border-y-[4px] border-transparent ${
+                className={`px-3 h-20 flex items-center text-[15px] font-normal transition-colors border-y-[4px] border-transparent ${
                   isActive
                     ? "!text-primary !font-semibold border-b-primary"
                     : scrolled || !isHomepage
@@ -223,19 +192,37 @@ export function Navbar() {
           })}
         </nav>
 
-        {/* Phone */}
-        <div className="hidden shrink-0 items-center lg:flex">
-          <a
-            href="tel:01616223633"
-            className={`flex items-center gap-2 text-sm font-medium transition-colors ${
-              scrolled || !isHomepage
-                ? "text-[#424444] hover:text-primary"
-                : "text-white/80 hover:text-white"
-            }`}
-          >
-            <Phone className="h-4 w-4" />
-            0161 622 3633
-          </a>
+        {/* WeChat QR codes placeholder */}
+        <div className="hidden shrink-0 items-center gap-3 lg:flex">
+          <div className="flex items-center gap-2">
+            <div className="relative group">
+              <div className={`flex items-center gap-1.5 text-sm cursor-pointer transition-colors ${
+                scrolled || !isHomepage ? "text-[#424444]" : "text-white/80"
+              }`}>
+                <QrCode className="h-4 w-4" />
+                <span className="text-xs">扫码咨询</span>
+              </div>
+              {/* QR hover popup */}
+              <div className="absolute right-0 top-full pt-2 hidden group-hover:block z-50">
+                <div className="bg-card rounded-lg shadow-[0_8px_40px_rgba(0,0,0,0.15)] p-4">
+                  <div className="flex gap-4">
+                    <div className="text-center">
+                      <div className="w-24 h-24 bg-muted rounded flex items-center justify-center mb-2">
+                        <QrCode className="h-10 w-10 text-muted-foreground" />
+                      </div>
+                      <p className="text-xs text-muted-foreground">微信客服1</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-24 h-24 bg-muted rounded flex items-center justify-center mb-2">
+                        <QrCode className="h-10 w-10 text-muted-foreground" />
+                      </div>
+                      <p className="text-xs text-muted-foreground">微信客服2</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Mobile toggle */}
@@ -255,80 +242,41 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="animate-fade-in border-t border-border bg-card lg:hidden">
+        <div className="animate-fade-in border-t border-border bg-card lg:hidden max-h-[calc(100vh-80px)] overflow-y-auto">
           <nav className="mx-auto flex max-w-7xl flex-col px-4 py-3">
-            <Link
-              href="/"
-              className={`rounded-md px-3 py-3 text-sm font-medium transition-colors ${
-                pathname === "/" ? "text-primary font-semibold" : "text-foreground hover:text-primary"
-              }`}
-            >
-              首页
-            </Link>
-
-            {/* Mobile services */}
-            <div className="px-3 py-2">
-              <Link
-                href="/services"
-                className={`block text-sm font-medium ${
-                  pathname.startsWith("/services") ? "text-primary font-semibold" : "text-foreground hover:text-primary"
-                }`}
-              >
-                服务
-              </Link>
-              <div className="mt-1.5 ml-3 flex flex-col gap-0.5 border-l-2 border-border pl-3">
-                {serviceItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="py-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {item.title}
-                  </Link>
-                ))}
+            {navLinks.map((link) => (
+              <div key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`block rounded-md px-3 py-3 text-sm font-medium transition-colors ${
+                    (link.href === "/" ? pathname === "/" : pathname.startsWith(link.href))
+                      ? "text-primary font-semibold"
+                      : "text-foreground hover:text-primary"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+                {link.dropdown && (
+                  <div className="ml-3 mb-2 flex flex-col gap-0.5 border-l-2 border-border pl-3">
+                    {getDropdownItems(link.dropdown).map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="py-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
-            </div>
-
-            <Link
-              href="/integrations"
-              className={`rounded-md px-3 py-3 text-sm font-medium transition-colors ${
-                pathname.startsWith("/integrations") ? "text-primary font-semibold" : "text-foreground hover:text-primary"
-              }`}
-            >
-              信息化
-            </Link>
-
-            {/* Mobile about */}
-            <div className="px-3 py-2">
-              <Link
-                href="/about"
-                className={`block text-sm font-medium ${
-                  pathname.startsWith("/about") ? "text-primary font-semibold" : "text-foreground hover:text-primary"
-                }`}
-              >
-                关于
-              </Link>
-              <div className="mt-1.5 ml-3 flex flex-col gap-0.5 border-l-2 border-border pl-3">
-                {aboutItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="py-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
+            ))}
 
             <div className="mt-3 border-t border-border pt-3">
-              <a
-                href="tel:01616223633"
-                className="flex items-center gap-2 px-3 text-sm font-medium text-muted-foreground"
-              >
-                <Phone className="h-4 w-4" />
-                0161 622 3633
-              </a>
+              <div className="flex items-center gap-2 px-3 text-sm text-muted-foreground">
+                <QrCode className="h-4 w-4" />
+                扫码添加微信咨询
+              </div>
             </div>
           </nav>
         </div>
