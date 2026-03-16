@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/navbar";
 import { HeroSection } from "@/components/hero-section";
 import { StatsSection } from "@/components/stats-section";
-import { TemuSection } from "@/components/temu-section";
 import { ServicesSection } from "@/components/services-section";
 import { AdvantagesSection } from "@/components/advantages-section";
 import { ContactCtaSection } from "@/components/contact-cta-section";
@@ -12,22 +11,19 @@ export default function Page() {
     <>
       <Navbar />
       <main>
-        {/* Section 1: Hero - 3 Banner Carousel */}
+        {/* 1. Hero 轮播 */}
         <HeroSection />
         
-        {/* Section 2: Company Stats */}
+        {/* 2. 公司实力 + TEMU 认证仓 */}
         <StatsSection />
         
-        {/* Section 3: TEMU Official Certification */}
-        <TemuSection />
-        
-        {/* Section 4: Our Services */}
+        {/* 3. 服务板块 */}
         <ServicesSection />
         
-        {/* Section 5: Why Choose Us */}
+        {/* 4. 优势 + 合作伙伴 + 行业 */}
         <AdvantagesSection />
         
-        {/* Section 6: Contact CTA */}
+        {/* 5. 联系我们 CTA */}
         <ContactCtaSection />
       </main>
       <Footer />

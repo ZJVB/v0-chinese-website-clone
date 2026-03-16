@@ -10,20 +10,26 @@ const banners = [
   {
     id: 1,
     title: "英国本地仓储与履约解决方案",
-    subtitle: "为跨境品牌、平台卖家及分销客户提供英国本地仓储、履约与配送支持。",
+    subtitle: "为跨境品牌、平台卖家及分销客户提供一站式英国本地仓储、履约与配送支持。",
     image: "/images/hero-warehouse.jpg",
+    link: "/solutions",
+    linkText: "查看解决方案",
   },
   {
     id: 2,
-    title: "TEMU 官方认证仓，履约表现持续位居前列",
-    subtitle: "依托标准化作业流程、稳定的订单处理能力和英国本地履约资源，Cube海外仓为 TEMU 卖家提供更高效、更可靠的本地仓配支持。",
-    image: "/images/service-temu.jpg",
+    title: "构建更高效的英国本地供应链",
+    subtitle: "从 FBA 备货、中转分拨到零售配送，帮助客户提升库存灵活性、发货效率和本地交付能力。",
+    image: "/images/service-fba.jpg",
+    link: "/warehousing",
+    linkText: "了解仓储服务",
   },
   {
     id: 3,
-    title: "构建更高效的英国本地供应链",
-    subtitle: "从 FBA 备货、中转分拨到零售配送，Cube海外仓帮助客户提升库存灵活性、发货效率和本地交付能力。",
-    image: "/images/service-fba.jpg",
+    title: "多行业、多渠道履约支持",
+    subtitle: "覆盖时尚服饰、消费电子、美妆健康、家居用品等多个行业，适配多种销售渠道与业务模式。",
+    image: "/images/industry-fashion.jpg",
+    link: "/industries",
+    linkText: "查看行业方案",
   },
 ];
 
@@ -45,9 +51,11 @@ export function HeroSection() {
     return () => clearInterval(timer);
   }, [isAutoPlaying, nextSlide]);
 
+  const currentBanner = banners[currentSlide];
+
   return (
     <section 
-      className="relative h-[620px] w-full overflow-hidden sm:h-[680px] lg:h-[720px]"
+      className="relative h-[600px] w-full overflow-hidden sm:h-[650px] lg:h-[700px]"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
@@ -72,7 +80,7 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-20 mx-auto flex h-full max-w-7xl items-center px-6 lg:px-8">
-        <div className="max-w-2xl pt-20">
+        <div className="max-w-2xl pt-16">
           {banners.map((banner, index) => (
             <div
               key={banner.id}
@@ -82,7 +90,7 @@ export function HeroSection() {
                   : "opacity-0 translate-y-4 absolute pointer-events-none"
               }`}
             >
-              <h1 className="mb-5 text-[28px] font-bold leading-[1.2] text-white sm:text-[36px] lg:text-[44px] text-balance">
+              <h1 className="mb-5 text-[26px] font-bold leading-[1.25] text-white sm:text-[32px] lg:text-[42px] text-balance">
                 {banner.title}
               </h1>
               <p className="mb-8 max-w-xl text-base leading-relaxed text-white/75 lg:text-lg text-pretty">
@@ -95,10 +103,10 @@ export function HeroSection() {
             <Button
               asChild
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-md px-8 py-6 text-base font-semibold"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-md px-7 py-5 text-base font-semibold"
             >
-              <Link href="/solutions">
-                获取解决方案
+              <Link href={currentBanner.link}>
+                {currentBanner.linkText}
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
@@ -106,7 +114,7 @@ export function HeroSection() {
               asChild
               size="lg"
               variant="outline"
-              className="border-white/40 text-white hover:bg-white/10 bg-transparent rounded-md px-8 py-6 text-base"
+              className="border-white/40 text-white hover:bg-white/10 bg-transparent rounded-md px-7 py-5 text-base"
             >
               <Link href="/contact">联系我们</Link>
             </Button>
