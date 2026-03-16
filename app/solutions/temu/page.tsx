@@ -55,22 +55,18 @@ export default function TemuPage() {
         <section className="py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
-              <div className="lg:w-3/5">
-                <div className="relative rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+              <div className="lg:w-[70%]">
+                <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100">
                   <Image
                     src="/images/temu-ranking.jpg"
                     alt="TEMU 平台履约排名 - CUBE 位居前列"
-                    width={900}
-                    height={580}
+                    width={1170}
+                    height={754}
                     className="w-full h-auto object-cover"
                   />
-                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 shadow-lg">
-                    <BadgeCheck className="h-5 w-5 text-white" />
-                    <span className="text-sm font-semibold text-white">官方认证仓</span>
-                  </div>
                 </div>
               </div>
-              <div className="mt-8 lg:mt-0 lg:w-2/5">
+              <div className="mt-8 lg:mt-0 lg:w-[30%]">
                 <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
                   TEMU 官方认证，品质有保障
                 </h2>
