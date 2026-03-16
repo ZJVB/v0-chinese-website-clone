@@ -4,30 +4,31 @@ import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import {
-  Shield,
-  Users,
-  TrendingUp,
-  Heart,
-  ArrowRight,
   Globe,
   Zap,
   Search,
+  ArrowRight,
+  Award,
+  Users,
+  Clock,
+  Shield,
+  CheckCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "关于我们 - Cube Fulfilment",
+  title: "关于我们 - Cube Cang 英国海外仓",
   description:
-    "了解 Cube Fulfilment 的故事、使命和团队。深耕英国十年，为500+跨境卖家提供仓储代发、FBA中转及定制化供应链服务。",
+    "了解 Cube Cang 的故事、使命和团队。深耕英国仓储物流，为跨境电商卖家提供专业海外仓、FBA中转及定制化供应链服务。",
 };
 
 const timeline = [
-  { year: "2018", desc: "创立于曼彻斯特，专注中英跨境卖家仓储代发服务" },
-  { year: "2020", desc: "启用8千平米智能仓，库存管理精度突破99.5%" },
-  { year: "2021", desc: "中英双语客服体系上线，响应速度进入30秒时代" },
-  { year: "2022", desc: "上线欧盟逆向物流网络，英德法退换时效缩短至48小时" },
-  { year: "2023", desc: "获ISO9001认证，Shopify/Amazon全平台API直连" },
-  { year: "2025", desc: "成为Temu官方认证仓，自动化分拣产能提升至15万SKU/日" },
+  { year: "2015", desc: "公司成立于英国曼彻斯特，开始为中国卖家提供仓储服务" },
+  { year: "2017", desc: "仓储面积扩展至5000平方米，上线自研WMS系统1.0版本" },
+  { year: "2019", desc: "成为Amazon SPN认证服务商，FBA中转业务全面启动" },
+  { year: "2021", desc: "英国仓网络扩展至3个城市，日均处理订单突破5万单" },
+  { year: "2023", desc: "成为TEMU官方认证海外仓，自动化分拣系统上线" },
+  { year: "2024", desc: "仓储总面积超过50,000平方米，服务客户超过800家" },
 ];
 
 const culture = [
@@ -52,9 +53,16 @@ const culture = [
 ];
 
 const stats = [
-  { num: "10 年", sub: "专注于海外仓", desc: "专注跨境物流十年，整合海空运干线、智能报关及海外仓配，服务覆盖全欧洲" },
-  { num: "500+", sub: "员工", desc: "超百人专业团队，仓库/运营/客服等多线协同，累计服务1000+客户" },
-  { num: "24 小时", sub: "客服服务", desc: "7x24小时全时客服，中英双语电话/在线/邮件30秒极速响应" },
+  { num: "50,000+", sub: "平方米仓储", desc: "英国多仓布局，覆盖曼彻斯特、伯明翰等核心物流枢纽" },
+  { num: "800+", sub: "合作客户", desc: "服务电商卖家涵盖时尚、3C、家居、健康等多个行业" },
+  { num: "99.9%", sub: "库存准确率", desc: "自研WMS系统实现SKU级实时追踪，精准库存管理" },
+];
+
+const certifications = [
+  "TEMU官方认证海外仓",
+  "Amazon SPN认证服务商",
+  "ISO9001质量管理认证",
+  "英国海关AEO授权",
 ];
 
 export default function AboutPage() {
@@ -67,7 +75,7 @@ export default function AboutPage() {
           <div className="relative h-[320px] lg:h-[400px]">
             <Image
               src="/images/warehouse-operations.jpg"
-              alt="Cube Fulfilment 仓库"
+              alt="Cube Cang 仓库"
               fill
               className="object-cover"
             />
@@ -76,13 +84,13 @@ export default function AboutPage() {
               <div className="mx-auto w-full max-w-7xl px-4 lg:px-8">
                 <div className="max-w-2xl">
                   <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-                    关于 CUBE
+                    关于 CUBE CANG
                   </p>
                   <h1 className="mb-4 text-3xl font-black text-white lg:text-5xl text-balance">
-                    关于 Cube Fulfilment
+                    您的英国仓储物流专家
                   </h1>
                   <p className="text-base leading-relaxed text-white/75 text-pretty max-w-xl">
-                    深耕英国十年，为500+跨境卖家提供仓储代发、FBA中转及定制化供应链服务。自有WMS系统实现库存精度99.9%，自动化分拣日均处理10万SKU
+                    深耕英国仓储物流多年，为跨境电商卖家提供一站式海外仓解决方案，助力品牌出海、货通全球。
                   </p>
                 </div>
               </div>
@@ -98,7 +106,7 @@ export default function AboutPage() {
                 专业
               </h2>
               <div className="relative mx-auto mt-1 inline-block">
-                <span className="text-3xl font-bold text-foreground lg:text-[40px]">服务</span>
+                <span className="text-3xl font-bold text-foreground lg:text-[40px]">实力</span>
                 <span className="absolute bottom-0 left-0 h-[40%] w-full bg-primary/20 animate-underline -z-10" />
               </div>
             </div>
@@ -117,13 +125,31 @@ export default function AboutPage() {
         {/* About intro */}
         <section className="py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <h2 className="mb-6 text-3xl font-bold text-foreground lg:text-[40px]">
-                关于 CUBE
-              </h2>
-              <p className="text-muted-foreground leading-relaxed text-pretty">
-                公司总部位于英国，业务范围涵盖：货运代理，项目物流，联运服务，卡车物流，仓储及配送服务。始终坚持以"通过多元化的网络和资源，致力为客户提供一体化的优质物流解决方案"为企业宗旨，以"专业、诚信、合规化"为立业之本。并形成一套以了解、体验、建议、合作、售后及回访为一体的完整服务体系。
-              </p>
+            <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+              <div>
+                <h2 className="mb-6 text-3xl font-bold text-foreground lg:text-4xl">
+                  关于 Cube Cang
+                </h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <p>
+                    Cube Cang（酷博仓）是一家专注于为跨境电商卖家提供英国本土仓储物流服务的企业。公司总部位于英国曼彻斯特，拥有超过50,000平方米的仓储空间，覆盖曼彻斯特、伯明翰等核心物流枢纽。
+                  </p>
+                  <p>
+                    我们的业务范围涵盖：海外仓一件代发、FBA中转、B2B批发配送、退货处理、商品翻新等全链路服务。通过自研WMS系统和自动化分拣设备，实现日均处理10万+订单的高效产能。
+                  </p>
+                  <p>
+                    作为TEMU官方认证海外仓和Amazon SPN认证服务商，我们始终坚持以客户需求为中心，提供专业、高效、可靠的物流解决方案，助力中国品牌成功出海。
+                  </p>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {certifications.map((cert) => (
+                  <div key={cert} className="flex items-center gap-3 rounded-lg bg-card p-4 shadow-sm">
+                    <Award className="h-5 w-5 shrink-0 text-primary" />
+                    <span className="text-sm font-medium text-foreground">{cert}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -132,9 +158,9 @@ export default function AboutPage() {
         <section className="bg-card py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="mb-12 text-center">
-              <h2 className="text-3xl font-bold text-foreground lg:text-[40px]">企业</h2>
+              <h2 className="text-3xl font-bold text-foreground lg:text-[40px]">发展</h2>
               <div className="relative mx-auto mt-1 inline-block">
-                <span className="text-3xl font-bold text-foreground lg:text-[40px]">发展</span>
+                <span className="text-3xl font-bold text-foreground lg:text-[40px]">历程</span>
                 <span className="absolute bottom-0 left-0 h-[40%] w-full bg-primary/20 animate-underline -z-10" />
               </div>
             </div>
@@ -179,6 +205,35 @@ export default function AboutPage() {
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                     {c.desc}
                   </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Core Values */}
+        <section className="bg-card py-16 lg:py-24">
+          <div className="mx-auto max-w-7xl px-4 lg:px-8">
+            <div className="mb-12 text-center">
+              <h2 className="text-3xl font-bold text-foreground lg:text-[40px]">核心</h2>
+              <div className="relative mx-auto mt-1 inline-block">
+                <span className="text-3xl font-bold text-foreground lg:text-[40px]">价值</span>
+                <span className="absolute bottom-0 left-0 h-[40%] w-full bg-primary/20 animate-underline -z-10" />
+              </div>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {[
+                { icon: Shield, title: "专业可靠", desc: "多年行业经验，专业团队保障" },
+                { icon: Zap, title: "高效敏捷", desc: "自动化系统，快速响应需求" },
+                { icon: Users, title: "客户至上", desc: "24小时服务，全程跟踪支持" },
+                { icon: Clock, title: "准时交付", desc: "严格时效管理，承诺必达" },
+              ].map((item) => (
+                <div key={item.title} className="text-center">
+                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+                    <item.icon className="h-7 w-7 text-primary" />
+                  </div>
+                  <h3 className="mb-2 font-semibold text-foreground">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground">{item.desc}</p>
                 </div>
               ))}
             </div>
