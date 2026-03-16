@@ -38,31 +38,35 @@ export default function D2cPage() {
         {/* Main Content Section */}
         <section className="py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            {/* Full width image */}
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100 mb-12">
-              <Image
-                src="/images/service-d2c.jpg"
-                alt="D2C 一件代发服务 - 仓库打包作业"
-                width={1400}
-                height={900}
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            {/* Text content below */}
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
-                从订单到交付，一站式履约支持
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                无论是独立站还是多平台销售，Cube海外仓都能为您提供稳定的订单处理与配送支持。我们通过系统对接实现订单自动同步，结合英国本地仓储与配送资源，帮助卖家实现快速、准确的订单履约。
-              </p>
-              <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
-                {features.map((item) => (
-                  <div key={item} className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0" />
-                    <span className="text-foreground">{item}</span>
-                  </div>
-                ))}
+            <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
+              {/* Left - Text content */}
+              <div className="lg:w-1/2">
+                <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
+                  从订单到交付，一站式履约支持
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-8">
+                  无论是独立站还是多平台销售，Cube海外仓都能为您提供稳定的订单处理与配送支持。我们通过系统对接实现订单自动同步，结合英国本地仓储与配送资源，帮助卖家实现快速、准确的订单履约。
+                </p>
+                <ul className="space-y-3">
+                  {features.map((item) => (
+                    <li key={item} className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary shrink-0" />
+                      <span className="text-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* Right - Image */}
+              <div className="mt-8 lg:mt-0 lg:w-1/2">
+                <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                  <Image
+                    src="/images/service-d2c.jpg"
+                    alt="D2C 一件代发服务 - 仓库打包作业"
+                    width={700}
+                    height={500}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
