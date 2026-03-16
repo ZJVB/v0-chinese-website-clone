@@ -38,31 +38,35 @@ export default function FbaPage() {
         {/* Main Content Section */}
         <section className="py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            {/* Full width image */}
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100 mb-12">
-              <Image
-                src="/images/banner-fba.jpg"
-                alt="FBA 备货转运 - 仓库作业"
-                width={1400}
-                height={900}
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            {/* Text content below */}
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
-                一站式 FBA 前置仓服务
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                Cube海外仓为亚马逊卖家提供英国本地 FBA 前置仓服务。通过本地备货、分批补货和灵活转运，帮助卖家优化库存周转，降低长期仓储费用，提高 FBA 补货效率。
-              </p>
-              <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
-                {features.map((item) => (
-                  <div key={item} className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0" />
-                    <span className="text-foreground">{item}</span>
-                  </div>
-                ))}
+            <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
+              {/* Left - Image */}
+              <div className="lg:w-1/2">
+                <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                  <Image
+                    src="/images/banner-fba.jpg"
+                    alt="FBA 备货转运 - 仓库作业"
+                    width={700}
+                    height={500}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
+              {/* Right - Text content */}
+              <div className="mt-8 lg:mt-0 lg:w-1/2">
+                <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
+                  一站式 FBA 前置仓服务
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-8">
+                  Cube海外仓为亚马逊卖家提供英国本地 FBA 前置仓服务。通过本地备货、分批补货和灵活转运，帮助卖家优化库存周转，降低长期仓储费用，提高 FBA 补货效率。
+                </p>
+                <ul className="space-y-3">
+                  {features.map((item) => (
+                    <li key={item} className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary shrink-0" />
+                      <span className="text-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
