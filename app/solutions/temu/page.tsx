@@ -56,12 +56,12 @@ export default function TemuPage() {
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
               <div className="lg:w-1/2">
-                <div className="relative rounded-2xl overflow-hidden shadow-lg">
+                <div className="relative rounded-2xl overflow-hidden shadow-lg border border-gray-100">
                   <Image
-                    src="/images/hero-temu.jpg"
-                    alt="TEMU 官方认证仓"
-                    width={600}
-                    height={400}
+                    src="/images/temu-ranking.jpg"
+                    alt="TEMU 平台履约排名 - CUBE 位居前列"
+                    width={700}
+                    height={450}
                     className="w-full h-auto object-cover"
                   />
                   <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 shadow-lg">
