@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, QrCode } from "lucide-react";
+import Image from "next/image";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 export function Footer() {
   return (
@@ -70,14 +71,14 @@ export function Footer() {
             <h4 className="mb-4 text-sm font-semibold text-primary">微信联系</h4>
             <div className="flex gap-4">
               <div className="group relative text-center">
-                <div className="mb-2 flex h-20 w-20 items-center justify-center rounded-lg border border-white/20 bg-white/10 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl group-hover:bg-white group-hover:border-white">
-                  <QrCode className="h-10 w-10 text-white/40 group-hover:text-gray-800" />
+                <div className="mb-2 h-20 w-20 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl">
+                  <Image src="/images/qr-1.png" alt="微信客服1" width={80} height={80} className="w-full h-full object-cover" />
                 </div>
                 <span className="text-xs text-white/60 group-hover:opacity-0 transition-opacity">微信客服1</span>
               </div>
               <div className="group relative text-center">
-                <div className="mb-2 flex h-20 w-20 items-center justify-center rounded-lg border border-white/20 bg-white/10 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl group-hover:bg-white group-hover:border-white">
-                  <QrCode className="h-10 w-10 text-white/40 group-hover:text-gray-800" />
+                <div className="mb-2 h-20 w-20 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl">
+                  <Image src="/images/qr-2.png" alt="微信客服2" width={80} height={80} className="w-full h-full object-cover" />
                 </div>
                 <span className="text-xs text-white/60 group-hover:opacity-0 transition-opacity">微信客服2</span>
               </div>
