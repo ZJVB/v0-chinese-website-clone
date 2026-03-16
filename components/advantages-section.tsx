@@ -15,9 +15,9 @@ const platforms = [
 ];
 
 const logistics = [
-  { name: "Royal Mail", logo: "https://cdn.worldvectorlogo.com/logos/royal-mail.svg" },
-  { name: "DPD", logo: "https://cdn.worldvectorlogo.com/logos/dpd-2.svg" },
-  { name: "Evri", logo: "https://cdn.worldvectorlogo.com/logos/evri.svg" },
+  { name: "Royal Mail", logo: "/images/logos/royal-mail.png" },
+  { name: "DPD", logo: "/images/logos/dpd.png" },
+  { name: "Evri", logo: "/images/logos/evri.png" },
   { name: "FedEx", logo: "https://cdn.worldvectorlogo.com/logos/fedex-express-6.svg" },
   { name: "UPS", logo: "https://cdn.worldvectorlogo.com/logos/ups-united-parcel-service.svg" },
   { name: "DHL", logo: "https://cdn.worldvectorlogo.com/logos/dhl-1.svg" },
