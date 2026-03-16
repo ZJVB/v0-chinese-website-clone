@@ -45,9 +45,12 @@ export function AdvantagesSection() {
         <div className="mt-12 space-y-8">
           {/* Platforms - scrolling left */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold text-muted-foreground uppercase tracking-wider text-center">
+            <h3 className="mb-1 text-sm font-semibold text-muted-foreground uppercase tracking-wider text-center">
               系统对接平台
             </h3>
+            <p className="mb-4 text-xs text-muted-foreground/70 text-center">
+              支持主流电商平台及 ERP/OMS 系统 API 对接
+            </p>
             <div className="relative overflow-hidden">
               <div className="flex animate-scroll-left">
                 {[...platforms, ...platforms].map((platform, index) => (
@@ -68,9 +71,12 @@ export function AdvantagesSection() {
 
           {/* Logistics - scrolling right */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold text-muted-foreground uppercase tracking-wider text-center">
+            <h3 className="mb-1 text-sm font-semibold text-muted-foreground uppercase tracking-wider text-center">
               合作物流渠道
             </h3>
+            <p className="mb-4 text-xs text-muted-foreground/70 text-center">
+              覆盖英国全境及欧洲主要目的地的多元化配送网络
+            </p>
             <div className="relative overflow-hidden">
               <div className="flex animate-scroll-right">
                 {[...logistics, ...logistics].map((partner, index) => (
@@ -92,9 +98,12 @@ export function AdvantagesSection() {
 
         {/* Industries */}
         <div className="mt-16">
-          <h3 className="mb-6 text-center text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+          <h3 className="mb-1 text-center text-sm font-semibold text-muted-foreground uppercase tracking-wider">
             覆盖多个重点行业
           </h3>
+          <p className="mb-6 text-xs text-muted-foreground/70 text-center">
+            针对不同品类特性提供定制化仓储与履约方案
+          </p>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             {industries.map((industry) => (
               <Link
