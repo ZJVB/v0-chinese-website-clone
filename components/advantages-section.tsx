@@ -4,11 +4,23 @@ import { ArrowRight } from "lucide-react";
 import { SectionTitle } from "@/components/section-title";
 
 const platforms = [
-  "Shopify", "TikTok Shop", "Amazon", "eBay", "TEMU", "WooCommerce", "ERP/OMS", "API"
+  { name: "Shopify", logo: "https://cdn.worldvectorlogo.com/logos/shopify.svg" },
+  { name: "TikTok Shop", logo: "https://cdn.worldvectorlogo.com/logos/tiktok-icon-2.svg" },
+  { name: "Amazon", logo: "https://cdn.worldvectorlogo.com/logos/amazon-2.svg" },
+  { name: "eBay", logo: "https://cdn.worldvectorlogo.com/logos/ebay-1.svg" },
+  { name: "TEMU", logo: "https://cdn.worldvectorlogo.com/logos/temu-logo.svg" },
+  { name: "WooCommerce", logo: "https://cdn.worldvectorlogo.com/logos/woocommerce.svg" },
+  { name: "Magento", logo: "https://cdn.worldvectorlogo.com/logos/magento.svg" },
+  { name: "PrestaShop", logo: "https://cdn.worldvectorlogo.com/logos/prestashop.svg" },
 ];
 
 const logistics = [
-  "Royal Mail", "DPD", "Evri", "FedEx", "UPS", "DHL"
+  { name: "Royal Mail", logo: "https://cdn.worldvectorlogo.com/logos/royal-mail.svg" },
+  { name: "DPD", logo: "https://cdn.worldvectorlogo.com/logos/dpd-2.svg" },
+  { name: "Evri", logo: "https://cdn.worldvectorlogo.com/logos/evri.svg" },
+  { name: "FedEx", logo: "https://cdn.worldvectorlogo.com/logos/fedex-express-6.svg" },
+  { name: "UPS", logo: "https://cdn.worldvectorlogo.com/logos/ups-united-parcel-service.svg" },
+  { name: "DHL", logo: "https://cdn.worldvectorlogo.com/logos/dhl-1.svg" },
 ];
 
 const industries = [
@@ -30,41 +42,56 @@ export function AdvantagesSection() {
         />
 
         {/* Partners Section */}
-        <div className="mt-12 rounded-2xl bg-[#f8fafc] p-6 lg:p-8">
-          <div className="mb-6">
-            <h3 className="mb-3 text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+        <div className="mt-12 space-y-8">
+          {/* Platforms - scrolling left */}
+          <div>
+            <h3 className="mb-4 text-sm font-semibold text-muted-foreground uppercase tracking-wider text-center">
               系统对接平台
             </h3>
-            <div className="flex flex-wrap gap-2">
-              {platforms.map((name) => (
-                <span
-                  key={name}
-                  className="rounded-md bg-white px-3 py-1.5 text-sm text-muted-foreground shadow-sm"
-                >
-                  {name}
-                </span>
-              ))}
+            <div className="relative overflow-hidden">
+              <div className="flex animate-scroll-left">
+                {[...platforms, ...platforms].map((platform, index) => (
+                  <div
+                    key={`${platform.name}-${index}`}
+                    className="flex-shrink-0 mx-6 flex items-center justify-center h-12 w-28 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                  >
+                    <img
+                      src={platform.logo}
+                      alt={platform.name}
+                      className="h-8 w-auto max-w-full object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
+
+          {/* Logistics - scrolling right */}
           <div>
-            <h3 className="mb-3 text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+            <h3 className="mb-4 text-sm font-semibold text-muted-foreground uppercase tracking-wider text-center">
               合作物流渠道
             </h3>
-            <div className="flex flex-wrap gap-2">
-              {logistics.map((name) => (
-                <span
-                  key={name}
-                  className="rounded-md bg-white px-3 py-1.5 text-sm text-muted-foreground shadow-sm"
-                >
-                  {name}
-                </span>
-              ))}
+            <div className="relative overflow-hidden">
+              <div className="flex animate-scroll-right">
+                {[...logistics, ...logistics].map((partner, index) => (
+                  <div
+                    key={`${partner.name}-${index}`}
+                    className="flex-shrink-0 mx-8 flex items-center justify-center h-12 w-28 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                  >
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="h-8 w-auto max-w-full object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
         {/* Industries */}
-        <div className="mt-12">
+        <div className="mt-16">
           <h3 className="mb-6 text-center text-sm font-semibold text-muted-foreground uppercase tracking-wider">
             覆盖多个重点行业
           </h3>
