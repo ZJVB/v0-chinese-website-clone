@@ -6,8 +6,8 @@ import { SectionTitle } from "@/components/section-title";
 const platforms = [
   { name: "Shopify", logo: "https://cdn.worldvectorlogo.com/logos/shopify.svg" },
   { name: "TikTok Shop", logo: "https://cdn.worldvectorlogo.com/logos/tiktok-icon-2.svg" },
-  { name: "Amazon", logo: "https://cdn.worldvectorlogo.com/logos/amazon-2.svg" },
-  { name: "eBay", logo: "https://cdn.worldvectorlogo.com/logos/ebay-1.svg" },
+  { name: "Amazon", logo: "/images/logos/amazon.png" },
+  { name: "eBay", logo: "/images/logos/ebay.png" },
   { name: "TEMU", logo: "https://cdn.worldvectorlogo.com/logos/temu-logo.svg" },
   { name: "WooCommerce", logo: "https://cdn.worldvectorlogo.com/logos/woocommerce.svg" },
   { name: "Magento", logo: "https://cdn.worldvectorlogo.com/logos/magento.svg" },
