@@ -43,8 +43,8 @@ export default function FbaPage() {
               <div className="lg:w-1/2">
                 <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100">
                   <Image
-                    src="/images/banner-fba.jpg"
-                    alt="FBA 备货转运 - 仓库作业"
+                    src="/images/fba-warehouse.jpg"
+                    alt="Amazon FBA 备货转运 - FNSKU 贴标作业"
                     width={700}
                     height={500}
                     className="w-full h-auto object-cover"
