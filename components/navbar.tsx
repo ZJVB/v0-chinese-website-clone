@@ -98,10 +98,8 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || !isHomepage
-          ? "bg-card shadow-[0_2px_12px_rgba(0,0,0,0.08)]"
-          : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-card ${
+        scrolled ? "shadow-[0_2px_12px_rgba(0,0,0,0.08)]" : ""
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center h-20 px-4 lg:px-8">
@@ -112,11 +110,7 @@ export function Navbar() {
               CUBE
             </span>
           </div>
-          <span
-            className={`text-base font-bold transition-colors ${
-              scrolled || !isHomepage ? "text-foreground" : "text-white"
-            }`}
-          >
+          <span className="text-base font-bold text-foreground">
             Cube海外仓
           </span>
         </Link>
@@ -142,9 +136,7 @@ export function Navbar() {
                     className={`flex items-center gap-1 px-3 h-20 text-[15px] font-normal transition-colors border-y-[4px] border-transparent ${
                       isActive
                         ? "!text-primary !font-semibold border-b-primary"
-                        : scrolled || !isHomepage
-                          ? "text-[#424444] hover:text-primary"
-                          : "text-white hover:text-white/80"
+                        : "text-[#424444] hover:text-primary"
                     }`}
                   >
                     {link.label}
@@ -181,9 +173,7 @@ export function Navbar() {
                 className={`px-3 h-20 flex items-center text-[15px] font-normal transition-colors border-y-[4px] border-transparent ${
                   isActive
                     ? "!text-primary !font-semibold border-b-primary"
-                    : scrolled || !isHomepage
-                      ? "text-[#424444] hover:text-primary"
-                      : "text-white hover:text-white/80"
+                    : "text-[#424444] hover:text-primary"
                 }`}
               >
                 {link.label}
@@ -196,9 +186,7 @@ export function Navbar() {
         <div className="hidden shrink-0 items-center gap-3 lg:flex">
           <div className="flex items-center gap-2">
             <div className="relative group">
-              <div className={`flex items-center gap-1.5 text-sm cursor-pointer transition-colors ${
-                scrolled || !isHomepage ? "text-[#424444]" : "text-white/80"
-              }`}>
+              <div className="flex items-center gap-1.5 text-sm cursor-pointer transition-colors text-[#424444] hover:text-primary">
                 <QrCode className="h-4 w-4" />
                 <span className="text-xs">扫码咨询</span>
               </div>
@@ -228,11 +216,7 @@ export function Navbar() {
         {/* Mobile toggle */}
         <button
           type="button"
-          className={`ml-auto rounded-md p-2 transition-colors lg:hidden ${
-            scrolled || !isHomepage
-              ? "text-foreground hover:bg-muted"
-              : "text-white hover:bg-white/10"
-          }`}
+          className="ml-auto rounded-md p-2 transition-colors lg:hidden text-foreground hover:bg-muted"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
