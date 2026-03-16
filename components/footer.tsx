@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, QrCode } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-white border-t border-border">
+    <footer className="bg-[#0a1628] text-white">
       {/* Main Footer Content */}
       <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -14,16 +14,16 @@ export function Footer() {
                 <span className="text-xs font-black text-white">CUBE</span>
               </div>
               <div>
-                <div className="text-lg font-bold text-foreground">Cube Cang</div>
+                <div className="text-lg font-bold text-white">Cube Cang</div>
                 <div className="text-[10px] font-medium uppercase tracking-wide text-primary">
                   Cube Distribution Service Ltd
                 </div>
               </div>
             </div>
-            <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
+            <p className="mb-6 text-sm leading-relaxed text-white/60">
               英国本地仓储与履约解决方案，助力品牌高效进入英国市场。为跨境品牌、平台卖家、分销客户提供专业物流支持。
             </p>
-            <div className="space-y-2 text-sm text-muted-foreground">
+            <div className="space-y-2 text-sm text-white/60">
               <a href="tel:+441615662392" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Phone className="h-4 w-4" />
                 +44 161 566 2392 / 7599588577
@@ -42,7 +42,7 @@ export function Footer() {
           {/* Solutions Links */}
           <div>
             <h4 className="mb-4 text-sm font-semibold text-primary">解决方案</h4>
-            <ul className="space-y-2.5 text-sm text-muted-foreground">
+            <ul className="space-y-2.5 text-sm text-white/60">
               <li><Link href="/solutions/temu" className="hover:text-primary transition-colors">TEMU 官方认证仓</Link></li>
               <li><Link href="/solutions/fba" className="hover:text-primary transition-colors">FBA 备货与转运</Link></li>
               <li><Link href="/solutions/d2c" className="hover:text-primary transition-colors">D2C 一件代发</Link></li>
@@ -55,7 +55,7 @@ export function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="mb-4 text-sm font-semibold text-primary">快速导航</h4>
-            <ul className="space-y-2.5 text-sm text-muted-foreground">
+            <ul className="space-y-2.5 text-sm text-white/60">
               <li><Link href="/" className="hover:text-primary transition-colors">首页</Link></li>
               <li><Link href="/warehousing" className="hover:text-primary transition-colors">仓储与派送</Link></li>
               <li><Link href="/industries" className="hover:text-primary transition-colors">行业解决方案</Link></li>
@@ -70,31 +70,31 @@ export function Footer() {
             <h4 className="mb-4 text-sm font-semibold text-primary">微信联系</h4>
             <div className="flex gap-4">
               <div className="text-center">
-                <div className="mb-2 flex h-20 w-20 items-center justify-center rounded-lg border border-border bg-muted">
-                  <QrCode className="h-10 w-10 text-muted-foreground" />
+                <div className="mb-2 flex h-20 w-20 items-center justify-center rounded-lg border border-white/20 bg-white/10">
+                  <QrCode className="h-10 w-10 text-white/40" />
                 </div>
-                <span className="text-xs text-muted-foreground">微信客服1</span>
+                <span className="text-xs text-white/60">微信客服1</span>
               </div>
               <div className="text-center">
-                <div className="mb-2 flex h-20 w-20 items-center justify-center rounded-lg border border-border bg-muted">
-                  <QrCode className="h-10 w-10 text-muted-foreground" />
+                <div className="mb-2 flex h-20 w-20 items-center justify-center rounded-lg border border-white/20 bg-white/10">
+                  <QrCode className="h-10 w-10 text-white/40" />
                 </div>
-                <span className="text-xs text-muted-foreground">微信客服2</span>
+                <span className="text-xs text-white/60">微信客服2</span>
               </div>
             </div>
-            <p className="mt-3 text-xs text-muted-foreground">扫码添加微信咨询业务合作</p>
+            <p className="mt-3 text-xs text-white/60">扫码添加微信咨询业务合作</p>
           </div>
         </div>
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-border">
+      <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 py-5 lg:px-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-white/40">
               &copy; {new Date().getFullYear()} Cube Distribution Service Ltd. All rights reserved.
             </p>
-            <div className="flex gap-6 text-xs text-muted-foreground">
+            <div className="flex gap-6 text-xs text-white/40">
               <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-primary transition-colors">Terms</Link>
               <Link href="/cookies" className="hover:text-primary transition-colors">Cookies</Link>
