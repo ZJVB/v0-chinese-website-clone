@@ -153,16 +153,16 @@ export function Navbar() {
 
                   {activeDropdown === link.dropdown && (
                     <div
-                      className="absolute left-1/2 top-20 -translate-x-1/2 min-w-[200px] animate-fade-in"
+                      className="absolute left-1/2 top-20 min-w-[220px] animate-dropdown-in"
                       onMouseEnter={() => handleMouseEnter(link.dropdown!)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      <div className="mt-0 rounded-lg bg-card py-2 shadow-[0_8px_40px_rgba(0,0,0,0.12)]">
+                      <div className="mt-1 rounded-lg bg-card py-2 shadow-[0_8px_40px_rgba(0,0,0,0.12)] border border-border/50">
                         {getDropdownItems(link.dropdown).map((item) => (
                           <Link
                             key={item.href}
                             href={item.href}
-                            className="block px-4 py-2.5 text-sm text-[#424444] transition-colors hover:bg-primary/[0.04] hover:text-primary"
+                            className="block px-5 py-2.5 text-sm text-[#424444] transition-all duration-200 hover:bg-primary/[0.06] hover:text-primary hover:pl-6"
                           >
                             {item.label}
                           </Link>
