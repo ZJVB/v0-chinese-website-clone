@@ -58,9 +58,8 @@ export function NewsSection() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="flex items-end justify-between mb-14">
           <SectionTitle
-            title="公司"
-            highlight="最新动态"
-            subtitle="了解 Cube Cang 的最新业务进展、仓储与履约能力更新、合作动态及市场活动信息。"
+            title="新闻"
+            highlight="与动态"
             className="mb-0"
           />
           <div className="hidden md:flex items-center gap-2">
