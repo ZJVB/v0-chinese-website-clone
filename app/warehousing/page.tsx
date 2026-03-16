@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { ContactCtaSection } from "@/components/contact-cta-section";
+
 import { Warehouse, Clock, Truck, Ship, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -91,7 +91,7 @@ export default function WarehousingPage() {
           </div>
         </section>
 
-        <ContactCtaSection />
+
       </main>
       <Footer />
     </>

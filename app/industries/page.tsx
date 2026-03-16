@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { ContactCtaSection } from "@/components/contact-cta-section";
+
 import { Shirt, Zap, Smartphone, Sofa, Sparkles, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -95,7 +95,7 @@ export default function IndustriesPage() {
           </div>
         </section>
 
-        <ContactCtaSection />
+
       </main>
       <Footer />
     </>

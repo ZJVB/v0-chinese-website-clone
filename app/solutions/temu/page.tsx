@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { ContactCtaSection } from "@/components/contact-cta-section";
+
 import { Button } from "@/components/ui/button";
 import {
   BadgeCheck,
@@ -141,7 +141,7 @@ export default function TemuPage() {
           </div>
         </section>
 
-        <ContactCtaSection />
+
       </main>
       <Footer />
     </>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { ContactCtaSection } from "@/components/contact-cta-section";
+
 import {
   BadgeCheck,
   Package,
@@ -124,7 +124,7 @@ export default function SolutionsPage() {
           </div>
         </section>
 
-        <ContactCtaSection />
+
       </main>
       <Footer />
     </>
