@@ -49,20 +49,8 @@ export default function ReturnsPage() {
         <section className="py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
-              {/* Left - Image */}
+              {/* Left - Text content */}
               <div className="lg:w-1/2">
-                <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100">
-                  <Image
-                    src="/images/service-returns.jpg"
-                    alt="退货处理 - 检查与分类"
-                    width={700}
-                    height={500}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-              </div>
-              {/* Right - Text content */}
-              <div className="mt-8 lg:mt-0 lg:w-1/2">
                 <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
                   完善的退货处理流程
                 </h2>
@@ -83,6 +71,18 @@ export default function ReturnsPage() {
                   ))}
                 </ul>
               </div>
+              {/* Right - Image */}
+              <div className="mt-8 lg:mt-0 lg:w-1/2">
+                <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                  <Image
+                    src="/images/service-returns.jpg"
+                    alt="退货处理 - 检查与分类"
+                    width={700}
+                    height={500}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -98,13 +98,13 @@ export default function ReturnsPage() {
               无论是电商平台退货还是品牌售后，我们都能为您提供专业的退货处理与逆向物流支持。
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" className="gap-2">
+              <Button asChild size="lg" className="gap-2 group transition-all duration-300 hover:scale-105 hover:shadow-lg">
                 <Link href="/contact">
                   立即咨询
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="transition-all duration-300 hover:scale-105 hover:shadow-md hover:bg-primary hover:text-white hover:border-primary">
                 <Link href="/solutions">查看全部方案</Link>
               </Button>
             </div>
