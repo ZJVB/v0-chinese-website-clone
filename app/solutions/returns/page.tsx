@@ -104,7 +104,7 @@ export default function ReturnsPage() {
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="transition-all duration-300 hover:scale-105 hover:shadow-md hover:bg-primary hover:text-white hover:border-primary">
+              <Button asChild variant="outline" size="lg" className="transition-all duration-300 hover:scale-105 hover:shadow-md">
                 <Link href="/solutions">查看全部方案</Link>
               </Button>
             </div>
