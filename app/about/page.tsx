@@ -100,9 +100,6 @@ export default function AboutPage() {
               {/* Horizontal timeline container */}
               <div className="overflow-x-auto pb-4 scrollbar-hide">
                 <div className="relative min-w-[900px] lg:min-w-0">
-                  {/* Horizontal line */}
-                  <div className="absolute left-0 right-0 top-1/2 h-1 bg-gradient-to-r from-primary/30 via-primary to-primary/30 rounded-full -translate-y-1/2" />
-                  
                   {/* Timeline items */}
                   <div className="relative flex justify-between">
                     {timeline.map((item, index) => (
