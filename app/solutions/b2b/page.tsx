@@ -98,13 +98,13 @@ export default function B2bPage() {
               无论是零售门店补货、批发分销还是项目型配送，我们都能为您提供专业的 B2B 物流解决方案。
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" className="gap-2">
+              <Button asChild size="lg" className="gap-2 group transition-all duration-300 hover:scale-105 hover:shadow-lg">
                 <Link href="/contact">
                   立即咨询
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="transition-all duration-300 hover:scale-105 hover:shadow-md">
                 <Link href="/solutions">查看全部方案</Link>
               </Button>
             </div>

@@ -95,13 +95,13 @@ export default function D2cPage() {
               无论您是刚起步的独立站卖家，还是多平台运营的成熟商家，我们都能为您提供专业的一件代发服务支持。
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" className="gap-2">
+              <Button asChild size="lg" className="gap-2 group transition-all duration-300 hover:scale-105 hover:shadow-lg">
                 <Link href="/contact">
                   立即咨询
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="transition-all duration-300 hover:scale-105 hover:shadow-md">
                 <Link href="/solutions">查看全部方案</Link>
               </Button>
             </div>
