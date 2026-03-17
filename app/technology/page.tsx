@@ -83,8 +83,12 @@ export default function TechnologyPage() {
         />
 
         {/* WMS Features Section */}
-        <section className="py-16 lg:py-20">
+        <section className="py-16 lg:py-20 bg-white">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
+            <div className="mb-10 text-center">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">核心系统</span>
+              <h2 className="text-2xl lg:text-3xl font-bold text-foreground">WMS 仓储管理系统</h2>
+            </div>
             <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
               {/* Left - Image */}
               <div className="lg:w-1/2">
@@ -100,9 +104,6 @@ export default function TechnologyPage() {
               </div>
               {/* Right - Content */}
               <div className="mt-8 lg:mt-0 lg:w-1/2">
-                <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
-                  WMS 仓储管理系统
-                </h2>
                 <p className="text-muted-foreground leading-relaxed mb-8">
                   自主研发的仓储管理系统，覆盖入库、存储、拣货、打包、发货全流程，支持多仓库、多货主管理，实现仓储作业的数字化与智能化。
                 </p>
@@ -128,9 +129,10 @@ export default function TechnologyPage() {
         </section>
 
         {/* Platform Integrations */}
-        <section className="py-16 lg:py-20 bg-muted/30">
+        <section className="py-16 lg:py-20 bg-gradient-to-b from-muted/50 to-muted/20 border-t border-b border-gray-100">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="text-center mb-12">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">平台对接</span>
               <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
                 全平台无缝对接
               </h2>
@@ -167,8 +169,12 @@ export default function TechnologyPage() {
         </section>
 
         {/* API Features */}
-        <section className="py-16 lg:py-20">
+        <section className="py-16 lg:py-20 bg-white">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
+            <div className="mb-10 text-center">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">开放能力</span>
+              <h2 className="text-2xl lg:text-3xl font-bold text-foreground">开放 API 集成能力</h2>
+            </div>
             <div className="flex flex-col lg:flex-row-reverse lg:items-center lg:gap-16">
               {/* Right - Image */}
               <div className="lg:w-1/2">
@@ -184,9 +190,6 @@ export default function TechnologyPage() {
               </div>
               {/* Left - Content */}
               <div className="mt-8 lg:mt-0 lg:w-1/2">
-                <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
-                  开放 API 集成能力
-                </h2>
                 <p className="text-muted-foreground leading-relaxed mb-8">
                   提供标准化的 RESTful API 接口，支持自定义开发和系统对接。完善的技术文档和沙盒测试环境，让系统集成更加简单高效。
                 </p>
@@ -209,8 +212,12 @@ export default function TechnologyPage() {
         </section>
 
         {/* Mobile App */}
-        <section className="py-16 lg:py-20 bg-muted/30">
+        <section className="py-16 lg:py-20 bg-gradient-to-b from-muted/50 to-muted/20 border-t border-gray-100">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
+            <div className="mb-10 text-center">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">移动管理</span>
+              <h2 className="text-2xl lg:text-3xl font-bold text-foreground">移动端随时管理</h2>
+            </div>
             <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
               {/* Left - Mock Phone */}
               <div className="lg:w-1/2 flex justify-center">
@@ -270,9 +277,6 @@ export default function TechnologyPage() {
               </div>
               {/* Right - Content */}
               <div className="mt-12 lg:mt-0 lg:w-1/2">
-                <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
-                  移动端随时管理
-                </h2>
                 <p className="text-muted-foreground leading-relaxed mb-8">
                   通过移动端应用，随时随地查看库存状态、订单进度和运营报表。异常情况实时推送，让您不错过任何重要信息。
                 </p>
@@ -295,14 +299,14 @@ export default function TechnologyPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-white py-16 lg:py-20 border-t border-gray-100">
+        <section className="bg-gradient-to-b from-white to-gray-50 py-16 lg:py-20 border-t border-gray-100">
           <div className="mx-auto max-w-4xl px-4 lg:px-8 text-center">
             <CheckCircle className="mx-auto h-12 w-12 text-primary mb-6" />
             <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
               体验数字化仓储管理
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              预约系统演示，了解 Cube WMS 如何帮助您提升仓储运营效率、降低运营成本、优化库存管理。
+              预约系统演示，了解 Cube WMS 如何帮助您提升仓储运营效率、降��运营成本、优化库存管理。
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg" className="gap-2 group transition-all duration-300 hover:scale-105 hover:shadow-lg">
