@@ -5,7 +5,17 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { PageBanner } from "@/components/page-banner";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowRight, Wrench } from "lucide-react";
+import { 
+  ArrowRight, 
+  Wrench,
+  Tag,
+  PackagePlus,
+  Gift,
+  Camera,
+  FileSpreadsheet,
+  Settings,
+  LucideIcon
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "增值服务 - Cube海外仓",
@@ -13,13 +23,13 @@ export const metadata: Metadata = {
     "贴标、换标、重新包装、组合装、套装组装、促销包装、抽检、拍照等个性化处理服务。",
 };
 
-const features = [
-  "贴标、换标与重新包装",
-  "组合装与套装组装",
-  "促销包装与礼品包装",
-  "抽检、拍照与资料留存",
-  "定制报表与特殊操作",
-  "按平台要求个性化处理",
+const features: { text: string; icon: LucideIcon }[] = [
+  { text: "贴标、换标与重新包装", icon: Tag },
+  { text: "组合装与套装组装", icon: PackagePlus },
+  { text: "促销包装与礼品包装", icon: Gift },
+  { text: "抽检、拍照与资料留存", icon: Camera },
+  { text: "定制报表与特殊操作", icon: FileSpreadsheet },
+  { text: "按平台要求个性化处理", icon: Settings },
 ];
 
 export default function ValueAddedPage() {
@@ -38,31 +48,40 @@ export default function ValueAddedPage() {
         {/* Main Content Section */}
         <section className="py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            {/* Full width image */}
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100 mb-12">
-              <Image
-                src="/images/service-value-added.jpg"
-                alt="增值服务 - 贴标换标作业"
-                width={1400}
-                height={900}
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            {/* Text content below */}
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
-                灵活的增值服务支持
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                Cube海外仓提供多种增值服务，帮助卖家满足不同平台和渠道的特殊要求。从简单的贴标换标到复杂的套装组装，我们都能提供专业、高效的处理支持。
-              </p>
-              <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
-                {features.map((item) => (
-                  <div key={item} className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0" />
-                    <span className="text-foreground">{item}</span>
-                  </div>
-                ))}
+            <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
+              {/* Left - Text content */}
+              <div className="lg:w-1/2">
+                <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
+                  灵活的增值服务支持
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-8">
+                  Cube海外仓提供多种增值服务，帮助卖家满足不同平台和渠道的特殊要求。从简单的贴标换标到复杂的套装组装，我们都能提供专业、高效的处理支持。
+                </p>
+                <ul className="space-y-3">
+                  {features.map((item) => (
+                    <li 
+                      key={item.text} 
+                      className="group flex items-center gap-4 p-3 rounded-xl cursor-pointer transition-all duration-300 hover:bg-primary/5 hover:shadow-md hover:translate-x-2"
+                    >
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 shrink-0 transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
+                        <item.icon className="h-5 w-5 text-primary transition-colors duration-300 group-hover:text-white" />
+                      </div>
+                      <span className="text-foreground font-medium transition-colors duration-300 group-hover:text-primary">{item.text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* Right - Image */}
+              <div className="mt-8 lg:mt-0 lg:w-1/2">
+                <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                  <Image
+                    src="/images/service-value-added.jpg"
+                    alt="增值服务 - 贴标换标作业"
+                    width={700}
+                    height={500}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
