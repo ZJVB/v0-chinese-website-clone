@@ -6,11 +6,6 @@ import { Footer } from "@/components/footer";
 import { PageBanner } from "@/components/page-banner";
 import {
   ArrowRight,
-  Award,
-  MapPin,
-  Warehouse,
-  Package,
-  CheckCircle,
   Target,
   Heart,
   Zap,
@@ -27,19 +22,6 @@ const stats = [
   { num: "30,000+", label: "平方米", desc: "仓储设施面积" },
   { num: "20,000+", label: "件/日", desc: "订单处理能力" },
   { num: "99.9%", label: "准确率", desc: "库存管理精度" },
-];
-
-const services = [
-  "海外仓一件代发",
-  "亚马逊 FBA 中转",
-  "B2B 配送",
-  "高效退货处理",
-  "专业商品翻新服务",
-];
-
-const certifications = [
-  { icon: Award, title: "TEMU 官方认证海外仓" },
-  { icon: CheckCircle, title: "Amazon SPN 认证服务商" },
 ];
 
 const values = [
@@ -120,82 +102,6 @@ export default function AboutPage() {
                   <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Services & Location */}
-        <section className="py-16 lg:py-20 bg-white">
-          <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="flex flex-col lg:flex-row lg:gap-16">
-              {/* Left - Services */}
-              <div className="lg:w-1/2 mb-10 lg:mb-0">
-                <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">服务范围</span>
-                <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-6">
-                  全面整合的物流解决方案
-                </h2>
-                <ul className="space-y-3">
-                  {services.map((service) => (
-                    <li 
-                      key={service} 
-                      className="group flex items-center gap-4 p-4 rounded-xl bg-muted/30 border border-gray-100 cursor-pointer transition-all duration-300 hover:bg-primary/5 hover:border-primary/20 hover:shadow-md"
-                    >
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 shrink-0 transition-all duration-300 group-hover:bg-primary">
-                        <Package className="h-5 w-5 text-primary transition-colors duration-300 group-hover:text-white" />
-                      </div>
-                      <span className="text-foreground font-medium transition-colors duration-300 group-hover:text-primary">{service}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
-              {/* Right - Location & Certifications */}
-              <div className="lg:w-1/2">
-                <div className="mb-8">
-                  <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">仓储网络</span>
-                  <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-6">
-                    英国核心物流枢纽
-                  </h2>
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-4 p-4 rounded-xl bg-muted/30 border border-gray-100">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 shrink-0">
-                        <MapPin className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground">总部：英国曼彻斯特</p>
-                        <p className="text-sm text-muted-foreground mt-1">覆盖曼彻斯特、伯明翰等关键物流枢纽</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4 p-4 rounded-xl bg-muted/30 border border-gray-100">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 shrink-0">
-                        <Warehouse className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground">30,000+ 平方米仓储设施</p>
-                        <p className="text-sm text-muted-foreground mt-1">先进的WMS系统与自动化技术</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Certifications */}
-                <div>
-                  <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">官方认证</span>
-                  <div className="space-y-3">
-                    {certifications.map((cert) => (
-                      <div 
-                        key={cert.title} 
-                        className="flex items-center gap-4 p-4 rounded-xl bg-primary/5 border border-primary/20"
-                      >
-                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary shrink-0">
-                          <cert.icon className="h-5 w-5 text-white" />
-                        </div>
-                        <span className="text-foreground font-semibold">{cert.title}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
