@@ -15,7 +15,6 @@ import {
   Monitor, 
   Globe,
   Link2,
-  Smartphone,
   CheckCircle,
   Zap,
   Shield,
@@ -62,12 +61,7 @@ const apiFeatures = [
   { icon: Monitor, text: "完善技术文档" },
 ];
 
-const mobileFeatures = [
-  "实时库存查询与盘点",
-  "订单状态追踪与更新",
-  "异常预警即时推送",
-  "数据报表随时查看",
-];
+
 
 export default function TechnologyPage() {
   return (
@@ -183,93 +177,6 @@ export default function TechnologyPage() {
                     <span className="text-foreground text-sm font-medium text-center transition-colors duration-300 group-hover:text-primary">{item.text}</span>
                   </div>
                 ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Mobile App */}
-        <section className="py-16 lg:py-20 bg-gradient-to-b from-muted/50 to-muted/20 border-t border-gray-100">
-          <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="mb-10 text-center">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">移动管理</span>
-              <h2 className="text-2xl lg:text-3xl font-bold text-foreground">移动端随时管理</h2>
-            </div>
-            <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
-              {/* Left - Mock Phone */}
-              <div className="lg:w-1/2 flex justify-center">
-                <div className="relative">
-                  {/* Phone frame */}
-                  <div className="relative w-64 h-[500px] bg-gradient-to-br from-gray-900 to-gray-800 rounded-[3rem] p-3 shadow-2xl">
-                    {/* Screen */}
-                    <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden">
-                      {/* Status bar */}
-                      <div className="h-8 bg-primary flex items-center justify-center">
-                        <span className="text-white text-xs font-medium">Cube WMS</span>
-                      </div>
-                      {/* App content */}
-                      <div className="p-4 space-y-4">
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <p className="text-xs text-muted-foreground">今日订单</p>
-                            <p className="text-2xl font-bold text-foreground">1,234</p>
-                          </div>
-                          <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                            <Package className="h-6 w-6 text-primary" />
-                          </div>
-                        </div>
-                        <div className="grid grid-cols-2 gap-3">
-                          <div className="bg-muted/50 rounded-xl p-3">
-                            <p className="text-xs text-muted-foreground">待处理</p>
-                            <p className="text-lg font-bold text-foreground">89</p>
-                          </div>
-                          <div className="bg-muted/50 rounded-xl p-3">
-                            <p className="text-xs text-muted-foreground">已发货</p>
-                            <p className="text-lg font-bold text-primary">1,145</p>
-                          </div>
-                        </div>
-                        <div className="bg-muted/30 rounded-xl p-3">
-                          <p className="text-xs text-muted-foreground mb-2">库存预警</p>
-                          <div className="space-y-2">
-                            <div className="flex items-center justify-between text-xs">
-                              <span className="text-foreground">SKU-A001</span>
-                              <span className="text-primary">低于安全库存</span>
-                            </div>
-                            <div className="flex items-center justify-between text-xs">
-                              <span className="text-foreground">SKU-B023</span>
-                              <span className="text-primary">即将过期</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="h-8 bg-primary rounded-lg flex items-center justify-center">
-                          <span className="text-white text-xs font-medium">查看详情</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Decorative elements */}
-                  <div className="absolute -z-10 top-10 -left-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl" />
-                  <div className="absolute -z-10 bottom-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
-                </div>
-              </div>
-              {/* Right - Content */}
-              <div className="mt-12 lg:mt-0 lg:w-1/2">
-                <p className="text-muted-foreground leading-relaxed mb-8">
-                  通过移动端应用，随时随地查看库存状态、订单进度和运营报表。异常情况实时推送，让您不错过任何重要信息。
-                </p>
-                <ul className="space-y-3">
-                  {mobileFeatures.map((item) => (
-                    <li 
-                      key={item} 
-                      className="group flex items-center gap-4 p-3 rounded-xl cursor-pointer transition-all duration-300 hover:bg-primary/5 hover:shadow-md hover:translate-x-2"
-                    >
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 shrink-0 transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
-                        <Smartphone className="h-5 w-5 text-primary transition-colors duration-300 group-hover:text-white" />
-                      </div>
-                      <span className="text-foreground font-medium transition-colors duration-300 group-hover:text-primary">{item}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             </div>
           </div>
