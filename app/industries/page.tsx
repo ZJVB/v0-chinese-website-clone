@@ -149,9 +149,6 @@ export default function IndustriesPage() {
                 
                 {/* Content */}
                 <div className="mt-8 lg:mt-0 lg:w-1/2">
-                  <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
-                    <industry.icon className="h-7 w-7 text-primary" />
-                  </div>
                   <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
                     {industry.title}
                   </h2>
