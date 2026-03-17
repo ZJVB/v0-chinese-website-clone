@@ -1,71 +1,158 @@
-import Image from "next/image";
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { Shield, Clock, TrendingUp } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const highlights = [
-  { icon: Shield, text: "安全可靠" },
-  { icon: Clock, text: "快速配送" },
-  { icon: TrendingUp, text: "助力增长" },
+const banners = [
+  {
+    id: 1,
+    title: "英国本地仓储与履约解决方案",
+    subtitle: "为跨境品牌、平台卖家及分销客户提供一站式英国本地仓储、履约与配送支持。",
+    image: "/images/hero-warehouse.jpg",
+    link: "/solutions",
+    linkText: "查看解决方案",
+  },
+  {
+    id: 2,
+    title: "构建更高效的英国本地供应链",
+    subtitle: "从 FBA 备货、中转分拨到零售配送，帮助客户提升库存灵活性、发货效率和本地交付能力。",
+    image: "/images/service-fba.jpg",
+    link: "/warehousing",
+    linkText: "了解仓储服务",
+  },
+  {
+    id: 3,
+    title: "TEMU 官方认证仓，履约表现持续位居前列",
+    subtitle: "依托标准化作业流程、稳定的订单处理能力和英国本地履约资源，Cube海外仓为 TEMU 卖家提供更高效、更可靠的本地仓配支持。",
+    image: "/images/hero-temu.jpg",
+    link: "/solutions/temu",
+    linkText: "了解 TEMU 服务",
+  },
 ];
 
 export function HeroSection() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % banners.length);
+  }, []);
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + banners.length) % banners.length);
+  }, []);
+
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    const timer = setInterval(nextSlide, 5000);
+    return () => clearInterval(timer);
+  }, [isAutoPlaying, nextSlide]);
+
+  const currentBanner = banners[currentSlide];
+
   return (
-    <section className="relative overflow-hidden bg-accent">
-      <div className="absolute inset-0">
-        <Image
-          src="/images/hero-warehouse.jpg"
-          alt="Cube Fulfilment 仓储中心"
-          fill
-          className="object-cover opacity-15"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-accent/95 to-accent/75" />
-      </div>
+    <section 
+      className="relative h-[600px] w-full overflow-hidden sm:h-[650px] lg:h-[700px]"
+      onMouseEnter={() => setIsAutoPlaying(false)}
+      onMouseLeave={() => setIsAutoPlaying(true)}
+    >
+      {/* Slides */}
+      {banners.map((banner, index) => (
+        <div
+          key={banner.id}
+          className={`absolute inset-0 transition-opacity duration-700 ${
+            index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+          }`}
+        >
+          <Image
+            src={banner.image}
+            alt={banner.title}
+            fill
+            className="object-cover"
+            priority={index === 0}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#041653]/90 via-[#041653]/70 to-[#041653]/30" />
+        </div>
+      ))}
 
-      <div className="relative mx-auto max-w-7xl px-4 py-20 lg:px-8 lg:py-32">
-        <div className="max-w-2xl">
-          <h1 className="mb-6 text-4xl font-black leading-[1.1] text-accent-foreground md:text-5xl lg:text-6xl text-balance">
-            英国专业电商
-            <span className="block text-primary">仓储物流服务</span>
-          </h1>
-
-          <p className="mb-8 max-w-xl text-lg leading-relaxed text-accent-foreground/75 text-pretty">
-            Cube Fulfilment
-            为您提供高效、可靠的电商仓储与第三方物流服务，涵盖拣货、包装、配送及库存管理，助力品牌快速增长。
-          </p>
-
-          <div className="mb-10 flex flex-col gap-3 sm:flex-row">
-            <Button
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8 font-semibold"
-              asChild
+      {/* Content */}
+      <div className="relative z-20 mx-auto flex h-full max-w-7xl items-center px-6 lg:px-8">
+        <div className="max-w-2xl pt-16">
+          {banners.map((banner, index) => (
+            <div
+              key={banner.id}
+              className={`transition-all duration-500 ${
+                index === currentSlide
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4 absolute pointer-events-none"
+              }`}
             >
-              <Link href="/services">了解我们的服务</Link>
+              <h1 className="mb-5 text-[26px] font-bold leading-[1.25] text-white sm:text-[32px] lg:text-[42px] text-balance">
+                {banner.title}
+              </h1>
+              <p className="mb-8 max-w-xl text-base leading-relaxed text-white/75 lg:text-lg text-pretty">
+                {banner.subtitle}
+              </p>
+            </div>
+          ))}
+
+          <div className="flex flex-wrap gap-4">
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-md px-7 py-5 text-base font-semibold"
+            >
+              <Link href={currentBanner.link}>
+                {currentBanner.linkText}
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
-              className="border-accent-foreground/25 text-accent-foreground hover:bg-accent-foreground/10 bg-transparent px-8 text-base"
-              asChild
+              className="border-white/40 text-white hover:bg-white/10 bg-transparent rounded-md px-7 py-5 text-base"
             >
               <Link href="/contact">联系我们</Link>
             </Button>
           </div>
 
-          <div className="flex flex-wrap gap-6">
-            {highlights.map((h) => (
-              <div
-                key={h.text}
-                className="flex items-center gap-2 text-accent-foreground/65"
-              >
-                <h.icon className="h-4 w-4 text-primary" />
-                <span className="text-sm font-medium">{h.text}</span>
-              </div>
+          {/* Slide indicators */}
+          <div className="mt-10 flex items-center gap-3">
+            {banners.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  index === currentSlide
+                    ? "w-8 bg-primary"
+                    : "w-3 bg-white/40 hover:bg-white/60"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
             ))}
           </div>
         </div>
       </div>
+
+      {/* Navigation arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 z-30 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white backdrop-blur-sm transition-all hover:bg-white/20 lg:left-8"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft className="h-5 w-5" />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 z-30 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white backdrop-blur-sm transition-all hover:bg-white/20 lg:right-8"
+        aria-label="Next slide"
+      >
+        <ChevronRight className="h-5 w-5" />
+      </button>
     </section>
   );
 }

@@ -1,101 +1,85 @@
 import Link from "next/link";
-import {
-  Warehouse,
-  Package,
-  Truck,
-  Ship,
-  Camera,
-  Box,
-  ArrowRight,
-} from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { SectionTitle } from "@/components/section-title";
 
 const services = [
   {
-    icon: Warehouse,
-    title: "托盘仓储",
-    description: "安全、可扩展的散货存储与高效托盘管理方案。",
-    slug: "pallet-storage",
+    title: "FBA 备货与转运",
+    description: "英国本地前置仓备货、中转分拨、分批补货",
+    image: "/images/service-fba.jpg",
+    href: "/solutions/fba",
   },
   {
-    icon: Package,
-    title: "电商履约",
-    description: "端到端订单履约，涵盖存储、拣货、包装和配送。",
-    slug: "ecommerce-fulfilment",
+    title: "D2C 一件代发",
+    description: "独立站及多平台订单履约，本地快速发货",
+    image: "/images/service-d2c.jpg",
+    href: "/solutions/d2c",
   },
   {
-    icon: Truck,
-    title: "运输配送",
-    description: "国内及国际配送，高效陆运与货运服务。",
-    slug: "transport-delivery",
+    title: "B2B 零售分销",
+    description: "整箱整托、门店补货、批量订单配送",
+    image: "/images/service-b2b.jpg",
+    href: "/solutions/b2b",
   },
   {
-    icon: Ship,
-    title: "国际货运代理",
-    description: "全球运输与清关的端到端物流解决方案。",
-    slug: "freight-forwarding",
+    title: "退货与售后",
+    description: "退件接收、检查分类、后续履约处理",
+    image: "/images/service-returns.jpg",
+    href: "/solutions/returns",
   },
   {
-    icon: Camera,
-    title: "产品摄影",
-    description: "专业产品拍摄，提升在线商品展示效果。",
-    slug: "product-photography",
-  },
-  {
-    icon: Box,
-    title: "智能包装",
-    description: "环保、高效的定制包装解决方案。",
-    slug: "smart-packaging",
+    title: "WMS 与系统对接",
+    description: "库存、订单与物流可视化管理",
+    image: "/images/service-wms.jpg",
+    href: "/technology/wms",
   },
 ];
 
 export function ServicesSection() {
   return (
-    <section className="bg-card py-16 lg:py-24">
+    <section className="bg-[#f8fafc] py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
-            核心服务
-          </p>
-          <h2 className="mb-4 text-3xl font-bold text-foreground lg:text-4xl text-balance">
-            全方位电商物流解决方案
-          </h2>
-          <p className="text-muted-foreground leading-relaxed text-pretty">
-            从仓储管理到最终配送，Cube Fulfilment 为您提供一站式物流服务。
-          </p>
-        </div>
+        <SectionTitle
+          title="我们的"
+          highlight="服务"
+          subtitle="专注于英国本地仓储与履约，为不同平台和业务模式提供稳定高效的物流解决方案。"
+        />
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 flex gap-4 overflow-x-auto pb-4 lg:overflow-visible lg:pb-0">
           {services.map((service) => (
             <Link
-              key={service.slug}
-              href={`/services/${service.slug}`}
-              className="group flex flex-col rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:-translate-y-0.5"
+              key={service.title}
+              href={service.href}
+              className="group relative flex-shrink-0 w-[200px] lg:flex-1 h-[320px] overflow-hidden rounded-xl shadow-[0_1px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_4px_20px_rgba(0,0,0,0.12)] hover:-translate-y-1"
             >
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/8 transition-colors group-hover:bg-primary/15">
-                <service.icon className="h-6 w-6 text-primary" />
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <h3 className="mb-2 text-base font-semibold text-white">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-white/80 line-clamp-2">
+                  {service.description}
+                </p>
               </div>
-              <h3 className="mb-2 text-lg font-semibold text-foreground">
-                {service.title}
-              </h3>
-              <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">
-                {service.description}
-              </p>
-              <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-all group-hover:gap-2.5">
-                了解详情
-                <ArrowRight className="h-3.5 w-3.5" />
-              </span>
             </Link>
           ))}
         </div>
 
         <div className="mt-10 text-center">
-          <Link
-            href="/services"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
-          >
-            查看全部服务
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+          <Button asChild variant="outline" className="gap-2 rounded-md">
+            <Link href="/solutions">
+              查看全部方案
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

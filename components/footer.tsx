@@ -1,141 +1,105 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
-
-const serviceLinks = [
-  { label: "电商履约", href: "/services/ecommerce-fulfilment" },
-  { label: "托盘仓储", href: "/services/pallet-storage" },
-  { label: "运输配送", href: "/services/transport-delivery" },
-  { label: "国际货运代理", href: "/services/freight-forwarding" },
-  { label: "智能包装", href: "/services/smart-packaging" },
-  { label: "产品摄影", href: "/services/product-photography" },
-];
-
-const quickLinks = [
-  { label: "关于我们", href: "/about" },
-  { label: "服务项目", href: "/services" },
-  { label: "平台集成", href: "/integrations" },
-  { label: "新闻资讯", href: "/news" },
-  { label: "联系我们", href: "/contact" },
-];
 
 export function Footer() {
   return (
-    <footer className="bg-accent text-accent-foreground">
+    <footer className="bg-[#051851] text-white">
+      {/* Main Footer Content */}
       <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Company Info */}
           <div>
-            <div className="mb-5 flex items-center gap-2.5">
+            <div className="mb-4 flex items-center gap-2">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-                <span className="text-sm font-black text-primary-foreground tracking-tight">
-                  CUBE
-                </span>
+                <span className="text-xs font-black text-white">CUBE</span>
               </div>
-              <div className="flex flex-col">
-                <span className="text-lg font-bold leading-tight text-accent-foreground">
-                  Cube Fulfilment
-                </span>
-                <span className="text-[10px] font-medium text-accent-foreground/50 leading-tight tracking-wide uppercase">
+              <div>
+                <div className="text-lg font-bold text-white">Cube海外仓</div>
+                <div className="text-[10px] font-medium uppercase tracking-wide text-primary">
                   Cube Distribution Service Ltd
-                </span>
+                </div>
               </div>
             </div>
-            <p className="mb-6 text-sm leading-relaxed text-accent-foreground/60">
-              Cube Fulfilment
-              是您值得信赖的英国电商仓储与第三方物流合作伙伴，助力品牌高效增长。
+            <p className="mb-6 text-sm leading-relaxed text-white/60">
+              英国本地仓储与履约解决方案，助力品牌高效进入英国市场。为跨境品牌、平台卖家、分销客户提供专业物流支持。
             </p>
-            <div className="flex flex-col gap-3">
-              <a
-                href="tel:01616223633"
-                className="flex items-center gap-2 text-sm text-accent-foreground/60 hover:text-primary transition-colors"
-              >
+            <div className="space-y-2 text-sm text-white/60">
+              <a href="tel:+441615662392" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Phone className="h-4 w-4" />
-                0161 622 3633
+                +44 161 566 2392 / 7599588577
               </a>
-              <a
-                href="mailto:info@cubefulfilment.com"
-                className="flex items-center gap-2 text-sm text-accent-foreground/60 hover:text-primary transition-colors"
-              >
+              <a href="mailto:contact@thecubedistribution.com" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Mail className="h-4 w-4" />
-                info@cubefulfilment.com
+                contact@thecubedistribution.com
               </a>
-              <div className="flex items-start gap-2 text-sm text-accent-foreground/60">
+              <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                Manchester, United Kingdom
+                <span>Zainhub Gate2, Lord North Street,<br />Manchester, M40 8HT, United Kingdom</span>
               </div>
             </div>
           </div>
 
+          {/* Solutions Links */}
           <div>
-            <h3 className="mb-5 text-xs font-semibold uppercase tracking-widest text-accent-foreground/40">
-              服务项目
-            </h3>
-            <ul className="flex flex-col gap-2.5">
-              {serviceLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-accent-foreground/60 transition-colors hover:text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+            <h4 className="mb-4 text-sm font-semibold text-primary">解决方案</h4>
+            <ul className="space-y-2.5 text-sm text-white/60">
+              <li><Link href="/solutions/temu" className="hover:text-primary transition-colors">TEMU 官方认证仓</Link></li>
+              <li><Link href="/solutions/fba" className="hover:text-primary transition-colors">FBA 备货与转运</Link></li>
+              <li><Link href="/solutions/d2c" className="hover:text-primary transition-colors">D2C 一件代发</Link></li>
+              <li><Link href="/solutions/b2b" className="hover:text-primary transition-colors">B2B 零售分销</Link></li>
+              <li><Link href="/solutions/returns" className="hover:text-primary transition-colors">售后退货</Link></li>
+              <li><Link href="/solutions/value-added" className="hover:text-primary transition-colors">增值服务</Link></li>
             </ul>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <h3 className="mb-5 text-xs font-semibold uppercase tracking-widest text-accent-foreground/40">
-              快速链接
-            </h3>
-            <ul className="flex flex-col gap-2.5">
-              {quickLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-accent-foreground/60 transition-colors hover:text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+            <h4 className="mb-4 text-sm font-semibold text-primary">快速导航</h4>
+            <ul className="space-y-2.5 text-sm text-white/60">
+              <li><Link href="/" className="hover:text-primary transition-colors">首页</Link></li>
+              <li><Link href="/warehousing" className="hover:text-primary transition-colors">仓储与派送</Link></li>
+              <li><Link href="/industries" className="hover:text-primary transition-colors">行业解决方案</Link></li>
+              <li><Link href="/technology" className="hover:text-primary transition-colors">技术支持</Link></li>
+              <li><Link href="/about" className="hover:text-primary transition-colors">关于我们</Link></li>
+              <li><Link href="/contact" className="hover:text-primary transition-colors">联系我们</Link></li>
             </ul>
           </div>
 
+          {/* WeChat QR Codes */}
           <div>
-            <h3 className="mb-5 text-xs font-semibold uppercase tracking-widest text-accent-foreground/40">
-              平台集成
-            </h3>
-            <ul className="flex flex-col gap-2.5">
-              {[
-                "Amazon",
-                "eBay",
-                "Shopify",
-                "TikTok Shop",
-                "WooCommerce",
-                "Etsy",
-              ].map((platform) => (
-                <li key={platform}>
-                  <Link
-                    href="/integrations"
-                    className="text-sm text-accent-foreground/60 transition-colors hover:text-primary"
-                  >
-                    {platform}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <h4 className="mb-4 text-sm font-semibold text-primary">微信联系</h4>
+            <div className="flex gap-4">
+              <div className="group relative text-center">
+                <div className="mb-2 h-20 w-20 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl">
+                  <Image src="/images/qr-1.png" alt="微信客服1" width={80} height={80} className="w-full h-full object-cover" />
+                </div>
+                <span className="text-xs text-white/60 group-hover:opacity-0 transition-opacity">微信客服1</span>
+              </div>
+              <div className="group relative text-center">
+                <div className="mb-2 h-20 w-20 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl">
+                  <Image src="/images/qr-2.png" alt="微信客服2" width={80} height={80} className="w-full h-full object-cover" />
+                </div>
+                <span className="text-xs text-white/60 group-hover:opacity-0 transition-opacity">微信客服2</span>
+              </div>
+            </div>
+            <p className="mt-3 text-xs text-white/60">鼠标悬停放大，方便扫码</p>
           </div>
         </div>
+      </div>
 
-        <div className="mt-12 border-t border-accent-foreground/10 pt-8">
-          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-sm text-accent-foreground/40">
-              &copy; {new Date().getFullYear()} Cube Distribution Service Ltd.
-              保留所有权利。
+      {/* Copyright */}
+      <div className="border-t border-white/10">
+        <div className="mx-auto max-w-7xl px-4 py-5 lg:px-8">
+          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <p className="text-xs text-white/40">
+              &copy; {new Date().getFullYear()} Cube Distribution Service Ltd. All rights reserved.
             </p>
-            <p className="text-sm text-accent-foreground/40">
-              www.cubefulfilment.com
-            </p>
+            <div className="flex gap-6 text-xs text-white/40">
+              <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-primary transition-colors">Terms</Link>
+              <Link href="/cookies" className="hover:text-primary transition-colors">Cookies</Link>
+            </div>
           </div>
         </div>
       </div>
