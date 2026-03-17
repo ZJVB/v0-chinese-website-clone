@@ -153,7 +153,7 @@ export default function IndustriesPage() {
                     <h2 className="text-lg lg:text-xl font-bold text-foreground mb-2">
                       {industry.title}
                     </h2>
-                    <p className="text-muted-foreground leading-relaxed mb-4 text-sm line-clamp-2">
+                    <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
                       {industry.description}
                     </p>
                     
