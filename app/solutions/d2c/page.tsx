@@ -57,13 +57,16 @@ export default function D2cPage() {
                 <p className="text-muted-foreground leading-relaxed mb-8">
                   无论是独立站还是多平台销售，Cube海外仓都能为您提供稳定的订单处理与配送支持。我们通过系统对接实现订单自动同步，结合英国本地仓储与配送资源，帮助卖家实现快速、准确的订单履约。
                 </p>
-                <ul className="space-y-4">
+                <ul className="space-y-3">
                   {features.map((item) => (
-                    <li key={item.text} className="flex items-center gap-4">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 shrink-0">
-                        <item.icon className="h-5 w-5 text-primary" />
+                    <li 
+                      key={item.text} 
+                      className="group flex items-center gap-4 p-3 rounded-xl cursor-pointer transition-all duration-300 hover:bg-primary/5 hover:shadow-md hover:translate-x-2"
+                    >
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 shrink-0 transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
+                        <item.icon className="h-5 w-5 text-primary transition-colors duration-300 group-hover:text-white" />
                       </div>
-                      <span className="text-foreground font-medium">{item.text}</span>
+                      <span className="text-foreground font-medium transition-colors duration-300 group-hover:text-primary">{item.text}</span>
                     </li>
                   ))}
                 </ul>
