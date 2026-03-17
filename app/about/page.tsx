@@ -18,12 +18,6 @@ export const metadata: Metadata = {
     "Cube海外仓是专注于为跨境电商卖家提供卓越英国本土仓储物流服务的专业伙伴。总部位于英国曼彻斯特，拥有超过30,000平方米的仓储设施。",
 };
 
-const stats = [
-  { num: "30,000+", label: "平方米", desc: "仓储设施面积" },
-  { num: "20,000+", label: "件/日", desc: "订单处理能力" },
-  { num: "99.9%", label: "准确率", desc: "库存管理精度" },
-];
-
 const timeline = [
   { year: "2020", title: "公司成立", desc: "公司正式成立，开启专注于跨境电商仓储物流的业务。" },
   { year: "2021", title: "初步扩展", desc: "仓储面积扩增至 5,000 平方米，提升仓储能力与服务水平。" },
@@ -158,30 +152,6 @@ export default function AboutPage() {
                   <ArrowRight className="h-4 w-4" />
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Stats Section */}
-        <section className="py-16 lg:py-20 bg-white border-t border-gray-100">
-          <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="text-center mb-12">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">实力数据</span>
-              <h2 className="text-2xl lg:text-3xl font-bold text-foreground">
-                专业实力，值得信赖
-              </h2>
-            </div>
-            <div className="grid gap-6 md:grid-cols-3">
-              {stats.map((s) => (
-                <div 
-                  key={s.num} 
-                  className="group bg-white rounded-2xl p-8 text-center shadow-md border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-                >
-                  <p className="text-4xl lg:text-5xl font-black text-primary">{s.num}</p>
-                  <p className="mt-2 text-lg font-semibold text-foreground">{s.label}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
-                </div>
-              ))}
             </div>
           </div>
         </section>
