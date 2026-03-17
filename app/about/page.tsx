@@ -92,7 +92,7 @@ export default function AboutPage() {
         </section>
 
         {/* Development Timeline */}
-        <section className="py-16 lg:py-20 bg-gradient-to-b from-muted/50 to-muted/20 border-t border-gray-100">
+        <section className="py-16 lg:py-20 bg-gradient-to-b from-muted/50 to-muted/20 border-t border-gray-100 overflow-hidden">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="text-center mb-16">
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">发展历程</span>
@@ -101,64 +101,62 @@ export default function AboutPage() {
               </h2>
             </div>
             
-            {/* Vertical Timeline */}
-            <div className="relative max-w-4xl mx-auto">
-              {/* Center vertical line with gradient */}
-              <div className="absolute left-8 lg:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-primary/60 to-primary/20 rounded-full lg:-translate-x-1/2" />
-              
-              {/* Timeline items */}
-              <div className="space-y-12">
-                {timeline.map((item, index) => (
-                  <div 
-                    key={item.year}
-                    className={`relative flex items-start gap-8 lg:gap-0 group ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}
-                  >
-                    {/* Year badge - positioned on the line */}
-                    <div className="absolute left-8 lg:left-1/2 -translate-x-1/2 z-20">
-                      <div className="relative">
-                        {/* Glow effect */}
-                        <div className="absolute inset-0 rounded-full bg-primary/30 blur-md scale-0 group-hover:scale-150 transition-transform duration-500" />
-                        {/* Year circle */}
-                        <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary/80 shadow-lg flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-primary/30">
-                          <span className="text-base font-black text-white">{item.year}</span>
-                        </div>
-                        {/* Ripple effect */}
-                        <div className="absolute inset-0 rounded-full border-2 border-primary/50 scale-100 opacity-0 group-hover:scale-150 group-hover:opacity-100 transition-all duration-700" />
-                        <div className="absolute inset-0 rounded-full border-2 border-primary/30 scale-100 opacity-0 group-hover:scale-[1.8] group-hover:opacity-100 transition-all duration-1000 delay-100" />
-                      </div>
-                    </div>
-                    
-                    {/* Content card */}
-                    <div className={`ml-24 lg:ml-0 lg:w-[calc(50%-3rem)] ${index % 2 === 0 ? 'lg:pr-0 lg:mr-auto' : 'lg:pl-0 lg:ml-auto'}`}>
-                      <div className={`relative bg-white rounded-2xl p-6 shadow-md border border-gray-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-1 group-hover:border-primary/20 ${index % 2 === 0 ? 'lg:mr-8' : 'lg:ml-8'}`}>
-                        {/* Connector line to center */}
-                        <div className={`hidden lg:block absolute top-8 w-8 h-0.5 bg-gradient-to-r ${index % 2 === 0 ? 'right-0 translate-x-full from-gray-200 to-primary/50' : 'left-0 -translate-x-full from-primary/50 to-gray-200'} transition-all duration-300 group-hover:from-primary group-hover:to-primary/80`} />
-                        
-                        {/* Card content */}
-                        <div className="flex items-start gap-4">
-                          {/* Icon */}
-                          <div className="shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
-                            <span className="text-lg font-bold text-primary transition-colors duration-300 group-hover:text-white">{index + 1}</span>
-                          </div>
-                          <div className="flex-1">
-                            <h3 className="text-lg font-bold text-foreground mb-2 transition-colors duration-300 group-hover:text-primary">{item.title}</h3>
-                            <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+            {/* Horizontal Timeline */}
+            <div className="relative">
+              {/* Horizontal timeline container */}
+              <div className="overflow-x-auto pb-4 scrollbar-hide">
+                <div className="relative min-w-[900px] lg:min-w-0">
+                  {/* Horizontal line */}
+                  <div className="absolute left-0 right-0 top-1/2 h-1 bg-gradient-to-r from-primary/30 via-primary to-primary/30 rounded-full -translate-y-1/2" />
+                  
+                  {/* Timeline items */}
+                  <div className="relative flex justify-between">
+                    {timeline.map((item, index) => (
+                      <div 
+                        key={item.year}
+                        className={`relative flex flex-col items-center group ${index % 2 === 0 ? '' : 'flex-col-reverse'}`}
+                        style={{ width: `${100 / timeline.length}%` }}
+                      >
+                        {/* Top content (for even indexes) or Bottom content (for odd indexes) */}
+                        <div className={`w-full px-2 ${index % 2 === 0 ? 'pb-8' : 'pt-8'}`}>
+                          <div className="bg-white rounded-xl p-4 shadow-md border border-gray-100 transition-all duration-500 group-hover:shadow-2xl group-hover:border-primary/30 group-hover:-translate-y-2">
+                            {/* Connector line */}
+                            <div className={`absolute left-1/2 w-0.5 h-6 bg-gradient-to-b from-primary/50 to-primary -translate-x-1/2 transition-all duration-300 group-hover:bg-primary ${index % 2 === 0 ? 'bottom-0 translate-y-2' : 'top-0 -translate-y-2 rotate-180'}`} />
+                            
+                            <h3 className="text-sm font-bold text-foreground mb-1 transition-colors duration-300 group-hover:text-primary text-center">{item.title}</h3>
+                            <p className="text-muted-foreground text-xs leading-relaxed text-center line-clamp-3">{item.desc}</p>
                           </div>
                         </div>
                         
-                        {/* Decorative corner */}
-                        <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden rounded-tr-2xl">
-                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/5 to-transparent transform rotate-45 translate-x-16 -translate-y-16 group-hover:from-primary/10 transition-colors duration-300" />
+                        {/* Year badge - on the line */}
+                        <div className="relative z-10 flex-shrink-0">
+                          {/* Glow effect */}
+                          <div className="absolute inset-0 rounded-full bg-primary/40 blur-lg scale-0 group-hover:scale-150 transition-transform duration-500" />
+                          {/* Ripple effects */}
+                          <div className="absolute inset-0 rounded-full border-2 border-primary/40 scale-100 opacity-0 group-hover:scale-[2] group-hover:opacity-100 transition-all duration-700" />
+                          <div className="absolute inset-0 rounded-full border-2 border-primary/20 scale-100 opacity-0 group-hover:scale-[2.5] group-hover:opacity-100 transition-all duration-1000 delay-150" />
+                          {/* Year circle */}
+                          <div className="relative w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 shadow-lg flex items-center justify-center transition-all duration-500 group-hover:scale-125 group-hover:shadow-xl group-hover:shadow-primary/40">
+                            <span className="text-sm lg:text-base font-black text-white">{item.year}</span>
+                          </div>
+                        </div>
+                        
+                        {/* Empty space for alternating layout */}
+                        <div className={`w-full px-2 ${index % 2 === 0 ? 'pt-8' : 'pb-8'}`}>
+                          <div className="h-[100px]" />
                         </div>
                       </div>
-                    </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
               
-              {/* End marker */}
-              <div className="absolute left-8 lg:left-1/2 -bottom-4 -translate-x-1/2">
-                <div className="w-4 h-4 rounded-full bg-primary/30 animate-pulse" />
+              {/* Scroll hint for mobile */}
+              <div className="lg:hidden flex justify-center mt-4">
+                <div className="flex items-center gap-2 text-muted-foreground text-sm animate-pulse">
+                  <span>左右滑动查看</span>
+                  <ArrowRight className="h-4 w-4" />
+                </div>
               </div>
             </div>
           </div>
