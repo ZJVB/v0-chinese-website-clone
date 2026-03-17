@@ -5,7 +5,17 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { PageBanner } from "@/components/page-banner";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowRight, Package } from "lucide-react";
+import { 
+  ArrowRight, 
+  Package,
+  Warehouse,
+  Clock,
+  Tag,
+  Truck,
+  RotateCcw,
+  BarChart3,
+  LucideIcon
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "FBA 备货与转运服务 - Cube海外仓",
@@ -13,13 +23,13 @@ export const metadata: Metadata = {
     "支持英国本地前置仓备货、中转、分批补货与退件处理，帮助卖家更灵活地管理 FBA 库存。",
 };
 
-const features = [
-  "英国本地 FBA 备货仓支持",
-  "临时仓储与库存缓冲",
-  "FNSKU 贴标与换标服务",
-  "分批补货与转运安排",
-  "退件回收与后续处理",
-  "库存管理与数据同步",
+const features: { text: string; icon: LucideIcon }[] = [
+  { text: "英国本地 FBA 备货仓支持", icon: Warehouse },
+  { text: "临时仓储与库存缓冲", icon: Clock },
+  { text: "FNSKU 贴标与换标服务", icon: Tag },
+  { text: "分批补货与转运安排", icon: Truck },
+  { text: "退件回收与后续处理", icon: RotateCcw },
+  { text: "库存管理与数据同步", icon: BarChart3 },
 ];
 
 export default function FbaPage() {
@@ -61,9 +71,14 @@ export default function FbaPage() {
                 </p>
                 <ul className="space-y-3">
                   {features.map((item) => (
-                    <li key={item} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary shrink-0" />
-                      <span className="text-foreground">{item}</span>
+                    <li 
+                      key={item.text} 
+                      className="group flex items-center gap-4 p-3 rounded-xl cursor-pointer transition-all duration-300 hover:bg-primary/5 hover:shadow-md hover:translate-x-2"
+                    >
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 shrink-0 transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
+                        <item.icon className="h-5 w-5 text-primary transition-colors duration-300 group-hover:text-white" />
+                      </div>
+                      <span className="text-foreground font-medium transition-colors duration-300 group-hover:text-primary">{item.text}</span>
                     </li>
                   ))}
                 </ul>
