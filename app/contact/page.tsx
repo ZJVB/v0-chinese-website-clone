@@ -207,31 +207,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* FAQ Preview */}
-        <section className="bg-card py-16 lg:py-24">
-          <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="mb-10 text-center">
-              <h2 className="text-3xl font-bold text-foreground lg:text-[40px]">常见</h2>
-              <div className="relative mx-auto mt-1 inline-block">
-                <span className="text-3xl font-bold text-foreground lg:text-[40px]">问题</span>
-                <span className="absolute bottom-0 left-0 h-[40%] w-full bg-primary/20 animate-underline -z-10" />
-              </div>
-            </div>
-            <div className="mx-auto max-w-3xl space-y-4">
-              {[
-                { q: "入仓需要多长时间？", a: "标准货物入仓后24小时内完成上架，紧急货物可申请加急处理。" },
-                { q: "支持哪些电商平台对接？", a: "支持Amazon、eBay、TEMU、SHEIN、Shopify、WooCommerce等主流平台API直连。" },
-                { q: "如何计算仓储费用？", a: "按实际占用库位计费，提供透明的在线账单系统，随时查看费用明细。" },
-                { q: "退货如何处理？", a: "提供退货接收、质检分级、重新包装、二次上架等全流程服务。" },
-              ].map((item) => (
-                <div key={item.q} className="rounded-lg bg-background p-6">
-                  <h3 className="mb-2 font-semibold text-foreground">{item.q}</h3>
-                  <p className="text-sm text-muted-foreground">{item.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+
       </main>
       <Footer />
     </>
