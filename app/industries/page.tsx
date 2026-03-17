@@ -127,16 +127,15 @@ export default function IndustriesPage() {
             className={`py-12 lg:py-16 ${index % 2 === 1 ? 'bg-muted/30' : 'bg-white'}`}
           >
             <div className="mx-auto max-w-7xl px-4 lg:px-8">
-              <div className={`flex flex-col lg:flex-row lg:items-start lg:gap-12 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+              <div className={`flex flex-col lg:flex-row lg:items-stretch lg:gap-12 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                 {/* Image */}
-                <div className="lg:w-[45%] lg:sticky lg:top-24">
-                  <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-500 hover:shadow-xl">
+                <div className="lg:w-[45%] flex flex-col">
+                  <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-500 hover:shadow-xl flex-1 relative min-h-[280px]">
                     <Image
                       src={industry.image}
                       alt={industry.title}
-                      width={600}
-                      height={400}
-                      className="w-full h-64 lg:h-80 object-cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                   {/* Highlights */}
