@@ -92,7 +92,7 @@ export default function AboutPage() {
         </section>
 
         {/* Development Timeline */}
-        <section className="py-16 lg:py-20 bg-gradient-to-b from-muted/50 to-muted/20 border-t border-gray-100">
+        <section className="py-16 lg:py-20 bg-gradient-to-b from-muted/50 to-muted/20 border-t border-gray-100 overflow-hidden">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">发展历程</span>
@@ -101,33 +101,50 @@ export default function AboutPage() {
               </h2>
             </div>
             
-            {/* Timeline */}
+            {/* Horizontal Timeline */}
             <div className="relative">
-              {/* Vertical line */}
-              <div className="absolute left-4 lg:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 lg:-translate-x-1/2" />
+              {/* Horizontal line */}
+              <div className="absolute left-0 right-0 top-[60px] h-1 bg-gradient-to-r from-primary/20 via-primary to-primary/20 rounded-full" />
               
-              <div className="space-y-8">
+              {/* Timeline items */}
+              <div className="flex overflow-x-auto pb-8 pt-4 gap-4 lg:gap-0 lg:justify-between scrollbar-hide snap-x snap-mandatory">
                 {timeline.map((item, index) => (
                   <div 
                     key={item.year}
-                    className={`relative flex flex-col lg:flex-row lg:items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+                    className="relative flex flex-col items-center min-w-[200px] lg:min-w-0 lg:flex-1 px-2 snap-center group"
                   >
-                    {/* Content */}
-                    <div className={`ml-12 lg:ml-0 lg:w-1/2 ${index % 2 === 0 ? 'lg:pr-12 lg:text-right' : 'lg:pl-12 lg:text-left'}`}>
-                      <div className="group bg-white rounded-xl p-6 shadow-md border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                        <span className="text-2xl font-black text-primary">{item.year}</span>
-                        <h3 className="text-lg font-bold text-foreground mt-2">{item.title}</h3>
-                        <p className="text-muted-foreground text-sm mt-2">{item.desc}</p>
+                    {/* Year badge */}
+                    <div className="relative z-10 mb-4">
+                      <div className="w-20 h-20 rounded-full bg-white border-4 border-primary shadow-lg flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:shadow-xl group-hover:border-primary/80">
+                        <span className="text-lg font-black text-primary">{item.year}</span>
                       </div>
+                      {/* Pulse animation on hover */}
+                      <div className="absolute inset-0 rounded-full bg-primary/20 animate-ping opacity-0 group-hover:opacity-75" style={{ animationDuration: '1.5s' }} />
                     </div>
                     
-                    {/* Dot */}
-                    <div className="absolute left-4 lg:left-1/2 top-6 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md lg:-translate-x-1/2" />
+                    {/* Connector dot */}
+                    <div className="w-3 h-3 rounded-full bg-primary mb-4 transition-all duration-300 group-hover:scale-150 group-hover:bg-primary/80" />
                     
-                    {/* Empty space for alternating layout */}
-                    <div className="hidden lg:block lg:w-1/2" />
+                    {/* Content card */}
+                    <div className="bg-white rounded-xl p-5 shadow-md border border-gray-100 text-center transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:border-primary/30 min-h-[160px] w-full">
+                      <h3 className="text-base font-bold text-foreground mb-2 transition-colors duration-300 group-hover:text-primary">{item.title}</h3>
+                      <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
+                    </div>
+                    
+                    {/* Index indicator */}
+                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                      <span className="text-xs font-bold text-primary">{index + 1}</span>
+                    </div>
                   </div>
                 ))}
+              </div>
+              
+              {/* Scroll hint for mobile */}
+              <div className="lg:hidden flex justify-center mt-4">
+                <div className="flex items-center gap-2 text-muted-foreground text-sm">
+                  <span>左右滑动查看更多</span>
+                  <ArrowRight className="h-4 w-4 animate-pulse" />
+                </div>
               </div>
             </div>
           </div>
