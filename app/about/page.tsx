@@ -92,59 +92,73 @@ export default function AboutPage() {
         </section>
 
         {/* Development Timeline */}
-        <section className="py-16 lg:py-20 bg-gradient-to-b from-muted/50 to-muted/20 border-t border-gray-100 overflow-hidden">
+        <section className="py-16 lg:py-20 bg-gradient-to-b from-muted/50 to-muted/20 border-t border-gray-100">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="text-center mb-12">
+            <div className="text-center mb-16">
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">发展历程</span>
               <h2 className="text-2xl lg:text-3xl font-bold text-foreground">
                 稳步前行，持续成长
               </h2>
             </div>
             
-            {/* Horizontal Timeline */}
-            <div className="relative">
-              {/* Horizontal line */}
-              <div className="absolute left-0 right-0 top-[60px] h-1 bg-gradient-to-r from-primary/20 via-primary to-primary/20 rounded-full" />
+            {/* Vertical Timeline */}
+            <div className="relative max-w-4xl mx-auto">
+              {/* Center vertical line with gradient */}
+              <div className="absolute left-8 lg:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-primary/60 to-primary/20 rounded-full lg:-translate-x-1/2" />
               
               {/* Timeline items */}
-              <div className="flex overflow-x-auto pb-8 pt-4 gap-4 lg:gap-0 lg:justify-between scrollbar-hide snap-x snap-mandatory">
+              <div className="space-y-12">
                 {timeline.map((item, index) => (
                   <div 
                     key={item.year}
-                    className="relative flex flex-col items-center min-w-[200px] lg:min-w-0 lg:flex-1 px-2 snap-center group"
+                    className={`relative flex items-start gap-8 lg:gap-0 group ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}
                   >
-                    {/* Year badge */}
-                    <div className="relative z-10 mb-4">
-                      <div className="w-20 h-20 rounded-full bg-white border-4 border-primary shadow-lg flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:shadow-xl group-hover:border-primary/80">
-                        <span className="text-lg font-black text-primary">{item.year}</span>
+                    {/* Year badge - positioned on the line */}
+                    <div className="absolute left-8 lg:left-1/2 -translate-x-1/2 z-20">
+                      <div className="relative">
+                        {/* Glow effect */}
+                        <div className="absolute inset-0 rounded-full bg-primary/30 blur-md scale-0 group-hover:scale-150 transition-transform duration-500" />
+                        {/* Year circle */}
+                        <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary/80 shadow-lg flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-primary/30">
+                          <span className="text-base font-black text-white">{item.year}</span>
+                        </div>
+                        {/* Ripple effect */}
+                        <div className="absolute inset-0 rounded-full border-2 border-primary/50 scale-100 opacity-0 group-hover:scale-150 group-hover:opacity-100 transition-all duration-700" />
+                        <div className="absolute inset-0 rounded-full border-2 border-primary/30 scale-100 opacity-0 group-hover:scale-[1.8] group-hover:opacity-100 transition-all duration-1000 delay-100" />
                       </div>
-                      {/* Pulse animation on hover */}
-                      <div className="absolute inset-0 rounded-full bg-primary/20 animate-ping opacity-0 group-hover:opacity-75" style={{ animationDuration: '1.5s' }} />
                     </div>
-                    
-                    {/* Connector dot */}
-                    <div className="w-3 h-3 rounded-full bg-primary mb-4 transition-all duration-300 group-hover:scale-150 group-hover:bg-primary/80" />
                     
                     {/* Content card */}
-                    <div className="bg-white rounded-xl p-5 shadow-md border border-gray-100 text-center transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:border-primary/30 min-h-[160px] w-full">
-                      <h3 className="text-base font-bold text-foreground mb-2 transition-colors duration-300 group-hover:text-primary">{item.title}</h3>
-                      <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
-                    </div>
-                    
-                    {/* Index indicator */}
-                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                      <span className="text-xs font-bold text-primary">{index + 1}</span>
+                    <div className={`ml-24 lg:ml-0 lg:w-[calc(50%-3rem)] ${index % 2 === 0 ? 'lg:pr-0 lg:mr-auto' : 'lg:pl-0 lg:ml-auto'}`}>
+                      <div className={`relative bg-white rounded-2xl p-6 shadow-md border border-gray-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-1 group-hover:border-primary/20 ${index % 2 === 0 ? 'lg:mr-8' : 'lg:ml-8'}`}>
+                        {/* Connector line to center */}
+                        <div className={`hidden lg:block absolute top-8 w-8 h-0.5 bg-gradient-to-r ${index % 2 === 0 ? 'right-0 translate-x-full from-gray-200 to-primary/50' : 'left-0 -translate-x-full from-primary/50 to-gray-200'} transition-all duration-300 group-hover:from-primary group-hover:to-primary/80`} />
+                        
+                        {/* Card content */}
+                        <div className="flex items-start gap-4">
+                          {/* Icon */}
+                          <div className="shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
+                            <span className="text-lg font-bold text-primary transition-colors duration-300 group-hover:text-white">{index + 1}</span>
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-lg font-bold text-foreground mb-2 transition-colors duration-300 group-hover:text-primary">{item.title}</h3>
+                            <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+                          </div>
+                        </div>
+                        
+                        {/* Decorative corner */}
+                        <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden rounded-tr-2xl">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/5 to-transparent transform rotate-45 translate-x-16 -translate-y-16 group-hover:from-primary/10 transition-colors duration-300" />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
               
-              {/* Scroll hint for mobile */}
-              <div className="lg:hidden flex justify-center mt-4">
-                <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                  <span>左右滑动查看更多</span>
-                  <ArrowRight className="h-4 w-4 animate-pulse" />
-                </div>
+              {/* End marker */}
+              <div className="absolute left-8 lg:left-1/2 -bottom-4 -translate-x-1/2">
+                <div className="w-4 h-4 rounded-full bg-primary/30 animate-pulse" />
               </div>
             </div>
           </div>
