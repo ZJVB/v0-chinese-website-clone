@@ -13,12 +13,7 @@ import {
   BarChart3, 
   Settings, 
   Monitor, 
-  Globe,
-  Link2,
   CheckCircle,
-  Zap,
-  Shield,
-  Clock,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -34,32 +29,7 @@ const wmsFeatures = [
   { icon: Monitor, title: "可视化看板", desc: "实时运营数据大屏展示，关键指标一目了然" },
 ];
 
-const integrations = [
-  { 
-    name: "电商平台", 
-    icon: Globe,
-    items: ["Amazon", "eBay", "TEMU", "Shopify", "WooCommerce", "Magento", "TikTok Shop"] 
-  },
-  { 
-    name: "快递服务", 
-    icon: Package,
-    items: ["Royal Mail", "DPD", "Evri", "UPS", "FedEx", "DHL", "Yodel"] 
-  },
-  { 
-    name: "ERP系统", 
-    icon: Link2,
-    items: ["SAP", "Oracle", "NetSuite", "金蝶", "用友", "自定义API"] 
-  },
-];
 
-const apiFeatures = [
-  { icon: Zap, text: "RESTful API 标准接口" },
-  { icon: Clock, text: "实时 Webhook 推送" },
-  { icon: Database, text: "批量数据同步" },
-  { icon: Settings, text: "自定义字段映射" },
-  { icon: Shield, text: "沙盒测试环境" },
-  { icon: Monitor, text: "完善技术文档" },
-];
 
 
 
@@ -136,7 +106,7 @@ export default function TechnologyPage() {
             </div>
             
             {/* API Architecture Diagram */}
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100 mb-12">
+            <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100">
               <Image
                 src="/images/technology-api.jpg"
                 alt="API 集成架构图"
@@ -144,51 +114,6 @@ export default function TechnologyPage() {
                 height={700}
                 className="w-full h-auto object-cover"
               />
-            </div>
-            
-            {/* Platform Cards */}
-            <div className="grid gap-6 md:grid-cols-3 mb-12">
-              {integrations.map((group) => (
-                <div 
-                  key={group.name} 
-                  className="group bg-white rounded-2xl p-6 shadow-md border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-                >
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-all duration-300 group-hover:bg-primary">
-                      <group.icon className="h-6 w-6 text-primary transition-colors duration-300 group-hover:text-white" />
-                    </div>
-                    <h3 className="text-lg font-bold text-foreground">{group.name}</h3>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {group.items.map((item) => (
-                      <span 
-                        key={item} 
-                        className="inline-flex items-center px-3 py-1.5 rounded-full bg-muted text-sm text-muted-foreground transition-all duration-300 hover:bg-primary/10 hover:text-primary"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            {/* API Features Grid */}
-            <div className="bg-white rounded-2xl p-8 shadow-md border border-gray-100">
-              <h3 className="text-lg font-bold text-foreground mb-6 text-center">API 集成能力</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                {apiFeatures.map((item) => (
-                  <div 
-                    key={item.text} 
-                    className="group flex flex-col items-center gap-3 p-4 rounded-xl cursor-pointer transition-all duration-300 hover:bg-primary/5"
-                  >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
-                      <item.icon className="h-6 w-6 text-primary transition-colors duration-300 group-hover:text-white" />
-                    </div>
-                    <span className="text-foreground text-sm font-medium text-center transition-colors duration-300 group-hover:text-primary">{item.text}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </section>
