@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle, MessageSquare, Globe } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
 
 const contactInfo = [
   { icon: Phone, title: "电话", content: "+44 161 XXX XXXX", href: "tel:+44161XXXXXXX" },
@@ -17,10 +17,7 @@ const contactInfo = [
   { icon: Clock, title: "工作时间", content: "周一至周六 9:00-18:00（英国时间）", href: null },
 ];
 
-const quickLinks = [
-  { icon: MessageSquare, title: "在线咨询", desc: "即时沟通，快速响应", action: "开始对话" },
-  { icon: Globe, title: "微信咨询", desc: "添加客服微信：CubeCang", action: "添加微信" },
-];
+
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -41,25 +38,6 @@ export default function ContactPage() {
           description="无论您有任何关于英国海外仓、跨境物流的需求或疑问，我们的团队随时为您服务"
           image="/images/banner-contact.jpg"
         />
-
-        {/* Quick Contact */}
-        <section className="border-b border-border py-8">
-          <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-8">
-              {quickLinks.map((link) => (
-                <div key={link.title} className="flex items-center gap-4 rounded-lg bg-card p-4 shadow-sm sm:px-8">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                    <link.icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground">{link.title}</p>
-                    <p className="text-sm text-muted-foreground">{link.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Contact Form & Info */}
         <section className="py-16 lg:py-24">
