@@ -9,6 +9,11 @@ import {
   BadgeCheck,
   CheckCircle,
   ArrowRight,
+  ShieldCheck,
+  TrendingUp,
+  ClipboardList,
+  Users,
+  LucideIcon,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -16,6 +21,13 @@ export const metadata: Metadata = {
   description:
     "Cube海外仓作为 TEMU 官方认证仓，为平台卖家提供标准化仓储、订单履约与本地发货支持，履约表现长期位居前列。",
 };
+
+const features: { text: string; icon: LucideIcon }[] = [
+  { text: "通过 TEMU 官方审核认证", icon: ShieldCheck },
+  { text: "履约数据持续位居平台前列", icon: TrendingUp },
+  { text: "标准化 SOP 流程管理", icon: ClipboardList },
+  { text: "专业团队全程支持", icon: Users },
+];
 
 export default function TemuPage() {
   return (
@@ -33,8 +45,8 @@ export default function TemuPage() {
         {/* Official Certification Section */}
         <section className="py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            {/* Full width image */}
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100 mb-12">
+            {/* Image with text overlay */}
+            <div className="relative rounded-2xl overflow-hidden shadow-xl border border-gray-100">
               <Image
                 src="/images/temu-ranking.jpg"
                 alt="TEMU 平台履约排名 - CUBE 位居前列"
@@ -42,23 +54,30 @@ export default function TemuPage() {
                 height={900}
                 className="w-full h-auto object-cover"
               />
-            </div>
-            {/* Text content below */}
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
-                TEMU 官方认证，品质有保障
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                Cube海外仓作为 TEMU 平台官方认证的海外仓服务商，严格按照平台标准执行入仓、存储、履约、发货等全流程操作。我们理解平台业务对时效、流程规范和履约稳定性的要求，帮助卖家更顺畅地开展英国本地业务。
-              </p>
-              <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
-                {["通过 TEMU 官方审核认证", "履约数据持续位居平台前列", "标准化 SOP 流程管理", "专业团队全程支持"].map((item) => (
-                  <div key={item} className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0" />
-                    <span className="text-foreground">{item}</span>
-                  </div>
-                ))}
+              {/* Text overlay on image */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 lg:p-12">
+                <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+                  TEMU 官方认证，品质有保障
+                </h2>
+                <p className="text-white/80 leading-relaxed max-w-3xl">
+                  Cube海外仓作为 TEMU 平台官方认证的海外仓服务商，严格按照平台标准执行入仓、存储、履约、发货等全流程操作。我们理解平台业务对时效、流程规范和履约稳定性的要求，帮助卖家更顺畅地开展英国本地业务。
+                </p>
               </div>
+            </div>
+            
+            {/* Service features - 2x2 grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
+              {features.map((item) => (
+                <div 
+                  key={item.text} 
+                  className="group flex items-center gap-4 p-5 rounded-xl bg-white border border-gray-100 cursor-pointer transition-all duration-300 hover:bg-primary/5 hover:shadow-lg hover:border-primary/20 hover:-translate-y-1"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 shrink-0 transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
+                    <item.icon className="h-6 w-6 text-primary transition-colors duration-300 group-hover:text-white" />
+                  </div>
+                  <span className="text-foreground font-semibold text-lg transition-colors duration-300 group-hover:text-primary">{item.text}</span>
+                </div>
+              ))}
             </div>
           </div>
         </section>
