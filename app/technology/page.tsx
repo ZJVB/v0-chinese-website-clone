@@ -13,7 +13,6 @@ import {
   BarChart3, 
   Settings, 
   Monitor, 
-  Cpu,
   Globe,
   Link2,
   Smartphone,
@@ -34,7 +33,6 @@ const wmsFeatures = [
   { icon: BarChart3, title: "数据分析报表", desc: "库存周转率、订单趋势、绩效报告等多维度数据分析" },
   { icon: Settings, title: "自动化工作流", desc: "入库质检、上架、出库全流程自动化，减少人工干预" },
   { icon: Monitor, title: "可视化看板", desc: "实时运营数据大屏展示，关键指标一目了然" },
-  { icon: Cpu, title: "AI智能预测", desc: "基于历史数据的销量预测与库存预警，优化补货策略" },
 ];
 
 const integrations = [
