@@ -47,7 +47,7 @@ export default function AboutPage() {
         />
 
         {/* Company Introduction */}
-        <section className="py-16 lg:py-20 bg-gradient-to-br from-white via-gray-50/50 to-white">
+        <section className="py-16 lg:py-20 bg-white">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
               {/* Left - Image */}
@@ -86,7 +86,7 @@ export default function AboutPage() {
         </section>
 
         {/* Development Timeline */}
-        <section className="py-16 lg:py-20 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 border-t border-b border-primary/10 overflow-hidden">
+        <section className="py-16 lg:py-20 bg-[#f8fafc] overflow-hidden">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="text-center mb-16">
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">发展历程</span>
@@ -157,7 +157,7 @@ export default function AboutPage() {
         </section>
 
         {/* Core Values */}
-        <section className="py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white">
+        <section className="py-16 lg:py-20 bg-white">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">核心价值</span>
@@ -186,7 +186,7 @@ export default function AboutPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 lg:py-20 bg-gradient-to-br from-primary/5 via-white to-primary/5 border-t border-gray-100">
+        <section className="py-16 lg:py-20 bg-[#f8fafc]">
           <div className="mx-auto max-w-7xl px-4 lg:px-8 text-center">
             <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
               准备好开始合作了吗？
