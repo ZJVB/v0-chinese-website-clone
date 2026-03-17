@@ -25,11 +25,6 @@ const warehouseItems = [
 
 
 
-const techItems = [
-  { label: "WMS 仓储订单管理系统", href: "/technology/wms" },
-  { label: "全平台 API 集成", href: "/technology/api" },
-];
-
 const aboutItems = [
   { label: "公司介绍", href: "/about" },
   { label: "资讯与合作", href: "/news" },
@@ -40,7 +35,7 @@ const navLinks = [
   { href: "/solutions", label: "解决方案", dropdown: "solutions" as const },
   { href: "/warehousing", label: "仓储与派送", dropdown: "warehousing" as const },
   { href: "/industries", label: "行业", dropdown: null },
-  { href: "/technology", label: "技术支持", dropdown: "technology" as const },
+  { href: "/technology", label: "技术支持", dropdown: null },
   { href: "/about", label: "关于我们", dropdown: "about" as const },
   { href: "/contact", label: "联系我们", dropdown: null },
 ];
@@ -83,7 +78,6 @@ export function Navbar() {
     switch (key) {
       case "solutions": return solutionItems;
       case "warehousing": return warehouseItems;
-      case "technology": return techItems;
       case "about": return aboutItems;
       default: return [];
     }
