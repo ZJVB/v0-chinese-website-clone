@@ -128,19 +128,21 @@ export default function TechnologyPage() {
           </div>
         </section>
 
-        {/* Platform Integrations */}
+        {/* Platform & API Integrations */}
         <section className="py-16 lg:py-20 bg-gradient-to-b from-muted/50 to-muted/20 border-t border-b border-gray-100">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="text-center mb-12">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">平台对接</span>
+              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">开放集成</span>
               <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
-                全平台无缝对接
+                全平台 API 无缝对接
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                支持主流电商平台、快递服务商和ERP系统的API对接，实现订单自动同步、物流信息实时更新、库存数据多端一致。
+                提供标准化 RESTful API 接口，支持主流电商平台、快递服务商和 ERP 系统对接，实现订单自动同步、物流信息实时更新、库存数据多端一致。
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-3">
+            
+            {/* Platform Cards */}
+            <div className="grid gap-6 md:grid-cols-3 mb-12">
               {integrations.map((group) => (
                 <div 
                   key={group.name} 
@@ -165,47 +167,22 @@ export default function TechnologyPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* API Features */}
-        <section className="py-16 lg:py-20 bg-white">
-          <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="mb-10 text-center">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">开放能力</span>
-              <h2 className="text-2xl lg:text-3xl font-bold text-foreground">开放 API 集成能力</h2>
-            </div>
-            <div className="flex flex-col lg:flex-row-reverse lg:items-center lg:gap-16">
-              {/* Right - Image */}
-              <div className="lg:w-1/2">
-                <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100">
-                  <Image
-                    src="/images/technology-api.jpg"
-                    alt="API 集成开发"
-                    width={700}
-                    height={500}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-              </div>
-              {/* Left - Content */}
-              <div className="mt-8 lg:mt-0 lg:w-1/2">
-                <p className="text-muted-foreground leading-relaxed mb-8">
-                  提供标准化的 RESTful API 接口，支持自定义开发和系统对接。完善的技术文档和沙盒测试环境，让系统集成更加简单高效。
-                </p>
-                <ul className="space-y-3">
-                  {apiFeatures.map((item) => (
-                    <li 
-                      key={item.text} 
-                      className="group flex items-center gap-4 p-3 rounded-xl cursor-pointer transition-all duration-300 hover:bg-primary/5 hover:shadow-md hover:translate-x-2"
-                    >
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 shrink-0 transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
-                        <item.icon className="h-5 w-5 text-primary transition-colors duration-300 group-hover:text-white" />
-                      </div>
-                      <span className="text-foreground font-medium transition-colors duration-300 group-hover:text-primary">{item.text}</span>
-                    </li>
-                  ))}
-                </ul>
+            
+            {/* API Features Grid */}
+            <div className="bg-white rounded-2xl p-8 shadow-md border border-gray-100">
+              <h3 className="text-lg font-bold text-foreground mb-6 text-center">API 集成能力</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                {apiFeatures.map((item) => (
+                  <div 
+                    key={item.text} 
+                    className="group flex flex-col items-center gap-3 p-4 rounded-xl cursor-pointer transition-all duration-300 hover:bg-primary/5"
+                  >
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
+                      <item.icon className="h-6 w-6 text-primary transition-colors duration-300 group-hover:text-white" />
+                    </div>
+                    <span className="text-foreground text-sm font-medium text-center transition-colors duration-300 group-hover:text-primary">{item.text}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
