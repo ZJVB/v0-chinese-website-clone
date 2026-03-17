@@ -23,13 +23,7 @@ const warehouseItems = [
   { label: "货运与特种物流", href: "/warehousing/freight" },
 ];
 
-const industryItems = [
-  { label: "时尚服饰与快消品", href: "/industries/fashion" },
-  { label: "新能源与电池", href: "/industries/energy" },
-  { label: "消费电子与高价值商品", href: "/industries/electronics" },
-  { label: "大件家居与器材", href: "/industries/furniture" },
-  { label: "美妆与保健品", href: "/industries/beauty" },
-];
+
 
 const techItems = [
   { label: "WMS 仓储订单管理系统", href: "/technology/wms" },
@@ -45,7 +39,7 @@ const navLinks = [
   { href: "/", label: "首页", dropdown: null },
   { href: "/solutions", label: "解决方案", dropdown: "solutions" as const },
   { href: "/warehousing", label: "仓储与派送", dropdown: "warehousing" as const },
-  { href: "/industries", label: "行业", dropdown: "industries" as const },
+  { href: "/industries", label: "行业", dropdown: null },
   { href: "/technology", label: "技术支持", dropdown: "technology" as const },
   { href: "/about", label: "关于我们", dropdown: "about" as const },
   { href: "/contact", label: "联系我们", dropdown: null },
@@ -89,7 +83,6 @@ export function Navbar() {
     switch (key) {
       case "solutions": return solutionItems;
       case "warehousing": return warehouseItems;
-      case "industries": return industryItems;
       case "technology": return techItems;
       case "about": return aboutItems;
       default: return [];

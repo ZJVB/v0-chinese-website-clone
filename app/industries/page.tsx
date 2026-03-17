@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import { 
   ArrowRight,
   CheckCircle,
-  LucideIcon
 } from "lucide-react";
 
 export const metadata: Metadata = {
