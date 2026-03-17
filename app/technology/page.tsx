@@ -135,6 +135,17 @@ export default function TechnologyPage() {
               </p>
             </div>
             
+            {/* API Architecture Diagram */}
+            <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100 mb-12">
+              <Image
+                src="/images/technology-api.jpg"
+                alt="API 集成架构图"
+                width={1400}
+                height={700}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            
             {/* Platform Cards */}
             <div className="grid gap-6 md:grid-cols-3 mb-12">
               {integrations.map((group) => (
