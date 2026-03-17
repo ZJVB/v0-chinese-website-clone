@@ -127,62 +127,64 @@ export default function IndustriesPage() {
         />
 
         {/* Industries sections with alternating layouts */}
-        {industries.map((industry, index) => (
-          <section 
-            key={industry.title} 
-            className={`py-10 lg:py-14 ${index % 2 === 1 ? 'bg-muted/30' : ''}`}
-          >
-            <div className="mx-auto max-w-7xl px-4 lg:px-8">
-              <div className={`flex flex-col lg:flex-row lg:items-center lg:gap-12 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                {/* Image */}
-                <div className="lg:w-2/5">
-                  <div className="rounded-xl overflow-hidden shadow-lg border border-gray-100">
-                    <Image
-                      src={industry.image}
-                      alt={industry.title}
-                      width={560}
-                      height={380}
-                      className="w-full h-auto object-cover"
-                    />
+        <div className="divide-y divide-gray-100">
+          {industries.map((industry, index) => (
+            <section 
+              key={industry.title} 
+              className={`py-8 lg:py-10 ${index % 2 === 1 ? 'bg-gradient-to-r from-muted/20 via-muted/40 to-muted/20' : 'bg-gradient-to-r from-white via-gray-50/30 to-white'}`}
+            >
+              <div className="mx-auto max-w-7xl px-4 lg:px-8">
+                <div className={`flex flex-col lg:flex-row lg:items-center lg:gap-10 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                  {/* Image */}
+                  <div className="lg:w-[38%]">
+                    <div className="rounded-xl overflow-hidden shadow-md border border-gray-100/80 transition-all duration-500 hover:shadow-xl hover:scale-[1.02]">
+                      <Image
+                        src={industry.image}
+                        alt={industry.title}
+                        width={480}
+                        height={320}
+                        className="w-full h-48 lg:h-56 object-cover"
+                      />
+                    </div>
                   </div>
-                </div>
-                
-                {/* Content */}
-                <div className="mt-6 lg:mt-0 lg:w-3/5">
-                  <h2 className="text-xl lg:text-2xl font-bold text-foreground mb-3">
-                    {industry.title}
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed mb-5 text-sm">
-                    {industry.description}
-                  </p>
                   
-                  {/* Features - 2x2 grid */}
-                  <div className="grid grid-cols-2 gap-2 mb-5">
-                    {industry.features.map((feature) => (
-                      <div 
-                        key={feature.text} 
-                        className="group flex items-center gap-2 p-2 rounded-lg cursor-pointer transition-all duration-300 hover:bg-primary/5"
-                      >
-                        <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary/10 shrink-0 transition-all duration-300 group-hover:bg-primary">
-                          <feature.icon className="h-4 w-4 text-primary transition-colors duration-300 group-hover:text-white" />
+                  {/* Content */}
+                  <div className="mt-5 lg:mt-0 lg:w-[62%]">
+                    <h2 className="text-lg lg:text-xl font-bold text-foreground mb-2">
+                      {industry.title}
+                    </h2>
+                    <p className="text-muted-foreground leading-relaxed mb-4 text-sm line-clamp-2">
+                      {industry.description}
+                    </p>
+                    
+                    {/* Features - 2x2 grid */}
+                    <div className="grid grid-cols-2 gap-x-3 gap-y-2 mb-4">
+                      {industry.features.map((feature) => (
+                        <div 
+                          key={feature.text} 
+                          className="group flex items-center gap-2 py-1.5 px-2 rounded-md cursor-pointer transition-all duration-300 hover:bg-primary/5"
+                        >
+                          <div className="flex h-7 w-7 items-center justify-center rounded-md bg-primary/10 shrink-0 transition-all duration-300 group-hover:bg-primary">
+                            <feature.icon className="h-3.5 w-3.5 text-primary transition-colors duration-300 group-hover:text-white" />
+                          </div>
+                          <span className="text-foreground text-xs font-medium transition-colors duration-300 group-hover:text-primary">{feature.text}</span>
                         </div>
-                        <span className="text-foreground text-sm font-medium transition-colors duration-300 group-hover:text-primary">{feature.text}</span>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
+                    
+                    <Link 
+                      href={industry.href}
+                      className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline group"
+                    >
+                      了解更多
+                      <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                    </Link>
                   </div>
-                  
-                  <Link 
-                    href={industry.href}
-                    className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:underline group"
-                  >
-                    了解更多
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
                 </div>
               </div>
-            </div>
-          </section>
-        ))}
+            </section>
+          ))}
+        </div>
 
         {/* CTA Section */}
         <section className="bg-white py-16 lg:py-20 border-t border-gray-100">
