@@ -5,7 +5,17 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { PageBanner } from "@/components/page-banner";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowRight, RotateCcw } from "lucide-react";
+import { 
+  ArrowRight, 
+  RotateCcw,
+  MapPin,
+  PackageSearch,
+  GitBranch,
+  PackagePlus,
+  RefreshCw,
+  HeadphonesIcon,
+  LucideIcon
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "退货与售后支持 - Cube海外仓",
@@ -13,13 +23,13 @@ export const metadata: Metadata = {
     "提供退件接收、检查、分类处理与后续履约支持，帮助客户优化退货流程。",
 };
 
-const features = [
-  "英国本地退件接收与登记",
-  "开箱检查与状态判断",
-  "分类处理与后续安排",
-  "重新上架或退回支持",
-  "逆向履约与库存恢复",
-  "售后流程协同与异常处理",
+const features: { text: string; icon: LucideIcon }[] = [
+  { text: "英国本地退件接收与登记", icon: MapPin },
+  { text: "开箱检查与状态判断", icon: PackageSearch },
+  { text: "分类处理与后续安排", icon: GitBranch },
+  { text: "重新上架或退回支持", icon: PackagePlus },
+  { text: "逆向履约与库存恢复", icon: RefreshCw },
+  { text: "售后流程协同与异常处理", icon: HeadphonesIcon },
 ];
 
 export default function ReturnsPage() {
@@ -38,31 +48,40 @@ export default function ReturnsPage() {
         {/* Main Content Section */}
         <section className="py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            {/* Full width image */}
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100 mb-12">
-              <Image
-                src="/images/service-returns.jpg"
-                alt="退货处理 - 检查与分类"
-                width={1400}
-                height={900}
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            {/* Text content below */}
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
-                完善的退货处理流程
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                Cube海外仓提供专业的退货处理服务，从退件接收、开箱检查到分类处理，帮助卖家高效管理退货商品。通过规范化的处理流程，最大限度降低退货损失，提升库存价值回收率。
-              </p>
-              <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
-                {features.map((item) => (
-                  <div key={item} className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0" />
-                    <span className="text-foreground">{item}</span>
-                  </div>
-                ))}
+            <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
+              {/* Left - Image */}
+              <div className="lg:w-1/2">
+                <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                  <Image
+                    src="/images/service-returns.jpg"
+                    alt="退货处理 - 检查与分类"
+                    width={700}
+                    height={500}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
+              {/* Right - Text content */}
+              <div className="mt-8 lg:mt-0 lg:w-1/2">
+                <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
+                  完善的退货处理流程
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-8">
+                  Cube海外仓提供专业的退货处理服务，从退件接收、开箱检查到分类处理，帮助卖家高效管理退货商品。通过规范化的处理流程，最大限度降低退货损失，提升库存价值回收率。
+                </p>
+                <ul className="space-y-3">
+                  {features.map((item) => (
+                    <li 
+                      key={item.text} 
+                      className="group flex items-center gap-4 p-3 rounded-xl cursor-pointer transition-all duration-300 hover:bg-primary/5 hover:shadow-md hover:translate-x-2"
+                    >
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 shrink-0 transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
+                        <item.icon className="h-5 w-5 text-primary transition-colors duration-300 group-hover:text-white" />
+                      </div>
+                      <span className="text-foreground font-medium transition-colors duration-300 group-hover:text-primary">{item.text}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
