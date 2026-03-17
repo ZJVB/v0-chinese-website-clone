@@ -166,7 +166,7 @@ export default function IndustriesPage() {
                   </div>
                   
                   {/* Services */}
-                  <div className="mb-6">
+                  <div>
                     <h3 className="text-lg font-semibold text-foreground mb-4">服务内容</h3>
                     <ul className="space-y-3">
                       {industry.services.map((service) => (
@@ -180,14 +180,6 @@ export default function IndustriesPage() {
                       ))}
                     </ul>
                   </div>
-                  
-                  {/* CTA */}
-                  <Button asChild className="gap-2 group transition-all duration-300 hover:scale-105">
-                    <Link href="/contact">
-                      获取行业方案
-                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </Link>
-                  </Button>
                 </div>
               </div>
             </div>
