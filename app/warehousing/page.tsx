@@ -85,11 +85,6 @@ export default function WarehousingPage() {
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-                    
-                    {/* Icon badge */}
-                    <div className="absolute top-4 left-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/90 backdrop-blur-sm shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-primary">
-                      <item.icon className="h-6 w-6 text-primary transition-colors duration-300 group-hover:text-white" />
-                    </div>
                   </div>
                   
                   {/* Content */}
