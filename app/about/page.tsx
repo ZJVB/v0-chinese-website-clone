@@ -24,6 +24,15 @@ const stats = [
   { num: "99.9%", label: "准确率", desc: "库存管理精度" },
 ];
 
+const timeline = [
+  { year: "2020", title: "公司成立", desc: "公司正式成立，开启专注于跨境电商仓储物流的业务。" },
+  { year: "2021", title: "初步扩展", desc: "仓储面积扩增至 5,000 平方米，提升仓储能力与服务水平。" },
+  { year: "2023", title: "效率提升", desc: "日处理订单量突破 3,000 单，运营效率显著提升。" },
+  { year: "2024", title: "业务多元化", desc: "仓库扩展至 10,000 平方米；成功开通 TikTok 对接及代发项目；年底日订单量突破 10,000 单。" },
+  { year: "2025", title: "官方认证", desc: "获得 TEMU 官方认证，成为 TEMU 海外仓合作伙伴。" },
+  { year: "2026", title: "持续壮大", desc: "仓库规模进一步扩大至 20,000 平方米，持续强化仓储与物流服务能力。" },
+];
+
 const values = [
   { icon: Target, title: "专业", desc: "深耕英国仓储物流，提供专业解决方案" },
   { icon: Zap, title: "高效", desc: "先进WMS系统与自动化技术保障效率" },
@@ -82,8 +91,50 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Development Timeline */}
+        <section className="py-16 lg:py-20 bg-gradient-to-b from-muted/50 to-muted/20 border-t border-gray-100">
+          <div className="mx-auto max-w-7xl px-4 lg:px-8">
+            <div className="text-center mb-12">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">发展历程</span>
+              <h2 className="text-2xl lg:text-3xl font-bold text-foreground">
+                稳步前行，持续成长
+              </h2>
+            </div>
+            
+            {/* Timeline */}
+            <div className="relative">
+              {/* Vertical line */}
+              <div className="absolute left-4 lg:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 lg:-translate-x-1/2" />
+              
+              <div className="space-y-8">
+                {timeline.map((item, index) => (
+                  <div 
+                    key={item.year}
+                    className={`relative flex flex-col lg:flex-row lg:items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+                  >
+                    {/* Content */}
+                    <div className={`ml-12 lg:ml-0 lg:w-1/2 ${index % 2 === 0 ? 'lg:pr-12 lg:text-right' : 'lg:pl-12 lg:text-left'}`}>
+                      <div className="group bg-white rounded-xl p-6 shadow-md border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <span className="text-2xl font-black text-primary">{item.year}</span>
+                        <h3 className="text-lg font-bold text-foreground mt-2">{item.title}</h3>
+                        <p className="text-muted-foreground text-sm mt-2">{item.desc}</p>
+                      </div>
+                    </div>
+                    
+                    {/* Dot */}
+                    <div className="absolute left-4 lg:left-1/2 top-6 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md lg:-translate-x-1/2" />
+                    
+                    {/* Empty space for alternating layout */}
+                    <div className="hidden lg:block lg:w-1/2" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Stats Section */}
-        <section className="py-16 lg:py-20 bg-gradient-to-b from-muted/50 to-muted/20 border-t border-b border-gray-100">
+        <section className="py-16 lg:py-20 bg-white border-t border-gray-100">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">实力数据</span>
