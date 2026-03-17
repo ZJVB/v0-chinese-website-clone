@@ -5,7 +5,17 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { PageBanner } from "@/components/page-banner";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowRight, Building2 } from "lucide-react";
+import { 
+  ArrowRight, 
+  Building2,
+  Boxes,
+  Store,
+  ClipboardCheck,
+  CalendarClock,
+  MessageSquareWarning,
+  Settings2,
+  LucideIcon
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "B2B 零售分销 - Cube海外仓",
@@ -13,13 +23,13 @@ export const metadata: Metadata = {
     "适用于整箱、整托、门店补货及批量订单配送场景，支持预约送货与签收回单管理。",
 };
 
-const features = [
-  "整箱、整托及批量订单出货",
-  "零售渠道分拨与门店补货",
-  "预约送货与签收回单管理",
-  "分阶段交付与项目型配送",
-  "异常反馈与交付协调服务",
-  "定制化物流方案支持",
+const features: { text: string; icon: LucideIcon }[] = [
+  { text: "整箱、整托及批量订单出货", icon: Boxes },
+  { text: "零售渠道分拨与门店补货", icon: Store },
+  { text: "预约送货与签收回单管理", icon: ClipboardCheck },
+  { text: "分阶段交付与项目型配送", icon: CalendarClock },
+  { text: "异常反馈与交付协调服务", icon: MessageSquareWarning },
+  { text: "定制化物流方案支持", icon: Settings2 },
 ];
 
 export default function B2bPage() {
@@ -38,31 +48,40 @@ export default function B2bPage() {
         {/* Main Content Section */}
         <section className="py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            {/* Full width image */}
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100 mb-12">
-              <Image
-                src="/images/banner-b2b.jpg"
-                alt="B2B 零售分销 - 批量配送作业"
-                width={1400}
-                height={900}
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            {/* Text content below */}
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
-                专业的 B2B 物流解决方案
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                Cube海外仓为品牌商、经销商和零售企业提供专业的 B2B 物流服务。从批量出货到门店配送，我们提供完整的分销物流支持，确保货物准时、准确送达。
-              </p>
-              <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
-                {features.map((item) => (
-                  <div key={item} className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0" />
-                    <span className="text-foreground">{item}</span>
-                  </div>
-                ))}
+            <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
+              {/* Left - Image */}
+              <div className="lg:w-1/2">
+                <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                  <Image
+                    src="/images/banner-b2b.jpg"
+                    alt="B2B 零售分销 - 批量配送作业"
+                    width={700}
+                    height={500}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
+              {/* Right - Text content */}
+              <div className="mt-8 lg:mt-0 lg:w-1/2">
+                <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
+                  专业的 B2B 物流解决方案
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-8">
+                  Cube海外仓为品牌商、经销商和零售企业提供专业的 B2B 物流服务。从批量出货到门店配送，我们提供完整的分销物流支持，确保货物准时、准确送达。
+                </p>
+                <ul className="space-y-3">
+                  {features.map((item) => (
+                    <li 
+                      key={item.text} 
+                      className="group flex items-center gap-4 p-3 rounded-xl cursor-pointer transition-all duration-300 hover:bg-primary/5 hover:shadow-md hover:translate-x-2"
+                    >
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 shrink-0 transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
+                        <item.icon className="h-5 w-5 text-primary transition-colors duration-300 group-hover:text-white" />
+                      </div>
+                      <span className="text-foreground font-medium transition-colors duration-300 group-hover:text-primary">{item.text}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
