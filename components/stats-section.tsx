@@ -21,22 +21,33 @@ export function StatsSection() {
           return (
             <div 
               key={stat.label} 
-              className={`flex items-center w-1/2 lg:w-auto lg:flex-1 ${isOrange ? 'bg-primary' : 'bg-[#2d3a4f]'}`}
+              className="flex w-1/2 lg:w-auto lg:flex-1"
             >
-              <div className="flex-1 flex flex-col items-center justify-center py-6 lg:py-8 px-3 lg:px-6">
+              {/* Content area */}
+              <div className={`flex-1 flex flex-col items-center justify-center py-6 lg:py-8 px-4 lg:px-8 ${isOrange ? 'bg-primary' : 'bg-[#2d3a4f]'}`}>
                 <div className="text-2xl lg:text-3xl font-bold text-white mb-1 text-center">
                   {stat.value}
                 </div>
                 <div className="text-xs lg:text-sm text-white/80 text-center">{stat.label}</div>
               </div>
-              {/* Diagonal divider between items */}
+              
+              {/* Diagonal divider (desktop only) */}
               {index < stats.length - 1 && (
-                <div className={`hidden lg:block relative w-8 self-stretch overflow-hidden ${isOrange ? 'bg-primary' : 'bg-[#2d3a4f]'}`}>
-                  {/* Next color triangle */}
-                  <div 
-                    className={`absolute inset-0 ${nextIsOrange ? 'bg-primary' : 'bg-[#2d3a4f]'}`}
-                    style={{ clipPath: 'polygon(100% 0, 0 100%, 100% 100%)' }}
-                  />
+                <div className="hidden lg:flex w-0 relative">
+                  <svg 
+                    className="absolute left-0 top-0 h-full w-6" 
+                    viewBox="0 0 24 100" 
+                    preserveAspectRatio="none"
+                  >
+                    <polygon 
+                      points="0,0 24,0 0,100" 
+                      fill={isOrange ? '#f97316' : '#2d3a4f'} 
+                    />
+                    <polygon 
+                      points="24,0 24,100 0,100" 
+                      fill={nextIsOrange ? '#f97316' : '#2d3a4f'} 
+                    />
+                  </svg>
                 </div>
               )}
             </div>
