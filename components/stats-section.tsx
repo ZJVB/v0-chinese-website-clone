@@ -14,32 +14,20 @@ const stats = [
 export function StatsSection() {
   return (
     <section className="bg-white">
-      {/* Stats Banner - Split Design with Diagonal Divider */}
-      <div className="relative flex flex-col lg:flex-row overflow-hidden">
-        {/* Left - Title Section */}
-        <div className="relative bg-[#2d3a4f] px-8 py-8 lg:px-12 lg:py-10 lg:w-[320px] flex items-center justify-center lg:justify-start z-10">
-          <h2 className="text-2xl lg:text-3xl font-bold text-white whitespace-nowrap">
-            我们的成绩
-          </h2>
-          {/* Diagonal divider - slanted edge */}
-          <div className="hidden lg:block absolute top-0 -right-8 w-16 h-full bg-[#2d3a4f] transform skew-x-[-12deg]" />
-        </div>
-        
-        {/* Right - Stats Section */}
-        <div className="flex-1 bg-primary">
-          <div className="grid grid-cols-2 lg:grid-cols-5 h-full">
-            {stats.map((stat, index) => (
-              <div
-                key={stat.label}
-                className="flex flex-col items-center justify-center py-6 lg:py-8 px-3 lg:px-4 border-b border-r border-white/10 lg:border-b-0 last:border-r-0 [&:nth-child(2)]:border-r-0 lg:[&:nth-child(2)]:border-r"
-              >
-                <div className={`font-bold text-white mb-1 text-center ${index === 0 ? 'text-lg lg:text-xl' : 'text-2xl lg:text-3xl'}`}>
-                  {stat.value}
-                </div>
-                <div className="text-xs lg:text-sm text-white/80 text-center">{stat.label}</div>
+      {/* Stats Banner - Full Width */}
+      <div className="bg-primary">
+        <div className="grid grid-cols-2 lg:grid-cols-5">
+          {stats.map((stat, index) => (
+            <div
+              key={stat.label}
+              className="flex flex-col items-center justify-center py-6 lg:py-8 px-3 lg:px-6 border-b border-r border-white/10 lg:border-b-0 last:border-r-0 [&:nth-child(2)]:border-r-0 lg:[&:nth-child(2)]:border-r"
+            >
+              <div className={`font-bold text-white mb-1 text-center ${index === 0 ? 'text-lg lg:text-xl' : 'text-2xl lg:text-3xl'}`}>
+                {stat.value}
               </div>
-            ))}
-          </div>
+              <div className="text-xs lg:text-sm text-white/80 text-center">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
 
