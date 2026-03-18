@@ -46,61 +46,65 @@ export function IndustriesSection() {
         </p>
       </div>
 
-      {/* Industry Cards - Full Width with Strong Layered Effect */}
-      <div className="relative flex flex-wrap lg:flex-nowrap">
-        {industries.map((industry, index) => (
-          <Link
-            key={industry.title}
-            href={industry.href}
-            className="group relative w-1/2 md:w-1/3 lg:w-1/5 aspect-[4/5] lg:aspect-[3/4] overflow-hidden transition-all duration-500 hover:z-30 hover:scale-105"
-            style={{ 
-              zIndex: industries.length - index,
-              marginLeft: index > 0 ? '-24px' : '0',
-            }}
-          >
-            {/* Card Shadow/Border for depth */}
-            <div className="absolute inset-0 shadow-[-16px_0_40px_rgba(0,0,0,0.6)] z-0" />
-            
-            {/* Image */}
-            <Image
-              src={industry.image}
-              alt={industry.title}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            
-            {/* Left Edge Deep Shadow */}
-            {index > 0 && (
-              <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10 pointer-events-none" />
-            )}
-            
-            {/* Top Left Corner Shadow */}
-            {index > 0 && (
-              <div className="absolute left-0 top-0 w-40 h-40 bg-gradient-to-br from-black/60 to-transparent z-10 pointer-events-none" />
-            )}
-            
-            {/* Bottom Left Corner Shadow */}
-            {index > 0 && (
-              <div className="absolute left-0 bottom-0 w-40 h-40 bg-gradient-to-tr from-black/60 to-transparent z-10 pointer-events-none" />
-            )}
-            
-            {/* Right Edge Light Border */}
-            <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-white/40 z-10 pointer-events-none" />
-            
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 group-hover:opacity-80" />
-            
-            {/* Content */}
-            <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6 flex items-center justify-end gap-3 z-10">
-              <span className="text-white font-bold text-sm lg:text-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                {industry.title}
-              </span>
-              <div className="w-7 h-7 lg:w-8 lg:h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:scale-110 shadow-lg">
-                <ArrowRight className="h-3 w-3 lg:h-4 lg:w-4 text-white" />
+      {/* Industry Cards - Stacked with Spread on Hover */}
+      <div className="group/container relative w-full h-[400px] lg:h-[500px] overflow-hidden">
+        <div className="absolute inset-0 flex">
+          {industries.map((industry, index) => (
+            <Link
+              key={industry.title}
+              href={industry.href}
+              className="group/card relative flex-1 h-full overflow-hidden transition-all duration-500 ease-out
+                hover:flex-[2.5] hover:z-50
+                group-hover/container:[&:not(:hover)]:flex-[0.7]"
+              style={{ 
+                zIndex: industries.length - index,
+                marginLeft: index > 0 ? '-30px' : '0',
+              }}
+            >
+              {/* Card Shadow/Border for depth */}
+              <div className="absolute inset-0 shadow-[-16px_0_40px_rgba(0,0,0,0.6)] z-0" />
+              
+              {/* Image */}
+              <Image
+                src={industry.image}
+                alt={industry.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover/card:scale-110"
+              />
+              
+              {/* Left Edge Deep Shadow */}
+              {index > 0 && (
+                <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10 pointer-events-none" />
+              )}
+              
+              {/* Top Left Corner Shadow */}
+              {index > 0 && (
+                <div className="absolute left-0 top-0 w-40 h-40 bg-gradient-to-br from-black/60 to-transparent z-10 pointer-events-none" />
+              )}
+              
+              {/* Bottom Left Corner Shadow */}
+              {index > 0 && (
+                <div className="absolute left-0 bottom-0 w-40 h-40 bg-gradient-to-tr from-black/60 to-transparent z-10 pointer-events-none" />
+              )}
+              
+              {/* Right Edge Light Border */}
+              <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-white/40 z-10 pointer-events-none" />
+              
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 group-hover/card:opacity-70" />
+              
+              {/* Content */}
+              <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6 flex items-center justify-end gap-3 z-10">
+                <span className="text-white font-bold text-sm lg:text-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] whitespace-nowrap">
+                  {industry.title}
+                </span>
+                <div className="w-7 h-7 lg:w-8 lg:h-8 flex-shrink-0 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover/card:bg-primary group-hover/card:scale-110 shadow-lg">
+                  <ArrowRight className="h-3 w-3 lg:h-4 lg:w-4 text-white" />
+                </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );
