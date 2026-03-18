@@ -176,13 +176,13 @@ export function Navbar() {
                 <div className="bg-card rounded-lg shadow-[0_8px_40px_rgba(0,0,0,0.15)] p-4">
                   <div className="flex gap-4">
                     <div className="group/qr text-center">
-                      <div className="w-24 h-24 rounded overflow-hidden mb-2 cursor-pointer transition-all duration-300 group-hover/qr:scale-150 group-hover/qr:z-50 group-hover/qr:shadow-xl">
+                      <div className="w-24 h-24 rounded-lg overflow-hidden mb-2 border border-gray-200 cursor-pointer transition-all duration-300 group-hover/qr:scale-[1.8] group-hover/qr:z-50 group-hover/qr:shadow-xl group-hover/qr:border-primary">
                         <Image src="/images/qr-1.png" alt="微信客服1" width={96} height={96} className="w-full h-full object-cover" />
                       </div>
                       <p className="text-xs text-muted-foreground group-hover/qr:opacity-0 transition-opacity">微信客服1</p>
                     </div>
                     <div className="group/qr text-center">
-                      <div className="w-24 h-24 rounded overflow-hidden mb-2 cursor-pointer transition-all duration-300 group-hover/qr:scale-150 group-hover/qr:z-50 group-hover/qr:shadow-xl">
+                      <div className="w-24 h-24 rounded-lg overflow-hidden mb-2 border border-gray-200 cursor-pointer transition-all duration-300 group-hover/qr:scale-[1.8] group-hover/qr:z-50 group-hover/qr:shadow-xl group-hover/qr:border-primary">
                         <Image src="/images/qr-2.png" alt="微信客服2" width={96} height={96} className="w-full h-full object-cover" />
                       </div>
                       <p className="text-xs text-muted-foreground group-hover/qr:opacity-0 transition-opacity">微信客服2</p>
