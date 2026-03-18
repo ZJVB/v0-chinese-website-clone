@@ -1,13 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Package, Warehouse, ShieldCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const stats = [
-  { value: "20,000+", label: "日订单处理量" },
-  { value: "20,000㎡+", label: "仓储面积" },
-  { value: "24/7", label: "安保监控系统" },
-  { value: "15年+", label: "团队经验" },
+  { value: "20,000+", label: "日订单处理量", icon: Package },
+  { value: "20,000㎡+", label: "仓储面积", icon: Warehouse },
+  { value: "24/7", label: "安保监控系统", icon: ShieldCheck },
+  { value: "15年+", label: "团队经验", icon: Users },
 ];
 
 export function StatsSection() {
@@ -27,10 +27,11 @@ export function StatsSection() {
             >
               {/* Content area */}
               <div 
-                className="flex-1 flex flex-col items-center justify-center py-6 lg:py-8 px-4 lg:px-8"
+                className="group flex-1 flex flex-col items-center justify-center py-6 lg:py-8 px-4 lg:px-8"
                 style={{ backgroundColor: isOrange ? orangeColor : blueColor }}
               >
-                <div className="text-2xl lg:text-3xl font-bold text-white mb-1 text-center">
+                <stat.icon className="h-6 w-6 lg:h-8 lg:w-8 text-white/90 mb-2 transition-transform duration-300 group-hover:scale-110 group-hover:animate-pulse" />
+                <div className="text-2xl lg:text-3xl font-bold text-white mb-1 text-center transition-transform duration-300 group-hover:scale-105">
                   {stat.value}
                 </div>
                 <div className="text-xs lg:text-sm text-white/80 text-center">{stat.label}</div>
