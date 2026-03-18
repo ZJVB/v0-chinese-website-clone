@@ -1,56 +1,89 @@
 import Link from "next/link";
 import Image from "next/image";
-import { BadgeCheck, TrendingUp, Building2, ShieldCheck, Users, ArrowRight } from "lucide-react";
+import { ArrowRight, Package, Warehouse, Cctv, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const stats = [
-  { icon: BadgeCheck, value: "HMRC 认可", label: "FHDDS 认证服务商" },
-  { icon: TrendingUp, value: "20,000+", label: "日订单处理量" },
-  { icon: Building2, value: "30,000㎡+", label: "仓储面积" },
-  { icon: ShieldCheck, value: "24/7", label: "安保监控系统" },
-  { icon: Users, value: "15年+", label: "团队经验" },
+  { value: "20,000+", label: "日订单处理量", icon: Package },
+  { value: "20,000㎡+", label: "仓储面积", icon: Warehouse },
+  { value: "24/7", label: "安保监控系统", icon: Cctv },
+  { value: "15年+", label: "团队经验", icon: Users },
 ];
 
 export function StatsSection() {
   return (
-    <section className="py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        {/* Stats Row */}
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 lg:gap-5">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="group rounded-xl bg-card p-5 shadow-[0_1px_16px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:-translate-y-0.5 text-center"
+    <section className="bg-white">
+      {/* Stats Banner - Full Width with Alternating Colors */}
+      <div className="flex flex-wrap lg:flex-nowrap">
+        {stats.map((stat, index) => {
+          const isOrange = index % 2 === 0;
+          const nextIsOrange = (index + 1) % 2 === 0;
+          const orangeColor = '#ff5500';
+          const blueColor = '#2d3a4f';
+          return (
+            <div 
+              key={stat.label} 
+              className="flex w-1/2 lg:w-auto lg:flex-1"
             >
-              <div className="mx-auto mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                <stat.icon className="h-6 w-6 text-primary" />
+              {/* Content area */}
+              <div 
+                className="group flex-1 flex flex-col items-center justify-center py-6 lg:py-8 px-4 lg:px-8"
+                style={{ backgroundColor: isOrange ? orangeColor : blueColor }}
+              >
+                <stat.icon className="h-6 w-6 lg:h-8 lg:w-8 text-white/90 mb-2 transition-transform duration-300 group-hover:scale-110 group-hover:animate-pulse" />
+                <div className="text-2xl lg:text-3xl font-bold text-white mb-1 text-center transition-transform duration-300 group-hover:scale-105">
+                  {stat.value}
+                </div>
+                <div className="text-xs lg:text-sm text-white/80 text-center">{stat.label}</div>
               </div>
-              <div className="mb-1 text-lg font-bold text-foreground lg:text-xl">
-                {stat.value}
-              </div>
-              <div className="text-xs text-muted-foreground">{stat.label}</div>
+              
+              {/* Diagonal divider (desktop only) */}
+              {index < stats.length - 1 && (
+                <div className="hidden lg:flex w-0 relative">
+                  <svg 
+                    className="absolute left-0 top-0 h-full w-6" 
+                    viewBox="0 0 24 100" 
+                    preserveAspectRatio="none"
+                  >
+                    <polygon 
+                      points="0,0 24,0 0,100" 
+                      fill={isOrange ? orangeColor : blueColor} 
+                    />
+                    <polygon 
+                      points="24,0 24,100 0,100" 
+                      fill={nextIsOrange ? orangeColor : blueColor} 
+                    />
+                  </svg>
+                </div>
+              )}
             </div>
-          ))}
-        </div>
+          );
+        })}
+      </div>
 
-        {/* TEMU Feature Section - Merged here */}
-        <div className="mt-14 grid items-center gap-8 rounded-2xl bg-gradient-to-br from-[#f8fafc] to-white p-6 lg:grid-cols-2 lg:gap-12 lg:p-10">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.08)]">
+      {/* TEMU Feature Section - Full background image */}
+      <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-20">
+        <div className="relative overflow-hidden rounded-2xl">
+          {/* Background Image */}
+          <div className="absolute inset-0">
             <Image
-              src="/images/service-temu.jpg"
-              alt="TEMU 官方认证仓"
+              src="/images/temu-ranking.jpg"
+              alt="TEMU 官方认证仓 - 履约排名前列"
               fill
               className="object-cover"
             />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
           </div>
-          <div>
-            <div className="mb-3 inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+          
+          {/* Content */}
+          <div className="relative z-10 p-8 lg:p-12 lg:max-w-xl">
+            <div className="mb-3 inline-block rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-xs font-medium text-white">
               TEMU 官方认证仓
             </div>
-            <h2 className="mb-4 text-2xl font-bold text-foreground lg:text-3xl">
+            <h2 className="mb-4 text-2xl font-bold text-white lg:text-3xl">
               履约表现持续位居<span className="text-primary">前列</span>
             </h2>
-            <p className="mb-6 text-muted-foreground leading-relaxed">
+            <p className="mb-6 text-white/80 leading-relaxed">
               作为 TEMU 官方认证仓，Cube海外仓依托标准化作业流程和稳定的订单处理能力，为平台卖家提供更高效、更可靠的英国本地仓配支持。
             </p>
             <Button asChild className="gap-2 rounded-md">

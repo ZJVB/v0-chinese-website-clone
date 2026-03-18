@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, QrCode } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const solutionItems = [
   { label: "TEMU 官方认证仓", href: "/solutions/temu" },
@@ -25,18 +25,13 @@ const warehouseItems = [
 
 
 
-const aboutItems = [
-  { label: "公司介绍", href: "/about" },
-  { label: "资讯与合作", href: "/news" },
-];
-
 const navLinks = [
   { href: "/", label: "首页", dropdown: null },
   { href: "/solutions", label: "解决方案", dropdown: "solutions" as const },
   { href: "/warehousing", label: "仓储与派送", dropdown: "warehousing" as const },
   { href: "/industries", label: "行业", dropdown: null },
   { href: "/technology", label: "技术支持", dropdown: null },
-  { href: "/about", label: "关于我们", dropdown: "about" as const },
+  { href: "/about", label: "关于我们", dropdown: null },
   { href: "/contact", label: "联系我们", dropdown: null },
 ];
 
@@ -78,7 +73,6 @@ export function Navbar() {
     switch (key) {
       case "solutions": return solutionItems;
       case "warehousing": return warehouseItems;
-      case "about": return aboutItems;
       default: return [];
     }
   }
@@ -169,33 +163,20 @@ export function Navbar() {
           })}
         </nav>
 
-        {/* WeChat QR codes placeholder */}
+        {/* WeChat QR codes - directly displayed */}
         <div className="hidden shrink-0 items-center gap-3 lg:flex">
-          <div className="flex items-center gap-2">
-            <div className="relative group">
-              <div className="flex items-center gap-1.5 text-sm cursor-pointer transition-colors text-[#424444] hover:text-primary">
-                <QrCode className="h-4 w-4" />
-                <span className="text-xs">扫码咨询</span>
-              </div>
-              {/* QR hover popup */}
-              <div className="absolute right-0 top-full pt-2 hidden group-hover:block z-50">
-                <div className="bg-card rounded-lg shadow-[0_8px_40px_rgba(0,0,0,0.15)] p-4">
-                  <div className="flex gap-4">
-                    <div className="group/qr text-center">
-                      <div className="w-24 h-24 rounded overflow-hidden mb-2 cursor-pointer transition-all duration-300 group-hover/qr:scale-150 group-hover/qr:z-50 group-hover/qr:shadow-xl">
-                        <Image src="/images/qr-1.png" alt="微信客服1" width={96} height={96} className="w-full h-full object-cover" />
-                      </div>
-                      <p className="text-xs text-muted-foreground group-hover/qr:opacity-0 transition-opacity">微信客服1</p>
-                    </div>
-                    <div className="group/qr text-center">
-                      <div className="w-24 h-24 rounded overflow-hidden mb-2 cursor-pointer transition-all duration-300 group-hover/qr:scale-150 group-hover/qr:z-50 group-hover/qr:shadow-xl">
-                        <Image src="/images/qr-2.png" alt="微信客服2" width={96} height={96} className="w-full h-full object-cover" />
-                      </div>
-                      <p className="text-xs text-muted-foreground group-hover/qr:opacity-0 transition-opacity">微信客服2</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div className="text-right mr-1">
+            <p className="text-xs font-medium text-foreground">微信咨询</p>
+            <p className="text-[10px] text-muted-foreground">悬停放大扫码</p>
+          </div>
+          <div className="group/qr text-center z-20 hover:z-[100]">
+            <div className="w-12 h-12 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover/qr:scale-[2.8] group-hover/qr:shadow-xl group-hover/qr:border-primary">
+              <Image src="/images/qr-1.png" alt="微信客服1" width={48} height={48} className="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div className="group/qr text-center z-10 hover:z-[100]">
+            <div className="w-12 h-12 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover/qr:scale-[2.8] group-hover/qr:shadow-xl group-hover/qr:border-primary">
+              <Image src="/images/qr-2.png" alt="微信客服2" width={48} height={48} className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -243,10 +224,21 @@ export function Navbar() {
               </div>
             ))}
 
-            <div className="mt-3 border-t border-border pt-3">
-              <div className="flex items-center gap-2 px-3 text-sm text-muted-foreground">
-                <QrCode className="h-4 w-4" />
-                扫码添加微信咨询
+            <div className="mt-3 border-t border-border pt-3 px-3">
+              <p className="text-sm text-muted-foreground mb-3">扫码添加微信咨询</p>
+              <div className="flex gap-4">
+                <div className="text-center">
+                  <div className="w-20 h-20 rounded-lg overflow-hidden border border-gray-200">
+                    <Image src="/images/qr-1.png" alt="微信客服1" width={80} height={80} className="w-full h-full object-cover" />
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-1">客服1</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-20 h-20 rounded-lg overflow-hidden border border-gray-200">
+                    <Image src="/images/qr-2.png" alt="微信客服2" width={80} height={80} className="w-full h-full object-cover" />
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-1">客服2</p>
+                </div>
               </div>
             </div>
           </nav>

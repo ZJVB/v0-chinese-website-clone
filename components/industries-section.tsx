@@ -1,99 +1,109 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Shirt, Zap, Smartphone, Sofa, Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { SectionTitle } from "@/components/section-title";
+import { ArrowRight } from "lucide-react";
 
 const industries = [
   {
-    icon: Shirt,
-    title: "时尚服饰与快消品",
-    description: "适合高频出货、多 SKU 管理与快速周转场景。",
-    href: "/industries/fashion",
+    title: "时尚服饰",
+    href: "/industries#fashion",
     image: "/images/industry-fashion.jpg",
   },
   {
-    icon: Zap,
-    title: "新能源与电池",
-    description: "更重视流程、合规与产品属性管理，适合对执行要求较高的仓储与物流场景。",
-    href: "/industries/energy",
+    title: "新能源电池",
+    href: "/industries#energy",
     image: "/images/industry-energy.jpg",
   },
   {
-    icon: Smartphone,
-    title: "消费电子与高价值商品",
-    description: "更关注库存准确、包装保护、追踪可视化与签收体验。",
-    href: "/industries/electronics",
+    title: "消费电子",
+    href: "/industries#electronics",
     image: "/images/industry-electronics.jpg",
   },
   {
-    icon: Sofa,
-    title: "大件家居与器材",
-    description: "适合需要大件仓储、分拨及复杂交付支持的业务。",
-    href: "/industries/home-garden",
+    title: "家居用品",
+    href: "/industries#home",
     image: "/images/industry-furniture.jpg",
   },
   {
-    icon: Sparkles,
-    title: "美妆与保健品",
-    description: "适合高频小件订单、批次管理和消费者体验要求较高的场景。",
-    href: "/industries/health",
+    title: "美妆健康",
+    href: "/industries#health",
     image: "/images/industry-beauty.jpg",
   },
 ];
 
 export function IndustriesSection() {
   return (
-    <section className="bg-card py-16 lg:py-24">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <SectionTitle
-          title="针对不同行业特点，提供"
-          highlight="更匹配的本地履约支持"
-          subtitle="不同产品在仓储、履约、配送和售后上的要求并不相同。Cube Cang 结合不同行业的业务特点，为客户提供更符合实际运营需求的英国本地物流支持。"
-        />
+    <section className="bg-white">
+      {/* Header */}
+      <div className="py-12 lg:py-16 text-center">
+        <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+          行业覆盖
+        </span>
+        <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">
+          覆盖多个<span className="text-primary">重点行业</span>
+        </h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto px-4">
+          针对不同品类特性提供定制化仓储与履约方案
+        </p>
+      </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {industries.map((item) => (
+      {/* Industry Cards - Stacked with Spread on Hover */}
+      <div className="group/container relative w-full h-[400px] lg:h-[500px] overflow-hidden">
+        <div className="absolute inset-0 flex">
+          {industries.map((industry, index) => (
             <Link
-              key={item.title}
-              href={item.href}
-              className="group relative block aspect-[3/4] overflow-hidden rounded-xl shadow-[0_1px_19px_0_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)]"
+              key={industry.title}
+              href={industry.href}
+              className="group/card relative flex-1 h-full overflow-hidden transition-all duration-500 ease-out
+                hover:flex-[2.5] hover:z-50
+                group-hover/container:[&:not(:hover)]:flex-[0.7]"
+              style={{ 
+                zIndex: industries.length - index,
+                marginLeft: index > 0 ? '-30px' : '0',
+              }}
             >
-              {/* Background Image */}
+              {/* Card Shadow/Border for depth */}
+              <div className="absolute inset-0 shadow-[-16px_0_40px_rgba(0,0,0,0.6)] z-0" />
+              
+              {/* Image */}
               <Image
-                src={item.image}
-                alt={item.title}
+                src={industry.image}
+                alt={industry.title}
                 fill
-                className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
+                className="object-cover transition-transform duration-500 group-hover/card:scale-110"
               />
               
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-all duration-300 group-hover:from-black/90 group-hover:via-black/40" />
+              {/* Left Edge Deep Shadow */}
+              {index > 0 && (
+                <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10 pointer-events-none" />
+              )}
               
-              {/* Content Overlay */}
-              <div className="absolute inset-x-0 bottom-0 p-5">
-                <h3 className="mb-2 text-lg font-bold text-white transition-colors duration-300 group-hover:text-primary">
-                  {item.title}
-                </h3>
-                <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-white/80">
-                  {item.description}
-                </p>
-                <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all duration-300 group-hover:gap-3">
-                  了解详情
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              {/* Top Left Corner Shadow */}
+              {index > 0 && (
+                <div className="absolute left-0 top-0 w-40 h-40 bg-gradient-to-br from-black/60 to-transparent z-10 pointer-events-none" />
+              )}
+              
+              {/* Bottom Left Corner Shadow */}
+              {index > 0 && (
+                <div className="absolute left-0 bottom-0 w-40 h-40 bg-gradient-to-tr from-black/60 to-transparent z-10 pointer-events-none" />
+              )}
+              
+              {/* Right Edge Light Border */}
+              <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-white/40 z-10 pointer-events-none" />
+              
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 group-hover/card:opacity-70" />
+              
+              {/* Content */}
+              <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6 flex items-center justify-end gap-3 z-10">
+                <span className="text-white font-bold text-sm lg:text-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] whitespace-nowrap">
+                  {industry.title}
                 </span>
+                <div className="w-7 h-7 lg:w-8 lg:h-8 flex-shrink-0 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover/card:bg-primary group-hover/card:scale-110 shadow-lg">
+                  <ArrowRight className="h-3 w-3 lg:h-4 lg:w-4 text-white" />
+                </div>
               </div>
             </Link>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <Button asChild variant="outline" size="lg" className="gap-2 rounded-md">
-            <Link href="/industries">
-              查看行业解决方案
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
         </div>
       </div>
     </section>
