@@ -15,7 +15,7 @@ export default function TermsPage() {
         <section className="bg-gradient-to-b from-[#1a1f2e] to-[#2d3a4f] py-16 lg:py-20">
           <div className="mx-auto max-w-4xl px-4 lg:px-8 text-center">
             <h1 className="text-3xl lg:text-4xl font-bold text-white mb-4">服务条款</h1>
-            <p className="text-white/70">最后更新日期：2024年1月1日</p>
+            <p className="text-white/70">{"最后更新日期：2024年1月1日"}</p>
           </div>
         </section>
 
@@ -127,9 +127,9 @@ export default function TermsPage() {
               <div className="bg-muted/30 rounded-lg p-6 mt-4">
                 <p className="text-muted-foreground mb-2"><strong>Cube Distribution Service Ltd</strong></p>
                 <p className="text-muted-foreground mb-2">公司注册号：12909860</p>
-                <p className="text-muted-foreground mb-2">地址：Unit 5, Industrial Estate, London, UK</p>
-                <p className="text-muted-foreground mb-2">邮箱：legal@cubedistribution.co.uk</p>
-                <p className="text-muted-foreground">电话：+44 20 1234 5678</p>
+                <p className="text-muted-foreground mb-2">地址：Zainhub Gate2, Lord North Street, Manchester, M40 8HT, United Kingdom</p>
+                <p className="text-muted-foreground mb-2">邮箱：contact@thecubedistribution.com</p>
+                <p className="text-muted-foreground">电话：+44 161 566 2392 / 7599588577</p>
               </div>
             </div>
           </div>
