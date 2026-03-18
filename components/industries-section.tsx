@@ -46,15 +46,21 @@ export function IndustriesSection() {
         </p>
       </div>
 
-      {/* Industry Cards - Full Width with Layered Effect */}
+      {/* Industry Cards - Full Width with Strong Layered Effect */}
       <div className="relative flex flex-wrap lg:flex-nowrap">
         {industries.map((industry, index) => (
           <Link
             key={industry.title}
             href={industry.href}
-            className="group relative w-1/2 md:w-1/3 lg:w-1/5 aspect-[4/5] lg:aspect-[3/4] overflow-hidden transition-all duration-500 hover:z-20 hover:scale-[1.02]"
-            style={{ zIndex: industries.length - index }}
+            className="group relative w-1/2 md:w-1/3 lg:w-1/5 aspect-[4/5] lg:aspect-[3/4] overflow-hidden transition-all duration-500 hover:z-30 hover:scale-105"
+            style={{ 
+              zIndex: industries.length - index,
+              marginLeft: index > 0 ? '-12px' : '0',
+            }}
           >
+            {/* Card Shadow/Border for depth */}
+            <div className="absolute inset-0 shadow-[-8px_0_20px_rgba(0,0,0,0.4)] z-0" />
+            
             {/* Image */}
             <Image
               src={industry.image}
@@ -63,23 +69,33 @@ export function IndustriesSection() {
               className="object-cover transition-transform duration-500 group-hover:scale-110"
             />
             
-            {/* Left Edge Shadow for depth */}
+            {/* Left Edge Deep Shadow */}
             {index > 0 && (
-              <div className="absolute left-0 top-0 bottom-0 w-4 bg-gradient-to-r from-black/30 to-transparent z-10 pointer-events-none" />
+              <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-black/60 via-black/30 to-transparent z-10 pointer-events-none" />
             )}
             
-            {/* Right Edge Highlight */}
-            <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-white/20 z-10 pointer-events-none" />
+            {/* Top Left Corner Shadow */}
+            {index > 0 && (
+              <div className="absolute left-0 top-0 w-20 h-20 bg-gradient-to-br from-black/40 to-transparent z-10 pointer-events-none" />
+            )}
+            
+            {/* Bottom Left Corner Shadow */}
+            {index > 0 && (
+              <div className="absolute left-0 bottom-0 w-20 h-20 bg-gradient-to-tr from-black/40 to-transparent z-10 pointer-events-none" />
+            )}
+            
+            {/* Right Edge Light Border */}
+            <div className="absolute right-0 top-0 bottom-0 w-[1px] bg-white/30 z-10 pointer-events-none" />
             
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 group-hover:opacity-80" />
             
             {/* Content */}
             <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6 flex items-center justify-between z-10">
-              <span className="text-white font-bold text-sm lg:text-lg drop-shadow-lg">
+              <span className="text-white font-bold text-sm lg:text-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                 {industry.title}
               </span>
-              <div className="w-7 h-7 lg:w-8 lg:h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
+              <div className="w-7 h-7 lg:w-8 lg:h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:scale-110 shadow-lg">
                 <ArrowRight className="h-3 w-3 lg:h-4 lg:w-4 text-white" />
               </div>
             </div>
