@@ -41,11 +41,11 @@ export function StatsSection() {
                   >
                     <polygon 
                       points="0,0 24,0 0,100" 
-                      fill={isOrange ? '#f97316' : '#2d3a4f'} 
+                      fill={isOrange ? '#ff5500' : '#2d3a4f'} 
                     />
                     <polygon 
                       points="24,0 24,100 0,100" 
-                      fill={nextIsOrange ? '#f97316' : '#2d3a4f'} 
+                      fill={nextIsOrange ? '#ff5500' : '#2d3a4f'} 
                     />
                   </svg>
                 </div>
