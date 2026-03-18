@@ -19,12 +19,12 @@ export const metadata: Metadata = {
 };
 
 const timeline = [
-  { year: "2020", title: "公司成立", desc: "公司正式成立，开启专注于跨境电商仓储物流的业务。" },
-  { year: "2021", title: "初步扩展", desc: "仓储面积扩增至 5,000 平方米，提升仓储能力与服务水平。" },
-  { year: "2023", title: "效率提升", desc: "日处理订单量突破 3,000 单，运营效率显著提升。" },
-  { year: "2024", title: "业务多元化", desc: "仓库扩展至 10,000 平方米；成功开通 TikTok 对接及代发项目；年底日订单量突破 10,000 单。" },
-  { year: "2025", title: "官方认证", desc: "获得 TEMU 官方认证，成为 TEMU 海外仓合作伙伴。" },
-  { year: "2026", title: "持续壮大", desc: "仓库规模进一步扩大至 20,000 平方米，持续强化仓储与物流服务能力。" },
+  { year: "2020", title: "公司成立", desc: "公司正式成立，开启专注于跨境电商仓储物流的业务。", image: "/images/timeline-2020.jpg" },
+  { year: "2021", title: "初步扩展", desc: "仓储面积扩增至 5,000 平方米，提升仓储能力与服务水平。", image: "/images/timeline-2021.jpg" },
+  { year: "2023", title: "效率提升", desc: "日处理订单量突破 3,000 单，运营效率显著提升。", image: "/images/timeline-2023.jpg" },
+  { year: "2024", title: "业务多元化", desc: "仓库扩展至 10,000 平方米；成功开通 TikTok 对接及代发项目；年底日订单量突破 10,000 单。", image: "/images/timeline-2024.jpg" },
+  { year: "2025", title: "官方认证", desc: "获得 TEMU 官方认证，成为 TEMU 海外仓合作伙伴。", image: "/images/timeline-2025.jpg" },
+  { year: "2026", title: "持续壮大", desc: "仓库规模进一步扩大至 20,000 平方米，持续强化仓储与物流服务能力。", image: "/images/timeline-2026.jpg" },
 ];
 
 const values = [
@@ -95,51 +95,57 @@ export default function AboutPage() {
               </h2>
             </div>
             
-            {/* Timeline - Interactive Cards */}
+            {/* Timeline - Interactive Cards with Images */}
             <div className="relative">
               {/* Central timeline line */}
               <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/20 via-primary to-primary/20 -translate-x-1/2 hidden lg:block" />
               
-              <div className="space-y-8 lg:space-y-0">
+              <div className="space-y-12 lg:space-y-16">
                 {timeline.map((item, index) => (
                   <div 
                     key={item.year}
                     className={`relative group lg:flex lg:items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
                   >
-                    {/* Content Card */}
-                    <div className={`lg:w-[45%] ${index % 2 === 0 ? 'lg:pr-12 lg:text-right' : 'lg:pl-12 lg:text-left'}`}>
-                      <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 transition-all duration-500 group-hover:bg-white/10 group-hover:border-primary/50 group-hover:shadow-xl group-hover:shadow-primary/10 group-hover:-translate-y-1">
-                        {/* Glow effect */}
-                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    {/* Content Card with Image */}
+                    <div className={`lg:w-[45%] ${index % 2 === 0 ? 'lg:pr-16' : 'lg:pl-16'}`}>
+                      <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 transition-all duration-500 group-hover:bg-white/10 group-hover:border-primary/50 group-hover:shadow-2xl group-hover:shadow-primary/20 group-hover:-translate-y-2">
+                        {/* Image */}
+                        <div className="relative h-48 lg:h-56 overflow-hidden">
+                          <Image
+                            src={item.image}
+                            alt={item.title}
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#1a1f2e] via-transparent to-transparent" />
+                          
+                          {/* Year badge on image */}
+                          <div className="absolute top-4 right-4 px-4 py-2 rounded-full bg-primary/90 backdrop-blur-sm shadow-lg">
+                            <span className="text-sm font-bold text-white">{item.year}</span>
+                          </div>
+                        </div>
                         
-                        <div className="relative z-10">
-                          <h3 className="text-lg lg:text-xl font-bold text-white mb-2 transition-colors duration-300 group-hover:text-primary">{item.title}</h3>
+                        {/* Text Content */}
+                        <div className={`p-6 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
+                          <h3 className="text-xl lg:text-2xl font-bold text-white mb-3 transition-colors duration-300 group-hover:text-primary">{item.title}</h3>
                           <p className="text-white/70 text-sm lg:text-base leading-relaxed">{item.desc}</p>
                         </div>
                         
                         {/* Connector line to center (desktop) */}
-                        <div className={`hidden lg:block absolute top-1/2 w-12 h-0.5 bg-gradient-to-r ${index % 2 === 0 ? 'right-0 translate-x-full from-white/20 to-primary' : 'left-0 -translate-x-full from-primary to-white/20'} -translate-y-1/2`} />
+                        <div className={`hidden lg:block absolute top-1/2 w-16 h-0.5 ${index % 2 === 0 ? 'right-0 translate-x-full bg-gradient-to-r from-white/30 to-primary' : 'left-0 -translate-x-full bg-gradient-to-l from-white/30 to-primary'} -translate-y-1/2`} />
                       </div>
                     </div>
                     
-                    {/* Year Badge - Center */}
+                    {/* Year Badge - Center (Desktop) */}
                     <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 z-20">
                       {/* Outer ring animation */}
-                      <div className="absolute inset-0 rounded-full border-2 border-primary/40 scale-100 opacity-0 group-hover:scale-150 group-hover:opacity-100 transition-all duration-700 animate-pulse" />
-                      <div className="absolute inset-0 rounded-full bg-primary/30 blur-xl scale-0 group-hover:scale-150 transition-transform duration-500" />
+                      <div className="absolute inset-0 rounded-full border-2 border-primary/40 scale-100 opacity-0 group-hover:scale-[1.8] group-hover:opacity-100 transition-all duration-700" />
+                      <div className="absolute inset-0 rounded-full bg-primary/40 blur-xl scale-0 group-hover:scale-[2] transition-transform duration-500" />
                       
                       {/* Year circle */}
-                      <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-primary via-primary to-orange-400 shadow-lg shadow-primary/30 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-primary/50">
-                        <span className="text-lg font-black text-white">{item.year}</span>
+                      <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-primary via-primary to-orange-400 shadow-lg shadow-primary/40 flex items-center justify-center transition-all duration-500 group-hover:scale-125 group-hover:shadow-2xl group-hover:shadow-primary/60">
+                        <span className="text-xl font-black text-white">{item.year}</span>
                       </div>
-                    </div>
-                    
-                    {/* Mobile Year Badge */}
-                    <div className="lg:hidden flex items-center gap-4 mb-4">
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-orange-400 shadow-lg flex items-center justify-center">
-                        <span className="text-base font-black text-white">{item.year}</span>
-                      </div>
-                      <div className="h-0.5 flex-1 bg-gradient-to-r from-primary to-transparent" />
                     </div>
                     
                     {/* Empty space for opposite side (desktop) */}
