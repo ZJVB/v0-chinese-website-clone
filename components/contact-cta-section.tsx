@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export function ContactCtaSection() {
   return (
-    <section className="relative py-20 lg:py-28 overflow-hidden">
+    <section className="relative py-12 lg:py-16 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/80" />
       
@@ -21,11 +21,11 @@ export function ContactCtaSection() {
           <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
             正在寻找可靠的英国本地物流伙伴？
           </h2>
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-white/80 leading-relaxed">
+          <p className="mx-auto mb-6 max-w-2xl text-base text-white/80 leading-relaxed">
             欢迎联系我们，获取适合您业务模式、订单结构和产品类型的英国仓储与履约方案
           </p>
           
-          <div className="flex flex-wrap justify-center gap-4 mb-10">
+          <div className="flex flex-wrap justify-center gap-4 mb-6">
             <Button asChild size="lg" className="gap-2 rounded-full px-8 bg-white text-primary hover:bg-white/90 shadow-xl shadow-black/20 transition-all duration-300 hover:scale-105">
               <Link href="/contact">
                 联系我们
@@ -35,8 +35,7 @@ export function ContactCtaSection() {
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="border-white/30 text-white hover:bg-white/10 rounded-full px-8 transition-all duration-300"
+              className="rounded-full px-8 bg-white/20 backdrop-blur-sm text-white font-medium border border-white/40 hover:bg-white hover:text-primary transition-all duration-300"
             >
               <Link href="/contact">获取报价</Link>
             </Button>
