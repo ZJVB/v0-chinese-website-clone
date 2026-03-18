@@ -69,11 +69,6 @@ export function ServicesSection() {
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-90" />
               
-              {/* Index number */}
-              <div className="absolute top-4 left-4 w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                <span className="text-white text-sm font-bold">{index + 1}</span>
-              </div>
-              
               {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-5">
                 <h3 className="mb-2 text-lg font-bold text-white transition-colors duration-300 group-hover:text-primary">
