@@ -8,6 +8,14 @@ import { Button } from "@/components/ui/button";
 
 const banners = [
   {
+    id: 3,
+    title: "TEMU 官方认证仓，履约表现持续位居前列",
+    subtitle: "依托标准化作业流程、稳定的订单处理能力和英国本地履约资源，Cube海外仓为 TEMU 卖家提供更高效、更可靠的本地仓配支持。",
+    image: "/images/hero-temu.jpg",
+    link: "/solutions/temu",
+    linkText: "了解 TEMU 服务",
+  },
+  {
     id: 1,
     title: "英国本地仓储与履约解决方案",
     subtitle: "为跨境品牌、平台卖家及分销客户提供一站式英国本地仓储、履约与配送支持。",
@@ -22,14 +30,6 @@ const banners = [
     image: "/images/service-fba.jpg",
     link: "/warehousing",
     linkText: "了解仓储服务",
-  },
-  {
-    id: 3,
-    title: "TEMU 官方认证仓，履约表现持续位居前列",
-    subtitle: "依托标准化作业流程、稳定的订单处理能力和英国本地履约资源，Cube海外仓为 TEMU 卖家提供更高效、更可靠的本地仓配支持。",
-    image: "/images/hero-temu.jpg",
-    link: "/solutions/temu",
-    linkText: "了解 TEMU 服务",
   },
 ];
 
