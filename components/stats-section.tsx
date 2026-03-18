@@ -4,36 +4,39 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const stats = [
-  { value: "98%", label: "订单履约率" },
-  { value: "99%", label: "客户满意度" },
-  { value: "27%", label: "价格节约" },
-  { value: "5000+", label: "日均处理订单量" },
+  { value: "HMRC 认可", label: "FHDDS 认证服务商" },
+  { value: "20,000+", label: "日订单处理量" },
+  { value: "20,000㎡+", label: "仓储面积" },
+  { value: "24/7", label: "安保监控系统" },
+  { value: "15年+", label: "团队经验" },
 ];
 
 export function StatsSection() {
   return (
     <section className="bg-white">
-      {/* Stats Banner - Split Design */}
-      <div className="flex flex-col lg:flex-row">
+      {/* Stats Banner - Split Design with Diagonal Divider */}
+      <div className="relative flex flex-col lg:flex-row overflow-hidden">
         {/* Left - Title Section */}
-        <div className="bg-[#2d3a4f] px-8 py-8 lg:px-12 lg:py-10 lg:w-[280px] flex items-center justify-center lg:justify-start">
+        <div className="relative bg-[#2d3a4f] px-8 py-8 lg:px-12 lg:py-10 lg:w-[320px] flex items-center justify-center lg:justify-start z-10">
           <h2 className="text-2xl lg:text-3xl font-bold text-white whitespace-nowrap">
             我们的成绩
           </h2>
+          {/* Diagonal divider - slanted edge */}
+          <div className="hidden lg:block absolute top-0 -right-8 w-16 h-full bg-[#2d3a4f] transform skew-x-[-12deg]" />
         </div>
         
         {/* Right - Stats Section */}
         <div className="flex-1 bg-primary">
-          <div className="grid grid-cols-2 lg:grid-cols-4 h-full">
-            {stats.map((stat) => (
+          <div className="grid grid-cols-2 lg:grid-cols-5 h-full">
+            {stats.map((stat, index) => (
               <div
                 key={stat.label}
-                className="flex flex-col items-center justify-center py-6 lg:py-8 px-4 border-b border-r border-white/10 lg:border-b-0 last:border-r-0 [&:nth-child(2)]:border-r-0 lg:[&:nth-child(2)]:border-r"
+                className="flex flex-col items-center justify-center py-6 lg:py-8 px-3 lg:px-4 border-b border-r border-white/10 lg:border-b-0 last:border-r-0 [&:nth-child(2)]:border-r-0 lg:[&:nth-child(2)]:border-r"
               >
-                <div className="text-2xl lg:text-4xl font-bold text-white mb-1">
+                <div className={`font-bold text-white mb-1 text-center ${index === 0 ? 'text-lg lg:text-xl' : 'text-2xl lg:text-3xl'}`}>
                   {stat.value}
                 </div>
-                <div className="text-sm text-white/80">{stat.label}</div>
+                <div className="text-xs lg:text-sm text-white/80 text-center">{stat.label}</div>
               </div>
             ))}
           </div>
