@@ -26,10 +26,13 @@ export function StatsSection() {
               </div>
               {/* Diagonal divider between items */}
               {index < stats.length - 1 && (
-                <div className="hidden lg:block relative w-6 h-full self-stretch">
+                <div className="hidden lg:block relative w-8 self-stretch overflow-hidden">
+                  {/* Blue background fills entire divider area */}
+                  <div className="absolute inset-0 bg-[#2d3a4f]" />
+                  {/* Orange triangle covers right portion */}
                   <div 
-                    className="absolute inset-0 bg-[#2d3a4f]"
-                    style={{ clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }}
+                    className="absolute inset-0 bg-primary"
+                    style={{ clipPath: 'polygon(100% 0, 0 100%, 100% 100%)' }}
                   />
                 </div>
               )}
