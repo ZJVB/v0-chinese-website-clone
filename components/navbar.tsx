@@ -164,15 +164,19 @@ export function Navbar() {
         </nav>
 
         {/* WeChat QR codes - directly displayed */}
-        <div className="hidden shrink-0 items-center gap-4 lg:flex">
+        <div className="hidden shrink-0 items-center gap-3 lg:flex">
+          <div className="text-right mr-1">
+            <p className="text-xs font-medium text-foreground">微信咨询</p>
+            <p className="text-[10px] text-muted-foreground">悬停放大扫码</p>
+          </div>
           <div className="group/qr text-center z-20 hover:z-[100]">
-            <div className="w-14 h-14 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover/qr:scale-[2.5] group-hover/qr:shadow-xl group-hover/qr:border-primary">
-              <Image src="/images/qr-1.png" alt="微信客服1" width={56} height={56} className="w-full h-full object-cover" />
+            <div className="w-12 h-12 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover/qr:scale-[2.8] group-hover/qr:shadow-xl group-hover/qr:border-primary">
+              <Image src="/images/qr-1.png" alt="微信客服1" width={48} height={48} className="w-full h-full object-cover" />
             </div>
           </div>
           <div className="group/qr text-center z-10 hover:z-[100]">
-            <div className="w-14 h-14 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover/qr:scale-[2.5] group-hover/qr:shadow-xl group-hover/qr:border-primary">
-              <Image src="/images/qr-2.png" alt="微信客服2" width={56} height={56} className="w-full h-full object-cover" />
+            <div className="w-12 h-12 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover/qr:scale-[2.8] group-hover/qr:shadow-xl group-hover/qr:border-primary">
+              <Image src="/images/qr-2.png" alt="微信客服2" width={48} height={48} className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
