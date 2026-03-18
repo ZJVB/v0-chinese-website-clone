@@ -13,22 +13,38 @@ const stats = [
 
 export function StatsSection() {
   return (
-    <section className="py-16 lg:py-20">
+    <section className="py-16 lg:py-20 bg-white">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-10">
+          <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">
+            专业实力，值得信赖
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            依托完善的基础设施与专业团队，为客户提供稳定可靠的英国本地仓储服务
+          </p>
+        </div>
+        
         {/* Stats Row */}
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 lg:gap-5">
-          {stats.map((stat) => (
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 lg:gap-6">
+          {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className="group rounded-xl bg-card p-5 shadow-[0_1px_16px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:-translate-y-0.5 text-center"
+              className="group relative rounded-2xl bg-gradient-to-br from-white to-gray-50 p-6 border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-primary/20 text-center overflow-hidden"
             >
-              <div className="mx-auto mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                <stat.icon className="h-6 w-6 text-primary" />
+              {/* Decorative background number */}
+              <span className="absolute -right-2 -top-4 text-7xl font-black text-gray-100/50 select-none">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <div className="relative z-10">
+                <div className="mx-auto mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
+                  <stat.icon className="h-7 w-7 text-primary transition-colors duration-300 group-hover:text-white" />
+                </div>
+                <div className="mb-1 text-xl font-bold text-foreground lg:text-2xl">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
               </div>
-              <div className="mb-1 text-lg font-bold text-foreground lg:text-xl">
-                {stat.value}
-              </div>
-              <div className="text-xs text-muted-foreground">{stat.label}</div>
             </div>
           ))}
         </div>

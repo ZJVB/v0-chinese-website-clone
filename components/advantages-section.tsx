@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { SectionTitle } from "@/components/section-title";
 
 const platforms = [
   { name: "Shopify", logo: "https://cdn.worldvectorlogo.com/logos/shopify.svg" },
@@ -33,22 +32,29 @@ const industries = [
 
 export function AdvantagesSection() {
   return (
-    <section className="py-16 lg:py-20">
+    <section className="py-16 lg:py-20 bg-white">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <SectionTitle
-          title="为什么选择"
-          highlight="Cube海外仓"
-          subtitle="依托本地仓储资源、成熟履约体系及灵活物流配置，为客户提供稳定高效的英国本地供应链支持。"
-        />
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+            合作生态
+          </span>
+          <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">
+            为什么选择<span className="text-primary">Cube海外仓</span>
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            依托本地仓储资源、成熟履约体系及灵活物流配置，为客户提供稳定高效的英国本地供应链支持
+          </p>
+        </div>
 
         {/* Partners Section */}
-        <div className="mt-12 space-y-8">
+        <div className="space-y-10">
           {/* Platforms - scrolling left */}
-          <div>
-            <h3 className="mb-1 text-sm font-semibold text-muted-foreground uppercase tracking-wider text-center">
+          <div className="rounded-2xl bg-gradient-to-r from-gray-50 via-white to-gray-50 p-6 lg:p-8">
+            <h3 className="mb-2 text-base font-bold text-foreground text-center">
               系统对接平台
             </h3>
-            <p className="mb-4 text-sm text-muted-foreground/70 text-center">
+            <p className="mb-6 text-sm text-muted-foreground text-center">
               支持主流电商平台及 ERP/OMS 系统 API 对接
             </p>
             <div className="relative overflow-hidden">
@@ -56,12 +62,12 @@ export function AdvantagesSection() {
                 {[...platforms, ...platforms].map((platform, index) => (
                   <div
                     key={`${platform.name}-${index}`}
-                    className="flex-shrink-0 mx-10 flex items-center justify-center h-16 w-36 transition-all duration-300 hover:scale-110"
+                    className="flex-shrink-0 mx-8 flex items-center justify-center h-14 w-32 rounded-lg bg-white shadow-sm transition-all duration-300 hover:scale-110 hover:shadow-md"
                   >
                     <img
                       src={platform.logo}
                       alt={platform.name}
-                      className="h-12 w-auto max-w-full object-contain mix-blend-multiply"
+                      className="h-10 w-auto max-w-[80%] object-contain"
                     />
                   </div>
                 ))}
@@ -70,11 +76,11 @@ export function AdvantagesSection() {
           </div>
 
           {/* Logistics - scrolling right */}
-          <div>
-            <h3 className="mb-1 text-sm font-semibold text-muted-foreground uppercase tracking-wider text-center">
+          <div className="rounded-2xl bg-gradient-to-r from-gray-50 via-white to-gray-50 p-6 lg:p-8">
+            <h3 className="mb-2 text-base font-bold text-foreground text-center">
               合作物流渠道
             </h3>
-            <p className="mb-4 text-sm text-muted-foreground/70 text-center">
+            <p className="mb-6 text-sm text-muted-foreground text-center">
               覆盖英国全境及欧洲主要目的地的多元化配送网络
             </p>
             <div className="relative overflow-hidden">
@@ -82,12 +88,12 @@ export function AdvantagesSection() {
                 {[...logistics, ...logistics].map((partner, index) => (
                   <div
                     key={`${partner.name}-${index}`}
-                    className="flex-shrink-0 mx-10 flex items-center justify-center h-16 w-36 transition-all duration-300 hover:scale-110"
+                    className="flex-shrink-0 mx-8 flex items-center justify-center h-14 w-32 rounded-lg bg-white shadow-sm transition-all duration-300 hover:scale-110 hover:shadow-md"
                   >
                     <img
                       src={partner.logo}
                       alt={partner.name}
-                      className="h-12 w-auto max-w-full object-contain mix-blend-multiply"
+                      className="h-10 w-auto max-w-[80%] object-contain"
                     />
                   </div>
                 ))}
@@ -97,19 +103,21 @@ export function AdvantagesSection() {
         </div>
 
         {/* Industries */}
-        <div className="mt-16">
-          <h3 className="mb-1 text-center text-sm font-semibold text-muted-foreground uppercase tracking-wider">
-            覆盖多个重点行业
-          </h3>
-          <p className="mb-6 text-sm text-muted-foreground/70 text-center">
-            针对不同品类特性提供定制化仓储与履约方案
-          </p>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="mt-14">
+          <div className="text-center mb-8">
+            <h3 className="text-xl font-bold text-foreground mb-2">
+              覆盖多个重点行业
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              针对不同品类特性提供定制化仓储与履约方案
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
             {industries.map((industry) => (
               <Link
                 key={industry.title}
                 href={industry.href}
-                className="group relative aspect-[4/3] overflow-hidden rounded-xl"
+                className="group relative aspect-[4/3] overflow-hidden rounded-xl shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
               >
                 <Image
                   src={industry.image}
@@ -117,12 +125,14 @@ export function AdvantagesSection() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-opacity group-hover:from-black/80" />
-                <div className="absolute inset-x-0 bottom-0 p-3 flex items-center justify-between">
-                  <h4 className="text-sm font-semibold text-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-4 flex items-center justify-between">
+                  <h4 className="text-sm font-bold text-white">
                     {industry.title}
                   </h4>
-                  <ArrowRight className="h-4 w-4 text-white/60 transition-all group-hover:text-white group-hover:translate-x-0.5" />
+                  <div className="w-7 h-7 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
+                    <ArrowRight className="h-4 w-4 text-white" />
+                  </div>
                 </div>
               </Link>
             ))}
