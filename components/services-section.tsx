@@ -38,7 +38,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="bg-[#f8fafc] py-16 lg:py-20">
+    <section className="bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9] py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">

@@ -20,7 +20,7 @@ const logistics = [
 
 export function AdvantagesSection() {
   return (
-    <section className="py-16 lg:py-20 bg-white">
+    <section className="py-16 lg:py-20 bg-gradient-to-b from-[#e8edf3] via-[#f1f5f9] to-white">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">

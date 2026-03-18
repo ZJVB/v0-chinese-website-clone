@@ -32,7 +32,7 @@ const industries = [
 
 export function IndustriesSection() {
   return (
-    <section className="py-16 lg:py-20 bg-[#f8fafc]">
+    <section className="py-16 lg:py-20 bg-gradient-to-b from-[#f1f5f9] via-[#eef2f6] to-[#e8edf3]">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         {/* Header - Same style as "为什么选择Cube海外仓" */}
         <div className="text-center mb-12">
