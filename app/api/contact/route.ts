@@ -126,8 +126,7 @@ export async function POST(request: NextRequest) {
     };
 
     // Send email using Resend
-    // Replace 're_xxxxxxxxx' with your real Resend API key or set RESEND_API_KEY env variable
-    const resendApiKey = process.env.RESEND_API_KEY || "re_xxxxxxxxx";
+    const resendApiKey = process.env.RESEND_API_KEY || "re_t7cobCEN_DGFwGZ9EDamjPYnFh6HvJD41";
     const resend = new Resend(resendApiKey);
     
     try {
