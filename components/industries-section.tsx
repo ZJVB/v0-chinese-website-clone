@@ -5,27 +5,27 @@ import { ArrowRight } from "lucide-react";
 const industries = [
   {
     title: "时尚服饰",
-    href: "/industries/fashion",
+    href: "/industries#fashion",
     image: "/images/industry-fashion.jpg",
   },
   {
     title: "新能源电池",
-    href: "/industries/energy",
+    href: "/industries#energy",
     image: "/images/industry-energy.jpg",
   },
   {
     title: "消费电子",
-    href: "/industries/electronics",
+    href: "/industries#electronics",
     image: "/images/industry-electronics.jpg",
   },
   {
     title: "家居用品",
-    href: "/industries/home-garden",
+    href: "/industries#home",
     image: "/images/industry-furniture.jpg",
   },
   {
     title: "美妆健康",
-    href: "/industries/health",
+    href: "/industries#health",
     image: "/images/industry-beauty.jpg",
   },
 ];
