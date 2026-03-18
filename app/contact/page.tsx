@@ -40,10 +40,11 @@ export default function ContactPage() {
         />
 
         {/* Contact Form & Info */}
-        <section className="py-16 lg:py-24">
+        <section className="py-16 lg:py-24 bg-[#f8fafc]">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="grid gap-12 lg:grid-cols-2">
-              <div>
+            <div className="grid gap-10 lg:grid-cols-5">
+              {/* Left - Contact Info */}
+              <div className="lg:col-span-2">
                 <h2 className="mb-2 text-2xl font-bold text-foreground">
                   联系方式
                 </h2>
@@ -51,73 +52,52 @@ export default function ContactPage() {
                   欢迎通过以下方式联系我们，或填写右侧表单，我们将在24小时内回复。
                 </p>
 
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div className="space-y-4">
                   {contactInfo.map((item) => (
                     <div
                       key={item.title}
-                      className="flex items-start gap-4 rounded-lg bg-card p-5 shadow-[0_1px_8px_rgba(0,0,0,0.05)]"
+                      className="group flex items-start gap-4 rounded-xl bg-white p-5 border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-primary/20 hover:-translate-y-0.5"
                     >
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                        <item.icon className="h-5 w-5 text-primary" />
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-all duration-300 group-hover:bg-primary">
+                        <item.icon className="h-5 w-5 text-primary transition-colors duration-300 group-hover:text-white" />
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-foreground">
+                        <p className="font-semibold text-foreground">
                           {item.title}
                         </p>
                         {item.href ? (
-                          <a href={item.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                          <a href={item.href} className="text-muted-foreground hover:text-primary transition-colors">
                             {item.content}
                           </a>
                         ) : (
-                          <p className="text-sm text-muted-foreground">{item.content}</p>
+                          <p className="text-muted-foreground">{item.content}</p>
                         )}
                       </div>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-8 rounded-lg bg-card p-6 shadow-[0_1px_8px_rgba(0,0,0,0.05)]">
-                  <h3 className="mb-3 font-semibold text-foreground">公司信息</h3>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <p>
+                <div className="mt-6 rounded-xl bg-white p-6 border border-gray-100">
+                  <h3 className="mb-4 font-bold text-foreground">公司信息</h3>
+                  <div className="space-y-3 text-muted-foreground">
+                    <p className="flex items-center gap-2">
                       <span className="font-medium text-foreground">公司名称：</span>
                       Cube Cang（酷博仓）
                     </p>
-                    <p>
+                    <p className="flex items-center gap-2">
                       <span className="font-medium text-foreground">网站：</span>
-                      www.cubecang.com
+                      <a href="https://www.cubecang.com" className="hover:text-primary transition-colors">www.cubecang.com</a>
                     </p>
-                    <p>
+                    <p className="flex items-center gap-2">
                       <span className="font-medium text-foreground">服务区域：</span>
                       英国、欧洲
                     </p>
                   </div>
                 </div>
-
-                <div className="mt-8 rounded-lg bg-primary/5 p-6">
-                  <h3 className="mb-3 font-semibold text-foreground">我们的服务</h3>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-primary" />
-                      英国海外仓一件代发
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-primary" />
-                      FBA头程与中转服务
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-primary" />
-                      TEMU/SHEIN官方认证仓
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-primary" />
-                      退货处理与商品翻新
-                    </li>
-                  </ul>
-                </div>
               </div>
-
-              <div className="rounded-lg bg-card p-8 shadow-[0_2px_20px_rgba(0,0,0,0.08)]">
+              
+              {/* Right - Contact Form */}
+              <div className="lg:col-span-3 rounded-2xl bg-white p-8 border border-gray-100 shadow-lg">
                 <h3 className="mb-1 text-xl font-bold text-foreground">发送消息</h3>
                 <p className="mb-6 text-sm text-muted-foreground">
                   填写以下表单，我们的团队将尽快与您联系
