@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 const timeline = [
-  { year: "2020", title: "公司成立", desc: "公司正式成立，开启专注于跨境电商仓储物流的业务。", image: "/images/timeline-2020.jpg" },
+  { year: "2020", title: "公司成立", desc: "公司正式成立，开启专注于跨境电商仓储物流的业务。", image: "/images/timeline-2020.png" },
   { year: "2021", title: "初步扩展", desc: "仓储面积扩增至 5,000 平方米，提升仓储能力与服务水平。", image: "/images/timeline-2021.jpg" },
   { year: "2023", title: "效率提升", desc: "日处理订单量突破 3,000 单，运营效率显著提升。", image: "/images/timeline-2023.jpg" },
   { year: "2024", title: "业务多元化", desc: "仓库扩展至 10,000 平方米；成功开通 TikTok 对接及代发项目；年底日订单量突破 10,000 单。", image: "/images/timeline-2024.jpg" },
