@@ -91,7 +91,7 @@ export function IndustriesSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 group-hover:opacity-80" />
             
             {/* Content */}
-            <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6 flex items-center justify-between z-10">
+            <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6 flex items-center justify-end gap-3 z-10">
               <span className="text-white font-bold text-sm lg:text-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                 {industry.title}
               </span>
