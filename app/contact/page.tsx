@@ -11,9 +11,9 @@ import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
 const contactInfo = [
-  { icon: Phone, title: "电话", content: "+44 161 XXX XXXX", href: "tel:+44161XXXXXXX" },
-  { icon: Mail, title: "邮箱", content: "info@cubecang.com", href: "mailto:info@cubecang.com" },
-  { icon: MapPin, title: "地址", content: "Manchester, United Kingdom", href: null },
+  { icon: Phone, title: "电话", content: "+44 161 566 2392 / 7599588577", href: "tel:+441615662392" },
+  { icon: Mail, title: "邮箱", content: "contact@thecubedistribution.com", href: "mailto:contact@thecubedistribution.com" },
+  { icon: MapPin, title: "地址", content: "Zainhub Gate2, Lord North Street, Manchester, M40 8HT, United Kingdom", href: null },
   { icon: Clock, title: "工作时间", content: "周一至周六 9:00-18:00（英国时间）", href: null },
 ];
 
