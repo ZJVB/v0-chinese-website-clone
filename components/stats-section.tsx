@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Package, Warehouse, ShieldCheck, Users } from "lucide-react";
+import { ArrowRight, Package, Warehouse, Cctv, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const stats = [
   { value: "20,000+", label: "日订单处理量", icon: Package },
   { value: "20,000㎡+", label: "仓储面积", icon: Warehouse },
-  { value: "24/7", label: "安保监控系统", icon: ShieldCheck },
+  { value: "24/7", label: "安保监控系统", icon: Cctv },
   { value: "15年+", label: "团队经验", icon: Users },
 ];
 
