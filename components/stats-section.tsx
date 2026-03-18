@@ -37,8 +37,8 @@ export function StatsSection() {
         <div className="mt-14 grid items-center gap-8 rounded-2xl bg-gradient-to-br from-[#f8fafc] to-white p-6 lg:grid-cols-2 lg:gap-12 lg:p-10">
           <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.08)]">
             <Image
-              src="/images/service-temu.jpg"
-              alt="TEMU 官方认证仓"
+              src="/images/temu-ranking.jpg"
+              alt="TEMU 官方认证仓 - 履约排名前列"
               fill
               className="object-cover"
             />
