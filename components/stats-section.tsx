@@ -13,11 +13,16 @@ const stats = [
 export function StatsSection() {
   return (
     <section className="bg-white">
-      {/* Stats Banner - Full Width with Diagonal Dividers */}
-      <div className="bg-primary">
-        <div className="flex flex-wrap lg:flex-nowrap">
-          {stats.map((stat, index) => (
-            <div key={stat.label} className="flex items-center w-1/2 lg:w-auto lg:flex-1">
+      {/* Stats Banner - Full Width with Alternating Colors */}
+      <div className="flex flex-wrap lg:flex-nowrap">
+        {stats.map((stat, index) => {
+          const isOrange = index % 2 === 0;
+          const nextIsOrange = (index + 1) % 2 === 0;
+          return (
+            <div 
+              key={stat.label} 
+              className={`flex items-center w-1/2 lg:w-auto lg:flex-1 ${isOrange ? 'bg-primary' : 'bg-[#2d3a4f]'}`}
+            >
               <div className="flex-1 flex flex-col items-center justify-center py-6 lg:py-8 px-3 lg:px-6">
                 <div className="text-2xl lg:text-3xl font-bold text-white mb-1 text-center">
                   {stat.value}
@@ -26,19 +31,17 @@ export function StatsSection() {
               </div>
               {/* Diagonal divider between items */}
               {index < stats.length - 1 && (
-                <div className="hidden lg:block relative w-8 self-stretch overflow-hidden">
-                  {/* Blue background fills entire divider area */}
-                  <div className="absolute inset-0 bg-[#2d3a4f]" />
-                  {/* Orange triangle covers right portion */}
+                <div className={`hidden lg:block relative w-8 self-stretch overflow-hidden ${isOrange ? 'bg-primary' : 'bg-[#2d3a4f]'}`}>
+                  {/* Next color triangle */}
                   <div 
-                    className="absolute inset-0 bg-primary"
+                    className={`absolute inset-0 ${nextIsOrange ? 'bg-primary' : 'bg-[#2d3a4f]'}`}
                     style={{ clipPath: 'polygon(100% 0, 0 100%, 100% 100%)' }}
                   />
                 </div>
               )}
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
 
       {/* TEMU Feature Section - Full background image */}
