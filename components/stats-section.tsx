@@ -18,13 +18,18 @@ export function StatsSection() {
         {stats.map((stat, index) => {
           const isOrange = index % 2 === 0;
           const nextIsOrange = (index + 1) % 2 === 0;
+          const orangeColor = '#ff5500';
+          const blueColor = '#2d3a4f';
           return (
             <div 
               key={stat.label} 
               className="flex w-1/2 lg:w-auto lg:flex-1"
             >
               {/* Content area */}
-              <div className={`flex-1 flex flex-col items-center justify-center py-6 lg:py-8 px-4 lg:px-8 ${isOrange ? 'bg-primary' : 'bg-[#2d3a4f]'}`}>
+              <div 
+                className="flex-1 flex flex-col items-center justify-center py-6 lg:py-8 px-4 lg:px-8"
+                style={{ backgroundColor: isOrange ? orangeColor : blueColor }}
+              >
                 <div className="text-2xl lg:text-3xl font-bold text-white mb-1 text-center">
                   {stat.value}
                 </div>
@@ -41,11 +46,11 @@ export function StatsSection() {
                   >
                     <polygon 
                       points="0,0 24,0 0,100" 
-                      fill={isOrange ? '#ff5500' : '#2d3a4f'} 
+                      fill={isOrange ? orangeColor : blueColor} 
                     />
                     <polygon 
                       points="24,0 24,100 0,100" 
-                      fill={nextIsOrange ? '#ff5500' : '#2d3a4f'} 
+                      fill={nextIsOrange ? orangeColor : blueColor} 
                     />
                   </svg>
                 </div>
