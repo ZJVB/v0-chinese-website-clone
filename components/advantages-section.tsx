@@ -38,7 +38,7 @@ export function AdvantagesSection() {
         {/* Partners Section */}
         <div className="space-y-10">
           {/* Platforms - scrolling left */}
-          <div className="rounded-2xl bg-gradient-to-r from-gray-50 via-white to-gray-50 p-6 lg:p-8">
+          <div className="p-6 lg:p-8">
             <h3 className="mb-2 text-base font-bold text-foreground text-center">
               系统对接平台
             </h3>
@@ -64,7 +64,7 @@ export function AdvantagesSection() {
           </div>
 
           {/* Logistics - scrolling right */}
-          <div className="rounded-2xl bg-gradient-to-r from-gray-50 via-white to-gray-50 p-6 lg:p-8">
+          <div className="p-6 lg:p-8">
             <h3 className="mb-2 text-base font-bold text-foreground text-center">
               合作物流渠道
             </h3>
