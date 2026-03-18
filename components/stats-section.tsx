@@ -4,7 +4,6 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const stats = [
-  { value: "HMRC 认可", label: "FHDDS 认证服务商" },
   { value: "20,000+", label: "日订单处理量" },
   { value: "20,000㎡+", label: "仓储面积" },
   { value: "24/7", label: "安保监控系统" },
@@ -16,13 +15,13 @@ export function StatsSection() {
     <section className="bg-white">
       {/* Stats Banner - Full Width */}
       <div className="bg-primary">
-        <div className="grid grid-cols-2 lg:grid-cols-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, index) => (
             <div
               key={stat.label}
               className="flex flex-col items-center justify-center py-6 lg:py-8 px-3 lg:px-6 border-b border-r border-white/10 lg:border-b-0 last:border-r-0 [&:nth-child(2)]:border-r-0 lg:[&:nth-child(2)]:border-r"
             >
-              <div className={`font-bold text-white mb-1 text-center ${index === 0 ? 'text-lg lg:text-xl' : 'text-2xl lg:text-3xl'}`}>
+              <div className="text-2xl lg:text-3xl font-bold text-white mb-1 text-center">
                 {stat.value}
               </div>
               <div className="text-xs lg:text-sm text-white/80 text-center">{stat.label}</div>
