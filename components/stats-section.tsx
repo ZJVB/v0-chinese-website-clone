@@ -13,18 +13,26 @@ const stats = [
 export function StatsSection() {
   return (
     <section className="bg-white">
-      {/* Stats Banner - Full Width */}
+      {/* Stats Banner - Full Width with Diagonal Dividers */}
       <div className="bg-primary">
-        <div className="grid grid-cols-2 lg:grid-cols-4">
+        <div className="flex flex-wrap lg:flex-nowrap">
           {stats.map((stat, index) => (
-            <div
-              key={stat.label}
-              className="flex flex-col items-center justify-center py-6 lg:py-8 px-3 lg:px-6 border-b border-r border-white/10 lg:border-b-0 last:border-r-0 [&:nth-child(2)]:border-r-0 lg:[&:nth-child(2)]:border-r"
-            >
-              <div className="text-2xl lg:text-3xl font-bold text-white mb-1 text-center">
-                {stat.value}
+            <div key={stat.label} className="flex items-center w-1/2 lg:w-auto lg:flex-1">
+              <div className="flex-1 flex flex-col items-center justify-center py-6 lg:py-8 px-3 lg:px-6">
+                <div className="text-2xl lg:text-3xl font-bold text-white mb-1 text-center">
+                  {stat.value}
+                </div>
+                <div className="text-xs lg:text-sm text-white/80 text-center">{stat.label}</div>
               </div>
-              <div className="text-xs lg:text-sm text-white/80 text-center">{stat.label}</div>
+              {/* Diagonal divider between items */}
+              {index < stats.length - 1 && (
+                <div className="hidden lg:block relative w-6 h-full self-stretch">
+                  <div 
+                    className="absolute inset-0 bg-[#2d3a4f]"
+                    style={{ clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }}
+                  />
+                </div>
+              )}
             </div>
           ))}
         </div>
