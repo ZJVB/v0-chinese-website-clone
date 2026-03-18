@@ -115,7 +115,7 @@ export default function AboutPage() {
                             src={item.image}
                             alt={item.title}
                             fill
-                            className={`object-cover transition-transform duration-700 group-hover:scale-110 ${item.year === "2020" ? "blur-[2px] scale-105" : ""}`}
+                            className={`object-cover transition-transform duration-700 group-hover:scale-110 ${item.year === "2020" ? "blur-[2px] object-top" : ""}`}
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-[#1a1f2e] via-transparent to-transparent" />
                           
