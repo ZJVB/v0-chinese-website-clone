@@ -55,11 +55,11 @@ export function IndustriesSection() {
             className="group relative w-1/2 md:w-1/3 lg:w-1/5 aspect-[4/5] lg:aspect-[3/4] overflow-hidden transition-all duration-500 hover:z-30 hover:scale-105"
             style={{ 
               zIndex: industries.length - index,
-              marginLeft: index > 0 ? '-12px' : '0',
+              marginLeft: index > 0 ? '-24px' : '0',
             }}
           >
             {/* Card Shadow/Border for depth */}
-            <div className="absolute inset-0 shadow-[-8px_0_20px_rgba(0,0,0,0.4)] z-0" />
+            <div className="absolute inset-0 shadow-[-16px_0_40px_rgba(0,0,0,0.6)] z-0" />
             
             {/* Image */}
             <Image
@@ -71,21 +71,21 @@ export function IndustriesSection() {
             
             {/* Left Edge Deep Shadow */}
             {index > 0 && (
-              <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-black/60 via-black/30 to-transparent z-10 pointer-events-none" />
+              <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10 pointer-events-none" />
             )}
             
             {/* Top Left Corner Shadow */}
             {index > 0 && (
-              <div className="absolute left-0 top-0 w-20 h-20 bg-gradient-to-br from-black/40 to-transparent z-10 pointer-events-none" />
+              <div className="absolute left-0 top-0 w-40 h-40 bg-gradient-to-br from-black/60 to-transparent z-10 pointer-events-none" />
             )}
             
             {/* Bottom Left Corner Shadow */}
             {index > 0 && (
-              <div className="absolute left-0 bottom-0 w-20 h-20 bg-gradient-to-tr from-black/40 to-transparent z-10 pointer-events-none" />
+              <div className="absolute left-0 bottom-0 w-40 h-40 bg-gradient-to-tr from-black/60 to-transparent z-10 pointer-events-none" />
             )}
             
             {/* Right Edge Light Border */}
-            <div className="absolute right-0 top-0 bottom-0 w-[1px] bg-white/30 z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-white/40 z-10 pointer-events-none" />
             
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 group-hover:opacity-80" />
