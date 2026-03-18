@@ -171,7 +171,7 @@ export default function ContactPage() {
 
                 <div className="mt-6 rounded-xl bg-white p-6 border border-gray-100">
                   <h3 className="mb-4 font-bold text-foreground">微信联系</h3>
-                  <p className="text-sm text-muted-foreground mb-4">扫码添加客服微信，获取即时咨询服务</p>
+                  <p className="text-sm text-muted-foreground mb-4">扫码添加客服微信，获取即时咨询服务（鼠标悬停放大二维码）</p>
                   <div className="flex gap-6">
                     <div className="group text-center">
                       <div className="relative mb-2 h-24 w-24 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover:scale-[1.8] group-hover:z-50 group-hover:shadow-xl group-hover:border-primary">
@@ -186,7 +186,6 @@ export default function ContactPage() {
                       <span className="text-xs text-muted-foreground">客服微信 2</span>
                     </div>
                   </div>
-                  <p className="mt-3 text-xs text-muted-foreground">鼠标悬停放大二维码</p>
                 </div>
               </div>
               
