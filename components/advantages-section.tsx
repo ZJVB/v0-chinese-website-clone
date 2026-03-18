@@ -1,7 +1,3 @@
-import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight } from "lucide-react";
-
 const platforms = [
   { name: "Shopify", logo: "https://cdn.worldvectorlogo.com/logos/shopify.svg" },
   { name: "TikTok Shop", logo: "https://cdn.worldvectorlogo.com/logos/tiktok-icon-2.svg" },
@@ -20,14 +16,6 @@ const logistics = [
   { name: "FedEx", logo: "https://cdn.worldvectorlogo.com/logos/fedex-express-6.svg" },
   { name: "UPS", logo: "https://cdn.worldvectorlogo.com/logos/ups-united-parcel-service.svg" },
   { name: "DHL", logo: "https://cdn.worldvectorlogo.com/logos/dhl-1.svg" },
-];
-
-const industries = [
-  { title: "时尚服饰", image: "/images/industry-fashion.jpg", href: "/industries/fashion" },
-  { title: "新能源电池", image: "/images/industry-energy.jpg", href: "/industries/energy" },
-  { title: "消费电子", image: "/images/industry-electronics.jpg", href: "/industries/electronics" },
-  { title: "家居用品", image: "/images/industry-furniture.jpg", href: "/industries/home-garden" },
-  { title: "美妆健康", image: "/images/industry-beauty.jpg", href: "/industries/health" },
 ];
 
 export function AdvantagesSection() {
@@ -102,42 +90,6 @@ export function AdvantagesSection() {
           </div>
         </div>
 
-        {/* Industries */}
-        <div className="mt-14">
-          <div className="text-center mb-8">
-            <h3 className="text-xl font-bold text-foreground mb-2">
-              覆盖多个重点行业
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              针对不同品类特性提供定制化仓储与履约方案
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-            {industries.map((industry) => (
-              <Link
-                key={industry.title}
-                href={industry.href}
-                className="group relative aspect-[4/3] overflow-hidden rounded-xl shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-              >
-                <Image
-                  src={industry.image}
-                  alt={industry.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-4 flex items-center justify-between">
-                  <h4 className="text-sm font-bold text-white">
-                    {industry.title}
-                  </h4>
-                  <div className="w-7 h-7 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
-                    <ArrowRight className="h-4 w-4 text-white" />
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
