@@ -19,7 +19,7 @@ const banners = [
     id: 4,
     title: "HMRC 认可的合规海外仓服务商",
     subtitle: "Cube海外仓作为英国税务及海关总署（HMRC）认可的海外仓服务商。依托规范的运营体系与成熟的本地履约能力，我们为跨境卖家提供安全、透明、可靠的英国仓储及订单履约服务。",
-    image: "/images/hero-warehouse.jpg",
+    image: "/images/hero-hmrc.jpg",
     link: "/about",
     linkText: "了解更多",
   },
