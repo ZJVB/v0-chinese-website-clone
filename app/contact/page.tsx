@@ -170,21 +170,23 @@ export default function ContactPage() {
                 </div>
 
                 <div className="mt-6 rounded-xl bg-white p-6 border border-gray-100">
-                  <h3 className="mb-4 font-bold text-foreground">公司信息</h3>
-                  <div className="space-y-3 text-muted-foreground">
-                    <p className="flex items-center gap-2">
-                      <span className="font-medium text-foreground">公司名称：</span>
-                      Cube Cang（酷博仓）
-                    </p>
-                    <p className="flex items-center gap-2">
-                      <span className="font-medium text-foreground">网站：</span>
-                      <a href="https://www.cubecang.com" className="hover:text-primary transition-colors">www.cubecang.com</a>
-                    </p>
-                    <p className="flex items-center gap-2">
-                      <span className="font-medium text-foreground">服务区域：</span>
-                      英国、欧洲
-                    </p>
+                  <h3 className="mb-4 font-bold text-foreground">微信联系</h3>
+                  <p className="text-sm text-muted-foreground mb-4">扫码添加客服微信，获取即时咨询服务</p>
+                  <div className="flex gap-6">
+                    <div className="group text-center">
+                      <div className="relative mb-2 h-24 w-24 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover:scale-[1.8] group-hover:z-50 group-hover:shadow-xl group-hover:border-primary">
+                        <img src="/images/qr-1.png" alt="微信客服1" className="w-full h-full object-cover" />
+                      </div>
+                      <span className="text-xs text-muted-foreground">客服微信 1</span>
+                    </div>
+                    <div className="group text-center">
+                      <div className="relative mb-2 h-24 w-24 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover:scale-[1.8] group-hover:z-50 group-hover:shadow-xl group-hover:border-primary">
+                        <img src="/images/qr-2.png" alt="微信客服2" className="w-full h-full object-cover" />
+                      </div>
+                      <span className="text-xs text-muted-foreground">客服微信 2</span>
+                    </div>
                   </div>
+                  <p className="mt-3 text-xs text-muted-foreground">鼠标悬停放大二维码</p>
                 </div>
               </div>
               
