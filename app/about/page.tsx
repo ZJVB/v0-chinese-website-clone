@@ -85,69 +85,67 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Development Timeline */}
-        <section className="py-16 lg:py-20 bg-[#f8fafc] overflow-hidden">
+        {/* Development Timeline - Redesigned */}
+        <section className="py-16 lg:py-24 bg-gradient-to-b from-[#1a1f2e] to-[#2d3a4f] overflow-hidden">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">发展历程</span>
-              <h2 className="text-2xl lg:text-3xl font-bold text-foreground">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary text-sm font-medium mb-4 border border-primary/30">发展历程</span>
+              <h2 className="text-2xl lg:text-4xl font-bold text-white">
                 稳步前行，持续成长
               </h2>
             </div>
             
-            {/* Horizontal Timeline */}
+            {/* Timeline - Interactive Cards */}
             <div className="relative">
-              {/* Horizontal timeline container */}
-              <div className="overflow-x-auto pb-4 scrollbar-hide">
-                <div className="relative min-w-[900px] lg:min-w-0">
-                  {/* Timeline items */}
-                  <div className="relative flex justify-between">
-                    {timeline.map((item, index) => (
-                      <div 
-                        key={item.year}
-                        className={`relative flex flex-col items-center group ${index % 2 === 0 ? '' : 'flex-col-reverse'}`}
-                        style={{ width: `${100 / timeline.length}%` }}
-                      >
-                        {/* Top content (for even indexes) or Bottom content (for odd indexes) */}
-                        <div className={`w-full px-2 ${index % 2 === 0 ? 'pb-8' : 'pt-8'}`}>
-                          <div className="bg-white rounded-xl p-4 shadow-md border border-gray-100 transition-all duration-500 group-hover:shadow-2xl group-hover:border-primary/30 group-hover:-translate-y-2">
-                            {/* Connector line */}
-                            <div className={`absolute left-1/2 w-0.5 h-6 bg-gradient-to-b from-primary/50 to-primary -translate-x-1/2 transition-all duration-300 group-hover:bg-primary ${index % 2 === 0 ? 'bottom-0 translate-y-2' : 'top-0 -translate-y-2 rotate-180'}`} />
-                            
-                            <h3 className="text-sm font-bold text-foreground mb-1 transition-colors duration-300 group-hover:text-primary text-center">{item.title}</h3>
-                            <p className="text-muted-foreground text-xs leading-relaxed text-center line-clamp-3">{item.desc}</p>
-                          </div>
-                        </div>
-                        
-                        {/* Year badge - on the line */}
-                        <div className="relative z-10 flex-shrink-0">
-                          {/* Glow effect */}
-                          <div className="absolute inset-0 rounded-full bg-primary/40 blur-lg scale-0 group-hover:scale-150 transition-transform duration-500" />
-                          {/* Ripple effects */}
-                          <div className="absolute inset-0 rounded-full border-2 border-primary/40 scale-100 opacity-0 group-hover:scale-[2] group-hover:opacity-100 transition-all duration-700" />
-                          <div className="absolute inset-0 rounded-full border-2 border-primary/20 scale-100 opacity-0 group-hover:scale-[2.5] group-hover:opacity-100 transition-all duration-1000 delay-150" />
-                          {/* Year circle */}
-                          <div className="relative w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 shadow-lg flex items-center justify-center transition-all duration-500 group-hover:scale-125 group-hover:shadow-xl group-hover:shadow-primary/40">
-                            <span className="text-sm lg:text-base font-black text-white">{item.year}</span>
-                          </div>
-                        </div>
-                        
-                        {/* Empty space for alternating layout */}
-                        <div className={`w-full px-2 ${index % 2 === 0 ? 'pt-8' : 'pb-8'}`}>
-                          <div className="h-[100px]" />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              {/* Central timeline line */}
+              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/20 via-primary to-primary/20 -translate-x-1/2 hidden lg:block" />
               
-              {/* Scroll hint for mobile */}
-              <div className="lg:hidden flex justify-center mt-4">
-                <div className="flex items-center gap-2 text-muted-foreground text-sm animate-pulse">
-                  <span>左右滑动查看</span>
-                  <ArrowRight className="h-4 w-4" />
-                </div>
+              <div className="space-y-8 lg:space-y-0">
+                {timeline.map((item, index) => (
+                  <div 
+                    key={item.year}
+                    className={`relative group lg:flex lg:items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+                  >
+                    {/* Content Card */}
+                    <div className={`lg:w-[45%] ${index % 2 === 0 ? 'lg:pr-12 lg:text-right' : 'lg:pl-12 lg:text-left'}`}>
+                      <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 transition-all duration-500 group-hover:bg-white/10 group-hover:border-primary/50 group-hover:shadow-xl group-hover:shadow-primary/10 group-hover:-translate-y-1">
+                        {/* Glow effect */}
+                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        
+                        <div className="relative z-10">
+                          <h3 className="text-lg lg:text-xl font-bold text-white mb-2 transition-colors duration-300 group-hover:text-primary">{item.title}</h3>
+                          <p className="text-white/70 text-sm lg:text-base leading-relaxed">{item.desc}</p>
+                        </div>
+                        
+                        {/* Connector line to center (desktop) */}
+                        <div className={`hidden lg:block absolute top-1/2 w-12 h-0.5 bg-gradient-to-r ${index % 2 === 0 ? 'right-0 translate-x-full from-white/20 to-primary' : 'left-0 -translate-x-full from-primary to-white/20'} -translate-y-1/2`} />
+                      </div>
+                    </div>
+                    
+                    {/* Year Badge - Center */}
+                    <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 z-20">
+                      {/* Outer ring animation */}
+                      <div className="absolute inset-0 rounded-full border-2 border-primary/40 scale-100 opacity-0 group-hover:scale-150 group-hover:opacity-100 transition-all duration-700 animate-pulse" />
+                      <div className="absolute inset-0 rounded-full bg-primary/30 blur-xl scale-0 group-hover:scale-150 transition-transform duration-500" />
+                      
+                      {/* Year circle */}
+                      <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-primary via-primary to-orange-400 shadow-lg shadow-primary/30 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-primary/50">
+                        <span className="text-lg font-black text-white">{item.year}</span>
+                      </div>
+                    </div>
+                    
+                    {/* Mobile Year Badge */}
+                    <div className="lg:hidden flex items-center gap-4 mb-4">
+                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-orange-400 shadow-lg flex items-center justify-center">
+                        <span className="text-base font-black text-white">{item.year}</span>
+                      </div>
+                      <div className="h-0.5 flex-1 bg-gradient-to-r from-primary to-transparent" />
+                    </div>
+                    
+                    {/* Empty space for opposite side (desktop) */}
+                    <div className="hidden lg:block lg:w-[45%]" />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
