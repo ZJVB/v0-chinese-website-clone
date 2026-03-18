@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
 
 // Simple in-memory rate limiting (for production, use Redis or similar)
 const rateLimitMap = new Map<string, { count: number; timestamp: number }>();
@@ -124,46 +125,54 @@ export async function POST(request: NextRequest) {
       message: sanitizeInput(message),
     };
 
-    // Send email using fetch to a mail API or construct mailto
-    // For now, we'll use Resend if available, otherwise log and return success
-    const resendApiKey = process.env.RESEND_API_KEY;
+    // Send email using Resend
+    // Replace 're_xxxxxxxxx' with your real Resend API key or set RESEND_API_KEY env variable
+    const resendApiKey = process.env.RESEND_API_KEY || "re_xxxxxxxxx";
+    const resend = new Resend(resendApiKey);
     
-    if (resendApiKey) {
-      const emailResponse = await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${resendApiKey}`,
-        },
-        body: JSON.stringify({
-          from: "Cube Website <noreply@cubecang.com>",
-          to: ["contact@thecubedistribution.com"],
-          subject: `新咨询 - ${sanitizedData.name} - ${sanitizedData.service || "一般咨询"}`,
-          html: `
-            <h2>新客户咨询</h2>
-            <p><strong>姓名：</strong>${sanitizedData.name}</p>
-            <p><strong>公司/店铺：</strong>${sanitizedData.company || "未填写"}</p>
-            <p><strong>邮箱：</strong>${sanitizedData.email}</p>
-            <p><strong>电话/微信：</strong>${sanitizedData.phone || "未填写"}</p>
-            <p><strong>感兴趣的服务：</strong>${sanitizedData.service || "未选择"}</p>
-            <p><strong>留言内容：</strong></p>
-            <p>${sanitizedData.message.replace(/\n/g, "<br>")}</p>
-            <hr>
-            <p style="color: #666; font-size: 12px;">此邮件由 Cube 海外仓网站自动发送</p>
-          `,
-        }),
+    try {
+      await resend.emails.send({
+        from: "onboarding@resend.dev",
+        to: "contact@thecubedistribution.com",
+        subject: `海外仓业务咨询 - ${sanitizedData.name}`,
+        html: `
+          <h2>新客户咨询</h2>
+          <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
+            <tr>
+              <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; width: 120px;">姓名</td>
+              <td style="padding: 10px; border-bottom: 1px solid #eee;">${sanitizedData.name}</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">公司/店铺</td>
+              <td style="padding: 10px; border-bottom: 1px solid #eee;">${sanitizedData.company || "未填写"}</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">邮箱</td>
+              <td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="mailto:${sanitizedData.email}">${sanitizedData.email}</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">电话/微信</td>
+              <td style="padding: 10px; border-bottom: 1px solid #eee;">${sanitizedData.phone || "未填写"}</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">感兴趣的服务</td>
+              <td style="padding: 10px; border-bottom: 1px solid #eee;">${sanitizedData.service || "未选择"}</td>
+            </tr>
+          </table>
+          <h3 style="margin-top: 20px;">留言内容</h3>
+          <div style="background: #f9f9f9; padding: 15px; border-radius: 5px;">
+            <p style="margin: 0; white-space: pre-wrap;">${sanitizedData.message.replace(/\n/g, "<br>")}</p>
+          </div>
+          <hr style="margin-top: 30px; border: none; border-top: 1px solid #eee;">
+          <p style="color: #666; font-size: 12px;">此邮件由 Cube 海外仓网站自动发送</p>
+        `,
       });
-
-      if (!emailResponse.ok) {
-        console.error("Failed to send email via Resend");
-        return NextResponse.json(
-          { success: false, message: "发送失败，请稍后重试" },
-          { status: 500 }
-        );
-      }
-    } else {
-      // Log the contact request if no email service configured
-      console.log("Contact form submission:", sanitizedData);
+    } catch (emailError) {
+      console.error("Failed to send email via Resend:", emailError);
+      return NextResponse.json(
+        { success: false, message: "发送失败，请稍后重试" },
+        { status: 500 }
+      );
     }
 
     return NextResponse.json({
