@@ -15,7 +15,7 @@ export default function TermsPage() {
         <section className="bg-gradient-to-b from-[#1a1f2e] to-[#2d3a4f] py-16 lg:py-20">
           <div className="mx-auto max-w-4xl px-4 lg:px-8 text-center">
             <h1 className="text-3xl lg:text-4xl font-bold text-white mb-4">服务条款</h1>
-            <p className="text-white/70">{"最后更新日期：2024年1月1日"}</p>
+            <p className="text-white/70">Last Updated: January 1, 2024</p>
           </div>
         </section>
 
@@ -65,14 +65,8 @@ export default function TermsPage() {
 
               <h2 className="text-xl font-bold text-foreground mt-8 mb-4">5. 费用与付款</h2>
               <p className="text-muted-foreground mb-4">
-                服务费用根据我们的报价单或合同约定执行。除非另有约定，付款条件如下：
+                服务费用根据我们的报价单或合同约定执行，除非另有约定。
               </p>
-              <ul className="list-disc pl-6 text-muted-foreground mb-4 space-y-2">
-                <li>仓储费：按月结算，次月5日前支付</li>
-                <li>配送费：按单结算或月结</li>
-                <li>逾期付款将收取1.5%月息的滞纳金</li>
-                <li>我们保留对未付款账户暂停服务的权利</li>
-              </ul>
 
               <h2 className="text-xl font-bold text-foreground mt-8 mb-4">6. 货物存储</h2>
               <p className="text-muted-foreground mb-4">关于货物存储：</p>
@@ -80,7 +74,6 @@ export default function TermsPage() {
                 <li>货物入库需提前预约并提供准确的货物清单</li>
                 <li>我们将按照行业标准妥善保管您的货物</li>
                 <li>超过180天无动销的货物，我们有权收取额外仓储费或要求移除</li>
-                <li>货物丢失或损坏的赔偿上限为申报价值或£100/件（以较低者为准）</li>
               </ul>
 
               <h2 className="text-xl font-bold text-foreground mt-8 mb-4">7. 配送与交付</h2>

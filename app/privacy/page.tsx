@@ -15,7 +15,7 @@ export default function PrivacyPage() {
         <section className="bg-gradient-to-b from-[#1a1f2e] to-[#2d3a4f] py-16 lg:py-20">
           <div className="mx-auto max-w-4xl px-4 lg:px-8 text-center">
             <h1 className="text-3xl lg:text-4xl font-bold text-white mb-4">隐私政策</h1>
-            <p className="text-white/70">{"最后更新日期：2024年1月1日"}</p>
+            <p className="text-white/70">Last Updated: January 1, 2024</p>
           </div>
         </section>
 
