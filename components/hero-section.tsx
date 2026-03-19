@@ -87,7 +87,7 @@ export function HeroSection() {
       ))}
 
       {/* Content */}
-      <div className="relative z-20 mx-auto flex h-full max-w-7xl items-center px-6 lg:px-8">
+      <div className="relative z-20 mx-auto flex h-full max-w-7xl items-center justify-between px-6 lg:px-8">
         <div className="max-w-2xl pt-16">
           {banners.map((banner, index) => (
             <div
@@ -142,6 +142,25 @@ export function HeroSection() {
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
+          </div>
+        </div>
+
+        {/* HMRC Approved Logo - Only show on HMRC slide */}
+        <div 
+          className={`hidden lg:block transition-all duration-500 ${
+            currentBanner.id === 4 
+              ? "opacity-100 translate-x-0" 
+              : "opacity-0 translate-x-8 pointer-events-none"
+          }`}
+        >
+          <div className="bg-white rounded-xl p-6 shadow-2xl">
+            <Image
+              src="/images/hmrc-approved-logo.png"
+              alt="HMRC Fulfilment House Due Diligence Scheme Approved"
+              width={280}
+              height={120}
+              className="object-contain"
+            />
           </div>
         </div>
       </div>
