@@ -156,7 +156,7 @@ export function HeroSection() {
             : "opacity-0 translate-x-8 pointer-events-none"
         }`}
       >
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-end pr-8">
           <Image
             src="/images/hmrc-approved-logo.png"
             alt="HMRC Fulfilment House Due Diligence Scheme Approved"
