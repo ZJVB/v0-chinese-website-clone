@@ -161,8 +161,8 @@ export function HeroSection() {
             src="/images/hmrc-approved-logo.png"
             alt="HMRC Fulfilment House Due Diligence Scheme Approved"
             width={800}
-            height={400}
-            className="object-contain drop-shadow-2xl w-full h-auto"
+            height={800}
+            className="object-contain drop-shadow-2xl w-full h-auto scale-y-[2] origin-center"
           />
         </div>
       </div>
