@@ -171,7 +171,7 @@ export function Navbar() {
           </div>
           <div className="group/qr text-center z-20 hover:z-[100]">
             <div className="w-12 h-12 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 origin-top group-hover/qr:scale-[2.8] group-hover/qr:translate-y-[40px] group-hover/qr:shadow-xl group-hover/qr:border-primary">
-              <Image src="/images/qr-1.png" alt="微信客服1" width={48} height={48} className="w-full h-full object-cover" />
+              <Image src="/images/qr-2.png" alt="技术支持" width={48} height={48} className="w-full h-full object-cover" />
             </div>
           </div>
           <div className="group/qr text-center z-10 hover:z-[100]">
@@ -229,9 +229,9 @@ export function Navbar() {
               <div className="flex gap-4">
                 <div className="text-center">
                   <div className="w-20 h-20 rounded-lg overflow-hidden border border-gray-200">
-                    <Image src="/images/qr-1.png" alt="微信客服1" width={80} height={80} className="w-full h-full object-cover" />
+                    <Image src="/images/qr-2.png" alt="技术支持" width={80} height={80} className="w-full h-full object-cover" />
                   </div>
-                  <p className="text-xs text-muted-foreground mt-1">客服1</p>
+                  <p className="text-xs text-muted-foreground mt-1">技术支持</p>
                 </div>
                 <div className="text-center">
                   <div className="w-20 h-20 rounded-lg overflow-hidden border border-gray-200">
