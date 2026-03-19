@@ -183,28 +183,40 @@ export default function ContactPage() {
 
             {/* WeChat QR Codes - Independent Section */}
             <div className="mt-6 rounded-2xl bg-white p-6 lg:p-8 border border-gray-100 shadow-sm">
-              <div className="text-center mb-6">
+              <div className="text-center mb-8">
                 <h3 className="text-xl font-bold text-foreground mb-2">微信联系</h3>
                 <p className="text-sm text-muted-foreground">扫码添加客服微信，获取实时咨询服务（鼠标悬停放大二维码）</p>
               </div>
-              <div className="flex flex-wrap justify-center gap-8">
-                <div className="group text-center">
-                  <div className="relative mb-2 h-24 w-24 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl group-hover:border-primary">
-                    <img src="/images/qr-2.png" alt="销售咨询" className="w-full h-full object-cover" />
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Sales Department */}
+                <div className="text-center">
+                  <h4 className="text-base font-semibold text-foreground mb-4 pb-2 border-b border-gray-100">销售部</h4>
+                  <div className="flex justify-center gap-6">
+                    <div className="group text-center">
+                      <div className="relative mb-2 h-24 w-24 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl group-hover:border-primary">
+                        <img src="/images/qr-2.png" alt="销售咨询" className="w-full h-full object-cover" />
+                      </div>
+                      <span className="text-sm text-muted-foreground">销售咨询</span>
+                    </div>
+                    <div className="group text-center">
+                      <div className="relative mb-2 h-24 w-24 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl group-hover:border-primary">
+                        <img src="/images/qr-china.png" alt="销售专员（中国办）" className="w-full h-full object-cover" />
+                      </div>
+                      <span className="text-sm text-muted-foreground">销售专员（中国办）</span>
+                    </div>
                   </div>
-                  <span className="text-sm text-muted-foreground">销售咨询</span>
                 </div>
-                <div className="group text-center">
-                  <div className="relative mb-2 h-24 w-24 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl group-hover:border-primary">
-                    <img src="/images/qr-china.png" alt="销售专员（中国办）" className="w-full h-full object-cover" />
+                {/* Technical Support Department */}
+                <div className="text-center">
+                  <h4 className="text-base font-semibold text-foreground mb-4 pb-2 border-b border-gray-100">技术支持部</h4>
+                  <div className="flex justify-center gap-6">
+                    <div className="group text-center">
+                      <div className="relative mb-2 h-24 w-24 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl group-hover:border-primary">
+                        <img src="/images/qr-1.png" alt="技术支持" className="w-full h-full object-cover" />
+                      </div>
+                      <span className="text-sm text-muted-foreground">技术支持</span>
+                    </div>
                   </div>
-                  <span className="text-sm text-muted-foreground">销售专员（中国办）</span>
-                </div>
-                <div className="group text-center">
-                  <div className="relative mb-2 h-24 w-24 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl group-hover:border-primary">
-                    <img src="/images/qr-1.png" alt="技术支持" className="w-full h-full object-cover" />
-                  </div>
-                  <span className="text-sm text-muted-foreground">技术支持</span>
                 </div>
               </div>
             </div>
