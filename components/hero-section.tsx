@@ -146,22 +146,23 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Right side - HMRC Approved Logo (takes half space on HMRC slide) */}
-        <div 
-          className={`hidden lg:flex w-1/2 h-full items-center justify-center transition-all duration-500 ${
-            currentBanner.id === 4 
-              ? "opacity-100 translate-x-0" 
-              : "opacity-0 translate-x-8 pointer-events-none absolute right-0"
-          }`}
-        >
-          <Image
-            src="/images/hmrc-approved-logo.png"
-            alt="HMRC Fulfilment House Due Diligence Scheme Approved"
-            width={500}
-            height={220}
-            className="object-contain drop-shadow-2xl w-auto h-auto max-w-full"
-          />
-        </div>
+      </div>
+
+      {/* Right side - HMRC Approved Logo (full height, half width on HMRC slide) */}
+      <div 
+        className={`hidden lg:flex absolute top-0 right-0 w-1/2 h-full items-center justify-center z-20 transition-all duration-500 ${
+          currentBanner.id === 4 
+            ? "opacity-100 translate-x-0" 
+            : "opacity-0 translate-x-8 pointer-events-none"
+        }`}
+      >
+        <Image
+          src="/images/hmrc-approved-logo.png"
+          alt="HMRC Fulfilment House Due Diligence Scheme Approved"
+          width={600}
+          height={280}
+          className="object-contain drop-shadow-2xl w-auto h-auto max-h-[60%]"
+        />
       </div>
 
       {/* Navigation arrows */}
