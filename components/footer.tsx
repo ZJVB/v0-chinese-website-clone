@@ -93,18 +93,24 @@ export function Footer() {
           {/* WeChat QR Codes */}
           <div>
             <h4 className="mb-4 text-sm font-semibold text-primary">微信联系</h4>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-3">
               <div className="group relative text-center z-20 hover:z-[100]">
-                <div className="mb-2 h-20 w-20 rounded-lg overflow-hidden border border-white/20 cursor-pointer transition-all duration-300 group-hover:scale-[1.8] group-hover:shadow-xl group-hover:border-primary">
-                  <Image src="/images/qr-1.png" alt="微信客服1" width={80} height={80} className="w-full h-full object-cover" />
+                <div className="mb-2 h-16 w-16 rounded-lg overflow-hidden border border-white/20 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:shadow-xl group-hover:border-primary">
+                  <Image src="/images/qr-1.png" alt="微信客服1" width={64} height={64} className="w-full h-full object-cover" />
                 </div>
-                <span className="text-xs text-white/60 group-hover:opacity-0 transition-opacity">微信客服1</span>
+                <span className="text-xs text-white/60 group-hover:opacity-0 transition-opacity">客服1</span>
               </div>
               <div className="group relative text-center z-10 hover:z-[100]">
-                <div className="mb-2 h-20 w-20 rounded-lg overflow-hidden border border-white/20 cursor-pointer transition-all duration-300 group-hover:scale-[1.8] group-hover:shadow-xl group-hover:border-primary">
-                  <Image src="/images/qr-2.png" alt="微信客服2" width={80} height={80} className="w-full h-full object-cover" />
+                <div className="mb-2 h-16 w-16 rounded-lg overflow-hidden border border-white/20 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:shadow-xl group-hover:border-primary">
+                  <Image src="/images/qr-2.png" alt="微信客服2" width={64} height={64} className="w-full h-full object-cover" />
                 </div>
-                <span className="text-xs text-white/60 group-hover:opacity-0 transition-opacity">微信客服2</span>
+                <span className="text-xs text-white/60 group-hover:opacity-0 transition-opacity">客服2</span>
+              </div>
+              <div className="group relative text-center z-0 hover:z-[100]">
+                <div className="mb-2 h-16 w-16 rounded-lg overflow-hidden border border-white/20 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:shadow-xl group-hover:border-primary">
+                  <Image src="/images/qr-china.png" alt="微信客服（中国）" width={64} height={64} className="w-full h-full object-cover" />
+                </div>
+                <span className="text-xs text-white/60 group-hover:opacity-0 transition-opacity">客服（中国）</span>
               </div>
             </div>
             <p className="mt-3 text-xs text-white/60">鼠标悬停放大二维码</p>

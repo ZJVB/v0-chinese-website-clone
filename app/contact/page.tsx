@@ -201,6 +201,12 @@ export default function ContactPage() {
                       </div>
                       <span className="text-xs text-muted-foreground">客服 2</span>
                     </div>
+                    <div className="group text-center">
+                      <div className="relative mb-1.5 h-20 w-20 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl group-hover:border-primary">
+                        <img src="/images/qr-china.png" alt="微信客服（中国）" className="w-full h-full object-cover" />
+                      </div>
+                      <span className="text-xs text-muted-foreground">客服（中国）</span>
+                    </div>
                   </div>
                 </div>
               </div>
