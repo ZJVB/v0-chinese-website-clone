@@ -75,7 +75,7 @@ export function HeroSection() {
             index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
         >
-          <div className={`absolute inset-0 ${banner.id === 4 ? "-inset-[5%]" : ""}`}>
+          <div className={`absolute ${banner.id === 4 ? "inset-[-5%]" : "inset-0"} overflow-hidden`}>
             <Image
               src={banner.image}
               alt={banner.title}
