@@ -46,9 +46,9 @@ export function Footer() {
 
             {/* China Office */}
             <div>
-              <h5 className="text-xs font-semibold text-red-400 mb-2">中国办事处</h5>
+              <h5 className="text-xs font-semibold text-primary mb-2">中国办事处</h5>
               <div className="space-y-1.5 text-sm text-white/60">
-                <a href="tel:18033414492" className="flex items-center gap-2 hover:text-red-400 transition-colors">
+                <a href="tel:18033414492" className="flex items-center gap-2 hover:text-primary transition-colors">
                   <Phone className="h-3.5 w-3.5" />
                   张小姐 18033414492
                 </a>
