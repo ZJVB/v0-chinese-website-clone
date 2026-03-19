@@ -153,15 +153,13 @@ export function HeroSection() {
               : "opacity-0 translate-x-8 pointer-events-none"
           }`}
         >
-          <div className="bg-white rounded-xl p-6 shadow-2xl">
-            <Image
-              src="/images/hmrc-approved-logo.png"
-              alt="HMRC Fulfilment House Due Diligence Scheme Approved"
-              width={280}
-              height={120}
-              className="object-contain"
-            />
-          </div>
+          <Image
+            src="/images/hmrc-approved-logo.png"
+            alt="HMRC Fulfilment House Due Diligence Scheme Approved"
+            width={400}
+            height={180}
+            className="object-contain drop-shadow-2xl w-auto h-auto"
+          />
         </div>
       </div>
 
