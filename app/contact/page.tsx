@@ -10,11 +10,17 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
-const contactInfo = [
+const contactInfoUK = [
   { icon: Phone, title: "电话", content: "+44 161 566 2392 / 7599588577", href: "tel:+441615662392" },
   { icon: Mail, title: "邮箱", content: "contact@thecubedistribution.com", href: "mailto:contact@thecubedistribution.com" },
   { icon: MapPin, title: "地址", content: "Zainhub Gate2, Lord North Street, Manchester, M40 8HT, United Kingdom", href: null },
   { icon: Clock, title: "工作时间", content: "周一至周六 9:00-18:00（英国时间）", href: null },
+];
+
+const contactInfoChina = [
+  { icon: MapPin, title: "地址", content: "广东省深圳市宝安区政丰南路怀德翠岗工业园4区28栋", href: null },
+  { icon: Phone, title: "联系人", content: "张小姐", href: null },
+  { icon: Phone, title: "联系电话", content: "18033414492（微信同号）", href: "tel:18033414492" },
 ];
 
 interface FormData {
@@ -144,29 +150,66 @@ export default function ContactPage() {
                   欢迎通过以下方式联系我们，或填写右侧表单，我们将在24小时内回复。
                 </p>
 
-                <div className="space-y-4">
-                  {contactInfo.map((item) => (
-                    <div
-                      key={item.title}
-                      className="group flex items-start gap-4 rounded-xl bg-white p-5 border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-primary/20 hover:-translate-y-0.5"
-                    >
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-all duration-300 group-hover:bg-primary">
-                        <item.icon className="h-5 w-5 text-primary transition-colors duration-300 group-hover:text-white" />
+                {/* UK Office */}
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <span className="text-xl">🇬🇧</span> 英国总部
+                  </h3>
+                  <div className="space-y-3">
+                    {contactInfoUK.map((item) => (
+                      <div
+                        key={item.title}
+                        className="group flex items-start gap-4 rounded-xl bg-white p-4 border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-primary/20 hover:-translate-y-0.5"
+                      >
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-all duration-300 group-hover:bg-primary">
+                          <item.icon className="h-4 w-4 text-primary transition-colors duration-300 group-hover:text-white" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-foreground text-sm">
+                            {item.title}
+                          </p>
+                          {item.href ? (
+                            <a href={item.href} className="text-muted-foreground text-sm hover:text-primary transition-colors">
+                              {item.content}
+                            </a>
+                          ) : (
+                            <p className="text-muted-foreground text-sm">{item.content}</p>
+                          )}
+                        </div>
                       </div>
-                      <div>
-                        <p className="font-semibold text-foreground">
-                          {item.title}
-                        </p>
-                        {item.href ? (
-                          <a href={item.href} className="text-muted-foreground hover:text-primary transition-colors">
-                            {item.content}
-                          </a>
-                        ) : (
-                          <p className="text-muted-foreground">{item.content}</p>
-                        )}
+                    ))}
+                  </div>
+                </div>
+
+                {/* China Office */}
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <span className="text-xl">🇨🇳</span> 中国办事处
+                  </h3>
+                  <div className="space-y-3">
+                    {contactInfoChina.map((item, index) => (
+                      <div
+                        key={index}
+                        className="group flex items-start gap-4 rounded-xl bg-white p-4 border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-primary/20 hover:-translate-y-0.5"
+                      >
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red-500/10 transition-all duration-300 group-hover:bg-red-500">
+                          <item.icon className="h-4 w-4 text-red-500 transition-colors duration-300 group-hover:text-white" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-foreground text-sm">
+                            {item.title}
+                          </p>
+                          {item.href ? (
+                            <a href={item.href} className="text-muted-foreground text-sm hover:text-red-500 transition-colors">
+                              {item.content}
+                            </a>
+                          ) : (
+                            <p className="text-muted-foreground text-sm">{item.content}</p>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
 
                 <div className="mt-6 rounded-xl bg-white p-6 border border-gray-100">

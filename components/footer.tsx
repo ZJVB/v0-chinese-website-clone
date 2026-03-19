@@ -21,21 +21,41 @@ export function Footer() {
                 </div>
               </div>
             </div>
-            <p className="mb-6 text-sm leading-relaxed text-white/60">
-              英国本地仓储与履约解决方案，助力品牌高效进入英国市场。为跨境品牌、平台卖家、分销客户提供专业物流支持。
+            <p className="mb-4 text-sm leading-relaxed text-white/60">
+              英国本地仓储与履约解决方案，助力品牌高效进入英国市场。
             </p>
-            <div className="space-y-2 text-sm text-white/60">
-              <a href="tel:+441615662392" className="flex items-center gap-2 hover:text-primary transition-colors">
-                <Phone className="h-4 w-4" />
-                +44 161 566 2392 / 7599588577
-              </a>
-              <a href="mailto:contact@thecubedistribution.com" className="flex items-center gap-2 hover:text-primary transition-colors">
-                <Mail className="h-4 w-4" />
-                contact@thecubedistribution.com
-              </a>
-              <div className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                <span>Zainhub Gate2, Lord North Street,<br />Manchester, M40 8HT, United Kingdom</span>
+            
+            {/* UK Office */}
+            <div className="mb-4">
+              <h5 className="text-xs font-semibold text-primary mb-2">英国总部</h5>
+              <div className="space-y-1.5 text-sm text-white/60">
+                <a href="tel:+441615662392" className="flex items-center gap-2 hover:text-primary transition-colors">
+                  <Phone className="h-3.5 w-3.5" />
+                  +44 161 566 2392
+                </a>
+                <a href="mailto:contact@thecubedistribution.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+                  <Mail className="h-3.5 w-3.5" />
+                  contact@thecubedistribution.com
+                </a>
+                <div className="flex items-start gap-2">
+                  <MapPin className="h-3.5 w-3.5 mt-0.5 shrink-0" />
+                  <span className="text-xs">Manchester, M40 8HT, UK</span>
+                </div>
+              </div>
+            </div>
+
+            {/* China Office */}
+            <div>
+              <h5 className="text-xs font-semibold text-red-400 mb-2">中国办事处</h5>
+              <div className="space-y-1.5 text-sm text-white/60">
+                <a href="tel:18033414492" className="flex items-center gap-2 hover:text-red-400 transition-colors">
+                  <Phone className="h-3.5 w-3.5" />
+                  张小姐 18033414492
+                </a>
+                <div className="flex items-start gap-2">
+                  <MapPin className="h-3.5 w-3.5 mt-0.5 shrink-0" />
+                  <span className="text-xs">深圳市宝安区怀德翠岗工业园</span>
+                </div>
               </div>
             </div>
           </div>
