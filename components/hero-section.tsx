@@ -84,7 +84,7 @@ export function HeroSection() {
               priority={index === 0}
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#041653]/90 via-[#041653]/70 to-[#041653]/30" />
+          <div className={`absolute inset-0 bg-gradient-to-r ${banner.id === 4 ? "from-[#041653]/70 via-[#041653]/40 to-transparent" : "from-[#041653]/90 via-[#041653]/70 to-[#041653]/30"}`} />
         </div>
       ))}
 
