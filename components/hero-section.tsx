@@ -156,13 +156,13 @@ export function HeroSection() {
             : "opacity-0 translate-x-8 pointer-events-none"
         }`}
       >
-        <div className="w-[80%] relative">
+        <div className="flex items-center justify-center">
           <Image
             src="/images/hmrc-approved-logo.png"
             alt="HMRC Fulfilment House Due Diligence Scheme Approved"
             width={800}
             height={800}
-            className="object-contain drop-shadow-2xl w-full h-auto scale-y-[2] origin-center"
+            className="object-contain drop-shadow-2xl scale-[2] origin-center"
           />
         </div>
       </div>
