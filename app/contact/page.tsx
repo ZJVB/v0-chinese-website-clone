@@ -130,14 +130,9 @@ export default function ContactPage() {
             <div className="grid gap-6 md:grid-cols-2">
               {/* UK Office Card */}
               <div className="rounded-2xl bg-white p-6 lg:p-8 border border-gray-100 shadow-sm">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                    <span className="text-2xl">🇬🇧</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground">英国总部</h3>
-                    <p className="text-sm text-muted-foreground">UK Headquarters</p>
-                  </div>
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold text-foreground">英国总部</h3>
+                  <p className="text-sm text-muted-foreground">UK Headquarters</p>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
@@ -161,14 +156,9 @@ export default function ContactPage() {
 
               {/* China Office Card */}
               <div className="rounded-2xl bg-white p-6 lg:p-8 border border-gray-100 shadow-sm">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                    <span className="text-2xl">🇨🇳</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground">中国办事处</h3>
-                    <p className="text-sm text-muted-foreground">China Office</p>
-                  </div>
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold text-foreground">中国办事处</h3>
+                  <p className="text-sm text-muted-foreground">China Office</p>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
@@ -182,6 +172,10 @@ export default function ContactPage() {
                   <div className="flex items-center gap-3">
                     <Phone className="h-5 w-5 text-primary shrink-0" />
                     <a href="tel:18033414492" className="text-muted-foreground text-sm hover:text-primary transition-colors">18033414492（微信同号）</a>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Clock className="h-5 w-5 text-primary shrink-0" />
+                    <p className="text-muted-foreground text-sm">周一至周日 8:00-20:00（北京时间）</p>
                   </div>
                 </div>
 
