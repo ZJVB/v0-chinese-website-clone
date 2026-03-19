@@ -159,9 +159,10 @@ export function HeroSection() {
         <Image
           src="/images/hmrc-approved-logo.png"
           alt="HMRC Fulfilment House Due Diligence Scheme Approved"
-          width={450}
-          height={450}
-          className="object-contain drop-shadow-2xl w-auto h-auto"
+          width={550}
+          height={550}
+          className="object-contain drop-shadow-2xl"
+          style={{ width: 'auto', height: '550px' }}
         />
       </div>
 
