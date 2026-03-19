@@ -87,8 +87,9 @@ export function HeroSection() {
       ))}
 
       {/* Content */}
-      <div className="relative z-20 mx-auto flex h-full max-w-7xl items-center justify-between px-6 lg:px-8">
-        <div className="max-w-2xl pt-16">
+      <div className="relative z-20 mx-auto flex h-full max-w-7xl items-center px-6 lg:px-8">
+        {/* Left side - Text content */}
+        <div className={`pt-16 ${currentBanner.id === 4 ? 'w-full lg:w-1/2' : 'max-w-2xl'}`}>
           {banners.map((banner, index) => (
             <div
               key={banner.id}
@@ -145,20 +146,20 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* HMRC Approved Logo - Only show on HMRC slide */}
+        {/* Right side - HMRC Approved Logo (takes half space on HMRC slide) */}
         <div 
-          className={`hidden lg:block transition-all duration-500 ${
+          className={`hidden lg:flex w-1/2 h-full items-center justify-center transition-all duration-500 ${
             currentBanner.id === 4 
               ? "opacity-100 translate-x-0" 
-              : "opacity-0 translate-x-8 pointer-events-none"
+              : "opacity-0 translate-x-8 pointer-events-none absolute right-0"
           }`}
         >
           <Image
             src="/images/hmrc-approved-logo.png"
             alt="HMRC Fulfilment House Due Diligence Scheme Approved"
-            width={400}
-            height={180}
-            className="object-contain drop-shadow-2xl w-auto h-auto"
+            width={500}
+            height={220}
+            className="object-contain drop-shadow-2xl w-auto h-auto max-w-full"
           />
         </div>
       </div>
