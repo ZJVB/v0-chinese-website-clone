@@ -185,7 +185,7 @@ export default function ContactPage() {
             <div className="mt-6 rounded-2xl bg-white p-6 lg:p-8 border border-gray-100 shadow-sm">
               <div className="text-center mb-6">
                 <h3 className="text-xl font-bold text-foreground mb-2">微信联系</h3>
-                <p className="text-sm text-muted-foreground">扫码添加客服微信，获取����时咨询服务（鼠标悬停放大二维码）</p>
+                <p className="text-sm text-muted-foreground">扫码添加客服微信，获取实时咨询服务（鼠标悬停放大二维码）</p>
               </div>
               <div className="flex flex-wrap justify-center gap-8">
                 <div className="group text-center">
