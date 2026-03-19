@@ -29,18 +29,18 @@ export function Footer() {
             <div className="mb-4">
               <h5 className="text-xs font-semibold text-primary mb-2">英国总部</h5>
               <div className="space-y-1.5 text-sm text-white/60">
+                <div className="flex items-start gap-2">
+                  <MapPin className="h-3.5 w-3.5 mt-0.5 shrink-0" />
+                  <span className="text-xs">Zainhub Gate2, Lord North Street, Manchester, M40 8HT, United Kingdom</span>
+                </div>
                 <a href="tel:+441615662392" className="flex items-center gap-2 hover:text-primary transition-colors">
                   <Phone className="h-3.5 w-3.5" />
-                  +44 161 566 2392
+                  <span className="text-xs">+44 161 566 2392 / 7599588577</span>
                 </a>
                 <a href="mailto:contact@thecubedistribution.com" className="flex items-center gap-2 hover:text-primary transition-colors">
                   <Mail className="h-3.5 w-3.5" />
-                  contact@thecubedistribution.com
+                  <span className="text-xs">contact@thecubedistribution.com</span>
                 </a>
-                <div className="flex items-start gap-2">
-                  <MapPin className="h-3.5 w-3.5 mt-0.5 shrink-0" />
-                  <span className="text-xs">Manchester, M40 8HT, UK</span>
-                </div>
               </div>
             </div>
 
