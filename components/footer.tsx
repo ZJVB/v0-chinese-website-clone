@@ -48,14 +48,18 @@ export function Footer() {
             <div>
               <h5 className="text-xs font-semibold text-primary mb-2">中国办事处</h5>
               <div className="space-y-1.5 text-sm text-white/60">
-                <a href="tel:18033414492" className="flex items-center gap-2 hover:text-primary transition-colors">
-                  <Phone className="h-3.5 w-3.5" />
-                  张小姐 18033414492
-                </a>
                 <div className="flex items-start gap-2">
                   <MapPin className="h-3.5 w-3.5 mt-0.5 shrink-0" />
-                  <span className="text-xs">深圳市宝安区怀德翠岗工业园</span>
+                  <span className="text-xs">广东省深圳市宝安区政丰南路怀德翠岗工业园4区28栋</span>
                 </div>
+                <div className="flex items-center gap-2">
+                  <Phone className="h-3.5 w-3.5" />
+                  <span className="text-xs">联系人：张小姐</span>
+                </div>
+                <a href="tel:18033414492" className="flex items-center gap-2 hover:text-primary transition-colors">
+                  <Phone className="h-3.5 w-3.5" />
+                  <span className="text-xs">18033414492（微信同号）</span>
+                </a>
               </div>
             </div>
           </div>
