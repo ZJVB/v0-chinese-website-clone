@@ -191,15 +191,15 @@ export default function ContactPage() {
                   <div className="flex gap-4">
                     <div className="group text-center">
                       <div className="relative mb-1.5 h-20 w-20 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl group-hover:border-primary">
-                        <img src="/images/qr-1.png" alt="微信客服1" className="w-full h-full object-cover" />
+                        <img src="/images/qr-1.png" alt="销售咨询" className="w-full h-full object-cover" />
                       </div>
-                      <span className="text-xs text-muted-foreground">客服 1</span>
+                      <span className="text-xs text-muted-foreground">销售咨询</span>
                     </div>
                     <div className="group text-center">
                       <div className="relative mb-1.5 h-20 w-20 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl group-hover:border-primary">
-                        <img src="/images/qr-2.png" alt="微信客服2" className="w-full h-full object-cover" />
+                        <img src="/images/qr-2.png" alt="技术支持" className="w-full h-full object-cover" />
                       </div>
-                      <span className="text-xs text-muted-foreground">客服 2</span>
+                      <span className="text-xs text-muted-foreground">技术支持</span>
                     </div>
                     <div className="group text-center">
                       <div className="relative mb-1.5 h-20 w-20 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl group-hover:border-primary">
