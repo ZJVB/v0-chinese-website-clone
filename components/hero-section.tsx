@@ -75,14 +75,15 @@ export function HeroSection() {
             index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
         >
-          <Image
-            src={banner.image}
-            alt={banner.title}
-            fill
-            className={`object-cover ${banner.id === 4 ? "-inset-[5%] !absolute" : ""}`}
-            style={banner.id === 4 ? { width: '110%', height: '110%' } : undefined}
-            priority={index === 0}
-          />
+          <div className={`absolute inset-0 ${banner.id === 4 ? "-inset-[5%]" : ""}`}>
+            <Image
+              src={banner.image}
+              alt={banner.title}
+              fill
+              className="object-cover"
+              priority={index === 0}
+            />
+          </div>
           <div className="absolute inset-0 bg-gradient-to-r from-[#041653]/90 via-[#041653]/70 to-[#041653]/30" />
         </div>
       ))}
