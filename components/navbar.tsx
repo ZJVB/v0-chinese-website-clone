@@ -170,12 +170,12 @@ export function Navbar() {
             <p className="text-[10px] text-muted-foreground">悬停放大扫码</p>
           </div>
           <div className="group/qr text-center z-20 hover:z-[100]">
-            <div className="w-12 h-12 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover/qr:scale-[2.8] group-hover/qr:shadow-xl group-hover/qr:border-primary">
+            <div className="w-12 h-12 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 origin-top group-hover/qr:scale-[2.8] group-hover/qr:translate-y-[40px] group-hover/qr:shadow-xl group-hover/qr:border-primary">
               <Image src="/images/qr-1.png" alt="微信客服1" width={48} height={48} className="w-full h-full object-cover" />
             </div>
           </div>
           <div className="group/qr text-center z-10 hover:z-[100]">
-            <div className="w-12 h-12 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover/qr:scale-[2.8] group-hover/qr:shadow-xl group-hover/qr:border-primary">
+            <div className="w-12 h-12 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 origin-top group-hover/qr:scale-[2.8] group-hover/qr:translate-y-[40px] group-hover/qr:shadow-xl group-hover/qr:border-primary">
               <Image src="/images/qr-china.png" alt="销售专员（中国办）" width={48} height={48} className="w-full h-full object-cover" />
             </div>
           </div>
