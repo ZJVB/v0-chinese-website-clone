@@ -8,20 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
-
-const contactInfoUK = [
-  { icon: Phone, title: "电话", content: "+44 161 566 2392 / 7599588577", href: "tel:+441615662392" },
-  { icon: Mail, title: "邮箱", content: "contact@thecubedistribution.com", href: "mailto:contact@thecubedistribution.com" },
-  { icon: MapPin, title: "地址", content: "Zainhub Gate2, Lord North Street, Manchester, M40 8HT, United Kingdom", href: null },
-  { icon: Clock, title: "工作时间", content: "周一至周六 9:00-18:00（英国时间）", href: null },
-];
-
-const contactInfoChina = [
-  { icon: MapPin, title: "地址", content: "广东省深圳市宝安区政丰南路怀德翠岗工业园4区28栋", href: null },
-  { icon: Phone, title: "联系人", content: "张小姐", href: null },
-  { icon: Phone, title: "联系电话", content: "18033414492（微信同号）", href: "tel:18033414492" },
-];
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle, Loader2, User } from "lucide-react";
 
 interface FormData {
   name: string;
@@ -137,107 +124,99 @@ export default function ContactPage() {
           image="/images/banner-contact.jpg"
         />
 
-        {/* Contact Form & Info */}
-        <section className="py-16 lg:py-24 bg-[#f8fafc]">
+        {/* Contact Info Cards */}
+        <section className="py-12 lg:py-16 bg-[#f8fafc]">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="grid gap-10 lg:grid-cols-5">
-              {/* Left - Contact Info */}
-              <div className="lg:col-span-2">
-                <h2 className="mb-2 text-2xl font-bold text-foreground">
-                  联系方式
-                </h2>
-                <p className="mb-8 text-muted-foreground">
-                  欢迎通过以下方式联系我们，或填写右侧表单，我们将在24小时内回复。
-                </p>
+            <div className="grid gap-6 md:grid-cols-2">
+              {/* UK Office Card */}
+              <div className="rounded-2xl bg-white p-6 lg:p-8 border border-gray-100 shadow-sm">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                    <span className="text-2xl">🇬🇧</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground">英国总部</h3>
+                    <p className="text-sm text-muted-foreground">UK Headquarters</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                    <p className="text-muted-foreground text-sm">Zainhub Gate2, Lord North Street, Manchester, M40 8HT, United Kingdom</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="h-5 w-5 text-primary shrink-0" />
+                    <a href="tel:+441615662392" className="text-muted-foreground text-sm hover:text-primary transition-colors">+44 161 566 2392 / 7599588577</a>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Mail className="h-5 w-5 text-primary shrink-0" />
+                    <a href="mailto:contact@thecubedistribution.com" className="text-muted-foreground text-sm hover:text-primary transition-colors">contact@thecubedistribution.com</a>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Clock className="h-5 w-5 text-primary shrink-0" />
+                    <p className="text-muted-foreground text-sm">周一至周六 9:00-18:00（英国时间）</p>
+                  </div>
+                </div>
+              </div>
 
-                {/* UK Office */}
-                <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <span className="text-xl">🇬🇧</span> 英国总部
-                  </h3>
-                  <div className="space-y-3">
-                    {contactInfoUK.map((item) => (
-                      <div
-                        key={item.title}
-                        className="group flex items-start gap-4 rounded-xl bg-white p-4 border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-primary/20 hover:-translate-y-0.5"
-                      >
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-all duration-300 group-hover:bg-primary">
-                          <item.icon className="h-4 w-4 text-primary transition-colors duration-300 group-hover:text-white" />
-                        </div>
-                        <div>
-                          <p className="font-semibold text-foreground text-sm">
-                            {item.title}
-                          </p>
-                          {item.href ? (
-                            <a href={item.href} className="text-muted-foreground text-sm hover:text-primary transition-colors">
-                              {item.content}
-                            </a>
-                          ) : (
-                            <p className="text-muted-foreground text-sm">{item.content}</p>
-                          )}
-                        </div>
-                      </div>
-                    ))}
+              {/* China Office Card */}
+              <div className="rounded-2xl bg-white p-6 lg:p-8 border border-gray-100 shadow-sm">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                    <span className="text-2xl">🇨🇳</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground">中国办事处</h3>
+                    <p className="text-sm text-muted-foreground">China Office</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                    <p className="text-muted-foreground text-sm">广东省深圳市宝安区政丰南路怀德翠岗工业园4区28栋</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <User className="h-5 w-5 text-primary shrink-0" />
+                    <p className="text-muted-foreground text-sm">联系人：张小姐</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="h-5 w-5 text-primary shrink-0" />
+                    <a href="tel:18033414492" className="text-muted-foreground text-sm hover:text-primary transition-colors">18033414492（微信同号）</a>
                   </div>
                 </div>
 
-                {/* China Office */}
-                <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <span className="text-xl">🇨🇳</span> 中国办事处
-                  </h3>
-                  <div className="space-y-3">
-                    {contactInfoChina.map((item, index) => (
-                      <div
-                        key={index}
-                        className="group flex items-start gap-4 rounded-xl bg-white p-4 border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-primary/20 hover:-translate-y-0.5"
-                      >
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red-500/10 transition-all duration-300 group-hover:bg-red-500">
-                          <item.icon className="h-4 w-4 text-red-500 transition-colors duration-300 group-hover:text-white" />
-                        </div>
-                        <div>
-                          <p className="font-semibold text-foreground text-sm">
-                            {item.title}
-                          </p>
-                          {item.href ? (
-                            <a href={item.href} className="text-muted-foreground text-sm hover:text-red-500 transition-colors">
-                              {item.content}
-                            </a>
-                          ) : (
-                            <p className="text-muted-foreground text-sm">{item.content}</p>
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mt-6 rounded-xl bg-white p-6 border border-gray-100">
-                  <h3 className="mb-4 font-bold text-foreground">微信联系</h3>
-                  <p className="text-sm text-muted-foreground mb-4">扫码添加客服微信，获取即时咨询服务（鼠标悬停放大二维码）</p>
-                  <div className="flex gap-6">
+                {/* WeChat QR Codes */}
+                <div className="mt-6 pt-6 border-t border-gray-100">
+                  <p className="text-sm font-medium text-foreground mb-3">微信联系</p>
+                  <div className="flex gap-4">
                     <div className="group text-center">
-                      <div className="relative mb-2 h-24 w-24 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover:scale-[1.8] group-hover:z-50 group-hover:shadow-xl group-hover:border-primary">
+                      <div className="relative mb-1.5 h-20 w-20 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl group-hover:border-primary">
                         <img src="/images/qr-1.png" alt="微信客服1" className="w-full h-full object-cover" />
                       </div>
-                      <span className="text-xs text-muted-foreground">客服微信 1</span>
+                      <span className="text-xs text-muted-foreground">客服 1</span>
                     </div>
                     <div className="group text-center">
-                      <div className="relative mb-2 h-24 w-24 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover:scale-[1.8] group-hover:z-50 group-hover:shadow-xl group-hover:border-primary">
+                      <div className="relative mb-1.5 h-20 w-20 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:z-50 group-hover:shadow-xl group-hover:border-primary">
                         <img src="/images/qr-2.png" alt="微信客服2" className="w-full h-full object-cover" />
                       </div>
-                      <span className="text-xs text-muted-foreground">客服微信 2</span>
+                      <span className="text-xs text-muted-foreground">客服 2</span>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Form */}
+        <section className="py-12 lg:py-16 bg-white">
+          <div className="mx-auto max-w-3xl px-4 lg:px-8">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">发送咨询</h2>
+              <p className="text-muted-foreground">填写以下表单，我们的团队将在24小时内与您联系</p>
+            </div>
               
-              {/* Right - Contact Form */}
-              <div className="lg:col-span-3 rounded-2xl bg-white p-8 border border-gray-100 shadow-lg">
-                <h3 className="mb-1 text-xl font-bold text-foreground">发送消息</h3>
-                <p className="mb-6 text-sm text-muted-foreground">
-                  填写以下表单，我们的团队将尽快与您联系
-                </p>
+            <div className="rounded-2xl bg-[#f8fafc] p-6 lg:p-10 border border-gray-100">
                 {submitted ? (
                   <div className="flex flex-col items-center justify-center py-16">
                     <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-50">
@@ -373,7 +352,6 @@ export default function ContactPage() {
                     </p>
                   </form>
                 )}
-              </div>
             </div>
           </div>
         </section>
