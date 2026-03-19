@@ -108,9 +108,9 @@ export function Footer() {
               </div>
               <div className="group relative text-center z-0 hover:z-[100]">
                 <div className="mb-2 h-16 w-16 rounded-lg overflow-hidden border border-white/20 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:shadow-xl group-hover:border-primary">
-                  <Image src="/images/qr-china.png" alt="微信客服（中国）" width={64} height={64} className="w-full h-full object-cover" />
+                  <Image src="/images/qr-china.png" alt="销售专员（中国办）" width={64} height={64} className="w-full h-full object-cover" />
                 </div>
-                <span className="text-xs text-white/60 group-hover:opacity-0 transition-opacity">客服（中国）</span>
+                <span className="text-xs text-white/60 group-hover:opacity-0 transition-opacity">销售专员（中国办）</span>
               </div>
             </div>
             <p className="mt-3 text-xs text-white/60">鼠标悬停放大二维码</p>
