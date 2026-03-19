@@ -19,7 +19,7 @@ const banners = [
     id: 4,
     title: "HMRC 认可的合规海外仓服务商",
     subtitle: "Cube海外仓作为英国税务及海关总署（HMRC）认可的海外仓服务商。依托规范的运营体系与成熟的本地履约能力，我们为跨境卖家提供安全、透明、可靠的英国仓储及订单履约服务。",
-    image: "/images/hero-hmrc.jpg",
+    image: "/images/hero-hmrc-new.jpg",
     link: "/about",
     linkText: "了解更多",
   },
@@ -75,17 +75,15 @@ export function HeroSection() {
             index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
         >
-          {banner.id !== 4 && (
-            <div className="absolute inset-0 overflow-hidden">
-              <Image
-                src={banner.image}
-                alt={banner.title}
-                fill
-                className="object-cover"
-                priority={index === 0}
-              />
-            </div>
-          )}
+          <div className="absolute inset-0 overflow-hidden">
+            <Image
+              src={banner.image}
+              alt={banner.title}
+              fill
+              className="object-cover"
+              priority={index === 0}
+            />
+          </div>
           <div className="absolute inset-0 bg-gradient-to-r from-[#041653]/90 via-[#041653]/70 to-[#041653]/30" />
         </div>
       ))}
