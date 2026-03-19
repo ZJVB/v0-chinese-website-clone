@@ -176,7 +176,7 @@ export function Navbar() {
           </div>
           <div className="group/qr text-center z-10 hover:z-[100]">
             <div className="w-12 h-12 rounded-lg overflow-hidden border border-gray-200 cursor-pointer transition-all duration-300 group-hover/qr:scale-[2.8] group-hover/qr:shadow-xl group-hover/qr:border-primary">
-              <Image src="/images/qr-2.png" alt="微信客服2" width={48} height={48} className="w-full h-full object-cover" />
+              <Image src="/images/qr-china.png" alt="销售专员（中国办）" width={48} height={48} className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -235,9 +235,9 @@ export function Navbar() {
                 </div>
                 <div className="text-center">
                   <div className="w-20 h-20 rounded-lg overflow-hidden border border-gray-200">
-                    <Image src="/images/qr-2.png" alt="微信客服2" width={80} height={80} className="w-full h-full object-cover" />
+                    <Image src="/images/qr-china.png" alt="销售专员（中国办）" width={80} height={80} className="w-full h-full object-cover" />
                   </div>
-                  <p className="text-xs text-muted-foreground mt-1">客服2</p>
+                  <p className="text-xs text-muted-foreground mt-1">销售专员</p>
                 </div>
               </div>
             </div>
