@@ -75,8 +75,8 @@ export function HeroSection() {
             index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
         >
-          <div className="absolute inset-0 overflow-hidden">
-            <div className={`relative w-full h-full ${banner.id === 4 ? "scale-[0.8]" : ""}`}>
+          {banner.id !== 4 && (
+            <div className="absolute inset-0 overflow-hidden">
               <Image
                 src={banner.image}
                 alt={banner.title}
@@ -85,7 +85,7 @@ export function HeroSection() {
                 priority={index === 0}
               />
             </div>
-          </div>
+          )}
           <div className="absolute inset-0 bg-gradient-to-r from-[#041653]/90 via-[#041653]/70 to-[#041653]/30" />
         </div>
       ))}
