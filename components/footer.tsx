@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, User } from "lucide-react";
 
 export function Footer() {
   return (
@@ -53,7 +53,7 @@ export function Footer() {
                   <span className="text-xs">广东省深圳市宝安区政丰南路怀德翠岗工业园4区28栋</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Phone className="h-3.5 w-3.5" />
+                  <User className="h-3.5 w-3.5" />
                   <span className="text-xs">联系人：张小姐</span>
                 </div>
                 <a href="tel:18033414492" className="flex items-center gap-2 hover:text-primary transition-colors">
