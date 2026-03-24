@@ -1,0 +1,43 @@
+@import 'tailwindcss';
+@import '@nuxt/ui';
+
+/* Custom brand colors */
+:root {
+  --color-primary: #1e40af;
+  --color-primary-foreground: #ffffff;
+  --color-brand-dark: #041653;
+}
+
+/* Custom animations */
+@keyframes dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-dropdown-in {
+  animation: dropdown-in 0.2s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+/* Text utilities */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
