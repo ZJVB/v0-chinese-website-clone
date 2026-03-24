@@ -106,10 +106,7 @@ export default function PrivacyPage() {
                 如果您对本隐私政策有任何疑问或希望行使您的数据保护权利，请联系我们：
               </p>
               <div className="bg-muted/30 rounded-lg p-6 mt-4">
-                <p className="text-muted-foreground mb-2"><strong>Cube Distribution Service Ltd</strong></p>
-                <p className="text-muted-foreground mb-2">地址：Zainhub Gate2, Lord North Street, Manchester, M40 8HT, United Kingdom</p>
-                <p className="text-muted-foreground mb-2">邮箱：contact@thecubedistribution.com</p>
-                <p className="text-muted-foreground">电话：+44 161 566 2392 / 7599588577</p>
+                <p className="text-muted-foreground"><strong>邮箱：</strong>contact@thecubedistribution.com</p>
               </div>
             </div>
           </div>
