@@ -11,29 +11,17 @@ import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle, Loader2, User } from "lucide-react";
 
 interface FormData {
-  name: string;
-  company: string;
   email: string;
-  phone: string;
-  service: string;
-  message: string;
   honeypot: string;
 }
 
 interface FormErrors {
-  name?: string;
   email?: string;
-  message?: string;
 }
 
 export default function ContactPage() {
   const [formData, setFormData] = useState<FormData>({
-    name: "",
-    company: "",
     email: "",
-    phone: "",
-    service: "",
-    message: "",
     honeypot: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
@@ -44,22 +32,10 @@ export default function ContactPage() {
   function validateForm(): boolean {
     const newErrors: FormErrors = {};
     
-    if (!formData.name.trim()) {
-      newErrors.name = "请输入姓名";
-    } else if (formData.name.length > 100) {
-      newErrors.name = "姓名过长";
-    }
-    
     if (!formData.email.trim()) {
       newErrors.email = "请输入邮箱";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "请输入有效的邮箱地址";
-    }
-    
-    if (!formData.message.trim()) {
-      newErrors.message = "请输入留言内容";
-    } else if (formData.message.length > 5000) {
-      newErrors.message = "留言内容过长";
     }
     
     setErrors(newErrors);
@@ -95,12 +71,7 @@ export default function ContactPage() {
       if (response.ok && data.success) {
         setSubmitted(true);
         setFormData({
-          name: "",
-          company: "",
           email: "",
-          phone: "",
-          service: "",
-          message: "",
           honeypot: "",
         });
       } else {
@@ -237,8 +208,8 @@ export default function ContactPage() {
         <section className="py-12 lg:py-16 bg-white">
           <div className="mx-auto max-w-3xl px-4 lg:px-8">
             <div className="text-center mb-10">
-              <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">发送咨询</h2>
-              <p className="text-muted-foreground">填写以下表单，我们的团队将在24小时内与您联系</p>
+              <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">邮件联系</h2>
+              <p className="text-muted-foreground">输入您的邮箱地址，我们将及时与您联系</p>
             </div>
               
             <div className="rounded-2xl bg-[#f8fafc] p-6 lg:p-10 border border-gray-100">
@@ -277,83 +248,19 @@ export default function ContactPage() {
                       </div>
                     )}
                     
-                    <div className="grid gap-5 sm:grid-cols-2">
-                      <div className="flex flex-col gap-2">
-                        <Label htmlFor="name">姓名 *</Label>
-                        <Input 
-                          id="name" 
-                          value={formData.name}
-                          onChange={handleChange}
-                          placeholder="请输入您的姓名" 
-                          className={`h-11 ${errors.name ? "border-red-500 focus:border-red-500 focus:ring-red-500" : ""}`}
-                        />
-                        {errors.name && <p className="text-xs text-red-500">{errors.name}</p>}
-                      </div>
-                      <div className="flex flex-col gap-2">
-                        <Label htmlFor="company">公司/店铺名称</Label>
-                        <Input 
-                          id="company" 
-                          value={formData.company}
-                          onChange={handleChange}
-                          placeholder="请输入公司或店铺名称" 
-                          className="h-11" 
-                        />
-                      </div>
-                    </div>
-                    <div className="grid gap-5 sm:grid-cols-2">
-                      <div className="flex flex-col gap-2">
-                        <Label htmlFor="email">邮箱地址 *</Label>
-                        <Input 
-                          id="email" 
-                          type="email" 
-                          value={formData.email}
-                          onChange={handleChange}
-                          placeholder="your@email.com" 
-                          className={`h-11 ${errors.email ? "border-red-500 focus:border-red-500 focus:ring-red-500" : ""}`}
-                        />
-                        {errors.email && <p className="text-xs text-red-500">{errors.email}</p>}
-                      </div>
-                      <div className="flex flex-col gap-2">
-                        <Label htmlFor="phone">联系电话/微信</Label>
-                        <Input 
-                          id="phone" 
-                          type="tel" 
-                          value={formData.phone}
-                          onChange={handleChange}
-                          placeholder="手机号或微信号" 
-                          className="h-11" 
-                        />
-                      </div>
-                    </div>
                     <div className="flex flex-col gap-2">
-                      <Label htmlFor="service">感兴趣的服务</Label>
-                      <select 
-                        id="service" 
-                        value={formData.service}
+                      <Label htmlFor="email">邮箱地址 *</Label>
+                      <Input 
+                        id="email" 
+                        type="email" 
+                        value={formData.email}
                         onChange={handleChange}
-                        className="h-11 rounded-md border border-input bg-background px-3 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                      >
-                        <option value="">请选择服务类型</option>
-                        <option value="海外仓一件代发">海外仓一件代发</option>
-                        <option value="FBA头程/中转">FBA头程/中转</option>
-                        <option value="TEMU官方仓服务">TEMU官方仓服务</option>
-                        <option value="退货处理">退货处理</option>
-                        <option value="B2B批发配送">B2B批发配送</option>
-                        <option value="其他服务">其他服务</option>
-                      </select>
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      <Label htmlFor="message">留言信息 *</Label>
-                      <Textarea 
-                        id="message" 
-                        value={formData.message}
-                        onChange={handleChange}
-                        placeholder="请描述您的业务需求，如日均单量、主营品类、目标市场等..." 
-                        rows={5} 
-                        className={errors.message ? "border-red-500 focus:border-red-500 focus:ring-red-500" : ""}
+                        placeholder="your@email.com" 
+                        className={`h-11 ${errors.email ? "border-red-500 focus:border-red-500 focus:ring-red-500" : ""}`}
                       />
-                      {errors.message && <p className="text-xs text-red-500">{errors.message}</p>}
+                      {errors.email && <p className="text-xs text-red-500">{errors.email}</p>}
                     </div>
+                    
                     <Button 
                       type="submit" 
                       size="lg" 
@@ -368,12 +275,12 @@ export default function ContactPage() {
                       ) : (
                         <>
                           <Send className="h-4 w-4" />
-                          提交咨询
+                          订阅
                         </>
                       )}
                     </Button>
                     <p className="text-center text-xs text-muted-foreground">
-                      7x24小时客服支持 | 您的信息将被严格保密
+                      7x24小时客服支持
                     </p>
                   </form>
                 )}
