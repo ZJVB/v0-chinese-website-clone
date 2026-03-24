@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, User } from "lucide-react";
 
 export function Footer() {
   return (
@@ -21,21 +21,45 @@ export function Footer() {
                 </div>
               </div>
             </div>
-            <p className="mb-6 text-sm leading-relaxed text-white/60">
-              英国本地仓储与履约解决方案，助力品牌高效进入英国市场。为跨境品牌、平台卖家、分销客户提供专业物流支持。
+            <p className="mb-4 text-sm leading-relaxed text-white/60">
+              英国本地仓储与履约解决方案，助力品牌高效进入英国市场。
             </p>
-            <div className="space-y-2 text-sm text-white/60">
-              <a href="tel:+441615662392" className="flex items-center gap-2 hover:text-primary transition-colors">
-                <Phone className="h-4 w-4" />
-                +44 161 566 2392 / 7599588577
-              </a>
-              <a href="mailto:contact@thecubedistribution.com" className="flex items-center gap-2 hover:text-primary transition-colors">
-                <Mail className="h-4 w-4" />
-                contact@thecubedistribution.com
-              </a>
-              <div className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                <span>Zainhub Gate2, Lord North Street,<br />Manchester, M40 8HT, United Kingdom</span>
+            
+            {/* UK Office */}
+            <div className="mb-4">
+              <h5 className="text-xs font-semibold text-primary mb-2">英国总部</h5>
+              <div className="space-y-1.5 text-sm text-white/60">
+                <div className="flex items-start gap-2">
+                  <MapPin className="h-3.5 w-3.5 mt-0.5 shrink-0" />
+                  <span className="text-xs">Zainhub Gate2, Lord North Street, Manchester, M40 8HT, United Kingdom</span>
+                </div>
+                <a href="tel:+441615662392" className="flex items-center gap-2 hover:text-primary transition-colors">
+                  <Phone className="h-3.5 w-3.5" />
+                  <span className="text-xs">+44 161 566 2392 / 7599588577</span>
+                </a>
+                <a href="mailto:contact@thecubedistribution.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+                  <Mail className="h-3.5 w-3.5" />
+                  <span className="text-xs">contact@thecubedistribution.com</span>
+                </a>
+              </div>
+            </div>
+
+            {/* China Office */}
+            <div>
+              <h5 className="text-xs font-semibold text-primary mb-2">中国办事处</h5>
+              <div className="space-y-1.5 text-sm text-white/60">
+                <div className="flex items-start gap-2">
+                  <MapPin className="h-3.5 w-3.5 mt-0.5 shrink-0" />
+                  <span className="text-xs">广东省深圳市宝安区政丰南路怀德翠岗工业园4区28栋</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <User className="h-3.5 w-3.5" />
+                  <span className="text-xs">联系人：张小姐</span>
+                </div>
+                <a href="tel:18033414492" className="flex items-center gap-2 hover:text-primary transition-colors">
+                  <Phone className="h-3.5 w-3.5" />
+                  <span className="text-xs">18033414492（微信同号）</span>
+                </a>
               </div>
             </div>
           </div>
@@ -68,19 +92,43 @@ export function Footer() {
 
           {/* WeChat QR Codes */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold text-primary">微信联系</h4>
-            <div className="flex gap-4">
+            <h4 className="mb-4 text-sm font-semibold text-primary flex items-center gap-2">
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
+                <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.294.295a.328.328 0 0 0 .186-.059l1.918-1.125a.795.795 0 0 1 .71-.078c.864.277 1.79.424 2.806.424.22 0 .436-.009.652-.021-.128-.425-.197-.867-.197-1.323 0-3.494 3.372-6.331 7.527-6.331.184 0 .366.006.546.019-.498-3.6-4.28-6.351-8.528-6.351" fill="#00C800"/>
+                <path d="M24 14.551c0-3.283-3.108-5.944-6.938-5.944-3.831 0-6.938 2.661-6.938 5.944 0 3.284 3.107 5.945 6.938 5.945.757 0 1.485-.098 2.173-.28a.608.608 0 0 1 .546.06l1.476.867a.252.252 0 0 0 .143.045.226.226 0 0 0 .226-.226c0-.055-.022-.109-.037-.163l-.3-1.137a.45.45 0 0 1 .164-.51C23.008 18.103 24 16.433 24 14.55" fill="#00C800"/>
+                <circle cx="14.392" cy="14.551" r="1" fill="white"/>
+                <circle cx="19.608" cy="14.551" r="1" fill="white"/>
+                <circle cx="5.565" cy="8.5" r="1" fill="white"/>
+                <circle cx="10.782" cy="8.5" r="1" fill="white"/>
+              </svg>
+              微信联系
+            </h4>
+            
+            {/* Sales Department */}
+            <p className="text-xs text-white/40 mb-2">销售部</p>
+            <div className="flex flex-wrap gap-3 mb-4">
               <div className="group relative text-center z-20 hover:z-[100]">
-                <div className="mb-2 h-20 w-20 rounded-lg overflow-hidden border border-white/20 cursor-pointer transition-all duration-300 group-hover:scale-[1.8] group-hover:shadow-xl group-hover:border-primary">
-                  <Image src="/images/qr-1.png" alt="微信客服1" width={80} height={80} className="w-full h-full object-cover" />
+                <div className="mb-1 h-14 w-14 rounded-lg overflow-hidden border border-white/20 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:shadow-xl group-hover:border-primary">
+                  <Image src="/images/qr-2.png" alt="销售咨询" width={56} height={56} className="w-full h-full object-cover" />
                 </div>
-                <span className="text-xs text-white/60 group-hover:opacity-0 transition-opacity">微信客服1</span>
+                <span className="text-[10px] text-white/60 group-hover:opacity-0 transition-opacity">销售咨询</span>
               </div>
               <div className="group relative text-center z-10 hover:z-[100]">
-                <div className="mb-2 h-20 w-20 rounded-lg overflow-hidden border border-white/20 cursor-pointer transition-all duration-300 group-hover:scale-[1.8] group-hover:shadow-xl group-hover:border-primary">
-                  <Image src="/images/qr-2.png" alt="微信客服2" width={80} height={80} className="w-full h-full object-cover" />
+                <div className="mb-1 h-14 w-14 rounded-lg overflow-hidden border border-white/20 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:shadow-xl group-hover:border-primary">
+                  <Image src="/images/qr-china.png" alt="销售专员（中国办）" width={56} height={56} className="w-full h-full object-cover" />
                 </div>
-                <span className="text-xs text-white/60 group-hover:opacity-0 transition-opacity">微信客服2</span>
+                <span className="text-[10px] text-white/60 group-hover:opacity-0 transition-opacity">中国办</span>
+              </div>
+            </div>
+            
+            {/* Technical Support */}
+            <p className="text-xs text-white/40 mb-2">技术支持部</p>
+            <div className="flex flex-wrap gap-3">
+              <div className="group relative text-center z-0 hover:z-[100]">
+                <div className="mb-1 h-14 w-14 rounded-lg overflow-hidden border border-white/20 cursor-pointer transition-all duration-300 group-hover:scale-[2] group-hover:shadow-xl group-hover:border-primary">
+                  <Image src="/images/qr-1.png" alt="技术支持" width={56} height={56} className="w-full h-full object-cover" />
+                </div>
+                <span className="text-[10px] text-white/60 group-hover:opacity-0 transition-opacity">技术支持</span>
               </div>
             </div>
             <p className="mt-3 text-xs text-white/60">鼠标悬停放大二维码</p>

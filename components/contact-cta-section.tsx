@@ -45,7 +45,11 @@ export function ContactCtaSection() {
           <div className="flex flex-wrap justify-center gap-6 text-white/80">
             <a href="tel:+441615662392" className="flex items-center gap-2 hover:text-white transition-colors">
               <Phone className="h-4 w-4" />
-              <span>+44 161 566 2392</span>
+              <span>英国: +44 161 566 2392</span>
+            </a>
+            <a href="tel:18033414492" className="flex items-center gap-2 hover:text-white transition-colors">
+              <Phone className="h-4 w-4" />
+              <span>中国: 18033414492</span>
             </a>
             <a href="mailto:contact@thecubedistribution.com" className="flex items-center gap-2 hover:text-white transition-colors">
               <Mail className="h-4 w-4" />
