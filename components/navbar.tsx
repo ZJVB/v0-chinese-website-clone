@@ -184,8 +184,10 @@ export function Navbar() {
           
           {/* WeChat QR Code Dropdown */}
           {wechatModalOpen && (
-            <div className="absolute right-0 top-full pt-2 z-[100] animate-dropdown-in">
+            <div className="absolute left-1/2 top-full pt-2 z-[100] animate-wechat-popup">
               <div className="bg-card rounded-xl p-5 shadow-[0_8px_40px_rgba(0,0,0,0.15)] border border-border/50 min-w-[300px]">
+                {/* Arrow indicator */}
+                <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-card border-l border-t border-border/50 rotate-45"></div>
                 <p className="text-sm font-medium text-foreground mb-4 text-center">扫码添加微信咨询</p>
                 <div className="flex justify-center gap-5">
                   <div className="text-center">

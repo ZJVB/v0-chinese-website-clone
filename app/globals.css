@@ -93,6 +93,21 @@ html {
   animation: scale-in 0.2s ease-out both;
 }
 
+@keyframes wechat-popup {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.9) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1) translateY(0);
+  }
+}
+
+.animate-wechat-popup {
+  animation: wechat-popup 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
 @keyframes dropdown-in {
   from {
     opacity: 0;
@@ -106,6 +121,21 @@ html {
 
 .animate-dropdown-in {
   animation: dropdown-in 0.2s ease-out both;
+}
+
+@keyframes popup-up {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-popup-up {
+  animation: popup-up 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
 @keyframes underline-grow {
