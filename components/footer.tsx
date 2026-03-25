@@ -35,44 +35,42 @@ export function Footer() {
               onMouseEnter={() => setWechatOpen(true)}
               onMouseLeave={() => setWechatOpen(false)}
             >
-              <div className="relative">
-                <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none">
-                  <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.294.295a.328.328 0 0 0 .186-.059l1.918-1.125a.795.795 0 0 1 .71-.078c.864.277 1.79.424 2.806.424.22 0 .436-.009.652-.021-.128-.425-.197-.867-.197-1.323 0-3.494 3.372-6.331 7.527-6.331.184 0 .366.006.546.019-.498-3.6-4.28-6.351-8.528-6.351" fill="#00C800"/>
-                  <path d="M24 14.551c0-3.283-3.108-5.944-6.938-5.944-3.831 0-6.938 2.661-6.938 5.944 0 3.284 3.107 5.945 6.938 5.945.757 0 1.485-.098 2.173-.28a.608.608 0 0 1 .546.06l1.476.867a.252.252 0 0 0 .143.045.226.226 0 0 0 .226-.226c0-.055-.022-.109-.037-.163l-.3-1.137a.45.45 0 0 1 .164-.51C23.008 18.103 24 16.433 24 14.55" fill="#00C800"/>
-                  <circle cx="14.392" cy="14.551" r="1" fill="white"/>
-                  <circle cx="19.608" cy="14.551" r="1" fill="white"/>
-                  <circle cx="5.565" cy="8.5" r="1" fill="white"/>
-                  <circle cx="10.782" cy="8.5" r="1" fill="white"/>
-                </svg>
-                
-                {/* WeChat QR Code Popup - positioned above the icon */}
-                {wechatOpen && (
-                  <div className="absolute left-1/2 -translate-x-1/2 bottom-[calc(100%+12px)] z-[100] animate-popup-up">
-                    <div className="bg-white rounded-xl p-5 shadow-[0_8px_40px_rgba(0,0,0,0.25)] min-w-[280px]">
-                      <p className="text-sm font-medium text-gray-800 mb-4 text-center">扫码添加微信咨询</p>
-                      <div className="flex justify-center gap-4">
-                        <div className="text-center">
-                          <div className="w-24 h-24 rounded-lg overflow-hidden border border-gray-200 shadow-sm">
-                            <Image src="/images/qr-2.png" alt="销售咨询" width={96} height={96} className="w-full h-full object-cover" />
-                          </div>
-                          <p className="text-xs font-medium text-gray-800 mt-2">销售咨询</p>
-                          <p className="text-[10px] text-gray-500">英国总部</p>
+              <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none">
+                <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.294.295a.328.328 0 0 0 .186-.059l1.918-1.125a.795.795 0 0 1 .71-.078c.864.277 1.79.424 2.806.424.22 0 .436-.009.652-.021-.128-.425-.197-.867-.197-1.323 0-3.494 3.372-6.331 7.527-6.331.184 0 .366.006.546.019-.498-3.6-4.28-6.351-8.528-6.351" fill="#00C800"/>
+                <path d="M24 14.551c0-3.283-3.108-5.944-6.938-5.944-3.831 0-6.938 2.661-6.938 5.944 0 3.284 3.107 5.945 6.938 5.945.757 0 1.485-.098 2.173-.28a.608.608 0 0 1 .546.06l1.476.867a.252.252 0 0 0 .143.045.226.226 0 0 0 .226-.226c0-.055-.022-.109-.037-.163l-.3-1.137a.45.45 0 0 1 .164-.51C23.008 18.103 24 16.433 24 14.55" fill="#00C800"/>
+                <circle cx="14.392" cy="14.551" r="1" fill="white"/>
+                <circle cx="19.608" cy="14.551" r="1" fill="white"/>
+                <circle cx="5.565" cy="8.5" r="1" fill="white"/>
+                <circle cx="10.782" cy="8.5" r="1" fill="white"/>
+              </svg>
+              <span className="text-xs text-white/60 mt-1">联系我们</span>
+              
+              {/* WeChat QR Code Popup - positioned above the icon */}
+              {wechatOpen && (
+                <div className="absolute left-1/2 bottom-full mb-3 z-[100] animate-popup-up" style={{ transform: 'translateX(-50%)' }}>
+                  <div className="bg-white rounded-xl p-5 shadow-[0_8px_40px_rgba(0,0,0,0.25)]">
+                    <p className="text-sm font-medium text-gray-800 mb-4 text-center">扫码添加微信咨询</p>
+                    <div className="flex justify-center gap-4">
+                      <div className="text-center">
+                        <div className="w-24 h-24 rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                          <Image src="/images/qr-2.png" alt="销售咨询" width={96} height={96} className="w-full h-full object-cover" />
                         </div>
-                        <div className="text-center">
-                          <div className="w-24 h-24 rounded-lg overflow-hidden border border-gray-200 shadow-sm">
-                            <Image src="/images/qr-china.png" alt="销售专员（中国办）" width={96} height={96} className="w-full h-full object-cover" />
-                          </div>
-                          <p className="text-xs font-medium text-gray-800 mt-2">销售专员</p>
-                          <p className="text-[10px] text-gray-500">中国办事处</p>
+                        <p className="text-xs font-medium text-gray-800 mt-2">销售咨询</p>
+                        <p className="text-[10px] text-gray-500">英国总部</p>
+                      </div>
+                      <div className="text-center">
+                        <div className="w-24 h-24 rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                          <Image src="/images/qr-china.png" alt="销售专员（中国办）" width={96} height={96} className="w-full h-full object-cover" />
                         </div>
+                        <p className="text-xs font-medium text-gray-800 mt-2">销售专员</p>
+                        <p className="text-[10px] text-gray-500">中国办事处</p>
                       </div>
                     </div>
-                    {/* Arrow pointing down */}
-                    <div className="absolute left-1/2 -translate-x-1/2 -bottom-2 w-4 h-4 bg-white rotate-45 shadow-lg"></div>
                   </div>
-                )}
-              </div>
-              <span className="text-xs text-white/60 mt-1">联系我们</span>
+                  {/* Arrow pointing down */}
+                  <div className="absolute left-1/2 -translate-x-1/2 -bottom-2 w-4 h-4 bg-white rotate-45"></div>
+                </div>
+              )}
             </div>
           </div>
           
