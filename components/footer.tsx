@@ -51,8 +51,6 @@ export function Footer() {
               {wechatOpen && (
                 <div className="absolute left-1/2 bottom-full pb-2 z-[100] animate-wechat-popup" style={{ transform: 'translateX(-50%)' }}>
                   <div className="bg-card rounded-xl p-5 shadow-[0_8px_40px_rgba(0,0,0,0.15)] border border-border/50 min-w-[300px]">
-                    {/* Arrow indicator pointing down */}
-                    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-card border-r border-b border-border/50 rotate-45"></div>
                     <p className="text-sm font-medium text-foreground mb-4 text-center">扫码添加微信咨询</p>
                     <div className="flex justify-center gap-5">
                       <div className="text-center">
