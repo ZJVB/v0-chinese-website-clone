@@ -182,27 +182,32 @@ export function Navbar() {
             <span className="text-xs text-muted-foreground">联系我们</span>
           </div>
           
-          {/* WeChat QR Code Dropdown */}
+          {/* WeChat QR Code Dropdown - No Arrow */}
           {wechatModalOpen && (
-            <div className="absolute left-1/2 top-full pt-2 z-[100] animate-wechat-popup">
-              <div className="bg-card rounded-xl p-5 shadow-[0_8px_40px_rgba(0,0,0,0.15)] border border-border/50 min-w-[300px]">
-                {/* Arrow indicator */}
-                <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-card border-l border-t border-border/50 rotate-45"></div>
-                <p className="text-sm font-medium text-foreground mb-4 text-center">扫码添加微信咨询</p>
+            <div 
+              className="absolute top-full mt-2 z-[100]"
+              style={{ 
+                left: '50%', 
+                transform: 'translateX(-50%)',
+                animation: 'fadeScaleIn 0.2s ease-out'
+              }}
+            >
+              <div className="bg-white rounded-xl p-5 shadow-[0_8px_30px_rgba(0,0,0,0.12)] min-w-[300px]">
+                <p className="text-sm font-medium text-gray-800 mb-4 text-center">扫码添加微信咨询</p>
                 <div className="flex justify-center gap-5">
                   <div className="text-center">
-                    <div className="w-28 h-28 rounded-lg overflow-hidden border-2 border-primary/20 shadow-md">
+                    <div className="w-28 h-28 rounded-lg overflow-hidden border border-gray-200">
                       <Image src="/images/qr-2.png" alt="销售咨询" width={112} height={112} className="w-full h-full object-cover" />
                     </div>
-                    <p className="text-xs font-medium text-foreground mt-2">销售咨询</p>
-                    <p className="text-[10px] text-muted-foreground">英国总部</p>
+                    <p className="text-xs font-medium text-gray-800 mt-2">销售咨询</p>
+                    <p className="text-[10px] text-gray-500">英国总部</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-28 h-28 rounded-lg overflow-hidden border-2 border-primary/20 shadow-md">
+                    <div className="w-28 h-28 rounded-lg overflow-hidden border border-gray-200">
                       <Image src="/images/qr-china.png" alt="销售专员（中国办）" width={112} height={112} className="w-full h-full object-cover" />
                     </div>
-                    <p className="text-xs font-medium text-foreground mt-2">销售专员</p>
-                    <p className="text-[10px] text-muted-foreground">中国办事处</p>
+                    <p className="text-xs font-medium text-gray-800 mt-2">销售专员</p>
+                    <p className="text-[10px] text-gray-500">中国办事处</p>
                   </div>
                 </div>
               </div>
