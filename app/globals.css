@@ -93,7 +93,7 @@ html {
   animation: scale-in 0.2s ease-out both;
 }
 
-@keyframes fadeScaleIn {
+@keyframes wechat-popup {
   from {
     opacity: 0;
     transform: translateX(-50%) scale(0.95);
@@ -102,6 +102,10 @@ html {
     opacity: 1;
     transform: translateX(-50%) scale(1);
   }
+}
+
+.animate-wechat-popup {
+  animation: wechat-popup 0.2s ease-out both;
 }
 
 @keyframes dropdown-in {
