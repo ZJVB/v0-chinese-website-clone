@@ -114,7 +114,7 @@ export default function TechnologyPage() {
             <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
               体验数字化仓储管理
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-muted-foreground mb-8">
               预约系统演示，了解 Cube WMS 如何帮助您提升仓储运营效率、降低运营成本、优化库存管理。
             </p>
             <div className="flex flex-wrap justify-center gap-4">
