@@ -24,14 +24,6 @@ const banners = [
     linkText: "了解更多",
   },
   {
-    id: 1,
-    title: "英国本地仓储与履约解决方案",
-    subtitle: "为跨境品牌、平台卖家及分销客户提供一站式英国本地仓储、履约与配送支持。",
-    image: "/images/hero-warehouse.jpg",
-    link: "/solutions",
-    linkText: "查看解决方案",
-  },
-  {
     id: 2,
     title: "构建更高效的英国本地供应链",
     subtitle: "从 FBA 备货、中转分拨到零售配送，帮助客户提升库存灵活性、发货效率和本地交付能力。",
