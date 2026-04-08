@@ -8,6 +8,14 @@ import { Button } from "@/components/ui/button";
 
 const banners = [
   {
+    id: 1,
+    title: "英国本地仓储与履约解决方案",
+    subtitle: "为跨境品牌、平台卖家及分销客户提供一站式英国本地仓储、履约与配送支持。",
+    image: "/images/hero-warehouse.jpg",
+    link: "/solutions",
+    linkText: "查看解决方案",
+  },
+  {
     id: 4,
     title: "HMRC 认可的合规海外仓服务商",
     subtitle: "Cube海外仓作为英国税务及海关总署（HMRC）认可的海外仓服务商。依托规范的运营体系与成熟的本地履约能力，我们为跨境卖家提供安全、透明、可靠的英国仓储及订单履约服务。",
