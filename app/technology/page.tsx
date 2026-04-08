@@ -115,7 +115,7 @@ export default function TechnologyPage() {
               体验数字化仓储管理
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              预约系统演示，了解 Cube WMS 如何帮助您提升仓储运营效率、降��运营成本、优化库存管理。
+              预约系统演示，了解 Cube WMS 如何帮助您提升仓储运营效率、降低运营成本、优化库存管理。
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg" className="gap-2 group transition-all duration-300 hover:scale-105 hover:shadow-lg">
