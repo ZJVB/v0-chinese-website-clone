@@ -104,17 +104,6 @@ export default function TechnologyPage() {
                 提供标准化 RESTful API 接口，支持主流电商平台、快递服务商和 ERP 系统对接，实现订单自动同步、物流信息实时更新、库存数据多端一致。
               </p>
             </div>
-            
-            {/* API Architecture Diagram */}
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100">
-              <Image
-                src="/images/technology-api.jpg"
-                alt="API 集成架构图"
-                width={1400}
-                height={700}
-                className="w-full h-auto object-cover"
-              />
-            </div>
           </div>
         </section>
 
