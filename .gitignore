@@ -3,8 +3,20 @@ __v0_runtime_loader.js
 __v0_devtools.tsx
 __v0_jsx-dev-runtime.ts
 
+# Nuxt
+.nuxt/
+dist/
+.output/
+.env
+.env.local
+.env.*.local
+
 # Common ignores
 node_modules/
-.next/
-.env*.local
 .DS_Store
+.idea/
+.vscode/
+*.log
+*.swp
+*.swo
+~*
