@@ -7,7 +7,6 @@ import { PageBanner } from "@/components/page-banner";
 import { Button } from "@/components/ui/button";
 
 import {
-  BadgeCheck,
   Package,
   ShoppingBag,
   Building2,
@@ -108,10 +107,6 @@ export default function SolutionsPage() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white">
-                  <BadgeCheck className="h-4 w-4" />
-                  官方认证仓
-                </div>
               </div>
 
               {/* Right - Content */}
