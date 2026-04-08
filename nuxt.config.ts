@@ -19,9 +19,9 @@ export default defineNuxtConfig({
   ui: {
     colorMode: false,
   },
-  
-  css: ['~/assets/css/main.css'],
-  
+
+  css: ['@/assets/css/main.css'],
+
   app: {
     head: {
       title: 'Cube 海外仓 - 英国本地仓储与履约解决方案',
