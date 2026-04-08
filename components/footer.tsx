@@ -121,7 +121,6 @@ export function Footer() {
           <div>
             <h4 className="mb-4 text-sm font-semibold text-primary">解决方案</h4>
             <ul className="space-y-2.5 text-sm text-white/60">
-              <li><Link href="/solutions/temu" className="hover:text-primary transition-colors">TEMU 官方认证仓</Link></li>
               <li><Link href="/solutions/fba" className="hover:text-primary transition-colors">FBA 备货与转运</Link></li>
               <li><Link href="/solutions/d2c" className="hover:text-primary transition-colors">D2C 一件代发</Link></li>
               <li><Link href="/solutions/b2b" className="hover:text-primary transition-colors">B2B 零售分销</Link></li>
