@@ -23,7 +23,6 @@ const timeline = [
   { year: "2021", title: "初步扩展", desc: "仓储面积扩增至 5,000 平方米，提升仓储能力与服务水平。", image: "/images/timeline-2021.jpg" },
   { year: "2023", title: "效率提升", desc: "日处理订单量突破 3,000 单，运营效率显著提升。", image: "/images/timeline-2023.jpg" },
   { year: "2024", title: "业务多元化", desc: "仓库扩展至 10,000 平方米；成功开通 TikTok 对接及代发项目；年底日订单量突破 10,000 单。", image: "/images/timeline-2024.jpg" },
-  { year: "2025", title: "官方认证", desc: "获得 TEMU 官方认证，成为 TEMU 海外仓合作伙伴。", image: "/images/timeline-2025.jpg" },
   { year: "2026", title: "持续壮大", desc: "仓库规模进一步扩大至 20,000 平方米，持续强化仓储与物流服务能力。", image: "/images/timeline-2026.jpg" },
 ];
 
@@ -77,7 +76,7 @@ export default function AboutPage() {
                     我们提供全面整合的物流解决方案，包括海外仓一件代发、亚马逊 FBA 中转、B2B 配送、高效退货处理以及专业的商品翻新服务。凭借先进的仓储管理系统（WMS）和自动化技术，Cube 海外仓能够实现日均处理超过 2 万件订单的高效运营。
                   </p>
                   <p>
-                    作为 TEMU 官方认证的海外仓，我们始终坚持以客户需求为核心，致力于提供专业、高效、可靠的物流服务，赋能中国品牌成功出海。
+                    我们始终坚持以客户需求为核心，致力于提供专业、高效、可靠的物流服务，赋能中国品牌成功出海。
                   </p>
                 </div>
               </div>
