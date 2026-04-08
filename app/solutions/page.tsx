@@ -25,17 +25,17 @@ export const metadata: Metadata = {
 };
 
 const featuredSolution = {
-  icon: BadgeCheck,
-  title: "TEMU 官方认证仓",
-  subtitle: "履约表现持续位居前列",
-  description: "作为 TEMU 官方认证仓，Cube海外仓在多个周期的履约数据评估中持续保持优异表现。为 TEMU 平台卖家提供标准化仓储、订单履约与本地发货支持。",
-  href: "/solutions/temu",
-  image: "/images/hero-temu.jpg",
+  icon: Package,
+  title: "FBA 备货与转运",
+  subtitle: "灵活高效的库存管理",
+  description: "支持英国本地前置仓备货、中转、分批补货与退件处理，帮助卖家更灵活地管理 FBA 库存，提升发货效率和库存流转速度。",
+  href: "/solutions/fba",
+  image: "/images/service-fba.jpg",
   features: [
-    "标准化作业流程",
-    "稳定的订单处理能力",
-    "英国本地履约资源",
-    "高效的仓配支持",
+    "英国本地前置仓备货",
+    "灵活的中转分拨",
+    "分批补货与退件处理",
+    "智能库存管理",
   ],
 };
 
@@ -141,7 +141,7 @@ export default function SolutionsPage() {
 
                 <Button asChild size="lg" className="group">
                   <Link href={featuredSolution.href}>
-                    了解 TEMU 服务
+                    了解 FBA 服务
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>

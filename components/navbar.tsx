@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const solutionItems = [
-  { label: "TEMU 官方认证仓", href: "/solutions/temu" },
   { label: "FBA 备货与转运服务", href: "/solutions/fba" },
   { label: "D2C 一件代发", href: "/solutions/d2c" },
   { label: "B2B 零售分销", href: "/solutions/b2b" },

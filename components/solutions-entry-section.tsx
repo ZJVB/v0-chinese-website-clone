@@ -3,7 +3,6 @@ import { ArrowRight } from "lucide-react";
 import { SectionTitle } from "@/components/section-title";
 
 const solutions = [
-  { title: "TEMU 官方认证仓", href: "/solutions/temu" },
   { title: "FBA 备货与转运服务", href: "/solutions/fba" },
   { title: "D2C 一件代发", href: "/solutions/d2c" },
   { title: "B2B 零售分销", href: "/solutions/b2b" },
